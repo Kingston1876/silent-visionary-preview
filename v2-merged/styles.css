@@ -1048,13 +1048,13 @@ body.mobile-nav-open .faq-widget { display: none; }
 
 .faq-widget__launcher {
   width: 56px; height: 56px; border-radius: 50%;
-  background: linear-gradient(180deg, var(--gold-bright), var(--gold));
-  color: var(--ink); border: none; cursor: pointer;
+  background: rgba(201, 161, 90, 0.42);
+  color: var(--gold-bright); border: 1px solid rgba(228, 196, 131, 0.45); cursor: pointer;
   display: flex; align-items: center; justify-content: center;
-  box-shadow: 0 14px 30px -10px rgba(0,0,0,.55);
-  transition: transform var(--transition-fast);
+  box-shadow: 0 14px 30px -10px rgba(0,0,0,.5);
+  transition: transform var(--transition-fast), background var(--transition-fast);
 }
-.faq-widget__launcher:hover { transform: translateY(-2px); }
+.faq-widget__launcher:hover { transform: translateY(-2px); background: rgba(201, 161, 90, 0.62); }
 .faq-widget__icon { width: 24px; height: 24px; }
 .faq-widget__icon--close { display: none; }
 .faq-widget__launcher--open .faq-widget__icon--chat { display: none; }
