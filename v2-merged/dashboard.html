@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dashboard | Silent Visionary</title>
     <meta name="description" content="Silent Visionary investigator dashboard — investigations, digital twin, timeline, threat intelligence, and the AI forensic assistant, in one workspace." />
-    <link rel="stylesheet" href="styles.css?v=20260812q" />
+    <link rel="stylesheet" href="styles.css?v=20260812s" />
   </head>
   <body class="app-page">
     <div class="desktop-only-notice">
@@ -72,7 +72,7 @@
 
         <div class="app-main">
           <div class="app-topbar">
-            <div class="case-pill" id="case-pill"><span class="sev-crit" id="case-pill-dot"></span> Active case <b id="case-pill-id">SV-001</b> — <span id="case-pill-title">Traffic Signal System Intrusion</span></div>
+            <div class="case-pill" id="case-pill"><span class="sev-crit" id="case-pill-dot"></span> Active case <b id="case-pill-id">SV-014</b> — <span id="case-pill-title">5th &amp; Main Armed Robbery</span></div>
             <div class="topbar-right">
               <div class="search-wrap">
                 <div class="search-fake">
@@ -120,9 +120,9 @@
 
             <div class="recon-cta">
               <div class="recon-cta-text">
-                <span class="recon-cta-eyebrow">Case SV-001 &middot; Traffic Signal System Intrusion</span>
+                <span class="recon-cta-eyebrow">Case SV-014 &middot; 5th &amp; Main Armed Robbery</span>
                 <h3>Watch the incident reconstructed, end to end.</h3>
-                <p>Walk through physical access, endpoint compromise, network activity, and evidence correlation as one continuous chain — the same reconstruction an investigator would build by hand.</p>
+                <p>Walk through the 911 call, CCTV footage, ALPR hits, and cell-tower correlation as one continuous chain — the same reconstruction an investigator would build by hand.</p>
               </div>
               <button type="button" class="btn btn-gold" id="recon-launch">Start Reconstruction</button>
             </div>
@@ -131,7 +131,7 @@
               <div class="panel-head"><span class="panel-title"><svg><use href="#i-folder"/></svg>Active Investigations</span><span class="panel-action">Click a case to select it</span></div>
               <div class="panel-body">
                 <div class="invest-row" id="invest-row">
-                  <div class="case-card active" data-case="SV-001" tabindex="0" role="button" style="--card-accent: var(--crit)">
+                  <div class="case-card" data-case="SV-001" tabindex="0" role="button" style="--card-accent: var(--crit)">
                     <div class="case-card-top"><span class="case-id">SV-001</span><span class="sev sev-critical">Critical</span></div>
                     <p class="case-name">Traffic Signal System Intrusion</p>
                     <div class="case-domain">Network Intrusion</div>
@@ -143,7 +143,7 @@
                     </div>
                     <div class="case-card-foot"><span class="lead">3 investigators</span><span>Last activity 21:14:47</span></div>
                   </div>
-                  <div class="case-card" data-case="SV-014" tabindex="0" role="button" style="--card-accent: var(--high)">
+                  <div class="case-card active" data-case="SV-014" tabindex="0" role="button" style="--card-accent: var(--high)">
                     <div class="case-card-top"><span class="case-id">SV-014</span><span class="sev sev-high">High</span></div>
                     <p class="case-name">5th &amp; Main Armed Robbery</p>
                     <div class="case-domain">Digital Forensics</div>
@@ -224,27 +224,26 @@
                       <button type="button" class="live-ctrl-btn" id="live-pause-btn" title="Pause live feed"><svg><use href="#i-pause"/></svg></button>
                       <button type="button" class="live-ctrl-btn" id="live-replay-btn" title="Replay incident"><svg><use href="#i-replay"/></svg></button>
                     </span>
-                    <span id="stream-case-label">SV-001</span>
+                    <span id="stream-case-label">SV-014</span>
                   </span>
                 </div>
                 <div class="panel-body">
                   <ul class="stream-list" id="stream-list">
-                    <li><span class="stream-time">21:14:02</span><span class="stream-tag tag-phys">Phys</span><span class="stream-desc">Movement detected — <b>Traffic Ops Center, Cam 04</b></span></li>
-                    <li><span class="stream-time">21:14:07</span><span class="stream-tag tag-phys">Phys</span><span class="stream-desc">Badge access — Door D-12, <b>Contractor-019</b></span></li>
-                    <li><span class="stream-time">21:14:12</span><span class="stream-tag tag-endpoint">Auth</span><span class="stream-desc">Login success — <b>TRAFFIC-CTRL-14</b></span></li>
-                    <li><span class="stream-time">21:14:19</span><span class="stream-tag tag-endpoint">Proc</span><span class="stream-desc">Suspicious process — <b>powershell.exe</b> (encoded)</span></li>
-                    <li><span class="stream-time">21:14:23</span><span class="stream-tag tag-net">Net</span><span class="stream-desc">Outbound connection — <b>185.212.44.6:443</b></span></li>
-                    <li><span class="stream-time">21:14:31</span><span class="stream-tag tag-file">File</span><span class="stream-desc">File accessed — <b>signal_timing_master.cfg</b></span></li>
-                    <li><span class="stream-time">21:14:47</span><span class="stream-tag tag-phys">Dev</span><span class="stream-desc">USB connected — <b>VID_0951&amp;PID_1666</b></span></li>
+                    <li><span class="stream-time">21:02:11</span><span class="stream-tag tag-endpoint">Call</span><span class="stream-desc">911 call received — <b>armed robbery in progress</b></span></li>
+                    <li><span class="stream-time">21:14:40</span><span class="stream-tag tag-file">CCTV</span><span class="stream-desc">Store CCTV — <b>suspect enters, brandishes weapon</b></span></li>
+                    <li><span class="stream-time">21:16:02</span><span class="stream-tag tag-endpoint">ALPR</span><span class="stream-desc">Plate reader hit — <b>suspect vehicle</b>, 5th &amp; Main</span></li>
+                    <li><span class="stream-time">21:17:55</span><span class="stream-tag tag-net">Cell</span><span class="stream-desc">Cell tower ping — <b>suspect phone</b>, Sector 4</span></li>
+                    <li><span class="stream-time">21:18:40</span><span class="stream-tag tag-file">CCTV</span><span class="stream-desc">Street camera — <b>suspect flees toward I-40</b></span></li>
+                    <li><span class="stream-time">21:22:10</span><span class="stream-tag tag-endpoint">Wit</span><span class="stream-desc">Witness statement recorded — <b>store clerk</b></span></li>
                   </ul>
                 </div>
               </div>
 
               <div class="panel" id="panel-twin">
-                <div class="panel-head"><span class="panel-title" id="twin-panel-title"><svg><use href="#i-cube"/></svg>Digital Twin — Traffic Ops Center</span><span class="panel-action">Selected: <span id="twin-selected-label">TRAFFIC-CTRL-14</span></span></div>
+                <div class="panel-head"><span class="panel-title" id="twin-panel-title"><svg><use href="#i-cube"/></svg>Digital Twin — 5th & Main Corridor</span><span class="panel-action">Selected: <span id="twin-selected-label">ALPR-UNIT-08</span></span></div>
                 <div class="panel-body">
                   <div class="twin-wrap">
-                    <svg viewBox="0 0 380 230" role="img" aria-label="Floor plan of the Traffic Ops Center showing clickable rooms and device nodes, with Traffic-Ctrl-14 highlighted as the selected object">
+                    <svg viewBox="0 0 380 230" role="img" aria-label="Floor plan of the 5th & Main Corridor showing clickable rooms and device nodes, with ALPR-Unit-08 highlighted as the selected object">
                       <g class="twin-room" data-room="server" tabindex="0">
                         <rect x="10" y="10" width="150" height="105" rx="3" fill="none" stroke="var(--line)" color="var(--line)" stroke-width="1.2"/>
                         <text x="18" y="26" font-family="var(--font-mono)" font-size="9" fill="var(--text-faint)" letter-spacing="1">SCADA SERVER ROOM</text>
@@ -264,21 +263,21 @@
                       <circle class="twin-node" data-device="d5" cx="60" cy="175" r="3.4" fill="var(--low)"/>
                       <circle class="twin-node" data-device="d6" cx="120" cy="190" r="3.4" fill="var(--low)"/>
                       <circle class="twin-node" data-device="d7" cx="270" cy="165" r="3.4" fill="var(--low)"/>
-                      <circle id="twin-pulse-ring" class="pulse" cx="190" cy="175" r="7" fill="none" stroke="var(--gold)" stroke-width="1.4" color="var(--gold)"/>
-                      <circle id="twin-pulse-dot" class="twin-node" data-device="d0" cx="190" cy="175" r="5" fill="var(--gold)"/>
-                      <text id="twin-pulse-label" x="190" y="200" text-anchor="middle" font-family="var(--font-mono)" font-size="9" fill="var(--gold-bright)">TRAFFIC-CTRL-14</text>
+                      <circle id="twin-pulse-ring" class="pulse" cx="280" cy="45" r="7" fill="none" stroke="var(--gold)" stroke-width="1.4" color="var(--gold)"/>
+                      <circle id="twin-pulse-dot" class="twin-node" data-device="d3" cx="280" cy="45" r="5" fill="var(--gold)"/>
+                      <text id="twin-pulse-label" x="280" y="70" text-anchor="middle" font-family="var(--font-mono)" font-size="9" fill="var(--gold-bright)">ALPR-UNIT-08</text>
                     </svg>
                     <div class="twin-detail">
-                      <div class="twin-detail-id" id="twin-id">TRAFFIC-CTRL-14</div>
-                      <span class="sev sev-critical" id="twin-risk" style="display: inline-flex; margin-bottom: 12px;">Risk: High</span>
+                      <div class="twin-detail-id" id="twin-id">ALPR-UNIT-08</div>
+                      <span class="sev sev-high" id="twin-risk" style="display: inline-flex; margin-bottom: 12px;">Risk: High</span>
                       <div class="twin-rows">
-                        <div class="twin-row"><span class="k">Location</span><span class="v" id="twin-location">Traffic Ops Center</span></div>
-                        <div class="twin-row"><span class="k">User</span><span class="v" id="twin-user">Contractor-019</span></div>
-                        <div class="twin-row"><span class="k">IP</span><span class="v" id="twin-ip">10.44.6.112</span></div>
-                        <div class="twin-row"><span class="k">MAC</span><span class="v" id="twin-mac">3C:E1:A4:9F:02:B7</span></div>
-                        <div class="twin-row"><span class="k">Evidence</span><span class="v" id="twin-evidence">27 artifacts</span></div>
-                        <div class="twin-row"><span class="k">Sec. events</span><span class="v" id="twin-events">8</span></div>
-                        <div class="twin-row"><span class="k">Accounts</span><span class="v" id="twin-accounts">2</span></div>
+                        <div class="twin-row"><span class="k">Location</span><span class="v" id="twin-location">5th & Main Corridor</span></div>
+                        <div class="twin-row"><span class="k">User</span><span class="v" id="twin-user">Suspect-01</span></div>
+                        <div class="twin-row"><span class="k">IP</span><span class="v" id="twin-ip">10.44.9.3</span></div>
+                        <div class="twin-row"><span class="k">MAC</span><span class="v" id="twin-mac">F0:1D:BC:22:4E:6A</span></div>
+                        <div class="twin-row"><span class="k">Evidence</span><span class="v" id="twin-evidence">21 artifacts</span></div>
+                        <div class="twin-row"><span class="k">Sec. events</span><span class="v" id="twin-events">5</span></div>
+                        <div class="twin-row"><span class="k">Accounts</span><span class="v" id="twin-accounts">1</span></div>
                       </div>
                     </div>
                   </div>
@@ -313,7 +312,7 @@
             </div>
 
             <div class="panel" id="panel-evidence-graph">
-              <div class="panel-head"><span class="panel-title"><svg><use href="#i-nodes"/></svg>Evidence Graph</span><span class="panel-action" id="eg-case-label">SV-001</span></div>
+              <div class="panel-head"><span class="panel-title"><svg><use href="#i-nodes"/></svg>Evidence Graph</span><span class="panel-action" id="eg-case-label">SV-014</span></div>
               <div class="panel-body">
                 <svg class="evidence-graph-svg" id="evidence-graph" viewBox="0 0 760 300" role="img" aria-label="Evidence graph tracing the active case's entity through an identifier, device, location, correlated event, and evidence item, with a branch to an external destination">
                   <g stroke="var(--line)" color="var(--line)" stroke-width="1.2">
@@ -327,31 +326,31 @@
                   <g font-family="var(--font-mono)">
                     <rect x="20" y="6" width="200" height="34" rx="7" fill="var(--charcoal-2)" stroke="var(--line)"/>
                     <text class="eg-node-label" x="30" y="19" font-size="8.5" fill="var(--text-faint)">ENTITY</text>
-                    <text class="eg-node-label" id="eg-entity" x="30" y="33" font-size="12" fill="var(--text)" font-weight="600">Contractor-019</text>
+                    <text class="eg-node-label" id="eg-entity" x="30" y="33" font-size="12" fill="var(--text)" font-weight="600">Suspect-01 (Unidentified)</text>
 
                     <rect x="20" y="70" width="200" height="34" rx="7" fill="var(--charcoal-2)" stroke="var(--line)"/>
                     <text class="eg-node-label" x="30" y="83" font-size="8.5" fill="var(--text-faint)">IDENTIFIER</text>
-                    <text class="eg-node-label" id="eg-account" x="30" y="97" font-size="12" fill="var(--text)" font-weight="600">contractor019@dot.cityops.gov</text>
+                    <text class="eg-node-label" id="eg-account" x="30" y="97" font-size="12" fill="var(--text)" font-weight="600">+1 (555) 019-4471</text>
 
                     <rect x="20" y="144" width="180" height="34" rx="7" fill="var(--charcoal-2)" stroke="var(--gold-dim)"/>
                     <text class="eg-node-label" x="30" y="157" font-size="8.5" fill="var(--gold)">DEVICE</text>
-                    <text class="eg-node-label" id="eg-device" x="30" y="171" font-size="12" fill="var(--text)" font-weight="600">TRAFFIC-CTRL-14</text>
+                    <text class="eg-node-label" id="eg-device" x="30" y="171" font-size="12" fill="var(--text)" font-weight="600">ALPR-UNIT-08</text>
 
                     <rect x="20" y="218" width="200" height="34" rx="7" fill="var(--charcoal-2)" stroke="var(--line)"/>
                     <text class="eg-node-label" x="30" y="231" font-size="8.5" fill="var(--text-faint)">LOCATION</text>
-                    <text class="eg-node-label" id="eg-ip" x="30" y="245" font-size="12" fill="var(--text)" font-weight="600">10.44.6.112</text>
+                    <text class="eg-node-label" id="eg-ip" x="30" y="245" font-size="12" fill="var(--text)" font-weight="600">5th & Main St.</text>
 
                     <rect x="360" y="127" width="200" height="34" rx="7" fill="var(--charcoal-2)" stroke="var(--line)"/>
                     <text x="370" y="140" font-size="8.5" fill="var(--text-faint)">CORRELATED EVENT</text>
-                    <text class="eg-node-label" id="eg-network" x="370" y="154" font-size="12" fill="var(--text)" font-weight="600">Outbound :443</text>
+                    <text class="eg-node-label" id="eg-network" x="370" y="154" font-size="12" fill="var(--text)" font-weight="600">Cell tower ping — Sector 4</text>
 
                     <rect x="620" y="73" width="120" height="34" rx="7" fill="var(--charcoal-2)" stroke="rgba(226,88,79,.5)"/>
                     <text x="630" y="86" font-size="8" fill="var(--crit)">DESTINATION</text>
-                    <text class="eg-node-label" id="eg-external" x="630" y="100" font-size="11" fill="var(--text)" font-weight="600">185.212.44.6</text>
+                    <text class="eg-node-label" id="eg-external" x="630" y="100" font-size="11" fill="var(--text)" font-weight="600">I-40 Westbound</text>
 
                     <rect x="620" y="183" width="120" height="34" rx="7" fill="var(--charcoal-2)" stroke="var(--line)"/>
                     <text x="630" y="196" font-size="8.5" fill="var(--text-faint)">EVIDENCE ITEM</text>
-                    <text class="eg-node-label" id="eg-file" x="630" y="210" font-size="11" fill="var(--text)" font-weight="600">signal_timing_master.cfg</text>
+                    <text class="eg-node-label" id="eg-file" x="630" y="210" font-size="11" fill="var(--text)" font-weight="600">ALPR_hit_5thMain_2126.jpg</text>
                   </g>
                 </svg>
               </div>
@@ -368,7 +367,7 @@
             </div>
 
             <div class="panel" id="panel-attack">
-              <div class="panel-head"><span class="panel-title"><svg><use href="#i-flow"/></svg>Attack Reconstruction</span><span class="panel-action" id="attack-case-label">SV-001</span></div>
+              <div class="panel-head"><span class="panel-title"><svg><use href="#i-flow"/></svg>Attack Reconstruction</span><span class="panel-action" id="attack-case-label">SV-014</span></div>
               <div class="panel-body">
                 <div class="attack-chain" id="attack-chain"></div>
                 <div class="stage-tooltip" id="stage-tooltip" role="tooltip" hidden></div>
@@ -401,10 +400,10 @@
                 <div class="panel-body">
                   <div class="ai-thread-scroll" id="ai-thread">
                     <div>
-                      <div class="ai-q">Show the initial access event.</div>
+                      <div class="ai-q">What happened?</div>
                       <div class="ai-a">
-                        Initial access occurred at <b>21:14:07</b> via badge credential for <b>Contractor-019</b> at the Traffic Ops Center's Door D-12, followed by an authenticated logon to <b>TRAFFIC-CTRL-14</b> five seconds later. The badge event and the logon share the same identity, consistent with a physical-to-digital handoff.
-                        <div class="ai-meta"><span class="conf-badge">88% · Correlated Evidence</span><span class="ev-refs">EVID-1042, EVID-1043</span></div>
+                        The incident begins with a 911 call at <b>21:02:11</b> reporting an armed robbery in progress, followed twelve minutes later by store CCTV showing the suspect entering and brandishing a weapon.
+                        <div class="ai-meta"><span class="conf-badge">71%</span><span class="ev-refs">EVID-2201</span></div>
                       </div>
                     </div>
                   </div>
@@ -446,7 +445,7 @@
                     <label class="workflow-toggle">
                       <input type="checkbox" id="automation-toggle" checked />
                       <span class="workflow-toggle-track"><span class="workflow-toggle-thumb"></span></span>
-                      <span id="automation-status">Enabled for SV-001</span>
+                      <span id="automation-status">Enabled for SV-014</span>
                     </label>
                   </div>
                 </div>
@@ -473,7 +472,7 @@
             </div>
 
             <div class="panel" id="panel-reports">
-              <div class="panel-head"><span class="panel-title"><svg><use href="#i-doc"/></svg>Reports</span><span class="panel-action" id="reports-case-label">SV-001</span></div>
+              <div class="panel-head"><span class="panel-title"><svg><use href="#i-doc"/></svg>Reports</span><span class="panel-action" id="reports-case-label">SV-014</span></div>
               <div class="panel-body">
                 <p style="font-size: 12.5px; color: var(--text-dim); margin-bottom: 14px;">Generates an executive summary, timeline, evidence inventory, attack path, and chain of custody for the active case.</p>
                 <button type="button" id="generate-report-btn" class="btn btn-gold btn-sm">Generate Report</button>
@@ -540,10 +539,10 @@
       </div>
     </div>
 
-    <div class="recon-overlay" id="recon-overlay" role="dialog" aria-modal="true" aria-label="Case SV-001 guided reconstruction" hidden>
+    <div class="recon-overlay" id="recon-overlay" role="dialog" aria-modal="true" aria-label="Case SV-014 guided reconstruction" hidden>
       <div class="recon-modal">
         <div class="recon-modal-head">
-          <span class="recon-modal-title"><svg><use href="#i-flow"/></svg>SV-001 &middot; Guided Reconstruction</span>
+          <span class="recon-modal-title"><svg><use href="#i-flow"/></svg>SV-014 &middot; Guided Reconstruction</span>
           <button type="button" class="recon-close" id="recon-close" aria-label="Close reconstruction">&times;</button>
         </div>
         <div class="recon-modal-body">
@@ -557,7 +556,7 @@
       </div>
     </div>
 
-    <script src="main.js?v=20260812q"></script>
-    <script src="dashboard.js?v=20260812q"></script>
+    <script src="main.js?v=20260812s"></script>
+    <script src="dashboard.js?v=20260812s"></script>
   </body>
 </html>

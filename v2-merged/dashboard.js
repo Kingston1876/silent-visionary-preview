@@ -563,7 +563,7 @@
   ];
 
   var SEVERITY_COLOR = { critical: "var(--crit)", high: "var(--high)", medium: "var(--med)" };
-  var currentCase = "SV-001";
+  var currentCase = "SV-014";
   var currentDevice = "d0";
   var currentZoom = "hours";
   var activeTimelineFilter = "all";
@@ -1375,15 +1375,15 @@
   }
 
   var RECON_STAGES = [
-    { label: "Physical Event", time: "21:14:02", note: "Movement detected on Traffic Ops Center Camera 04, followed by a badge scan at Door D-12.", evid: "EVID-1042" },
-    { label: "Authentication Event", time: "21:14:12", note: "The badge credential for Contractor-019 is followed five seconds later by a successful logon to TRAFFIC-CTRL-14 — same identity, physical to digital.", evid: "EVID-1042" },
-    { label: "Endpoint Compromise", time: "21:14:19", note: "An encoded PowerShell process spawns on TRAFFIC-CTRL-14 immediately after logon — uncommon for this contractor's baseline behavior.", evid: "EVID-1044" },
-    { label: "Network Activity", time: "21:14:23", note: "An outbound connection opens to 185.212.44.6:443, infrastructure already flagged as command-and-control.", evid: "EVID-1043" },
-    { label: "File Activity", time: "21:31:02", note: "File access is confirmed on signal_timing_master.cfg — the live signal-timing configuration for the downtown corridor.", evid: "EVID-1046" },
-    { label: "Lateral Movement", time: "—", note: "No confirmed lateral movement — only TRAFFIC-CTRL-14 shows compromise indicators so far. This step remains open.", evid: null, muted: true },
-    { label: "Related Physical Event", time: "21:14:47", note: "A USB device connects to TRAFFIC-CTRL-14 minutes after the endpoint compromise — a second physical signal tied to the same session.", evid: null },
-    { label: "Evidence Correlation", time: "—", note: "34 evidence items now resolve into a single chain: badge access, endpoint logon, encoded process, outbound C2 connection, and file access — all under one identity, one device, one 30-minute window.", evid: null },
-    { label: "Final Reconstruction", time: "21:44:50", note: "Session terminated. The reconstruction is complete, pending investigator confirmation of attacker attribution.", evid: "EVID-1047" },
+    { label: "Initial Report", time: "21:02:11", note: "Dispatch receives a 911 call reporting an armed robbery in progress at a retail location on 5th & Main.", evid: "EVID-2201" },
+    { label: "CCTV Capture", time: "21:14:40", note: "Store CCTV shows the suspect entering and brandishing a weapon, twelve minutes after the call.", evid: "EVID-2202" },
+    { label: "ALPR Hit", time: "21:16:02", note: "A license-plate reader at 5th & Main captures the suspect vehicle as it leaves the scene.", evid: "EVID-2203" },
+    { label: "Cell Tower Correlation", time: "21:17:55", note: "A cell tower ping places a phone in the same sector at the same time as the suspect vehicle's departure.", evid: "EVID-2204" },
+    { label: "Street Camera Tracking", time: "21:18:40", note: "A street camera tracks the vehicle heading north toward I-40.", evid: "EVID-2205" },
+    { label: "Witness Interview", time: "21:22:10", note: "A witness statement from the store clerk corroborates the sequence and vehicle description.", evid: "EVID-2206" },
+    { label: "Vehicle Cross-Reference", time: "—", note: "The suspect vehicle's plate doesn't match any vehicle registered to store employees or recent customers. Flagged for regional ALPR cross-reference — this step remains open.", evid: null, muted: true },
+    { label: "Evidence Correlation", time: "—", note: "21 evidence items now resolve into a single chain: the 911 call, store CCTV, an ALPR capture, a cell tower ping, street camera tracking, and a witness statement — all within a 20-minute window.", evid: null },
+    { label: "Final Reconstruction", time: "21:22:10", note: "Reconstruction complete. Suspect vehicle description and last known heading are with patrol units — the investigation remains open pending vehicle location.", evid: "EVID-2206" },
   ];
   var reconTimer = null;
   var reconRevealIndex = 0;
@@ -1491,16 +1491,16 @@
       '<div class="recon-summary-title">Reconstruction Complete</div>' +
       '<div class="recon-summary-title big">INCIDENT RECONSTRUCTED</div>' +
       '<div class="recon-summary-grid">' +
-      '<div><div class="recon-stat-label">Evidence Sources</div><div class="recon-stat-value">34 items</div></div>' +
-      '<div><div class="recon-stat-label">Systems Affected</div><div class="recon-stat-value">TRAFFIC-CTRL-14, external C2 host</div></div>' +
-      '<div><div class="recon-stat-label">Timeline</div><div class="recon-stat-value">20:42:18&ndash;21:44:50</div></div>' +
-      '<div><div class="recon-stat-label">Attack Path</div><div class="recon-stat-value">Initial Access &rarr; Execution &rarr; Defense Evasion &rarr; Collection &rarr; Exfiltration</div></div>' +
-      '<div><div class="recon-stat-label">Physical Correlations</div><div class="recon-stat-value">Badge access, USB device connection</div></div>' +
+      '<div><div class="recon-stat-label">Evidence Sources</div><div class="recon-stat-value">21 items</div></div>' +
+      '<div><div class="recon-stat-label">Suspect Vehicle</div><div class="recon-stat-value">Partial plate match, unregistered</div></div>' +
+      '<div><div class="recon-stat-label">Timeline</div><div class="recon-stat-value">21:02:11&ndash;21:22:10</div></div>' +
+      '<div><div class="recon-stat-label">Investigation Path</div><div class="recon-stat-value">911 Call &rarr; CCTV &rarr; ALPR &rarr; Cell Correlation &rarr; Witness Interview</div></div>' +
+      '<div><div class="recon-stat-label">Physical Correlations</div><div class="recon-stat-value">ALPR capture, street camera tracking</div></div>' +
       '<div><div class="recon-stat-label">Confidence</div><div class="recon-stat-value">Pending investigator review</div></div>' +
       "</div>" +
       '<div class="recon-summary-questions"><b>Outstanding questions</b><ul>' +
-      "<li>Actor attribution remains unconfirmed.</li>" +
-      "<li>No confirmed lateral movement beyond TRAFFIC-CTRL-14.</li>" +
+      "<li>Suspect identity remains unconfirmed.</li>" +
+      "<li>Vehicle registration cross-reference pending.</li>" +
       "</ul></div>";
     summary.hidden = false;
     if (restartBtn) restartBtn.hidden = false;
