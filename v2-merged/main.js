@@ -280,4 +280,63 @@
       }
     });
   }
+
+  // ---------- Homepage live split feed (cyber + street) ----------
+
+  const splitCyberList = document.getElementById('split-feed-cyber');
+  const splitStreetList = document.getElementById('split-feed-street');
+
+  if (splitCyberList && splitStreetList) {
+    const SPLIT_CYBER_EVENTS = [
+      'Badge access — Door D-12, Contractor-019',
+      'Outbound connection flagged — 185.212.44.6',
+      'Encoded PowerShell process detected',
+      'Credential reuse attempt — RMS admin account',
+      'Lateral movement — SCADA-APP-02 → RMS-DB-01',
+      'Query blocked — insufficient clearance',
+      'Network scan detected — records subnet',
+      'Session terminated by SOC',
+    ];
+    const SPLIT_STREET_EVENTS = [
+      '911 call received — armed robbery in progress',
+      'ALPR hit — suspect vehicle, 5th & Main',
+      'Street camera — suspect flees toward I-40',
+      'Transit tap correlation — Riverside Station',
+      'Witness statement recorded — store clerk',
+      'Cell tower ping — suspect phone, Sector 4',
+      'Perimeter fence sensor triggered',
+      'Public camera sighting — Bridge St.',
+    ];
+    const SPLIT_MAX_ITEMS = 5;
+
+    function splitNowLabel() {
+      const d = new Date();
+      const pad = (n) => (n < 10 ? '0' + n : '' + n);
+      return pad(d.getHours()) + ':' + pad(d.getMinutes()) + ':' + pad(d.getSeconds());
+    }
+
+    function splitFeedTick(list, events, indexRef) {
+      const text = events[indexRef.i % events.length];
+      indexRef.i++;
+      const li = document.createElement('li');
+      const t = document.createElement('span');
+      t.className = 't';
+      t.textContent = splitNowLabel();
+      li.appendChild(t);
+      li.appendChild(document.createTextNode(text));
+      list.insertBefore(li, list.firstChild);
+      while (list.children.length > SPLIT_MAX_ITEMS) {
+        list.removeChild(list.lastChild);
+      }
+    }
+
+    const cyberRef = { i: 0 };
+    const streetRef = { i: 0 };
+
+    splitFeedTick(splitCyberList, SPLIT_CYBER_EVENTS, cyberRef);
+    splitFeedTick(splitStreetList, SPLIT_STREET_EVENTS, streetRef);
+
+    window.setInterval(() => splitFeedTick(splitCyberList, SPLIT_CYBER_EVENTS, cyberRef), 2600);
+    window.setInterval(() => splitFeedTick(splitStreetList, SPLIT_STREET_EVENTS, streetRef), 3100);
+  }
 })();

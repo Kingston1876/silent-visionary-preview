@@ -45,6 +45,11 @@
       "common.includes": "Includes",
       "common.home": "Home",
 
+      "index.split.eyebrow": "One engine. Two worlds.",
+      "index.split.title": "Watch the same engine work a cyberattack and a street crime, live.",
+      "index.split.cyberLabel": "Cybersecurity",
+      "index.split.streetLabel": "Street &amp; Public Safety",
+
       "index.why.eyebrow": "Why one platform",
       "index.why.title": "Five tools. One case. One login.",
       "index.why.p1.title": "One login, not five.",
@@ -516,6 +521,11 @@
       "common.eyebrow": "Perícia Digital para a Rua",
       "common.includes": "Inclui",
       "common.home": "Início",
+
+      "index.split.eyebrow": "Um motor. Dois mundos.",
+      "index.split.title": "Veja o mesmo motor investigar um ciberataque e um crime de rua, ao vivo.",
+      "index.split.cyberLabel": "Cibersegurança",
+      "index.split.streetLabel": "Rua e Segurança Pública",
 
       "index.why.eyebrow": "Por que uma única plataforma",
       "index.why.title": "Cinco ferramentas. Um caso. Um login.",
@@ -989,6 +999,11 @@
       "common.includes": "Incluye",
       "common.home": "Inicio",
 
+      "index.split.eyebrow": "Un motor. Dos mundos.",
+      "index.split.title": "Vea el mismo motor investigar un ciberataque y un delito callejero, en vivo.",
+      "index.split.cyberLabel": "Ciberseguridad",
+      "index.split.streetLabel": "Calle y Seguridad Pública",
+
       "index.why.eyebrow": "Por qué una sola plataforma",
       "index.why.title": "Cinco herramientas. Un caso. Un inicio de sesión.",
       "index.why.p1.title": "Un inicio de sesión, no cinco.",
@@ -1460,6 +1475,11 @@
       "common.eyebrow": "Investigation Numérique pour la Rue",
       "common.includes": "Comprend",
       "common.home": "Accueil",
+
+      "index.split.eyebrow": "Un moteur. Deux mondes.",
+      "index.split.title": "Regardez le même moteur traiter une cyberattaque et un crime de rue, en direct.",
+      "index.split.cyberLabel": "Cybersécurité",
+      "index.split.streetLabel": "Rue et Sécurité Publique",
 
       "index.why.eyebrow": "Pourquoi une seule plateforme",
       "index.why.title": "Cinq outils. Un dossier. Une connexion.",
