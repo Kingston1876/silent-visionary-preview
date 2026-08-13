@@ -1504,6 +1504,11 @@
       "</ul></div>";
     summary.hidden = false;
     if (restartBtn) restartBtn.hidden = false;
+    if (typeof summary.scrollIntoView === "function") {
+      try {
+        summary.scrollIntoView({ behavior: "smooth", block: "start" });
+      } catch (e) {}
+    }
   }
 
   function pad(n) { return n < 10 ? "0" + n : "" + n; }
