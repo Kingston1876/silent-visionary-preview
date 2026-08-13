@@ -38,10 +38,10 @@
       "index.hero.title":
         'Reconstruct reality.<br><span class="accent">Reveal the evidence.</span>',
       "index.hero.lede":
-        "Forensics™, Sentinel™, Redact™, Compliance™, and FraudShield™ are no longer five separate products — they're five capabilities inside one reconstruction engine, unified by the Silent Visionary Intelligence Cloud (SVIC).",
+        "From a robbery three blocks away to a compromised traffic signal downtown, Silent Visionary fuses street cameras, license plates, cell records, and public infrastructure data into one investigation. Forensics™, Sentinel™, Redact™, Compliance™, and FraudShield™ — five capabilities built for law enforcement and city government, unified by the Silent Visionary Intelligence Cloud (SVIC).",
       "index.hero.ctaPrimary": "Explore the Platform",
 
-      "common.eyebrow": "Cyber-Physical Forensic Intelligence",
+      "common.eyebrow": "Digital Forensics for the Street",
       "common.includes": "Includes",
       "common.home": "Home",
 
@@ -229,7 +229,7 @@
       "ind.closing.cta1": "Contact Us",
       "about.hero.eyebrow": "About Silent Visionary",
       "about.hero.title": "We build the platform we&#39;d want in the room during an investigation.",
-      "about.hero.lede": "Silent Visionary started as five focused tools &mdash; Forensics, Sentinel, Redact, Compliance, and FraudShield &mdash; and became one platform once it was clear the hardest part of an investigation wasn&#39;t any single tool. It was the gap between them.",
+      "about.hero.lede": "Silent Visionary started as five focused tools &mdash; Forensics, Sentinel, Redact, Compliance, and FraudShield &mdash; and became one platform once it was clear the hardest part of an investigation, whether it&#39;s a breached traffic system or a robbery three blocks away, wasn&#39;t any single tool. It was the gap between them.",
       "about.philosophy.eyebrow": "Our philosophy",
       "about.philosophy.title": "Evidence first. AI second. Human judgment always visible.",
       "about.philosophy.p1.title": "Evidence traces to source.",
@@ -510,10 +510,10 @@
       "index.hero.title":
         'Reconstrua a realidade.<br><span class="accent">Revele a evidência.</span>',
       "index.hero.lede":
-        "Forensics™, Sentinel™, Redact™, Compliance™ e FraudShield™ não são mais cinco produtos separados — são cinco capacidades dentro de um único motor de reconstrução, unificadas pela Silent Visionary Intelligence Cloud (SVIC).",
+        "De um assalto a três quarteirões de distância a um semáforo comprometido no centro da cidade, a Silent Visionary reúne câmeras de rua, placas de veículos, registros de celular e dados de infraestrutura pública em uma única investigação. Forensics™, Sentinel™, Redact™, Compliance™ e FraudShield™ — cinco capacidades criadas para a aplicação da lei e para governos municipais, unificadas pela Silent Visionary Intelligence Cloud (SVIC).",
       "index.hero.ctaPrimary": "Explorar a Plataforma",
 
-      "common.eyebrow": "Inteligência Forense Ciberfísica",
+      "common.eyebrow": "Perícia Digital para a Rua",
       "common.includes": "Inclui",
       "common.home": "Início",
 
@@ -701,7 +701,7 @@
       "ind.closing.cta1": "Fale Conosco",
       "about.hero.eyebrow": "Sobre a Silent Visionary",
       "about.hero.title": "Construímos a plataforma que gostaríamos de ter na sala durante uma investigação.",
-      "about.hero.lede": "A Silent Visionary começou como cinco ferramentas focadas &mdash; Forensics, Sentinel, Redact, Compliance e FraudShield &mdash; e se tornou uma única plataforma quando ficou claro que a parte mais difícil de uma investigação não era nenhuma ferramenta isolada. Era a lacuna entre elas.",
+      "about.hero.lede": "A Silent Visionary começou como cinco ferramentas focadas &mdash; Forensics, Sentinel, Redact, Compliance e FraudShield &mdash; e se tornou uma única plataforma quando ficou claro que a parte mais difícil de uma investigação, seja um sistema de semáforos comprometido ou um assalto a três quarteirões de distância, não era nenhuma ferramenta isolada. Era a lacuna entre elas.",
       "about.philosophy.eyebrow": "Nossa filosofia",
       "about.philosophy.title": "Evidência primeiro. IA em segundo lugar. Julgamento humano sempre visível.",
       "about.philosophy.p1.title": "A evidência remonta à fonte.",
@@ -982,10 +982,10 @@
       "index.hero.title":
         'Reconstruye la realidad.<br><span class="accent">Revela la evidencia.</span>',
       "index.hero.lede":
-        "Forensics™, Sentinel™, Redact™, Compliance™ y FraudShield™ ya no son cinco productos separados — son cinco capacidades dentro de un único motor de reconstrucción, unificadas por Silent Visionary Intelligence Cloud (SVIC).",
+        "Desde un robo a tres cuadras de distancia hasta un semáforo comprometido en el centro de la ciudad, Silent Visionary combina cámaras de calle, matrículas, registros telefónicos y datos de infraestructura pública en una sola investigación. Forensics™, Sentinel™, Redact™, Compliance™ y FraudShield™ — cinco capacidades creadas para las fuerzas del orden y los gobiernos municipales, unificadas por Silent Visionary Intelligence Cloud (SVIC).",
       "index.hero.ctaPrimary": "Explorar la Plataforma",
 
-      "common.eyebrow": "Inteligencia Forense Ciberfísica",
+      "common.eyebrow": "Forense Digital para la Calle",
       "common.includes": "Incluye",
       "common.home": "Inicio",
 
@@ -1173,7 +1173,7 @@
       "ind.closing.cta1": "Contáctenos",
       "about.hero.eyebrow": "Acerca de Silent Visionary",
       "about.hero.title": "Construimos la plataforma que nos gustaría tener en la sala durante una investigación.",
-      "about.hero.lede": "Silent Visionary comenzó como cinco herramientas específicas &mdash; Forensics, Sentinel, Redact, Compliance y FraudShield &mdash; y se convirtió en una sola plataforma cuando quedó claro que la parte más difícil de una investigación no era ninguna herramienta individual. Era la brecha entre ellas.",
+      "about.hero.lede": "Silent Visionary comenzó como cinco herramientas específicas &mdash; Forensics, Sentinel, Redact, Compliance y FraudShield &mdash; y se convirtió en una sola plataforma cuando quedó claro que la parte más difícil de una investigación, ya sea un sistema de semáforos comprometido o un robo a tres cuadras de distancia, no era ninguna herramienta individual. Era la brecha entre ellas.",
       "about.philosophy.eyebrow": "Nuestra filosofía",
       "about.philosophy.title": "Evidencia primero. IA en segundo lugar. Juicio humano siempre visible.",
       "about.philosophy.p1.title": "La evidencia se remonta a la fuente.",
@@ -1454,10 +1454,10 @@
       "index.hero.title":
         'Reconstruisez la réalité.<br><span class="accent">Révélez la preuve.</span>',
       "index.hero.lede":
-        "Forensics™, Sentinel™, Redact™, Compliance™ et FraudShield™ ne sont plus cinq produits distincts — ce sont cinq capacités au sein d'un seul moteur de reconstruction, unifiées par Silent Visionary Intelligence Cloud (SVIC).",
+        "D'un vol à trois rues de là à un feu de signalisation compromis en centre-ville, Silent Visionary réunit caméras de rue, plaques d'immatriculation, relevés téléphoniques et données d'infrastructure publique en une seule enquête. Forensics™, Sentinel™, Redact™, Compliance™ et FraudShield™ — cinq capacités conçues pour les forces de l'ordre et les gouvernements municipaux, unifiées par Silent Visionary Intelligence Cloud (SVIC).",
       "index.hero.ctaPrimary": "Explorer la Plateforme",
 
-      "common.eyebrow": "Intelligence Forensique Cyber-Physique",
+      "common.eyebrow": "Investigation Numérique pour la Rue",
       "common.includes": "Comprend",
       "common.home": "Accueil",
 
@@ -1645,7 +1645,7 @@
       "ind.closing.cta1": "Contactez-nous",
       "about.hero.eyebrow": "À propos de Silent Visionary",
       "about.hero.title": "Nous construisons la plateforme que nous voudrions avoir dans la salle pendant une enquête.",
-      "about.hero.lede": "Silent Visionary a débuté comme cinq outils spécialisés &mdash; Forensics, Sentinel, Redact, Compliance et FraudShield &mdash; et est devenu une seule plateforme lorsqu&#39;il est apparu clairement que la partie la plus difficile d&#39;une enquête n&#39;était aucun outil isolé. C&#39;était l&#39;écart entre eux.",
+      "about.hero.lede": "Silent Visionary a débuté comme cinq outils spécialisés &mdash; Forensics, Sentinel, Redact, Compliance et FraudShield &mdash; et est devenu une seule plateforme lorsqu&#39;il est apparu clairement que la partie la plus difficile d&#39;une enquête, qu&#39;il s&#39;agisse d&#39;un système de signalisation compromis ou d&#39;un vol à trois rues de là, n&#39;était aucun outil isolé. C&#39;était l&#39;écart entre eux.",
       "about.philosophy.eyebrow": "Notre philosophie",
       "about.philosophy.title": "La preuve d&#39;abord. L&#39;IA ensuite. Le jugement humain toujours visible.",
       "about.philosophy.p1.title": "La preuve remonte à sa source.",

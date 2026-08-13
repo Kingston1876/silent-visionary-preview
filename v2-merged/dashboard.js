@@ -8,31 +8,31 @@
 
   var CASES = {
     "SV-001": {
-      title: "Unauthorized Network Intrusion",
+      title: "Traffic Signal System Intrusion",
       severity: "critical",
       status: "active",
-      twinTitle: "Digital Twin — Ops Wing",
+      twinTitle: "Digital Twin — Traffic Ops Center",
       primaryDevice: "d0",
-      evidenceGraph: { entity: "User-019", account: "user019@sv.local", device: "WORKSTATION-042", ip: "10.44.6.112", network: "Outbound :443", external: "185.212.44.6", file: "finance_q3.xlsx" },
+      evidenceGraph: { entity: "Contractor-019", account: "contractor019@dot.cityops.gov", device: "TRAFFIC-CTRL-14", ip: "10.44.6.112", network: "Outbound :443", external: "185.212.44.6", file: "signal_timing_master.cfg" },
       timeline: {
         ticks: [{ x: 60, label: "18:00" }, { x: 380, label: "20:00" }, { x: 700, label: "21:00" }],
         events: [
           { x: 760, time: "20:42:18", label: "Badge scan — no match", source: "Access Control", type: "physical", evid: "EVID-1039", conf: "Observed Evidence", color: "var(--low)" },
           { x: 800, time: "20:58:04", label: "Authentication attempt failed", source: "IAM", type: "identity", evid: "EVID-1040", conf: "Observed Evidence", color: "var(--ev-correlated)" },
-          { x: 840, time: "21:14:07", label: "Badge access — Door D-12, User-019", source: "Access Control", type: "physical", evid: "EVID-1042", conf: "Correlated Evidence", highlight: "top" },
+          { x: 840, time: "21:14:07", label: "Badge access — Door D-12, Contractor-019", source: "Access Control", type: "physical", evid: "EVID-1042", conf: "Correlated Evidence", highlight: "top" },
           { x: 880, time: "21:14:19", label: "Suspicious process spawned — powershell.exe", source: "EDR", type: "endpoint", evid: "EVID-1044", conf: "AI Inference", color: "var(--ev-correlated)" },
           { x: 920, time: "21:14:23", label: "Outbound connection — 185.212.44.6:443", source: "Network", type: "network", evid: "EVID-1043", conf: "Correlated Evidence", highlight: "bottom" },
-          { x: 960, time: "21:31:02", label: "File access confirmed — finance_q3_export.xlsx", source: "Endpoint", type: "file", evid: "EVID-1046", conf: "Observed Evidence", color: "var(--low)" },
+          { x: 960, time: "21:31:02", label: "File access confirmed — signal_timing_master.cfg", source: "Endpoint", type: "file", evid: "EVID-1046", conf: "Observed Evidence", color: "var(--low)" },
           { x: 990, time: "21:44:50", label: "Session terminated", source: "IAM", type: "identity", evid: "EVID-1047", conf: "Observed Evidence", color: "var(--text-faint)" },
         ],
       },
       stream: [
-        ["21:14:02", "tag-phys", "Phys", "Movement detected — <b>Ops Wing, Cam 04</b>"],
-        ["21:14:07", "tag-phys", "Phys", "Badge access — Door D-12, <b>User-019</b>"],
-        ["21:14:12", "tag-endpoint", "Auth", "Login success — <b>WORKSTATION-042</b>"],
+        ["21:14:02", "tag-phys", "Phys", "Movement detected — <b>Traffic Ops Center, Cam 04</b>"],
+        ["21:14:07", "tag-phys", "Phys", "Badge access — Door D-12, <b>Contractor-019</b>"],
+        ["21:14:12", "tag-endpoint", "Auth", "Login success — <b>TRAFFIC-CTRL-14</b>"],
         ["21:14:19", "tag-endpoint", "Proc", "Suspicious process — <b>powershell.exe</b> (encoded)"],
         ["21:14:23", "tag-net", "Net", "Outbound connection — <b>185.212.44.6:443</b>"],
-        ["21:14:31", "tag-file", "File", "File accessed — <b>finance_q3_export.xlsx</b>"],
+        ["21:14:31", "tag-file", "File", "File accessed — <b>signal_timing_master.cfg</b>"],
         ["21:14:47", "tag-phys", "Dev", "USB connected — <b>VID_0951&amp;PID_1666</b>"],
       ],
       liveFeed: [
@@ -40,7 +40,7 @@
         ["tag-endpoint", "Proc", "New process — <b>rundll32.exe</b> spawned by powershell.exe"],
         ["tag-file", "File", "Registry key modified — <b>Run\\WindowsUpdateSvc</b>"],
         ["tag-net", "Net", "DNS query — <b>update-cdn-secure.net</b>"],
-        ["tag-phys", "Phys", "Badge access — Door D-12, <b>User-019</b> (exit)"],
+        ["tag-phys", "Phys", "Badge access — Door D-12, <b>Contractor-019</b> (exit)"],
       ],
       intel: [
         ["185.212.44.6", "IP · C2 Infra", "sev-high", "High"],
@@ -49,231 +49,231 @@
       ],
       ai: {
         initial: {
-          text: 'Initial access occurred at <b>21:14:07</b> via badge credential for <b>User-019</b> at Door D-12, followed by an authenticated logon to <b>WORKSTATION-042</b> five seconds later. The badge event and the logon share the same identity, consistent with a physical-to-digital handoff.',
+          text: 'Initial access occurred at <b>21:14:07</b> via badge credential for <b>Contractor-019</b> at the Traffic Ops Center\'s Door D-12, followed by an authenticated logon to <b>TRAFFIC-CTRL-14</b> five seconds later. The badge event and the logon share the same identity, consistent with a physical-to-digital handoff.',
           conf: "88%", cls: "", refs: "EVID-1042, EVID-1043",
         },
         affected: {
-          text: "Two systems show confirmed compromise: <b>WORKSTATION-042</b> (initial foothold), with an outbound connection to <b>185.212.44.6</b> suggesting external command-and-control involvement.",
+          text: "One traffic-signal controller shows confirmed compromise: <b>TRAFFIC-CTRL-14</b> (initial foothold), with an outbound connection to <b>185.212.44.6</b> suggesting external command-and-control involvement.",
           conf: "74%", cls: "", refs: "EVID-1044",
         },
         summary: {
-          text: "SV-001 began with a badge-authenticated physical entry, followed by an endpoint login, an encoded PowerShell process, and an outbound connection to a known C2 IP within 21 seconds. 34 evidence items support this reconstruction; actor attribution remains unconfirmed.",
+          text: "SV-001 began with a badge-authenticated physical entry to the Traffic Ops Center, followed by an endpoint login, an encoded PowerShell process, and an outbound connection to a known C2 IP within 21 seconds. 34 evidence items support this reconstruction; actor attribution remains unconfirmed.",
           conf: "Pending", cls: "conclusion", refs: "—",
         },
         anomaly: {
-          text: "The PowerShell process at <b>21:14:19</b> used Base64-encoded arguments — uncommon for this user's baseline behavior. Flagged as an anomaly, not yet a confirmed conclusion.",
+          text: "The PowerShell process at <b>21:14:19</b> used Base64-encoded arguments — uncommon for this contractor's baseline behavior. Flagged as an anomaly, not yet a confirmed conclusion.",
           conf: "66%", cls: "inference", refs: "EVID-1045",
         },
         lateral: {
-          text: "No confirmed lateral movement yet — only <b>WORKSTATION-042</b> shows compromise indicators so far.",
+          text: "No confirmed lateral movement yet — only <b>TRAFFIC-CTRL-14</b> shows compromise indicators so far, though the wider signal network remains under review.",
           conf: "Observed", cls: "observed", refs: "EVID-1042",
         },
         evidence: {
-          text: "This case has <b>34</b> evidence items, including endpoint logs, network captures, and physical access records.",
+          text: "This case has <b>34</b> evidence items, including endpoint logs, network captures, and physical access records from the Traffic Ops Center.",
           conf: "—", cls: "observed", refs: "—",
         },
       },
       aiFallback: "I can help investigate SV-001. Try asking about the initial access event, affected systems, lateral movement, or a summary of the investigation.",
       attackChain: {
-        initial: { status: "correlated", evid: "EVID-1042", note: "Badge access at Door D-12 and an authenticated logon to WORKSTATION-042 occurred five seconds apart, under the same identity — consistent with a physical-to-digital handoff." },
-        execution: { status: "inference", evid: "EVID-1044", note: "An encoded PowerShell process was spawned on WORKSTATION-042 immediately after logon." },
-        defenseEvasion: { status: "inference", evid: "EVID-1045", note: "The PowerShell process used Base64-encoded arguments — uncommon for this user's baseline behavior." },
-        collection: { status: "observed", evid: "EVID-1046", note: "File access confirmed on finance_q3_export.xlsx." },
+        initial: { status: "correlated", evid: "EVID-1042", note: "Badge access at the Traffic Ops Center's Door D-12 and an authenticated logon to TRAFFIC-CTRL-14 occurred five seconds apart, under the same identity — consistent with a physical-to-digital handoff." },
+        execution: { status: "inference", evid: "EVID-1044", note: "An encoded PowerShell process was spawned on TRAFFIC-CTRL-14 immediately after logon." },
+        defenseEvasion: { status: "inference", evid: "EVID-1045", note: "The PowerShell process used Base64-encoded arguments — uncommon for this contractor's baseline behavior." },
+        collection: { status: "observed", evid: "EVID-1046", note: "File access confirmed on signal_timing_master.cfg, the controller's live signal-timing configuration." },
         exfil: { status: "correlated", evid: "EVID-1043", note: "Outbound connection to 185.212.44.6:443, known command-and-control infrastructure." },
       },
       forensicsArtifacts: [
-        { id: "EVID-1042", type: "Access Control Log", source: "Access Control", acquired: "2025-08-09 21:16", hash: "SHA-256 9F2A1C…6E0B", integrity: "Verified", custody: "FIELD-EXAM-03 → EVID-VAULT-02" },
-        { id: "EVID-1048", type: "Disk Image", source: "Forensics Lab", acquired: "2025-08-09 22:40", hash: "SHA-256 3B7D44…19FA", integrity: "Verified", custody: "FIELD-EXAM-03 → EVID-VAULT-02" },
-        { id: "EVID-1044", type: "Memory Capture", source: "EDR", acquired: "2025-08-09 21:18", hash: "SHA-256 A81E2D…C305", integrity: "Verified", custody: "AUTOMATED → EVID-VAULT-02" },
-        { id: "EVID-1045", type: "Registry Artifact", source: "Endpoint", acquired: "2025-08-09 21:19", hash: "SHA-256 5C9F80…7B21", integrity: "Verified", custody: "AUTOMATED → EVID-VAULT-02" },
-        { id: "EVID-1043", type: "Network Capture (PCAP)", source: "Network", acquired: "2025-08-09 21:20", hash: "SHA-256 4E1F7A…9BD2", integrity: "Verified", custody: "AUTOMATED → EVID-VAULT-02" },
-        { id: "EVID-1046", type: "File System Artifact", source: "Endpoint", acquired: "2025-08-09 21:35", hash: "SHA-256 D027E6…44A8", integrity: "Verified", custody: "AUTOMATED → EVID-VAULT-02" },
-        { id: "EVID-1049", type: "USB / Device History", source: "Endpoint", acquired: "2025-08-09 21:36", hash: "SHA-256 88C1B0…F212", integrity: "Verified", custody: "AUTOMATED → EVID-VAULT-02" },
-        { id: "EVID-1050", type: "Malware Artifact", source: "EDR", acquired: "2025-08-10 08:05", hash: "SHA-256 A1B2C9…944F", integrity: "Verified", custody: "A.RIVERA → EVID-VAULT-02" },
+        { id: "EVID-1042", type: "Access Control Log", source: "Access Control", acquired: "2026-08-09 21:16", hash: "SHA-256 9F2A1C…6E0B", integrity: "Verified", custody: "FIELD-EXAM-03 → EVID-VAULT-02" },
+        { id: "EVID-1048", type: "Disk Image", source: "Forensics Lab", acquired: "2026-08-09 22:40", hash: "SHA-256 3B7D44…19FA", integrity: "Verified", custody: "FIELD-EXAM-03 → EVID-VAULT-02" },
+        { id: "EVID-1044", type: "Memory Capture", source: "EDR", acquired: "2026-08-09 21:18", hash: "SHA-256 A81E2D…C305", integrity: "Verified", custody: "AUTOMATED → EVID-VAULT-02" },
+        { id: "EVID-1045", type: "Registry Artifact", source: "Endpoint", acquired: "2026-08-09 21:19", hash: "SHA-256 5C9F80…7B21", integrity: "Verified", custody: "AUTOMATED → EVID-VAULT-02" },
+        { id: "EVID-1043", type: "Network Capture (PCAP)", source: "Network", acquired: "2026-08-09 21:20", hash: "SHA-256 4E1F7A…9BD2", integrity: "Verified", custody: "AUTOMATED → EVID-VAULT-02" },
+        { id: "EVID-1046", type: "File System Artifact", source: "Endpoint", acquired: "2026-08-09 21:35", hash: "SHA-256 D027E6…44A8", integrity: "Verified", custody: "AUTOMATED → EVID-VAULT-02" },
+        { id: "EVID-1049", type: "USB / Device History", source: "Endpoint", acquired: "2026-08-09 21:36", hash: "SHA-256 88C1B0…F212", integrity: "Verified", custody: "AUTOMATED → EVID-VAULT-02" },
+        { id: "EVID-1050", type: "Malware Artifact", source: "EDR", acquired: "2026-08-10 08:05", hash: "SHA-256 A1B2C9…944F", integrity: "Verified", custody: "A.RIVERA → EVID-VAULT-02" },
       ],
     },
     "SV-014": {
-      title: "Insider Data Exfiltration",
+      title: "5th & Main Armed Robbery",
       severity: "high",
       status: "analysis",
-      twinTitle: "Digital Twin — Access Corridor",
+      twinTitle: "Digital Twin — 5th & Main Corridor",
       primaryDevice: "d3",
-      evidenceGraph: { entity: "User-227", account: "user227@sv.local", device: "REMOTE-ENDPOINT-227", ip: "10.44.9.3", network: "Outbound :22 (SFTP)", external: "44.211.98.3", file: "contracts_export.7z" },
+      evidenceGraph: { entity: "Suspect-01 (Unidentified)", account: "+1 (555) 019-4471", device: "ALPR-UNIT-08", ip: "5th & Main St.", network: "Cell tower ping — Sector 4", external: "I-40 Westbound", file: "ALPR_hit_5thMain_2126.jpg" },
       timeline: {
-        ticks: [{ x: 90, label: "09:00" }, { x: 450, label: "09:10" }, { x: 850, label: "09:20" }],
+        ticks: [{ x: 90, label: "21:00" }, { x: 450, label: "21:10" }, { x: 850, label: "21:20" }],
         events: [
-          { x: 120, time: "09:02:11", label: "VPN login success — User-227", source: "IAM", type: "identity", evid: "EVID-2201", conf: "Observed Evidence", highlight: "top" },
-          { x: 600, time: "09:14:40", label: "Bulk file access — /finance/contracts/ (142 files)", source: "File Share", type: "file", evid: "EVID-2202", conf: "Observed Evidence", color: "var(--low)" },
-          { x: 655, time: "09:16:02", label: "Archive utility launched — 7z.exe", source: "Endpoint", type: "endpoint", evid: "EVID-2203", conf: "Correlated Evidence", color: "var(--ev-correlated)" },
-          { x: 730, time: "09:17:55", label: "Outbound transfer — 44.211.98.3:22 (SFTP)", source: "Network", type: "network", evid: "EVID-2204", conf: "Correlated Evidence", highlight: "bottom" },
-          { x: 760, time: "09:18:40", label: "Archive deleted — contracts_export.7z", source: "Endpoint", type: "file", evid: "EVID-2205", conf: "AI Inference", color: "var(--gold)" },
-          { x: 890, time: "09:22:10", label: "Second login, same credentials — new device", source: "IAM", type: "identity", evid: "EVID-2206", conf: "AI Inference", color: "var(--gold)" },
+          { x: 120, time: "21:02:11", label: "911 call received — armed robbery in progress", source: "Dispatch", type: "identity", evid: "EVID-2201", conf: "Observed Evidence", highlight: "top" },
+          { x: 600, time: "21:14:40", label: "Store CCTV — suspect enters, brandishes weapon", source: "CCTV", type: "physical", evid: "EVID-2202", conf: "Observed Evidence", color: "var(--low)" },
+          { x: 655, time: "21:16:02", label: "ALPR hit — suspect vehicle, 5th & Main", source: "ALPR Network", type: "physical", evid: "EVID-2203", conf: "Correlated Evidence", color: "var(--ev-correlated)" },
+          { x: 730, time: "21:17:55", label: "Cell tower ping — suspect phone, Sector 4", source: "Telecom Records", type: "network", evid: "EVID-2204", conf: "Correlated Evidence", highlight: "bottom" },
+          { x: 760, time: "21:18:40", label: "Street camera — suspect flees toward I-40", source: "City Camera Network", type: "physical", evid: "EVID-2205", conf: "AI Inference", color: "var(--gold)" },
+          { x: 890, time: "21:22:10", label: "Witness statement recorded — clerk on duty", source: "Field Interview", type: "identity", evid: "EVID-2206", conf: "AI Inference", color: "var(--gold)" },
         ],
       },
       stream: [
-        ["09:02:11", "tag-endpoint", "Auth", "VPN login success — <b>User-227</b>"],
-        ["09:14:40", "tag-file", "File", "Bulk file access — <b>/finance/contracts/</b> (142 files)"],
-        ["09:16:02", "tag-endpoint", "Proc", "Archive utility launched — <b>7z.exe</b>"],
-        ["09:17:55", "tag-net", "Net", "Outbound transfer — <b>44.211.98.3:22</b> (SFTP)"],
-        ["09:18:40", "tag-file", "File", "Archive deleted — <b>contracts_export.7z</b>"],
-        ["09:22:10", "tag-endpoint", "Auth", "Second login, same credentials — <b>new device</b>"],
+        ["21:02:11", "tag-endpoint", "Call", "911 call received — <b>armed robbery in progress</b>"],
+        ["21:14:40", "tag-file", "CCTV", "Store CCTV — <b>suspect enters, brandishes weapon</b>"],
+        ["21:16:02", "tag-endpoint", "ALPR", "Plate reader hit — <b>suspect vehicle</b>, 5th &amp; Main"],
+        ["21:17:55", "tag-net", "Cell", "Cell tower ping — <b>suspect phone</b>, Sector 4"],
+        ["21:18:40", "tag-file", "CCTV", "Street camera — <b>suspect flees toward I-40</b>"],
+        ["21:22:10", "tag-endpoint", "Wit", "Witness statement recorded — <b>store clerk</b>"],
       ],
       liveFeed: [
-        ["tag-net", "Net", "Repeat SFTP connection — <b>44.211.98.3:22</b>"],
-        ["tag-file", "File", "New bulk access — <b>/finance/payroll/</b> (58 files)"],
-        ["tag-endpoint", "Auth", "Session still active — <b>User-227</b>, 3h12m"],
+        ["tag-net", "Cell", "Second tower ping — <b>suspect phone</b> moving west on I-40"],
+        ["tag-file", "CCTV", "New ALPR hit — <b>suspect vehicle</b>, mile marker 12"],
+        ["tag-endpoint", "Unit", "Patrol unit dispatched to last known heading"],
       ],
       intel: [
-        ["44.211.98.3", "IP · Exfil Destination", "sev-high", "High"],
-        ["contracts_export.7z", "Hash · Deleted Archive", "sev-medium", "Medium"],
-        ["User-227", "Identity · Second-Device Login", "sev-high", "High"],
+        ["+1 (555) 019-4471", "Phone · Suspect (Unconfirmed)", "sev-high", "High"],
+        ["ALPR_hit_5thMain_2126.jpg", "Image · Plate Capture", "sev-medium", "Medium"],
+        ["Suspect-01", "Identity · Unidentified", "sev-high", "High"],
       ],
       ai: {
         initial: {
-          text: "The session begins with a successful VPN login for <b>User-227</b> at <b>09:02:11</b>, from a device not previously associated with this account.",
+          text: "The incident begins with a 911 call at <b>21:02:11</b> reporting an armed robbery in progress, followed twelve minutes later by store CCTV showing the suspect entering and brandishing a weapon.",
           conf: "71%", cls: "", refs: "EVID-2201",
         },
         affected: {
-          text: "One user account (<b>User-227</b>) and one remote endpoint are implicated. No lateral movement into internal systems has been observed.",
+          text: "One retail location and one suspect vehicle are implicated. No additional locations have been connected to this suspect yet.",
           conf: "80%", cls: "observed", refs: "EVID-2204",
         },
         summary: {
-          text: "User-227 accessed 142 files in the contracts directory, compressed them into an archive, transferred it over SFTP, then deleted the local copy — a pattern consistent with deliberate exfiltration.",
+          text: "Suspect-01 entered the store, brandished a weapon, and fled on foot to a waiting vehicle captured by an ALPR unit at 5th & Main. A cell tower ping places a phone in the same sector at the same time, and street cameras track the vehicle heading toward I-40.",
           conf: "Pending", cls: "conclusion", refs: "—",
         },
         anomaly: {
-          text: "A second login for the same credentials occurred 4 minutes after the transfer, from a different device fingerprint — unusual for this account's history.",
-          conf: "69%", cls: "inference", refs: "EVID-2206",
+          text: "The suspect vehicle's plate does not match any vehicle registered to store employees or recent customers — flagged for cross-reference against regional ALPR history.",
+          conf: "69%", cls: "inference", refs: "EVID-2203",
         },
         lateral: {
-          text: "No lateral movement observed — activity is confined to the file share and the outbound transfer.",
+          text: "No additional locations connected yet — activity is confined to the 5th & Main corridor and the westbound route onto I-40.",
           conf: "Observed", cls: "observed", refs: "EVID-2204",
         },
         evidence: {
-          text: "This case has <b>21</b> evidence items, primarily file-access logs and network transfer records.",
+          text: "This case has <b>21</b> evidence items, primarily CCTV footage, ALPR hits, cell tower records, and a witness statement.",
           conf: "—", cls: "observed", refs: "—",
         },
       },
-      aiFallback: "I can help investigate SV-014. Try asking about the initial access event, affected systems, or a summary of the investigation.",
+      aiFallback: "I can help investigate SV-014. Try asking about the initial call, the suspect vehicle, the witness statement, or a summary of the investigation.",
       attackChain: {
-        initial: { status: "observed", evid: "EVID-2201", note: "VPN login success for User-227 from a device not previously associated with this account." },
-        credAccess: { status: "inference", evid: "EVID-2206", note: "A second login for the same credentials occurred 4 minutes after the transfer, from a different device fingerprint." },
-        collection: { status: "observed", evid: "EVID-2202", note: "Bulk file access — 142 files in /finance/contracts/." },
-        defenseEvasion: { status: "inference", evid: "EVID-2205", note: "The local archive was deleted immediately after the outbound transfer completed." },
-        exfil: { status: "correlated", evid: "EVID-2204", note: "Outbound transfer to 44.211.98.3:22 over SFTP." },
+        initial: { status: "observed", evid: "EVID-2201", note: "911 call received reporting an armed robbery in progress at a retail location on 5th & Main." },
+        collection: { status: "observed", evid: "EVID-2202", note: "Store CCTV footage and a witness statement were collected from the scene." },
+        exfil: { status: "correlated", evid: "EVID-2205", note: "Suspect fled the scene by vehicle, tracked by street camera and ALPR toward I-40 westbound." },
       },
       forensicsArtifacts: [
-        { id: "EVID-2201", type: "Authentication Log", source: "IAM", acquired: "2025-08-09 09:03", hash: "SHA-256 6A20D1…33EC", integrity: "Verified", custody: "AUTOMATED → EVID-VAULT-02" },
-        { id: "EVID-2202", type: "File System Artifact", source: "File Share", acquired: "2025-08-09 09:15", hash: "SHA-256 71FBE0…A902", integrity: "Verified", custody: "AUTOMATED → EVID-VAULT-02" },
-        { id: "EVID-2203", type: "Application Artifact", source: "Endpoint", acquired: "2025-08-09 09:17", hash: "SHA-256 0DAC4E…5F18", integrity: "Verified", custody: "AUTOMATED → EVID-VAULT-02" },
-        { id: "EVID-2204", type: "Network Capture (PCAP)", source: "Network", acquired: "2025-08-09 09:18", hash: "SHA-256 C63A9F…2D77", integrity: "Verified", custody: "AUTOMATED → EVID-VAULT-02" },
-        { id: "EVID-2207", type: "Deleted File Record", source: "Endpoint", acquired: "2025-08-09 09:19", hash: "SHA-256 F4409B…E610", integrity: "Verified", custody: "AUTOMATED → EVID-VAULT-02" },
-        { id: "EVID-2208", type: "Browser Artifact", source: "Endpoint", acquired: "2025-08-09 09:21", hash: "SHA-256 2B88A7…C034", integrity: "Verified", custody: "AUTOMATED → EVID-VAULT-02" },
-        { id: "EVID-2206", type: "Authentication Log", source: "IAM", acquired: "2025-08-09 09:23", hash: "SHA-256 D91F5C…7A29", integrity: "Verified", custody: "AUTOMATED → EVID-VAULT-02" },
+        { id: "EVID-2201", type: "911 Call Recording", source: "Dispatch", acquired: "2026-08-09 21:03", hash: "SHA-256 6A20D1…33EC", integrity: "Verified", custody: "AUTOMATED → EVID-VAULT-02" },
+        { id: "EVID-2202", type: "CCTV Footage", source: "Store Camera", acquired: "2026-08-09 21:15", hash: "SHA-256 71FBE0…A902", integrity: "Verified", custody: "AUTOMATED → EVID-VAULT-02" },
+        { id: "EVID-2203", type: "ALPR Capture", source: "ALPR Network", acquired: "2026-08-09 21:17", hash: "SHA-256 0DAC4E…5F18", integrity: "Verified", custody: "AUTOMATED → EVID-VAULT-02" },
+        { id: "EVID-2204", type: "Telecom Tower Record", source: "Telecom Records", acquired: "2026-08-09 21:18", hash: "SHA-256 C63A9F…2D77", integrity: "Verified", custody: "AUTOMATED → EVID-VAULT-02" },
+        { id: "EVID-2207", type: "Street Camera Footage", source: "City Camera Network", acquired: "2026-08-09 21:19", hash: "SHA-256 F4409B…E610", integrity: "Verified", custody: "AUTOMATED → EVID-VAULT-02" },
+        { id: "EVID-2208", type: "Forensic Photograph", source: "Field Exam", acquired: "2026-08-09 21:21", hash: "SHA-256 2B88A7…C034", integrity: "Verified", custody: "FIELD-EXAM-03 → EVID-VAULT-02" },
+        { id: "EVID-2206", type: "Witness Statement", source: "Field Interview", acquired: "2026-08-09 21:23", hash: "SHA-256 D91F5C…7A29", integrity: "Verified", custody: "FIELD-EXAM-03 → EVID-VAULT-02" },
       ],
     },
     "SV-009": {
-      title: "Physical Access Anomaly",
-      severity: "medium",
+      title: "Missing Person — Riverside District",
+      severity: "high",
       status: "review",
-      twinTitle: "Digital Twin — HQ West Entrance",
+      twinTitle: "Digital Twin — Riverside Transit Hub",
       primaryDevice: "d5",
-      evidenceGraph: { entity: "User-104", account: "user104@sv.local", device: "BADGE-READER-D01", ip: "—", network: "No network activity", external: "—", file: "—" },
+      evidenceGraph: { entity: "Case Subject — J.A.", account: "+1 (555) 044-2210", device: "TRANSIT-GATE-R12", ip: "Riverside Transit Hub", network: "Geolocation ping — 3.2mi radius", external: "Bridge St. Overlook", file: "transit_tap_log_R12.csv" },
       timeline: {
         ticks: [{ x: 60, label: "07:30" }, { x: 400, label: "08:45" }, { x: 900, label: "09:50" }],
         events: [
-          { x: 110, time: "07:41:03", label: "Badge access — West Entrance, User-104", source: "Access Control", type: "physical", evid: "EVID-3301", conf: "AI Inference", highlight: "top" },
-          { x: 170, time: "07:41:09", label: "No corresponding motion event — Cam 02", source: "Physical Security", type: "physical", evid: "EVID-3302", conf: "AI Inference", color: "var(--gold)" },
-          { x: 918, time: "09:52:14", label: "No login activity for User-104 in following window", source: "IAM", type: "identity", evid: "EVID-3303", conf: "Observed Evidence", highlight: "bottom" },
+          { x: 110, time: "07:41:03", label: "Last phone activity — outgoing text", source: "Telecom Records", type: "network", evid: "EVID-3301", conf: "Observed Evidence", highlight: "top" },
+          { x: 170, time: "07:48:20", label: "Transit card tap — Riverside Station, inbound", source: "Transit System", type: "physical", evid: "EVID-3302", conf: "Observed Evidence", color: "var(--low)" },
+          { x: 420, time: "08:20:15", label: "Public camera sighting — Riverside Ave", source: "City Camera Network", type: "physical", evid: "EVID-3305", conf: "AI Inference", color: "var(--gold)" },
+          { x: 918, time: "09:52:14", label: "No further phone or transit activity", source: "Telecom Records", type: "network", evid: "EVID-3303", conf: "Observed Evidence", highlight: "bottom" },
         ],
       },
       stream: [
-        ["07:41:03", "tag-phys", "Phys", "Badge access — West Entrance, <b>User-104</b>"],
-        ["07:41:09", "tag-phys", "Phys", "No corresponding motion event — <b>Cam 02</b>"],
-        ["09:52:14", "tag-endpoint", "Auth", "No login activity for User-104 in following window"],
+        ["07:41:03", "tag-net", "Cell", "Last phone activity — <b>outgoing text</b>"],
+        ["07:48:20", "tag-phys", "Transit", "Card tap — <b>Riverside Station</b>, inbound"],
+        ["08:20:15", "tag-phys", "Cam", "Public camera sighting — <b>Riverside Ave</b>"],
+        ["09:52:14", "tag-net", "Cell", "No further phone or transit activity"],
       ],
       liveFeed: [
-        ["tag-phys", "Phys", "Camera sweep — <b>Cam 02</b>, no motion detected"],
-        ["tag-endpoint", "Auth", "Still no login activity — <b>User-104</b>"],
+        ["tag-phys", "Cam", "Camera sweep — <b>Bridge St. Overlook</b>, reviewing footage"],
+        ["tag-net", "Cell", "Still no new phone activity — <b>Case Subject J.A.</b>"],
       ],
       intel: [
-        ["User-104", "Identity · Off-hours Access", "sev-medium", "Medium"],
-        ["Door D-01", "Access Point", "sev-medium", "Medium"],
+        ["+1 (555) 044-2210", "Phone · Case Subject", "sev-medium", "Medium"],
+        ["Riverside Station", "Transit Access Point", "sev-medium", "Medium"],
       ],
       ai: {
         initial: {
-          text: "A badge credential for <b>User-104</b> was used at the HQ West Entrance at <b>07:41:03</b>, roughly 3 hours outside that user's typical access window.",
+          text: "The last confirmed phone activity for the case subject was an outgoing text at <b>07:41:03</b>, followed seven minutes later by a transit card tap at Riverside Station.",
           conf: "62%", cls: "inference", refs: "EVID-3301",
         },
         affected: {
-          text: "No endpoint or network systems are currently implicated — this remains a physical-access-only anomaly.",
+          text: "No further phone, transit, or financial activity has been observed since 09:52 — investigators are correlating the last public camera sighting with witness canvassing near Bridge St.",
           conf: "90%", cls: "observed", refs: "EVID-3301",
         },
         summary: {
-          text: "A single badge event outside normal hours, with no corroborating digital activity from the same user in the following two hours. Currently unexplained.",
+          text: "Movement is confirmed from Riverside Station to Riverside Ave via transit tap and public camera, with no activity since. Currently unresolved.",
           conf: "Pending", cls: "conclusion", refs: "—",
         },
         anomaly: {
-          text: "The access window itself is the anomaly — no other correlated signals have been found yet.",
+          text: "The gap between the last camera sighting and the total absence of any further phone activity is the primary anomaly — investigators are prioritizing the Bridge St. Overlook camera footage next.",
           conf: "58%", cls: "inference", refs: "—",
         },
         evidence: {
-          text: "This case has <b>9</b> evidence items, primarily access-control logs and camera metadata.",
+          text: "This case has <b>9</b> evidence items, primarily transit records, public camera footage, and telecom records.",
           conf: "—", cls: "observed", refs: "—",
         },
       },
-      aiFallback: "I can help investigate SV-009. Try asking about the initial access event, affected systems, or a summary of the investigation.",
+      aiFallback: "I can help investigate SV-009. Try asking about the last known location, phone activity, or a summary of the investigation.",
       attackChain: {
-        initial: { status: "inference", evid: "EVID-3301", note: "A badge credential for User-104 was used at the HQ West Entrance roughly 3 hours outside that user's typical access window." },
+        initial: { status: "inference", evid: "EVID-3301", note: "Last confirmed phone activity for the case subject, followed by a transit card tap at Riverside Station seven minutes later." },
       },
       forensicsArtifacts: [
-        { id: "EVID-3301", type: "Access Control Log", source: "Access Control", acquired: "2025-08-09 07:42", hash: "SHA-256 1A6C90…D847", integrity: "Verified", custody: "AUTOMATED → EVID-VAULT-02" },
-        { id: "EVID-3302", type: "Camera Metadata", source: "Physical Security", acquired: "2025-08-09 07:42", hash: "SHA-256 7E30B2…5C19", integrity: "Verified", custody: "AUTOMATED → EVID-VAULT-02" },
-        { id: "EVID-3303", type: "Authentication Log", source: "IAM", acquired: "2025-08-09 09:53", hash: "SHA-256 C420F1…8B36", integrity: "Verified", custody: "AUTOMATED → EVID-VAULT-02" },
-        { id: "EVID-3304", type: "Device Registry", source: "Access Control", acquired: "2025-08-09 10:02", hash: "SHA-256 60DA27…E9F4", integrity: "Verified", custody: "AUTOMATED → EVID-VAULT-02" },
+        { id: "EVID-3301", type: "Telecom Tower Record", source: "Telecom Records", acquired: "2026-08-09 07:42", hash: "SHA-256 1A6C90…D847", integrity: "Verified", custody: "AUTOMATED → EVID-VAULT-02" },
+        { id: "EVID-3302", type: "Transit Tap Log", source: "Transit System", acquired: "2026-08-09 07:49", hash: "SHA-256 7E30B2…5C19", integrity: "Verified", custody: "AUTOMATED → EVID-VAULT-02" },
+        { id: "EVID-3303", type: "Telecom Tower Record", source: "Telecom Records", acquired: "2026-08-09 09:53", hash: "SHA-256 C420F1…8B36", integrity: "Verified", custody: "AUTOMATED → EVID-VAULT-02" },
+        { id: "EVID-3305", type: "Public Camera Footage", source: "City Camera Network", acquired: "2026-08-09 08:21", hash: "SHA-256 60DA27…E9F4", integrity: "Verified", custody: "AUTOMATED → EVID-VAULT-02" },
       ],
     },
   };
 
   var DEVICES = {
-    d0: { id: "WORKSTATION-042", cx: 190, cy: 175, location: "Operations Room", user: "User-019", ip: "10.44.6.112", mac: "3C:E1:A4:9F:02:B7", evidence: "27 artifacts", events: "8", accounts: "2", risk: "High" },
-    d1: { id: "SERVER-DB-01", cx: 55, cy: 65, location: "Server Room", user: "svc-database", ip: "10.44.2.10", mac: "88:5A:04:B1:1C:9E", evidence: "4 artifacts", events: "1", accounts: "1", risk: "Low" },
-    d2: { id: "SERVER-APP-02", cx: 120, cy: 80, location: "Server Room", user: "svc-app", ip: "10.44.2.14", mac: "88:5A:04:B1:1C:A2", evidence: "2 artifacts", events: "0", accounts: "1", risk: "Low" },
-    d3: { id: "REMOTE-ENDPOINT-227", cx: 280, cy: 45, location: "Access Corridor", user: "User-227", ip: "10.44.9.3", mac: "F0:1D:BC:22:4E:6A", evidence: "21 artifacts", events: "5", accounts: "1", risk: "High" },
-    d4: { id: "SWITCH-CORE-01", cx: 330, cy: 55, location: "Access Corridor", user: "—", ip: "10.44.1.1", mac: "00:1B:44:11:3A:B7", evidence: "3 artifacts", events: "1", accounts: "0", risk: "Low" },
-    d5: { id: "BADGE-READER-D01", cx: 60, cy: 175, location: "West Entrance", user: "User-104", ip: "—", mac: "—", evidence: "9 artifacts", events: "1", accounts: "1", risk: "Medium" },
-    d6: { id: "WORKSTATION-018", cx: 120, cy: 190, location: "Operations Room", user: "User-044", ip: "10.44.6.44", mac: "3C:E1:A4:9F:03:11", evidence: "1 artifact", events: "0", accounts: "1", risk: "Low" },
-    d7: { id: "CAMERA-OPS-04", cx: 270, cy: 165, location: "Operations Room", user: "—", ip: "10.44.5.20", mac: "AC:DE:48:00:11:22", evidence: "6 artifacts", events: "2", accounts: "0", risk: "Low" },
+    d0: { id: "TRAFFIC-CTRL-14", cx: 190, cy: 175, location: "Traffic Ops Center", user: "Contractor-019", ip: "10.44.6.112", mac: "3C:E1:A4:9F:02:B7", evidence: "27 artifacts", events: "8", accounts: "2", risk: "High" },
+    d1: { id: "SIGNAL-DB-01", cx: 55, cy: 65, location: "SCADA Server Room", user: "svc-signaldb", ip: "10.44.2.10", mac: "88:5A:04:B1:1C:9E", evidence: "4 artifacts", events: "1", accounts: "1", risk: "Low" },
+    d2: { id: "SCADA-APP-02", cx: 120, cy: 80, location: "SCADA Server Room", user: "svc-scada", ip: "10.44.2.14", mac: "88:5A:04:B1:1C:A2", evidence: "2 artifacts", events: "0", accounts: "1", risk: "Low" },
+    d3: { id: "ALPR-UNIT-08", cx: 280, cy: 45, location: "5th & Main Corridor", user: "Suspect-01", ip: "10.44.9.3", mac: "F0:1D:BC:22:4E:6A", evidence: "21 artifacts", events: "5", accounts: "1", risk: "High" },
+    d4: { id: "STREETCAM-5THMAIN", cx: 330, cy: 55, location: "5th & Main Corridor", user: "—", ip: "10.44.1.1", mac: "00:1B:44:11:3A:B7", evidence: "3 artifacts", events: "1", accounts: "0", risk: "Low" },
+    d5: { id: "TRANSIT-GATE-R12", cx: 60, cy: 175, location: "Riverside Transit Hub", user: "Case Subject — J.A.", ip: "—", mac: "—", evidence: "9 artifacts", events: "1", accounts: "1", risk: "Medium" },
+    d6: { id: "TRAFFIC-CTRL-09", cx: 120, cy: 190, location: "Traffic Ops Center", user: "Contractor-044", ip: "10.44.6.44", mac: "3C:E1:A4:9F:03:11", evidence: "1 artifact", events: "0", accounts: "1", risk: "Low" },
+    d7: { id: "CAM-TRAFFICOPS-04", cx: 270, cy: 165, location: "Traffic Ops Center", user: "—", ip: "10.44.5.20", mac: "AC:DE:48:00:11:22", evidence: "6 artifacts", events: "2", accounts: "0", risk: "Low" },
   };
 
   var ROOMS = {
     server: {
-      name: "Server Room", risk: "Low", devices: ["SERVER-DB-01", "SERVER-APP-02"],
+      name: "SCADA Server Room", risk: "Low", devices: ["SIGNAL-DB-01", "SCADA-APP-02"],
       note: "2 devices, no active alerts",
     },
     corridor: {
-      name: "Access Corridor", risk: "High", devices: ["REMOTE-ENDPOINT-227", "SWITCH-CORE-01"],
-      note: "Remote access gateway — flagged in SV-014",
+      name: "5th & Main Corridor", risk: "High", devices: ["ALPR-UNIT-08", "STREETCAM-5THMAIN"],
+      note: "Street-level ALPR and camera network — flagged in SV-014",
     },
     ops: {
-      name: "Operations Room", risk: "High", devices: ["WORKSTATION-042", "WORKSTATION-018", "CAMERA-OPS-04"],
-      note: "Primary workstation cluster — includes WORKSTATION-042",
+      name: "Traffic Ops Center", risk: "High", devices: ["TRAFFIC-CTRL-14", "TRAFFIC-CTRL-09", "CAM-TRAFFICOPS-04"],
+      note: "Primary signal-controller cluster — includes TRAFFIC-CTRL-14",
     },
   };
 
   var SEARCH_INDEX = [
     { label: "SV-001", type: "Case · Critical", run: function () { selectCase("SV-001"); scrollToPanel("panel-investigations"); } },
     { label: "SV-014", type: "Case · High", run: function () { selectCase("SV-014"); scrollToPanel("panel-investigations"); } },
-    { label: "SV-009", type: "Case · Medium", run: function () { selectCase("SV-009"); scrollToPanel("panel-investigations"); } },
-    { label: "WORKSTATION-042", type: "Device · SV-001", run: function () { selectCase("SV-001"); selectDevice("d0"); scrollToPanel("panel-twin"); } },
-    { label: "REMOTE-ENDPOINT-227", type: "Device · SV-014", run: function () { selectCase("SV-014"); selectDevice("d3"); scrollToPanel("panel-twin"); } },
-    { label: "BADGE-READER-D01", type: "Device · SV-009", run: function () { selectCase("SV-009"); selectDevice("d5"); scrollToPanel("panel-twin"); } },
-    { label: "User-019", type: "Identity · SV-001", run: function () { selectCase("SV-001"); scrollToPanel("panel-overview"); } },
-    { label: "User-227", type: "Identity · SV-014", run: function () { selectCase("SV-014"); scrollToPanel("panel-overview"); } },
-    { label: "User-104", type: "Identity · SV-009", run: function () { selectCase("SV-009"); scrollToPanel("panel-overview"); } },
+    { label: "SV-009", type: "Case · High", run: function () { selectCase("SV-009"); scrollToPanel("panel-investigations"); } },
+    { label: "TRAFFIC-CTRL-14", type: "Device · SV-001", run: function () { selectCase("SV-001"); selectDevice("d0"); scrollToPanel("panel-twin"); } },
+    { label: "ALPR-UNIT-08", type: "Device · SV-014", run: function () { selectCase("SV-014"); selectDevice("d3"); scrollToPanel("panel-twin"); } },
+    { label: "TRANSIT-GATE-R12", type: "Device · SV-009", run: function () { selectCase("SV-009"); selectDevice("d5"); scrollToPanel("panel-twin"); } },
+    { label: "Contractor-019", type: "Identity · SV-001", run: function () { selectCase("SV-001"); scrollToPanel("panel-overview"); } },
+    { label: "Suspect-01", type: "Identity · SV-014", run: function () { selectCase("SV-014"); scrollToPanel("panel-overview"); } },
+    { label: "Case Subject — J.A.", type: "Identity · SV-009", run: function () { selectCase("SV-009"); scrollToPanel("panel-overview"); } },
     { label: "185.212.44.6", type: "IOC · IP", run: function () { selectCase("SV-001"); selectIntel("185.212.44.6"); } },
-    { label: "44.211.98.3", type: "IOC · IP", run: function () { selectCase("SV-014"); selectIntel("44.211.98.3"); } },
-    { label: "finance_q3_export.xlsx", type: "Evidence · File", run: function () { selectCase("SV-001"); scrollToPanel("panel-overview"); } },
+    { label: "+1 (555) 019-4471", type: "IOC · Phone", run: function () { selectCase("SV-014"); selectIntel("+1 (555) 019-4471"); } },
+    { label: "signal_timing_master.cfg", type: "Evidence · File", run: function () { selectCase("SV-001"); scrollToPanel("panel-overview"); } },
     { label: "EVID-1042", type: "Evidence ID · SV-001", run: function () { selectCase("SV-001"); scrollToPanel("panel-overview"); } },
   ];
 
@@ -676,7 +676,7 @@
 
     document.getElementById("twin-selected-label").textContent = room.name;
     document.getElementById("twin-id").textContent = room.name;
-    document.getElementById("twin-location").textContent = "Ops Wing";
+    document.getElementById("twin-location").textContent = "Downtown Corridor";
     document.getElementById("twin-user").textContent = room.devices.length + " devices";
     document.getElementById("twin-ip").textContent = "—";
     document.getElementById("twin-mac").textContent = "—";
@@ -1054,13 +1054,13 @@
   }
 
   var RECON_STAGES = [
-    { label: "Physical Event", time: "21:14:02", note: "Movement detected on Ops Wing Camera 04, followed by a badge scan at Door D-12.", evid: "EVID-1042" },
-    { label: "Authentication Event", time: "21:14:12", note: "The badge credential for User-019 is followed five seconds later by a successful logon to WORKSTATION-042 — same identity, physical to digital.", evid: "EVID-1042" },
-    { label: "Endpoint Compromise", time: "21:14:19", note: "An encoded PowerShell process spawns on WORKSTATION-042 immediately after logon — uncommon for this user's baseline behavior.", evid: "EVID-1044" },
+    { label: "Physical Event", time: "21:14:02", note: "Movement detected on Traffic Ops Center Camera 04, followed by a badge scan at Door D-12.", evid: "EVID-1042" },
+    { label: "Authentication Event", time: "21:14:12", note: "The badge credential for Contractor-019 is followed five seconds later by a successful logon to TRAFFIC-CTRL-14 — same identity, physical to digital.", evid: "EVID-1042" },
+    { label: "Endpoint Compromise", time: "21:14:19", note: "An encoded PowerShell process spawns on TRAFFIC-CTRL-14 immediately after logon — uncommon for this contractor's baseline behavior.", evid: "EVID-1044" },
     { label: "Network Activity", time: "21:14:23", note: "An outbound connection opens to 185.212.44.6:443, infrastructure already flagged as command-and-control.", evid: "EVID-1043" },
-    { label: "File Activity", time: "21:31:02", note: "File access is confirmed on finance_q3_export.xlsx — the same file later staged for transfer.", evid: "EVID-1046" },
-    { label: "Lateral Movement", time: "—", note: "No confirmed lateral movement — only WORKSTATION-042 shows compromise indicators so far. This step remains open.", evid: null, muted: true },
-    { label: "Related Physical Event", time: "21:14:47", note: "A USB device connects to WORKSTATION-042 minutes after the endpoint compromise — a second physical signal tied to the same session.", evid: null },
+    { label: "File Activity", time: "21:31:02", note: "File access is confirmed on signal_timing_master.cfg — the live signal-timing configuration for the downtown corridor.", evid: "EVID-1046" },
+    { label: "Lateral Movement", time: "—", note: "No confirmed lateral movement — only TRAFFIC-CTRL-14 shows compromise indicators so far. This step remains open.", evid: null, muted: true },
+    { label: "Related Physical Event", time: "21:14:47", note: "A USB device connects to TRAFFIC-CTRL-14 minutes after the endpoint compromise — a second physical signal tied to the same session.", evid: null },
     { label: "Evidence Correlation", time: "—", note: "34 evidence items now resolve into a single chain: badge access, endpoint logon, encoded process, outbound C2 connection, and file access — all under one identity, one device, one 30-minute window.", evid: null },
     { label: "Final Reconstruction", time: "21:44:50", note: "Session terminated. The reconstruction is complete, pending investigator confirmation of attacker attribution.", evid: "EVID-1047" },
   ];
@@ -1171,7 +1171,7 @@
       '<div class="recon-summary-title big">INCIDENT RECONSTRUCTED</div>' +
       '<div class="recon-summary-grid">' +
       '<div><div class="recon-stat-label">Evidence Sources</div><div class="recon-stat-value">34 items</div></div>' +
-      '<div><div class="recon-stat-label">Systems Affected</div><div class="recon-stat-value">WORKSTATION-042, external C2 host</div></div>' +
+      '<div><div class="recon-stat-label">Systems Affected</div><div class="recon-stat-value">TRAFFIC-CTRL-14, external C2 host</div></div>' +
       '<div><div class="recon-stat-label">Timeline</div><div class="recon-stat-value">20:42:18&ndash;21:44:50</div></div>' +
       '<div><div class="recon-stat-label">Attack Path</div><div class="recon-stat-value">Initial Access &rarr; Execution &rarr; Defense Evasion &rarr; Collection &rarr; Exfiltration</div></div>' +
       '<div><div class="recon-stat-label">Physical Correlations</div><div class="recon-stat-value">Badge access, USB device connection</div></div>' +
@@ -1179,7 +1179,7 @@
       "</div>" +
       '<div class="recon-summary-questions"><b>Outstanding questions</b><ul>' +
       "<li>Actor attribution remains unconfirmed.</li>" +
-      "<li>No confirmed lateral movement beyond WORKSTATION-042.</li>" +
+      "<li>No confirmed lateral movement beyond TRAFFIC-CTRL-14.</li>" +
       "</ul></div>";
     summary.hidden = false;
     if (restartBtn) restartBtn.hidden = false;
