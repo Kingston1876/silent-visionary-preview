@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Forensics™ | Silent Visionary</title>
     <meta name="description" content="AI-powered digital forensics. Automate evidence triage, reconstruct timelines, and generate court-ready reports — part of the Forensic Intelligence pillar." />
-    <link rel="stylesheet" href="styles.css?v=20260812t" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css?v=20260812v" />
   </head>
   <body>
     <svg width="0" height="0" style="position: absolute">
@@ -129,6 +132,28 @@
 
     <section class="section section--navy">
       <div class="wrap">
+        <div class="section-head" style="text-align: center; align-items: center;">
+          <div class="eyebrow" style="justify-content: center;" data-i18n="forensics.custody.eyebrow">Try it yourself</div>
+          <h2 data-i18n="forensics.custody.title">Seal a piece of evidence, live in your browser.</h2>
+          <p class="lede" style="max-width: 620px; margin: 10px auto 0;" data-i18n="forensics.custody.lede">Type anything below and we'll compute a real SHA-256 hash — the same cryptographic primitive Forensics™ uses to seal every piece of evidence — right here, client-side. Nothing you type leaves your browser.</p>
+        </div>
+        <div class="custody-demo">
+          <div class="custody-demo__input-row">
+            <input type="text" id="custody-input" class="custody-demo__input" data-i18n-placeholder="forensics.custody.placeholder" placeholder="Type a case note, a filename, anything…" maxlength="200" autocomplete="off" />
+            <button type="button" id="custody-seal-btn" class="btn btn-gold" data-i18n="forensics.custody.button">Compute Hash &amp; Seal</button>
+          </div>
+          <div class="custody-demo__hash" id="custody-hash-row" hidden>
+            <span class="custody-demo__hash-label">SHA-256</span>
+            <code class="custody-demo__hash-value" id="custody-hash-value"></code>
+          </div>
+          <div class="custody-demo__ledger" id="custody-ledger"></div>
+          <p class="custody-demo__hint" data-i18n="forensics.custody.hint">Change even one character above and seal again — watch the hash completely change. That's the avalanche effect: it's what makes tampering with evidence mathematically impossible to hide.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--navy">
+      <div class="wrap">
         <div class="rationale-grid" style="align-items: center;">
           <div>
             <div class="eyebrow" data-i18n="forensics.crosslink.eyebrow">Part of Forensic Intelligence</div>
@@ -240,7 +265,7 @@
       </div>
     </div>
 
-    <script src="i18n.js?v=20260812t" defer></script>
-    <script src="main.js?v=20260812t"></script>
+    <script src="i18n.js?v=20260812v" defer></script>
+    <script src="main.js?v=20260812v"></script>
   </body>
 </html>

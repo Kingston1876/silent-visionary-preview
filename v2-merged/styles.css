@@ -34,9 +34,9 @@
   --ev-inference: #c9a15a;
   --ev-conclusion: #e7ebf1;
 
-  --font-display: -apple-system, "Segoe UI", "SF Pro Display", ui-sans-serif, system-ui, sans-serif;
-  --font-body: -apple-system, "Segoe UI", ui-sans-serif, system-ui, sans-serif;
-  --font-mono: ui-monospace, "SF Mono", "Cascadia Code", "Roboto Mono", "Consolas", monospace;
+  --font-display: "Archivo", -apple-system, "Segoe UI", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Public Sans", -apple-system, "Segoe UI", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", "Cascadia Code", "Roboto Mono", "Consolas", monospace;
 
   --header-height: 78px;
   --space-1: 4px;
@@ -1185,4 +1185,42 @@ body.mobile-nav-open .faq-widget { display: none; }
   .split-feed { grid-template-columns: 1fr; }
   .split-feed__core { flex-direction: row; padding: 10px 0; }
   .split-feed__core-ring { width: 48px; height: 48px; }
+}
+
+/* ============================================
+   FORENSICS: LIVE CHAIN-OF-CUSTODY DEMO
+   ============================================ */
+
+.custody-demo { max-width: 720px; margin: 32px auto 0; background: var(--charcoal); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 26px 28px; }
+.custody-demo__input-row { display: flex; gap: 10px; flex-wrap: wrap; }
+.custody-demo__input {
+  flex: 1; min-width: 220px; background: var(--navy); border: 1px solid var(--line); border-radius: var(--radius-md);
+  padding: 12px 14px; font-size: 13.5px; color: var(--text); font-family: var(--font-body);
+}
+.custody-demo__input:focus { outline: none; border-color: var(--gold-dim); }
+.custody-demo__hash {
+  margin-top: 16px; padding: 12px 14px; background: var(--charcoal-2); border: 1px solid var(--gold-dim);
+  border-radius: var(--radius-md); display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+}
+.custody-demo__hash-label { font-family: var(--font-mono); font-size: 10px; font-weight: 700; letter-spacing: 0.06em; color: var(--gold); text-transform: uppercase; flex-shrink: 0; }
+.custody-demo__hash-value { font-family: var(--font-mono); font-size: 12px; color: var(--text); word-break: break-all; background: none; padding: 0; }
+.custody-demo__ledger { margin-top: 18px; display: flex; flex-direction: column; gap: 6px; max-height: 230px; overflow-y: auto; }
+.custody-demo__entry {
+  display: grid; grid-template-columns: auto 1fr auto auto; gap: 12px; align-items: center;
+  font-family: var(--font-mono); font-size: 11px; padding: 9px 11px; background: var(--charcoal-2);
+  border-left: 2px solid var(--ok); border-radius: 6px;
+  opacity: 0; transform: translateY(-4px); animation: custodyIn 0.35s ease forwards;
+}
+.custody-demo__entry-id { color: var(--gold-bright); font-weight: 600; }
+.custody-demo__entry-hash { color: var(--text-dim); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.custody-demo__entry-status { color: var(--ok); }
+.custody-demo__entry-time { color: var(--text-faint); }
+@keyframes custodyIn { to { opacity: 1; transform: translateY(0); } }
+.custody-demo__hint { margin-top: 16px; font-size: 12px; color: var(--text-faint); text-align: center; }
+
+@media (prefers-reduced-motion: reduce) {
+  .custody-demo__entry { opacity: 1; transform: none; animation: none; }
+}
+@media (max-width: 640px) {
+  .custody-demo__entry { grid-template-columns: 1fr; gap: 3px; }
 }

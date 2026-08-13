@@ -339,4 +339,81 @@
     window.setInterval(() => splitFeedTick(splitCyberList, SPLIT_CYBER_EVENTS, cyberRef), 2600);
     window.setInterval(() => splitFeedTick(splitStreetList, SPLIT_STREET_EVENTS, streetRef), 3100);
   }
+
+  // ---------- Forensics: live chain-of-custody demo ----------
+
+  const custodyInput = document.getElementById('custody-input');
+  const custodyBtn = document.getElementById('custody-seal-btn');
+  const custodyHashRow = document.getElementById('custody-hash-row');
+  const custodyHashValue = document.getElementById('custody-hash-value');
+  const custodyLedger = document.getElementById('custody-ledger');
+
+  if (custodyInput && custodyBtn && custodyHashRow && custodyHashValue && custodyLedger) {
+    let custodySeq = 0;
+
+    async function sealEvidence() {
+      const text = custodyInput.value;
+      if (!text.trim()) {
+        custodyInput.focus();
+        return;
+      }
+      if (!window.crypto || !window.crypto.subtle) {
+        custodyHashValue.textContent = 'Web Crypto API not available in this browser.';
+        custodyHashRow.hidden = false;
+        return;
+      }
+
+      custodyBtn.disabled = true;
+      const originalLabel = custodyBtn.textContent;
+      custodyBtn.textContent = 'Hashing…';
+
+      try {
+        const enc = new TextEncoder().encode(text);
+        const digest = await window.crypto.subtle.digest('SHA-256', enc);
+        const hex = Array.from(new Uint8Array(digest))
+          .map((b) => b.toString(16).padStart(2, '0'))
+          .join('');
+
+        custodyHashValue.textContent = hex;
+        custodyHashRow.hidden = false;
+
+        custodySeq++;
+        const now = new Date();
+        const pad = (n) => (n < 10 ? '0' + n : '' + n);
+        const stamp = pad(now.getHours()) + ':' + pad(now.getMinutes()) + ':' + pad(now.getSeconds());
+        const id = 'EVID-DEMO-' + String(custodySeq).padStart(3, '0');
+
+        const row = document.createElement('div');
+        row.className = 'custody-demo__entry';
+        const idSpan = document.createElement('span');
+        idSpan.className = 'custody-demo__entry-id';
+        idSpan.textContent = id;
+        const hashSpan = document.createElement('span');
+        hashSpan.className = 'custody-demo__entry-hash';
+        hashSpan.textContent = hex.slice(0, 16) + '…';
+        const statusSpan = document.createElement('span');
+        statusSpan.className = 'custody-demo__entry-status';
+        statusSpan.textContent = 'Verified';
+        const timeSpan = document.createElement('span');
+        timeSpan.className = 'custody-demo__entry-time';
+        timeSpan.textContent = stamp;
+        row.appendChild(idSpan);
+        row.appendChild(hashSpan);
+        row.appendChild(statusSpan);
+        row.appendChild(timeSpan);
+        custodyLedger.insertBefore(row, custodyLedger.firstChild);
+      } finally {
+        custodyBtn.disabled = false;
+        custodyBtn.textContent = originalLabel;
+      }
+    }
+
+    custodyBtn.addEventListener('click', sealEvidence);
+    custodyInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        sealEvidence();
+      }
+    });
+  }
 })();
