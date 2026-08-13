@@ -22,7 +22,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css?v=20260813f" />
+    <link rel="stylesheet" href="styles.css?v=20260813g" />
   </head>
   <body>
     <svg width="0" height="0" style="position: absolute">
@@ -99,7 +99,7 @@
               <input type="text" id="c-message" placeholder="What are you trying to solve?" style="height: 90px" data-i18n-placeholder="contact.form.messagePlaceholder" />
             </div>
             <button type="submit" class="btn btn-gold btn-block btn-lg" style="margin-top: 8px" data-i18n="contact.form.submit">Send Message</button>
-            <p class="auth-foot" data-i18n="contact.form.foot">Submits directly to our team — no email client required.</p>
+            <p class="auth-foot" data-i18n="contact.form.foot">Submits via your email client — no data leaves your device silently.</p>
           </form>
 
           <div>
@@ -198,55 +198,21 @@
       </div>
     </div>
 
-    <script src="i18n.js?v=20260813f" defer></script>
-    <script src="main.js?v=20260813f"></script>
+    <script src="i18n.js?v=20260813g" defer></script>
+    <script src="main.js?v=20260813g"></script>
     <script>
-      (function () {
-        var API_BASE = location.protocol + "//" + location.hostname + ":3000";
-        var form = document.getElementById("contact-form");
-        var footNote = form.querySelector(".auth-foot");
-        var footNoteDefault = footNote ? footNote.textContent : "";
-
-        form.addEventListener("submit", function (e) {
-          e.preventDefault();
-          var submitBtn = form.querySelector('button[type="submit"]');
-          var payload = {
-            name: document.getElementById("c-name").value,
-            email: document.getElementById("c-email").value,
-            org: document.getElementById("c-org").value,
-            interest: document.getElementById("c-interest").value,
-            message: document.getElementById("c-message").value,
-          };
-          submitBtn.disabled = true;
-          submitBtn.setAttribute("aria-busy", "true");
-
-          fetch(API_BASE + "/api/contact", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(payload),
-          })
-            .then(function (res) {
-              return res.json().then(function (data) { return { ok: res.ok, data: data }; });
-            })
-            .then(function (r) {
-              if (!r.ok) throw new Error(r.data.error || "Something went wrong.");
-              form.reset();
-              if (footNote) footNote.textContent = "Message sent — thanks, we'll be in touch.";
-            })
-            .catch(function (err) {
-              if (footNote) footNote.textContent = err.message;
-            })
-            .finally(function () {
-              submitBtn.disabled = false;
-              submitBtn.removeAttribute("aria-busy");
-              if (footNote) {
-                setTimeout(function () {
-                  footNote.textContent = footNoteDefault;
-                }, 6000);
-              }
-            });
-        });
-      })();
+      document.getElementById("contact-form").addEventListener("submit", function (e) {
+        e.preventDefault();
+        var name = document.getElementById("c-name").value;
+        var org = document.getElementById("c-org").value;
+        var interest = document.getElementById("c-interest").value;
+        var message = document.getElementById("c-message").value;
+        var subject = encodeURIComponent("Silent Visionary Inquiry — " + (interest || "General"));
+        var body = encodeURIComponent(
+          "Name: " + name + "\nOrganization: " + org + "\nInterested in: " + interest + "\n\n" + message
+        );
+        window.location.href = "mailto:info@silentvisionary.com?subject=" + subject + "&body=" + body;
+      });
     </script>
   </body>
 </html>
