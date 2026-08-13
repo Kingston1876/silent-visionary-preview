@@ -433,6 +433,87 @@
         { id: "EVID-6604", type: "Field Interview Log", source: "Field Interview", acquired: "2026-08-08 08:20", hash: "SHA-256 5E92F0…B341", integrity: "Verified", custody: "FIELD-EXAM-03 → EVID-VAULT-02" },
       ],
     },
+    "SV-047": {
+      title: "Records Management System Intrusion",
+      severity: "critical",
+      status: "analysis",
+      twinTitle: "Digital Twin — SCADA Server Room",
+      primaryDevice: "d2",
+      evidenceGraph: { entity: "Employee-088 (Compromised Account)", account: "employee088@dot.cityops.gov", device: "SCADA-APP-02", ip: "10.44.2.14", network: "Outbound :443 — anomalous", external: "91.203.44.18", file: "rms_case_index.db" },
+      timeline: {
+        ticks: [{ x: 60, label: "03:00" }, { x: 380, label: "03:20" }, { x: 700, label: "03:40" }],
+        events: [
+          { x: 130, time: "03:04:22", label: "VPN login — Employee-088, unrecognized device", source: "IAM", type: "identity", evid: "EVID-7701", conf: "Observed Evidence", highlight: "top" },
+          { x: 300, time: "03:09:47", label: "Credential reuse attempt — RMS admin account", source: "IAM", type: "identity", evid: "EVID-7702", conf: "Correlated Evidence", color: "var(--ev-correlated)" },
+          { x: 480, time: "03:14:10", label: "Network scan detected — records subnet", source: "Network", type: "network", evid: "EVID-7703", conf: "AI Inference", color: "var(--gold)" },
+          { x: 610, time: "03:21:35", label: "Lateral movement — SCADA-APP-02 to RMS-DB-01", source: "EDR", type: "endpoint", evid: "EVID-7704", conf: "Correlated Evidence", highlight: "bottom" },
+          { x: 690, time: "03:26:52", label: "Query attempt — CJIS-protected case records", source: "RMS Audit Log", type: "file", evid: "EVID-7705", conf: "Observed Evidence", color: "var(--low)" },
+          { x: 760, time: "03:29:18", label: "Access control blocked query — insufficient clearance", source: "Access Control", type: "identity", evid: "EVID-7706", conf: "Observed Evidence", color: "var(--ok)" },
+          { x: 820, time: "03:31:44", label: "Session terminated by SOC", source: "IAM", type: "identity", evid: "EVID-7707", conf: "Observed Evidence", color: "var(--text-faint)" },
+        ],
+      },
+      stream: [
+        ["03:04:22", "tag-endpoint", "Auth", "VPN login — <b>Employee-088</b>, unrecognized device"],
+        ["03:09:47", "tag-endpoint", "Auth", "Credential reuse attempt — <b>RMS admin account</b>"],
+        ["03:14:10", "tag-net", "Net", "Network scan detected — <b>records subnet</b>"],
+        ["03:21:35", "tag-endpoint", "Proc", "Lateral movement — <b>SCADA-APP-02 → RMS-DB-01</b>"],
+        ["03:26:52", "tag-file", "File", "Query attempt — <b>CJIS-protected case records</b>"],
+        ["03:29:18", "tag-phys", "Block", "Access control blocked query — <b>insufficient clearance</b>"],
+      ],
+      liveFeed: [
+        ["tag-endpoint", "Auth", "Reviewing Employee-088's device history — <b>no prior VPN use</b>"],
+        ["tag-net", "Net", "Cross-referencing 91.203.44.18 against known threat feeds"],
+      ],
+      intel: [
+        ["91.203.44.18", "IP · Suspected Origin", "sev-high", "High"],
+        ["Employee-088", "Identity · Compromised Account", "sev-critical", "Critical"],
+        ["RMS-DB-01", "System · Records Database", "sev-high", "High"],
+      ],
+      ai: {
+        initial: {
+          text: "A VPN login for <b>Employee-088</b> at <b>03:04:22</b> from a device never seen on this account was followed five minutes later by a credential reuse attempt against the RMS administrator account.",
+          conf: "82%", cls: "", refs: "EVID-7701, EVID-7702",
+        },
+        affected: {
+          text: "One compromised VPN account and one internal application server (<b>SCADA-APP-02</b>) are implicated, with lateral movement toward the records-management database. No case records were successfully accessed.",
+          conf: "79%", cls: "", refs: "EVID-7704",
+        },
+        summary: {
+          text: "A compromised VPN credential was used overnight to scan the records subnet, move laterally from SCADA-APP-02 toward the RMS database, and attempt a query against CJIS-protected case records. Access control blocked the query on insufficient clearance, and the SOC terminated the session two minutes later.",
+          conf: "Pending", cls: "conclusion", refs: "—",
+        },
+        anomaly: {
+          text: "The credential-reuse attempt against the RMS admin account — a role Employee-088 has never held — is the clearest signal this session was not the legitimate employee.",
+          conf: "76%", cls: "inference", refs: "EVID-7702",
+        },
+        lateral: {
+          text: "Confirmed lateral movement from <b>SCADA-APP-02</b> toward <b>RMS-DB-01</b> on the same internal subnet, though the records query itself was blocked before any data was returned.",
+          conf: "Correlated", cls: "", refs: "EVID-7704",
+        },
+        evidence: {
+          text: "This case has <b>19</b> evidence items, including authentication logs, network captures, and the RMS system's own access-control audit trail.",
+          conf: "—", cls: "observed", refs: "—",
+        },
+      },
+      aiFallback: "I can help investigate SV-047. Try asking about the initial login, the lateral movement, the blocked query, or a summary of the investigation.",
+      attackChain: {
+        initial: { status: "observed", evid: "EVID-7701", note: "VPN login for Employee-088 from a device never previously associated with this account." },
+        credAccess: { status: "correlated", evid: "EVID-7702", note: "Credential reuse attempt against the RMS administrator account, a role this employee has never held." },
+        discovery: { status: "inference", evid: "EVID-7703", note: "A network scan of the records subnet was detected shortly after the credential-reuse attempt." },
+        lateral: { status: "correlated", evid: "EVID-7704", note: "Lateral movement confirmed from SCADA-APP-02 toward the RMS database on the same internal subnet." },
+        collection: { status: "observed", evid: "EVID-7705", note: "A query was attempted against CJIS-protected case records." },
+        exfil: { status: "observed", evid: "EVID-7706", note: "The query was blocked by access control on insufficient clearance — no case data was returned or exfiltrated." },
+      },
+      forensicsArtifacts: [
+        { id: "EVID-7701", type: "Authentication Log", source: "IAM", acquired: "2026-08-12 03:05", hash: "SHA-256 6C40E1…9B27", integrity: "Verified", custody: "AUTOMATED → EVID-VAULT-02" },
+        { id: "EVID-7702", type: "Authentication Log", source: "IAM", acquired: "2026-08-12 03:10", hash: "SHA-256 2A98D4…F615", integrity: "Verified", custody: "AUTOMATED → EVID-VAULT-02" },
+        { id: "EVID-7703", type: "Network Capture (PCAP)", source: "Network", acquired: "2026-08-12 03:15", hash: "SHA-256 D471C0…3E82", integrity: "Verified", custody: "AUTOMATED → EVID-VAULT-02" },
+        { id: "EVID-7704", type: "Memory Capture", source: "EDR", acquired: "2026-08-12 03:22", hash: "SHA-256 91B7A5…C049", integrity: "Verified", custody: "AUTOMATED → EVID-VAULT-02" },
+        { id: "EVID-7705", type: "RMS Audit Log", source: "RMS Audit Log", acquired: "2026-08-12 03:27", hash: "SHA-256 5F03E8…7A16", integrity: "Verified", custody: "AUTOMATED → EVID-VAULT-02" },
+        { id: "EVID-7706", type: "Access Control Log", source: "Access Control", acquired: "2026-08-12 03:30", hash: "SHA-256 C82B49…D501", integrity: "Verified", custody: "AUTOMATED → EVID-VAULT-02" },
+        { id: "EVID-7707", type: "Session Termination Log", source: "IAM", acquired: "2026-08-12 03:32", hash: "SHA-256 0E9F73…B884", integrity: "Verified", custody: "AUTOMATED → EVID-VAULT-02" },
+      ],
+    },
   };
 
   var DEVICES = {
@@ -468,6 +549,7 @@
     { label: "SV-022", type: "Case · High", run: function () { selectCase("SV-022"); scrollToPanel("panel-investigations"); } },
     { label: "SV-031", type: "Case · Critical", run: function () { selectCase("SV-031"); scrollToPanel("panel-investigations"); } },
     { label: "SV-018", type: "Case · Medium", run: function () { selectCase("SV-018"); scrollToPanel("panel-investigations"); } },
+    { label: "SV-047", type: "Case · Critical", run: function () { selectCase("SV-047"); scrollToPanel("panel-investigations"); } },
     { label: "TRAFFIC-CTRL-14", type: "Device · SV-001", run: function () { selectCase("SV-001"); selectDevice("d0"); scrollToPanel("panel-twin"); } },
     { label: "ALPR-UNIT-08", type: "Device · SV-014", run: function () { selectCase("SV-014"); selectDevice("d3"); scrollToPanel("panel-twin"); } },
     { label: "TRANSIT-GATE-R12", type: "Device · SV-009", run: function () { selectCase("SV-009"); selectDevice("d5"); scrollToPanel("panel-twin"); } },
@@ -1460,7 +1542,7 @@
   }
 
   function initKpiCountUp() {
-    animateCountUp(document.getElementById("kpi-active-cases"), 6, { duration: 900 });
+    animateCountUp(document.getElementById("kpi-active-cases"), 7, { duration: 900 });
     animateCountUp(document.getElementById("kpi-evidence"), 64, { duration: 1400 });
     animateCountUp(document.getElementById("kpi-alerts"), 7, { duration: 1000 });
     animateCountUp(document.getElementById("kpi-confidence"), 78, { duration: 1300, suffix: "%" });
