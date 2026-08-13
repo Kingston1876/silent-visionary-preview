@@ -22,7 +22,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css?v=20260812y" />
+    <link rel="stylesheet" href="styles.css?v=20260813e" />
   </head>
   <body>
     <header class="header" id="header">
@@ -99,6 +99,7 @@
             <input type="text" maxlength="1" inputmode="numeric" />
           </div>
 
+          <p id="login-error" class="auth-error" hidden></p>
           <button type="submit" class="btn btn-gold btn-block btn-lg" style="margin-top: 22px">Sign In</button>
         </form>
 
@@ -110,22 +111,62 @@
           <div class="role-opt" tabindex="0" role="button" aria-pressed="false">Administrator</div>
         </div>
 
-        <p class="auth-foot">This is a simulated sign-in for demonstration — no credentials are transmitted or stored. Don't have access? Contact your administrator.</p>
+        <p class="auth-foot">Demo credentials are pre-filled when you pick a role above — click Sign In to authenticate for real. Don't have access? Contact your administrator.</p>
       </div>
     </main>
 
-    <script src="main.js?v=20260812y"></script>
+    <script src="main.js?v=20260813e"></script>
     <script>
-      document.getElementById("login-form").addEventListener("submit", function (e) {
+      var API_BASE = location.protocol + "//" + location.hostname + ":3000";
+
+      var loginForm = document.getElementById("login-form");
+      var loginError = document.getElementById("login-error");
+
+      loginForm.addEventListener("submit", function (e) {
         e.preventDefault();
-        window.location.href = "dashboard.html";
+        var submitBtn = loginForm.querySelector('button[type="submit"]');
+        loginError.hidden = true;
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Signing in…";
+
+        fetch(API_BASE + "/api/auth/login", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          credentials: "include",
+          body: JSON.stringify({
+            email: document.getElementById("email").value.trim(),
+            password: document.getElementById("password").value,
+          }),
+        })
+          .then(function (res) {
+            return res.json().then(function (data) { return { ok: res.ok, data: data }; });
+          })
+          .then(function (r) {
+            if (!r.ok) throw new Error(r.data.error || "Login failed.");
+            window.location.href = "dashboard.html";
+          })
+          .catch(function (err) {
+            loginError.textContent = err.message;
+            loginError.hidden = false;
+            submitBtn.disabled = false;
+            submitBtn.textContent = "Sign In";
+          });
       });
+
       var mfaInputs = document.querySelectorAll(".mfa-boxes input");
       mfaInputs.forEach(function (input, i) {
         input.addEventListener("input", function () {
           if (input.value && mfaInputs[i + 1]) mfaInputs[i + 1].focus();
         });
       });
+
+      var DEMO_ACCOUNTS = {
+        "Investigator": "investigator@agency.gov",
+        "Forensic Analyst": "analyst@agency.gov",
+        "SOC Analyst": "soc@agency.gov",
+        "Administrator": "admin@agency.gov",
+      };
+      var DEMO_PASSWORD = "Demo!2026";
 
       var roleOpts = document.querySelectorAll(".role-opt");
       function selectRole(opt) {
@@ -135,9 +176,15 @@
         });
         opt.classList.add("active");
         opt.setAttribute("aria-pressed", "true");
+        var role = opt.textContent.trim();
         try {
-          window.localStorage.setItem("sv_demo_role", opt.textContent.trim());
+          window.localStorage.setItem("sv_demo_role", role);
         } catch (e) {}
+        var email = DEMO_ACCOUNTS[role];
+        if (email) {
+          document.getElementById("email").value = email;
+          document.getElementById("password").value = DEMO_PASSWORD;
+        }
       }
       roleOpts.forEach(function (opt) {
         opt.addEventListener("click", function () { selectRole(opt); });
@@ -148,6 +195,7 @@
           }
         });
       });
+      selectRole(document.querySelector(".role-opt.active"));
     </script>
   </body>
 </html>

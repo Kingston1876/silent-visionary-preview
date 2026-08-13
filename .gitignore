@@ -1,2 +1,5 @@
 .DS_Store
 *.mov
+server/node_modules/
+server/.env
+server/prisma/dev.db

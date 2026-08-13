@@ -32,7 +32,7 @@
       "footer.about": "About",
       "footer.touch": "Get in Touch",
       "footer.contact": "Contact",
-      "footer.copyright": "&copy; 2025 Silent Visionary. All rights reserved.",
+      "footer.copyright": "&copy; {year} Silent Visionary. All rights reserved.",
       "footer.language": "Language",
 
       "index.hero.title":
@@ -273,7 +273,7 @@
       "contact.form.message": "Message",
       "contact.form.messagePlaceholder": "What are you trying to solve?",
       "contact.form.submit": "Send Message",
-      "contact.form.foot": "Submits via your email client &mdash; no data leaves your device silently.",
+      "contact.form.foot": "Submits directly to our team &mdash; no email client required.",
       "contact.card1.title": "General &amp; Sales",
       "contact.card1.desc": "Product questions, demos, and pricing.",
       "contact.card2.title": "Support",
@@ -516,7 +516,7 @@
       "footer.about": "Sobre",
       "footer.touch": "Fale Conosco",
       "footer.contact": "Contato",
-      "footer.copyright": "&copy; 2025 Silent Visionary. Todos os direitos reservados.",
+      "footer.copyright": "&copy; {year} Silent Visionary. Todos os direitos reservados.",
       "footer.language": "Idioma",
 
       "index.hero.title":
@@ -757,7 +757,7 @@
       "contact.form.message": "Mensagem",
       "contact.form.messagePlaceholder": "O que você está tentando resolver?",
       "contact.form.submit": "Enviar Mensagem",
-      "contact.form.foot": "Enviado pelo seu cliente de e-mail &mdash; nenhum dado sai do seu dispositivo silenciosamente.",
+      "contact.form.foot": "Enviado diretamente para nossa equipe &mdash; nenhum cliente de e-mail necessário.",
       "contact.card1.title": "Geral e Vendas",
       "contact.card1.desc": "Dúvidas sobre produtos, demonstrações e preços.",
       "contact.card2.title": "Suporte",
@@ -1000,7 +1000,7 @@
       "footer.about": "Nosotros",
       "footer.touch": "Contáctenos",
       "footer.contact": "Contacto",
-      "footer.copyright": "&copy; 2025 Silent Visionary. Todos los derechos reservados.",
+      "footer.copyright": "&copy; {year} Silent Visionary. Todos los derechos reservados.",
       "footer.language": "Idioma",
 
       "index.hero.title":
@@ -1241,7 +1241,7 @@
       "contact.form.message": "Mensaje",
       "contact.form.messagePlaceholder": "¿Qué está tratando de resolver?",
       "contact.form.submit": "Enviar Mensaje",
-      "contact.form.foot": "Se envía a través de su cliente de correo &mdash; ningún dato sale de su dispositivo en silencio.",
+      "contact.form.foot": "Se envía directamente a nuestro equipo &mdash; no se necesita cliente de correo.",
       "contact.card1.title": "General y Ventas",
       "contact.card1.desc": "Preguntas sobre productos, demostraciones y precios.",
       "contact.card2.title": "Soporte",
@@ -1484,7 +1484,7 @@
       "footer.about": "À propos",
       "footer.touch": "Nous Contacter",
       "footer.contact": "Contact",
-      "footer.copyright": "&copy; 2025 Silent Visionary. Tous droits réservés.",
+      "footer.copyright": "&copy; {year} Silent Visionary. Tous droits réservés.",
       "footer.language": "Langue",
 
       "index.hero.title":
@@ -1725,7 +1725,7 @@
       "contact.form.message": "Message",
       "contact.form.messagePlaceholder": "Que cherchez-vous à résoudre&nbsp;?",
       "contact.form.submit": "Envoyer le Message",
-      "contact.form.foot": "Envoyé via votre client de messagerie &mdash; aucune donnée ne quitte votre appareil silencieusement.",
+      "contact.form.foot": "Envoyé directement à notre équipe &mdash; aucun client de messagerie requis.",
       "contact.card1.title": "Général et Ventes",
       "contact.card1.desc": "Questions produit, démonstrations et tarifs.",
       "contact.card2.title": "Support",
@@ -1958,6 +1958,9 @@
       var key = nodes[i].getAttribute("data-i18n");
       var value = dict[key] || fallback[key];
       if (value !== undefined) {
+        if (value.indexOf("{year}") !== -1) {
+          value = value.replace(/\{year\}/g, new Date().getFullYear());
+        }
         nodes[i].innerHTML = value;
       }
     }
