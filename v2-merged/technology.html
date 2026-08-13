@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Technology | Silent Visionary</title>
+    <meta name="description" content="Inside the Silent Visionary Forensic Intelligence Engine: the reconstruction engine, attack reconstruction, evidence graph, and chain of custody." />
+    <link rel="stylesheet" href="styles.css?v=20260812g" />
+  </head>
+  <body>
+    <svg width="0" height="0" style="position: absolute">
+      <defs>
+        <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12.5 9.5 18 20 6"/></symbol>
+        <symbol id="i-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><line x1="3" y1="12" x2="21" y2="12"/><path d="M12 3a15 15 0 0 1 4 9 15 15 0 0 1-4 9 15 15 0 0 1-4-9 15 15 0 0 1 4-9z"/></symbol>
+        <symbol id="i-eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 12s3.8-7 10-7 10 7 10 7-3.8 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="2.6"/></symbol>
+        <symbol id="i-cpu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="6" y="6" width="12" height="12" rx="1.5"/><rect x="10" y="10" width="4" height="4"/><path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3"/></symbol>
+        <symbol id="i-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4.5" y="11" width="15" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></symbol>
+        <symbol id="i-nodes" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="5" cy="6" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="12" cy="18" r="2"/><path d="M6.6 7.2 11 16.5M17.4 7.2 13 16.5M7 6h10"/></symbol>
+        <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M0,0 L10,5 L0,10 z" fill="currentColor"/>
+        </marker>
+      </defs>
+    </svg>
+
+    <header class="header" id="header">
+      <div class="header__inner">
+        <a href="index.html" class="brandmark">
+          <img src="LOGO-icon.png" alt="Silent Visionary" class="brandmark-icon" />
+          SILENT VISIONARY
+        </a>
+        <nav class="navlinks">
+          <a href="platform.html" data-i18n="nav.platform">Platform</a>
+          <a href="products.html" data-i18n="nav.products">Products</a>
+          <a href="technology.html" class="active" data-i18n="nav.technology">Technology</a>
+          <a href="solutions.html" data-i18n="nav.solutions">Solutions</a>
+          <a href="industries.html" data-i18n="nav.industries">Industries</a>
+          <a href="about.html" data-i18n="nav.about">About</a>
+          <a href="contact.html" data-i18n="nav.contact">Contact</a>
+        </nav>
+        <div class="navcta">
+          <a href="login.html" class="btn btn-ghost btn-sm" data-i18n="nav.login">Login</a>
+          <a href="dashboard.html" class="btn btn-gold btn-sm" data-i18n="nav.demo">Launch Demo</a>
+        </div>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+          <span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span>
+        </button>
+      </div>
+      <nav class="mobile-nav" id="mobile-nav">
+        <a href="platform.html" class="mobile-nav__link">Platform</a>
+        <a href="products.html" class="mobile-nav__link">Products</a>
+        <a href="technology.html" class="mobile-nav__link">Technology</a>
+        <a href="solutions.html" class="mobile-nav__link">Solutions</a>
+        <a href="industries.html" class="mobile-nav__link">Industries</a>
+        <a href="about.html" class="mobile-nav__link">About</a>
+        <a href="contact.html" class="mobile-nav__link">Contact</a>
+        <a href="login.html" class="btn btn-ghost btn-lg btn-block mobile-nav__cta" style="margin-top: 20px">Login</a>
+        <a href="dashboard.html" class="btn btn-gold btn-lg btn-block mobile-nav__cta" style="margin-top: 12px">Launch Demo</a>
+      </nav>
+    </header>
+
+    <section class="page-hero">
+      <div class="wrap">
+        <nav class="breadcrumb"><a href="index.html" data-i18n="common.home">Home</a><span class="sep">/</span><span class="current" data-i18n="nav.technology">Technology</span></nav>
+        <div class="eyebrow" data-i18n="tech.hero.eyebrow">Silent Visionary Reconstruction Engine</div>
+        <h1 data-i18n="tech.hero.title">Physical movement to external connection — one traced chain.</h1>
+        <p class="lede" data-i18n="tech.hero.lede">The reconstruction engine correlates events from every source into a synchronized timeline, then classifies each link in the chain by how certain it is — never presenting a hypothesis as a fact.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow" data-i18n="tech.recon.eyebrow">Reconstruction example</div>
+          <h2 data-i18n="tech.recon.title">Nine events. One continuous chain of cause and effect.</h2>
+        </div>
+        <div class="diagram-card">
+          <div style="display: flex; flex-direction: column;">
+            <div style="display:flex; align-items:center; gap:14px; padding:9px 0; border-bottom:1px solid var(--line-soft);"><span style="width:8px;height:8px;border-radius:50%;background:var(--low);flex-shrink:0;"></span><span style="font-family:var(--font-mono);font-size:13px;" data-i18n="tech.recon.e1">Physical movement</span></div>
+            <div style="display:flex; align-items:center; gap:14px; padding:9px 0; border-bottom:1px solid var(--line-soft);"><span style="width:8px;height:8px;border-radius:50%;background:var(--low);flex-shrink:0;"></span><span style="font-family:var(--font-mono);font-size:13px;" data-i18n="tech.recon.e2">Access-control event</span></div>
+            <div style="display:flex; align-items:center; gap:14px; padding:9px 0; border-bottom:1px solid var(--line-soft);"><span style="width:8px;height:8px;border-radius:50%;background:var(--ev-correlated);flex-shrink:0;"></span><span style="font-family:var(--font-mono);font-size:13px;" data-i18n="tech.recon.e3">Authentication</span></div>
+            <div style="display:flex; align-items:center; gap:14px; padding:9px 0; border-bottom:1px solid var(--line-soft);"><span style="width:8px;height:8px;border-radius:50%;background:var(--ev-correlated);flex-shrink:0;"></span><span style="font-family:var(--font-mono);font-size:13px;" data-i18n="tech.recon.e4">Endpoint activity</span></div>
+            <div style="display:flex; align-items:center; gap:14px; padding:9px 0; border-bottom:1px solid var(--line-soft);"><span style="width:8px;height:8px;border-radius:50%;background:var(--ev-inference);flex-shrink:0;"></span><span style="font-family:var(--font-mono);font-size:13px;" data-i18n="tech.recon.e5">Process execution</span></div>
+            <div style="display:flex; align-items:center; gap:14px; padding:9px 0; border-bottom:1px solid var(--line-soft);"><span style="width:8px;height:8px;border-radius:50%;background:var(--ev-observed);flex-shrink:0;"></span><span style="font-family:var(--font-mono);font-size:13px;" data-i18n="tech.recon.e6">Network connection</span></div>
+            <div style="display:flex; align-items:center; gap:14px; padding:9px 0; border-bottom:1px solid var(--line-soft);"><span style="width:8px;height:8px;border-radius:50%;background:var(--ev-observed);flex-shrink:0;"></span><span style="font-family:var(--font-mono);font-size:13px;" data-i18n="tech.recon.e7">File access</span></div>
+            <div style="display:flex; align-items:center; gap:14px; padding:9px 0; border-bottom:1px solid var(--line-soft);"><span style="width:8px;height:8px;border-radius:50%;background:var(--ev-observed);flex-shrink:0;"></span><span style="font-family:var(--font-mono);font-size:13px;" data-i18n="tech.recon.e8">USB activity</span></div>
+            <div style="display:flex; align-items:center; gap:14px; padding:9px 0;"><span style="width:8px;height:8px;border-radius:50%;background:var(--ev-conclusion);flex-shrink:0;"></span><span style="font-family:var(--font-mono);font-size:13px;" data-i18n="tech.recon.e9">External connection</span></div>
+          </div>
+          <div class="legend">
+            <span class="legend-item"><span class="legend-swatch" style="background: var(--ev-observed)"></span><span data-i18n="tech.legend.observed">Observed</span></span>
+            <span class="legend-item"><span class="legend-swatch" style="background: var(--ev-correlated)"></span><span data-i18n="tech.legend.correlated">Correlated</span></span>
+            <span class="legend-item"><span class="legend-swatch" style="background: var(--ev-inference)"></span><span data-i18n="tech.legend.inference">AI Inference</span></span>
+            <span class="legend-item"><span class="legend-swatch" style="background: var(--ev-conclusion)"></span><span data-i18n="tech.legend.conclusion">Investigator Conclusion</span></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--border-top">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow" data-i18n="tech.attack.eyebrow">Attack Reconstruction</div>
+          <h2 data-i18n="tech.attack.title">Every stage, traced to its evidence class.</h2>
+        </div>
+        <figure class="diagram-card">
+          <svg viewBox="0 0 1080 150" role="img" aria-label="Ten-stage attack reconstruction flow from Initial Access to Exfiltration, each stage tagged with its evidence class">
+            <line x1="40" y1="60" x2="1040" y2="60" stroke="var(--line)" stroke-width="1"/>
+            <g font-family="var(--font-mono)" font-size="9.5" text-anchor="middle">
+              <circle cx="60" cy="60" r="6" fill="var(--ev-observed)"/>
+              <text x="60" y="86" fill="var(--text-dim)" data-i18n="tech.attack.s1a">INITIAL</text>
+              <text x="60" y="98" fill="var(--text-dim)" data-i18n="tech.attack.s1b">ACCESS</text>
+              <line x1="66" y1="60" x2="150" y2="60" stroke="var(--line)" marker-end="url(#arrow)" color="var(--line)"/>
+              <circle cx="167" cy="60" r="6" fill="var(--ev-observed)"/>
+              <text x="167" y="86" fill="var(--text-dim)" data-i18n="tech.attack.s2">EXECUTION</text>
+              <line x1="173" y1="60" x2="257" y2="60" stroke="var(--line)" marker-end="url(#arrow)" color="var(--line)"/>
+              <circle cx="274" cy="60" r="6" fill="var(--ev-correlated)"/>
+              <text x="274" y="86" fill="var(--text-dim)" data-i18n="tech.attack.s3">PERSISTENCE</text>
+              <line x1="280" y1="60" x2="364" y2="60" stroke="var(--line)" marker-end="url(#arrow)" color="var(--line)"/>
+              <circle cx="381" cy="60" r="6" fill="var(--ev-correlated)"/>
+              <text x="381" y="86" fill="var(--text-dim)" data-i18n="tech.attack.s4a">PRIVILEGE</text>
+              <text x="381" y="98" fill="var(--text-dim)" data-i18n="tech.attack.s4b">ESCALATION</text>
+              <line x1="387" y1="60" x2="471" y2="60" stroke="var(--line)" marker-end="url(#arrow)" color="var(--line)"/>
+              <circle cx="488" cy="60" r="6" fill="var(--ev-inference)"/>
+              <text x="488" y="86" fill="var(--text-dim)" data-i18n="tech.attack.s5a">DEFENSE</text>
+              <text x="488" y="98" fill="var(--text-dim)" data-i18n="tech.attack.s5b">EVASION</text>
+              <line x1="494" y1="60" x2="578" y2="60" stroke="var(--line)" marker-end="url(#arrow)" color="var(--line)"/>
+              <circle cx="595" cy="60" r="6" fill="var(--ev-correlated)"/>
+              <text x="595" y="86" fill="var(--text-dim)" data-i18n="tech.attack.s6a">CREDENTIAL</text>
+              <text x="595" y="98" fill="var(--text-dim)" data-i18n="tech.attack.s6b">ACCESS</text>
+              <line x1="601" y1="60" x2="685" y2="60" stroke="var(--line)" marker-end="url(#arrow)" color="var(--line)"/>
+              <circle cx="702" cy="60" r="6" fill="var(--ev-inference)"/>
+              <text x="702" y="86" fill="var(--text-dim)" data-i18n="tech.attack.s7">DISCOVERY</text>
+              <line x1="708" y1="60" x2="792" y2="60" stroke="var(--line)" marker-end="url(#arrow)" color="var(--line)"/>
+              <circle cx="809" cy="60" r="6" fill="var(--ev-correlated)"/>
+              <text x="809" y="86" fill="var(--text-dim)" data-i18n="tech.attack.s8a">LATERAL</text>
+              <text x="809" y="98" fill="var(--text-dim)" data-i18n="tech.attack.s8b">MOVEMENT</text>
+              <line x1="815" y1="60" x2="899" y2="60" stroke="var(--line)" marker-end="url(#arrow)" color="var(--line)"/>
+              <circle cx="916" cy="60" r="6" fill="var(--ev-observed)"/>
+              <text x="916" y="86" fill="var(--text-dim)" data-i18n="tech.attack.s9">COLLECTION</text>
+              <line x1="922" y1="60" x2="1000" y2="60" stroke="var(--line)" marker-end="url(#arrow)" color="var(--line)"/>
+              <circle cx="1015" cy="60" r="6.5" fill="var(--ev-conclusion)"/>
+              <text x="1015" y="86" fill="var(--text)" data-i18n="tech.attack.s10">EXFILTRATION</text>
+            </g>
+          </svg>
+          <div class="legend">
+            <span class="legend-item"><span class="legend-swatch" style="background: var(--ev-observed)"></span><span data-i18n="tech.legend.observedEvidence">Observed Evidence</span></span>
+            <span class="legend-item"><span class="legend-swatch" style="background: var(--ev-correlated)"></span><span data-i18n="tech.legend.correlatedEvidence">Correlated Evidence</span></span>
+            <span class="legend-item"><span class="legend-swatch" style="background: var(--ev-inference)"></span><span data-i18n="tech.legend.inference">AI Inference</span></span>
+            <span class="legend-item"><span class="legend-swatch" style="background: var(--ev-conclusion)"></span><span data-i18n="tech.legend.conclusion">Investigator Conclusion</span></span>
+          </div>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section section--navy">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow" data-i18n="tech.graph.eyebrow">Evidence Graph</div>
+          <h2 data-i18n="tech.graph.title">From a person to a destination, every hop is evidenced.</h2>
+        </div>
+        <figure class="diagram-card">
+          <svg viewBox="0 0 760 460" role="img" aria-label="Evidence graph tracing User-019 through their account, device, IP address, a network event, a process, a file, and finally an external destination, with a branch to show it is a graph, not a line">
+            <g stroke="var(--line)" color="var(--line)" stroke-width="1.2">
+              <line x1="230" y1="44" x2="230" y2="88" marker-end="url(#arrow)"/>
+              <line x1="230" y1="122" x2="230" y2="166" marker-end="url(#arrow)"/>
+              <line x1="230" y1="200" x2="230" y2="244" marker-end="url(#arrow)"/>
+              <line x1="230" y1="278" x2="230" y2="322" marker-end="url(#arrow)"/>
+              <line x1="230" y1="356" x2="230" y2="400" marker-end="url(#arrow)"/>
+              <line x1="315" y1="200" x2="470" y2="240" marker-end="url(#arrow)"/>
+              <line x1="320" y1="417" x2="480" y2="400" marker-end="url(#arrow)"/>
+            </g>
+            <g font-family="var(--font-mono)">
+              <rect x="140" y="10" width="180" height="34" rx="7" fill="var(--charcoal-2)" stroke="var(--line)"/>
+              <text x="150" y="23" font-size="8.5" fill="var(--text-faint)" data-i18n="tech.graph.entity">ENTITY</text>
+              <text x="150" y="37" font-size="12" fill="var(--text)" font-weight="600">User-019</text>
+              <rect x="140" y="88" width="180" height="34" rx="7" fill="var(--charcoal-2)" stroke="var(--line)"/>
+              <text x="150" y="101" font-size="8.5" fill="var(--text-faint)" data-i18n="tech.graph.account">ACCOUNT</text>
+              <text x="150" y="115" font-size="12" fill="var(--text)" font-weight="600">user019@sv.local</text>
+              <rect x="140" y="166" width="180" height="34" rx="7" fill="var(--charcoal-2)" stroke="var(--gold-dim)"/>
+              <text x="150" y="179" font-size="8.5" fill="var(--gold)" data-i18n="tech.graph.device">DEVICE</text>
+              <text x="150" y="193" font-size="12" fill="var(--text)" font-weight="600">WORKSTATION-042</text>
+              <rect x="140" y="244" width="180" height="34" rx="7" fill="var(--charcoal-2)" stroke="var(--line)"/>
+              <text x="150" y="257" font-size="8.5" fill="var(--text-faint)" data-i18n="tech.graph.ip">IP ADDRESS</text>
+              <text x="150" y="271" font-size="12" fill="var(--text)" font-weight="600">10.44.6.112</text>
+              <rect x="140" y="322" width="180" height="34" rx="7" fill="var(--charcoal-2)" stroke="var(--line)"/>
+              <text x="150" y="335" font-size="8.5" fill="var(--text-faint)" data-i18n="tech.graph.netevent">NETWORK EVENT</text>
+              <text x="150" y="349" font-size="12" fill="var(--text)" font-weight="600">Outbound :443</text>
+              <rect x="140" y="400" width="180" height="34" rx="7" fill="var(--charcoal-2)" stroke="var(--line)"/>
+              <text x="150" y="413" font-size="8.5" fill="var(--text-faint)" data-i18n="tech.graph.process">PROCESS</text>
+              <text x="150" y="427" font-size="12" fill="var(--text)" font-weight="600">powershell.exe</text>
+              <rect x="490" y="383" width="190" height="34" rx="7" fill="var(--charcoal-2)" stroke="var(--line)"/>
+              <text x="500" y="396" font-size="8.5" fill="var(--text-faint)" data-i18n="tech.graph.file">FILE</text>
+              <text x="500" y="410" font-size="12" fill="var(--text)" font-weight="600">finance_q3_export.xlsx</text>
+              <rect x="490" y="223" width="190" height="34" rx="7" fill="var(--charcoal-2)" stroke="rgba(226,88,79,.5)"/>
+              <text x="500" y="236" font-size="8.5" fill="var(--crit)" data-i18n="tech.graph.external">EXTERNAL DESTINATION</text>
+              <text x="500" y="250" font-size="12" fill="var(--text)" font-weight="600">185.212.44.6</text>
+            </g>
+          </svg>
+          <figcaption data-i18n="tech.graph.caption">Branch shown: Device → External Destination (network path) and Process → File (local access path)</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow" data-i18n="tech.custody.eyebrow">Evidence Integrity &amp; Chain of Custody</div>
+          <h2 data-i18n="tech.custody.title">Every transition, timestamped and attributed.</h2>
+        </div>
+        <figure class="diagram-card">
+          <svg viewBox="0 0 1040 190" role="img" aria-label="Chain of custody flow for evidence item EVID-1043: collected, hashed, stored, accessed, analyzed, and reported, each step with a timestamp and responsible actor">
+            <line x1="60" y1="40" x2="980" y2="40" stroke="var(--line)" stroke-width="1"/>
+            <g font-family="var(--font-mono)" text-anchor="middle">
+              <circle cx="60" cy="40" r="6.5" fill="var(--ok)"/>
+              <text x="60" y="66" font-size="10.5" fill="var(--text)" data-i18n="tech.custody.collected">COLLECTED</text>
+              <text x="60" y="82" font-size="9" fill="var(--text-faint)">08-09 21:16</text>
+              <text x="60" y="96" font-size="9" fill="var(--text-faint)">FIELD-EXAM-03</text>
+              <line x1="66" y1="40" x2="170" y2="40" stroke="var(--line)" marker-end="url(#arrow)" color="var(--line)"/>
+              <circle cx="188" cy="40" r="6.5" fill="var(--ok)"/>
+              <text x="188" y="66" font-size="10.5" fill="var(--text)" data-i18n="tech.custody.hashed">HASHED</text>
+              <text x="188" y="82" font-size="9" fill="var(--text-faint)">08-09 21:19</text>
+              <text x="188" y="96" font-size="9" fill="var(--text-faint)">AUTOMATED</text>
+              <line x1="194" y1="40" x2="298" y2="40" stroke="var(--line)" marker-end="url(#arrow)" color="var(--line)"/>
+              <circle cx="316" cy="40" r="6.5" fill="var(--ok)"/>
+              <text x="316" y="66" font-size="10.5" fill="var(--text)" data-i18n="tech.custody.stored">STORED</text>
+              <text x="316" y="82" font-size="9" fill="var(--text-faint)">08-09 21:20</text>
+              <text x="316" y="96" font-size="9" fill="var(--text-faint)">EVID-VAULT-02</text>
+              <line x1="322" y1="40" x2="426" y2="40" stroke="var(--line)" marker-end="url(#arrow)" color="var(--line)"/>
+              <circle cx="444" cy="40" r="6.5" fill="var(--low)"/>
+              <text x="444" y="66" font-size="10.5" fill="var(--text)" data-i18n="tech.custody.accessed">ACCESSED</text>
+              <text x="444" y="82" font-size="9" fill="var(--text-faint)">08-10 08:41</text>
+              <text x="444" y="96" font-size="9" fill="var(--text-faint)">A.RIVERA</text>
+              <line x1="450" y1="40" x2="554" y2="40" stroke="var(--line)" marker-end="url(#arrow)" color="var(--line)"/>
+              <circle cx="572" cy="40" r="6.5" fill="var(--low)"/>
+              <text x="572" y="66" font-size="10.5" fill="var(--text)" data-i18n="tech.custody.analyzed">ANALYZED</text>
+              <text x="572" y="82" font-size="9" fill="var(--text-faint)">08-10 09:15</text>
+              <text x="572" y="96" font-size="9" fill="var(--text-faint)">A.RIVERA</text>
+              <line x1="578" y1="40" x2="682" y2="40" stroke="var(--line)" marker-end="url(#arrow)" color="var(--line)"/>
+              <circle cx="700" cy="40" r="7" fill="var(--gold)"/>
+              <text x="700" y="66" font-size="10.5" fill="var(--gold-bright)" data-i18n="tech.custody.reported">REPORTED</text>
+              <text x="700" y="82" font-size="9" fill="var(--text-faint)">08-11 14:02</text>
+              <text x="700" y="96" font-size="9" fill="var(--text-faint)">CASE LEAD</text>
+            </g>
+          </svg>
+          <div class="integrity-badge"><svg><use href="#i-check"/></svg><span data-i18n="tech.custody.integrity">Evidence Integrity: Verified</span></div>
+          <div class="hash-strip">EVID-1043 &middot; SHA-256 4E1F7A2C9D0B&hellip;88C3A16F9BD2 &middot; <span data-i18n="tech.custody.hashSuffix">unaltered since acquisition</span></div>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section section--navy">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow" data-i18n="tech.node.eyebrow">Distributed Architecture</div>
+          <h2 data-i18n="tech.node.title">Every node observes, correlates, and preserves &mdash; locally.</h2>
+          <p class="lede" style="max-width: 720px" data-i18n="tech.node.lede">The Silent Visionary Node Network is a distributed architecture of authorized edge nodes deployed inside monitored environments &mdash; government facilities, enterprise campuses, data centers, critical infrastructure, transportation facilities, and other security-controlled sites. Each node processes only the telemetry its own environment is authorized to share, and forwards relevant events, not raw streams, to the central platform.</p>
+        </div>
+        <div class="cards-grid">
+          <div class="info-card" style="--card-accent: var(--p-sentinel)">
+            <div class="icon-badge"><svg><use href="#i-eye"/></svg></div>
+            <h3 data-i18n="tech.node.observe.title">Observe</h3>
+            <p data-i18n="tech.node.observe.desc">Receives authorized telemetry from connected systems &mdash; cameras, access control, environmental sensors, IoT devices, network telemetry, DNS/DHCP, and endpoint alerts.</p>
+          </div>
+          <div class="info-card" style="--card-accent: var(--p-forensics)">
+            <div class="icon-badge"><svg><use href="#i-cpu"/></svg></div>
+            <h3 data-i18n="tech.node.edge.title">Edge Processing</h3>
+            <p data-i18n="tech.node.edge.desc">Local analysis runs before anything leaves the site. Raw telemetry becomes relevant events, reducing bandwidth and improving data minimization.</p>
+          </div>
+          <div class="info-card" style="--card-accent: var(--p-redact)">
+            <div class="icon-badge"><svg><use href="#i-lock"/></svg></div>
+            <h3 data-i18n="tech.node.evidence.title">Evidence Preservation</h3>
+            <p data-i18n="tech.node.evidence.desc">Significant events become evidence records &mdash; timestamped, hashed, and tracked &mdash; preserved separately from any AI-generated interpretation.</p>
+          </div>
+          <div class="info-card" style="--card-accent: var(--p-fraudshield)">
+            <div class="icon-badge"><svg><use href="#i-nodes"/></svg></div>
+            <h3 data-i18n="tech.node.cross.title">Cross-Node Correlation</h3>
+            <p data-i18n="tech.node.cross.desc">Multiple authorized nodes can contribute to the same investigation, correlating independent signals into one unified incident timeline.</p>
+          </div>
+        </div>
+
+        <figure class="diagram-card" style="margin-top: 34px">
+          <svg viewBox="0 0 1100 110" role="img" aria-label="Flow from a physical or cyber environment through a Silent Visionary edge node, local analysis, and evidence correlation, to the secure platform and its digital twin, timeline, and reconstruction">
+            <line x1="35" y1="46" x2="1055" y2="46" stroke="var(--line)" stroke-width="1"/>
+            <g font-family="var(--font-mono)" font-size="9.5" text-anchor="middle">
+              <circle cx="55" cy="46" r="6" fill="var(--ev-observed)"/>
+              <text x="55" y="72" fill="var(--text-dim)" data-i18n="tech.node.flow.s1a">PHYSICAL / CYBER</text>
+              <text x="55" y="84" fill="var(--text-dim)" data-i18n="tech.node.flow.s1b">ENVIRONMENT</text>
+              <line x1="61" y1="46" x2="234" y2="46" stroke="var(--line)" marker-end="url(#arrow)" color="var(--line)"/>
+              <circle cx="250" cy="46" r="6.5" fill="var(--gold)"/>
+              <text x="250" y="72" fill="var(--gold-bright)" data-i18n="tech.node.flow.s2a">EDGE NODE</text>
+              <line x1="257" y1="46" x2="429" y2="46" stroke="var(--line)" marker-end="url(#arrow)" color="var(--line)"/>
+              <circle cx="445" cy="46" r="6" fill="var(--ev-inference)"/>
+              <text x="445" y="72" fill="var(--text-dim)" data-i18n="tech.node.flow.s3a">LOCAL ANALYSIS</text>
+              <line x1="451" y1="46" x2="624" y2="46" stroke="var(--line)" marker-end="url(#arrow)" color="var(--line)"/>
+              <circle cx="640" cy="46" r="6" fill="var(--ev-correlated)"/>
+              <text x="640" y="72" fill="var(--text-dim)" data-i18n="tech.node.flow.s4a">EVIDENCE</text>
+              <text x="640" y="84" fill="var(--text-dim)" data-i18n="tech.node.flow.s4b">CORRELATION</text>
+              <line x1="646" y1="46" x2="819" y2="46" stroke="var(--line)" marker-end="url(#arrow)" color="var(--line)"/>
+              <circle cx="835" cy="46" r="6" fill="var(--low)"/>
+              <text x="835" y="72" fill="var(--text-dim)" data-i18n="tech.node.flow.s5a">SECURE</text>
+              <text x="835" y="84" fill="var(--text-dim)" data-i18n="tech.node.flow.s5b">PLATFORM</text>
+              <line x1="841" y1="46" x2="1014" y2="46" stroke="var(--line)" marker-end="url(#arrow)" color="var(--line)"/>
+              <circle cx="1030" cy="46" r="7" fill="var(--ev-conclusion)"/>
+              <text x="1030" y="72" fill="var(--text)" data-i18n="tech.node.flow.s6a">DIGITAL TWIN +</text>
+              <text x="1030" y="84" fill="var(--text)" data-i18n="tech.node.flow.s6b">TIMELINE</text>
+            </g>
+          </svg>
+          <figcaption data-i18n="tech.node.flow.caption">Conceptual data path &mdash; raw telemetry never leaves the edge node unprocessed.</figcaption>
+        </figure>
+
+        <figure class="diagram-card" style="margin-top: 24px">
+          <svg viewBox="0 0 1060 110" role="img" aria-label="Three example nodes each detecting a related event, correlated by Silent Visionary into one unified incident">
+            <g font-family="var(--font-mono)">
+              <rect x="20" y="10" width="220" height="64" rx="7" fill="var(--charcoal-2)" stroke="var(--line)"/>
+              <text x="32" y="28" font-size="9.5" fill="var(--gold)">NODE 01</text>
+              <text x="32" y="46" font-size="10" fill="var(--text)" data-i18n="tech.node.chain.n1">Suspicious network activity</text>
+              <line x1="240" y1="42" x2="300" y2="42" stroke="var(--line)" marker-end="url(#arrow)" color="var(--line)"/>
+              <rect x="300" y="10" width="230" height="64" rx="7" fill="var(--charcoal-2)" stroke="var(--line)"/>
+              <text x="312" y="28" font-size="9.5" fill="var(--gold)">NODE 02</text>
+              <text x="312" y="46" font-size="10" fill="var(--text)" data-i18n="tech.node.chain.n2">Related security event</text>
+              <line x1="530" y1="42" x2="590" y2="42" stroke="var(--line)" marker-end="url(#arrow)" color="var(--line)"/>
+              <rect x="590" y="10" width="230" height="64" rx="7" fill="var(--charcoal-2)" stroke="var(--line)"/>
+              <text x="602" y="28" font-size="9.5" fill="var(--gold)">NODE 03</text>
+              <text x="602" y="46" font-size="10" fill="var(--text)" data-i18n="tech.node.chain.n3">Related infrastructure event</text>
+              <line x1="820" y1="42" x2="880" y2="42" stroke="var(--line)" marker-end="url(#arrow)" color="var(--line)"/>
+              <rect x="880" y="4" width="140" height="76" rx="7" fill="var(--charcoal-2)" stroke="var(--gold-dim)"/>
+              <text x="950" y="36" font-size="9.5" fill="var(--gold-bright)" text-anchor="middle">SILENT</text>
+              <text x="950" y="49" font-size="9.5" fill="var(--gold-bright)" text-anchor="middle">VISIONARY</text>
+              <text x="950" y="98" font-size="9.5" fill="var(--text-faint)" text-anchor="middle" data-i18n="tech.node.chain.result">Correlates into a unified timeline</text>
+            </g>
+          </svg>
+          <figcaption data-i18n="tech.node.chain.caption">Independent nodes, one incident &mdash; cross-node correlation is how isolated signals become a case.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow" data-i18n="tech.city.eyebrow">Future Architecture</div>
+          <h2 data-i18n="tech.city.title">A hierarchy built to scale &mdash; one room today, a monitored district eventually.</h2>
+          <p class="lede" style="max-width: 720px" data-i18n="tech.city.lede">Silent Visionary does not monitor cities today. The initial product demonstrates this architecture inside a single controlled environment &mdash; the hierarchy below is the structure the platform is built to grow into as more authorized facilities and districts opt in.</p>
+        </div>
+        <figure class="diagram-card">
+          <svg viewBox="0 0 420 500" role="img" aria-label="Future distributed forensic infrastructure hierarchy, narrowing from city to district, facility, building, room, device, event, and evidence">
+            <g font-family="var(--font-mono)" text-anchor="middle">
+              <rect x="40" y="10" width="340" height="34" rx="7" fill="var(--charcoal-2)" stroke="var(--gold-dim)"/>
+              <text x="210" y="32" font-size="11" fill="var(--gold-bright)" data-i18n="tech.city.level.city">CITY</text>
+              <line x1="210" y1="44" x2="210" y2="70" stroke="var(--line)" marker-end="url(#arrow)" color="var(--line)"/>
+
+              <rect x="70" y="72" width="280" height="34" rx="7" fill="var(--charcoal-2)" stroke="var(--line)"/>
+              <text x="210" y="94" font-size="11" fill="var(--text)" data-i18n="tech.city.level.district">DISTRICT</text>
+              <line x1="210" y1="106" x2="210" y2="132" stroke="var(--line)" marker-end="url(#arrow)" color="var(--line)"/>
+
+              <rect x="100" y="134" width="220" height="34" rx="7" fill="var(--charcoal-2)" stroke="var(--line)"/>
+              <text x="210" y="156" font-size="11" fill="var(--text)" data-i18n="tech.city.level.facility">FACILITY</text>
+              <line x1="210" y1="168" x2="210" y2="194" stroke="var(--line)" marker-end="url(#arrow)" color="var(--line)"/>
+
+              <rect x="125" y="196" width="170" height="34" rx="7" fill="var(--charcoal-2)" stroke="var(--line)"/>
+              <text x="210" y="218" font-size="11" fill="var(--text)" data-i18n="tech.city.level.building">BUILDING</text>
+              <line x1="210" y1="230" x2="210" y2="256" stroke="var(--line)" marker-end="url(#arrow)" color="var(--line)"/>
+
+              <rect x="150" y="258" width="120" height="34" rx="7" fill="var(--charcoal-2)" stroke="var(--line)"/>
+              <text x="210" y="280" font-size="11" fill="var(--text)" data-i18n="tech.city.level.room">ROOM</text>
+              <line x1="210" y1="292" x2="210" y2="318" stroke="var(--line)" marker-end="url(#arrow)" color="var(--line)"/>
+
+              <rect x="165" y="320" width="90" height="34" rx="7" fill="var(--charcoal-2)" stroke="var(--line)"/>
+              <text x="210" y="342" font-size="11" fill="var(--text)" data-i18n="tech.city.level.device">DEVICE</text>
+              <line x1="210" y1="354" x2="210" y2="380" stroke="var(--line)" marker-end="url(#arrow)" color="var(--line)"/>
+
+              <rect x="170" y="382" width="80" height="34" rx="7" fill="var(--charcoal-2)" stroke="var(--ev-inference)"/>
+              <text x="210" y="404" font-size="11" fill="var(--gold)" data-i18n="tech.city.level.event">EVENT</text>
+              <line x1="210" y1="416" x2="210" y2="442" stroke="var(--line)" marker-end="url(#arrow)" color="var(--line)"/>
+
+              <rect x="155" y="444" width="110" height="34" rx="7" fill="var(--charcoal-2)" stroke="var(--ok)"/>
+              <text x="210" y="466" font-size="11" fill="var(--ok)" data-i18n="tech.city.level.evidence">EVIDENCE</text>
+            </g>
+          </svg>
+          <figcaption data-i18n="tech.city.caption">Future Distributed Forensic Infrastructure &mdash; not a claim of current coverage.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="closing">
+      <div class="wrap">
+        <h2 data-i18n="tech.closing.title">Evidence first. AI second. Human judgment always visible.</h2>
+        <p class="lede" data-i18n="tech.closing.lede">Every AI-generated conclusion in Silent Visionary traces back to the evidence that supports it — and never further than that.</p>
+        <div class="closing-ctas">
+          <a href="platform.html" class="btn btn-gold" data-i18n="tech.closing.cta2">Back to Platform</a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="wrap">
+        <div class="footer__grid">
+          <div>
+            <img src="LOGO-full.png" alt="Silent Visionary" class="footer__logo-img" />
+            <p class="footer__desc" data-i18n="footer.desc">The unified cyber-physical forensic intelligence platform.</p>
+          </div>
+          <div>
+            <h4 class="footer__col-title" data-i18n="footer.products">Products</h4>
+            <div class="footer__links">
+              <a href="forensics.html" class="footer__link">Forensics™</a>
+              <a href="sentinel.html" class="footer__link">Sentinel™</a>
+              <a href="redact.html" class="footer__link">Redact™</a>
+              <a href="compliance.html" class="footer__link">Compliance™</a>
+              <a href="fraudshield.html" class="footer__link">FraudShield™</a>
+            </div>
+          </div>
+          <div>
+            <h4 class="footer__col-title" data-i18n="footer.company">Company</h4>
+            <div class="footer__links">
+              <a href="platform.html" class="footer__link" data-i18n="footer.platform">Platform</a>
+              <a href="technology.html" class="footer__link" data-i18n="footer.technology">Technology</a>
+              <a href="solutions.html" class="footer__link" data-i18n="footer.solutions">Solutions</a>
+              <a href="about.html" class="footer__link" data-i18n="footer.about">About</a>
+            </div>
+          </div>
+          <div>
+            <h4 class="footer__col-title" data-i18n="footer.touch">Get in Touch</h4>
+            <div class="footer__links">
+              <a href="mailto:info@silentvisionary.com" class="footer__link">info@silentvisionary.com</a>
+            </div>
+            <a href="contact.html" class="btn btn-gold footer__cta" data-i18n="footer.contact">Contact</a>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <div class="footer__copyright" data-i18n="footer.copyright">&copy; 2025 Silent Visionary. All rights reserved.</div>
+          <div class="footer__badges"><span>Silent Visionary Platform</span></div>
+          <div class="footer__lang">
+            <label for="lang-select" class="footer__lang-label">
+              <svg class="footer__lang-icon"><use href="#i-globe"/></svg>
+              <span data-i18n="footer.language">Language</span>
+            </label>
+            <select id="lang-select" class="footer__lang-select">
+              <option value="en">English</option>
+              <option value="pt-BR">Português (Brasil)</option>
+              <option value="es">Español</option>
+              <option value="fr">Français</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="i18n.js?v=20260812g" defer></script>
+    <script src="main.js?v=20260812g"></script>
+  </body>
+</html>

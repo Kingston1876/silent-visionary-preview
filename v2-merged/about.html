@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About | Silent Visionary</title>
+    <meta name="description" content="Silent Visionary's philosophy: evidence first, AI second, human judgment always visible." />
+    <link rel="stylesheet" href="styles.css?v=20260812g" />
+  </head>
+  <body>
+    <svg width="0" height="0" style="position: absolute">
+      <defs>
+        <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12.5 9.5 18 20 6"/></symbol>
+        <symbol id="i-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><line x1="3" y1="12" x2="21" y2="12"/><path d="M12 3a15 15 0 0 1 4 9 15 15 0 0 1-4 9 15 15 0 0 1-4-9 15 15 0 0 1 4-9z"/></symbol>
+        <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M0,0 L10,5 L0,10 z" fill="currentColor"/>
+        </marker>
+      </defs>
+    </svg>
+
+    <header class="header" id="header">
+      <div class="header__inner">
+        <a href="index.html" class="brandmark">
+          <img src="LOGO-icon.png" alt="Silent Visionary" class="brandmark-icon" />
+          SILENT VISIONARY
+        </a>
+        <nav class="navlinks">
+          <a href="platform.html" data-i18n="nav.platform">Platform</a>
+          <a href="products.html" data-i18n="nav.products">Products</a>
+          <a href="technology.html" data-i18n="nav.technology">Technology</a>
+          <a href="solutions.html" data-i18n="nav.solutions">Solutions</a>
+          <a href="industries.html" data-i18n="nav.industries">Industries</a>
+          <a href="about.html" class="active" data-i18n="nav.about">About</a>
+          <a href="contact.html" data-i18n="nav.contact">Contact</a>
+        </nav>
+        <div class="navcta">
+          <a href="login.html" class="btn btn-ghost btn-sm" data-i18n="nav.login">Login</a>
+          <a href="dashboard.html" class="btn btn-gold btn-sm" data-i18n="nav.demo">Launch Demo</a>
+        </div>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+          <span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span>
+        </button>
+      </div>
+      <nav class="mobile-nav" id="mobile-nav">
+        <a href="platform.html" class="mobile-nav__link">Platform</a>
+        <a href="products.html" class="mobile-nav__link">Products</a>
+        <a href="technology.html" class="mobile-nav__link">Technology</a>
+        <a href="solutions.html" class="mobile-nav__link">Solutions</a>
+        <a href="industries.html" class="mobile-nav__link">Industries</a>
+        <a href="about.html" class="mobile-nav__link">About</a>
+        <a href="contact.html" class="mobile-nav__link">Contact</a>
+        <a href="login.html" class="btn btn-ghost btn-lg btn-block mobile-nav__cta" style="margin-top: 20px">Login</a>
+        <a href="dashboard.html" class="btn btn-gold btn-lg btn-block mobile-nav__cta" style="margin-top: 12px">Launch Demo</a>
+      </nav>
+    </header>
+
+    <section class="page-hero">
+      <div class="wrap">
+        <nav class="breadcrumb"><a href="index.html" data-i18n="common.home">Home</a><span class="sep">/</span><span class="current" data-i18n="nav.about">About</span></nav>
+        <div class="eyebrow" data-i18n="about.hero.eyebrow">About Silent Visionary</div>
+        <h1 data-i18n="about.hero.title">We build the platform we'd want in the room during an investigation.</h1>
+        <p class="lede" data-i18n="about.hero.lede">Silent Visionary started as five focused tools — Forensics, Sentinel, Redact, Compliance, and FraudShield — and became one platform once it was clear the hardest part of an investigation wasn't any single tool. It was the gap between them.</p>
+      </div>
+    </section>
+
+    <section class="section section--navy">
+      <div class="wrap">
+        <div class="rationale-grid">
+          <div>
+            <div class="eyebrow" data-i18n="about.philosophy.eyebrow">Our philosophy</div>
+            <h2 style="font-size: 25px; margin-top: 14px" data-i18n="about.philosophy.title">Evidence first. AI second. Human judgment always visible.</h2>
+          </div>
+          <div class="rationale-points">
+            <div class="rpoint"><svg><use href="#i-check"/></svg><div><b data-i18n="about.philosophy.p1.title">Evidence traces to source.</b><p data-i18n="about.philosophy.p1.desc">Every conclusion the platform shows is one click from the artifact that supports it.</p></div></div>
+            <div class="rpoint"><svg><use href="#i-check"/></svg><div><b data-i18n="about.philosophy.p2.title">Confidence is stated, not implied.</b><p data-i18n="about.philosophy.p2.desc">Observed evidence, correlated evidence, AI inference, and investigator conclusion are never blurred together.</p></div></div>
+            <div class="rpoint"><svg><use href="#i-check"/></svg><div><b data-i18n="about.philosophy.p3.title">A hypothesis is never presented as certainty.</b><p data-i18n="about.philosophy.p3.desc">If the evidence only supports a possibility, that's what the platform says.</p></div></div>
+          </div>
+        </div>
+
+        <figure class="diagram-card" style="margin-top: 34px;">
+          <svg viewBox="0 0 900 130" role="img" aria-label="Diagram showing the order of trust: evidence first, then AI analysis, then a human-confirmed conclusion, with a dashed line showing the conclusion always traces back to the original evidence">
+            <g font-family="var(--font-mono)" text-anchor="middle">
+              <rect x="30" y="35" width="220" height="60" rx="10" fill="var(--charcoal-2)" stroke="var(--low)" stroke-width="1.6"/>
+              <text x="140" y="60" font-size="9" fill="var(--text-faint)" letter-spacing="1" data-i18n="about.diagram.s1a">01 · OBSERVED</text>
+              <text x="140" y="78" font-size="13" fill="var(--text)" font-weight="700" data-i18n="about.diagram.s1b">Evidence</text>
+
+              <line x1="250" y1="65" x2="335" y2="65" stroke="var(--line)" stroke-width="1.3" marker-end="url(#arrow)" color="var(--line)"/>
+
+              <rect x="340" y="35" width="220" height="60" rx="10" fill="var(--charcoal-2)" stroke="var(--gold-dim)" stroke-width="1.6"/>
+              <text x="450" y="60" font-size="9" fill="var(--gold)" letter-spacing="1" data-i18n="about.diagram.s2a">02 · INFERRED</text>
+              <text x="450" y="78" font-size="13" fill="var(--text)" font-weight="700" data-i18n="about.diagram.s2b">AI Analysis</text>
+
+              <line x1="560" y1="65" x2="645" y2="65" stroke="var(--line)" stroke-width="1.3" marker-end="url(#arrow)" color="var(--line)"/>
+
+              <rect x="650" y="35" width="220" height="60" rx="10" fill="var(--charcoal-2)" stroke="var(--ok)" stroke-width="1.6"/>
+              <text x="760" y="60" font-size="9" fill="var(--ok)" letter-spacing="1" data-i18n="about.diagram.s3a">03 · CONFIRMED</text>
+              <text x="760" y="78" font-size="13" fill="var(--text)" font-weight="700" data-i18n="about.diagram.s3b">Human Conclusion</text>
+
+              <path d="M760,95 C760,120 140,120 140,95" fill="none" stroke="var(--text-faint)" stroke-width="1" stroke-dasharray="2 4" marker-end="url(#arrow)" color="var(--text-faint)"/>
+              <text x="450" y="126" font-size="8.5" fill="var(--text-faint)" data-i18n="about.diagram.note">every conclusion traces back to source evidence</text>
+            </g>
+          </svg>
+          <figcaption data-i18n="about.diagram.caption">The order never reverses — a conclusion is never shown without the evidence path that produced it</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow" data-i18n="about.diff.eyebrow">What we don't do</div>
+          <h2 data-i18n="about.diff.title">The core differentiator, stated plainly.</h2>
+        </div>
+        <div class="diff-grid" style="border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 32px 0;">
+          <div class="diff-col">
+            <div class="diff-tag" data-i18n="about.diff.col1.tag">Most security platforms</div>
+            <div class="diff-quote" data-i18n="about.diff.col1.quote">&quot;There is an alert.&quot;</div>
+            <p class="diff-sub" data-i18n="about.diff.col1.sub">A signal, disconnected from cause or consequence.</p>
+          </div>
+          <div class="diff-col">
+            <div class="diff-tag" data-i18n="about.diff.col2.tag">Most forensic tools</div>
+            <div class="diff-quote" data-i18n="about.diff.col2.quote">&quot;Here is the evidence.&quot;</div>
+            <p class="diff-sub" data-i18n="about.diff.col2.sub">Artifacts, without the narrative connecting them.</p>
+          </div>
+          <div class="diff-col final">
+            <div class="diff-tag">Silent Visionary</div>
+            <div class="diff-quote" data-i18n="about.diff.col3.quote">&quot;Here is what happened, why we believe it, and the evidence behind it.&quot;</div>
+            <p class="diff-sub" data-i18n="about.diff.col3.sub">That's the whole company, in one sentence.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="closing">
+      <div class="wrap">
+        <h2 data-i18n="about.closing.title">Want to see how we build this?</h2>
+        <div class="closing-ctas">
+          <a href="technology.html" class="btn btn-gold" data-i18n="platform.closing.cta1">Explore the Technology</a>
+          <a href="contact.html" class="btn btn-ghost" data-i18n="ind.closing.cta1">Contact Us</a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="wrap">
+        <div class="footer__grid">
+          <div>
+            <img src="LOGO-full.png" alt="Silent Visionary" class="footer__logo-img" />
+            <p class="footer__desc" data-i18n="footer.desc">The unified cyber-physical forensic intelligence platform.</p>
+          </div>
+          <div>
+            <h4 class="footer__col-title" data-i18n="footer.products">Products</h4>
+            <div class="footer__links">
+              <a href="forensics.html" class="footer__link">Forensics™</a>
+              <a href="sentinel.html" class="footer__link">Sentinel™</a>
+              <a href="redact.html" class="footer__link">Redact™</a>
+              <a href="compliance.html" class="footer__link">Compliance™</a>
+              <a href="fraudshield.html" class="footer__link">FraudShield™</a>
+            </div>
+          </div>
+          <div>
+            <h4 class="footer__col-title" data-i18n="footer.company">Company</h4>
+            <div class="footer__links">
+              <a href="platform.html" class="footer__link" data-i18n="footer.platform">Platform</a>
+              <a href="technology.html" class="footer__link" data-i18n="footer.technology">Technology</a>
+              <a href="solutions.html" class="footer__link" data-i18n="footer.solutions">Solutions</a>
+              <a href="industries.html" class="footer__link" data-i18n="footer.industries">Industries</a>
+            </div>
+          </div>
+          <div>
+            <h4 class="footer__col-title" data-i18n="footer.touch">Get in Touch</h4>
+            <div class="footer__links">
+              <a href="mailto:info@silentvisionary.com" class="footer__link">info@silentvisionary.com</a>
+            </div>
+            <a href="contact.html" class="btn btn-gold footer__cta" data-i18n="footer.contact">Contact</a>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <div class="footer__copyright" data-i18n="footer.copyright">&copy; 2025 Silent Visionary. All rights reserved.</div>
+          <div class="footer__badges"><span>Silent Visionary Platform</span></div>
+          <div class="footer__lang">
+            <label for="lang-select" class="footer__lang-label">
+              <svg class="footer__lang-icon"><use href="#i-globe"/></svg>
+              <span data-i18n="footer.language">Language</span>
+            </label>
+            <select id="lang-select" class="footer__lang-select">
+              <option value="en">English</option>
+              <option value="pt-BR">Português (Brasil)</option>
+              <option value="es">Español</option>
+              <option value="fr">Français</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="i18n.js?v=20260812g" defer></script>
+    <script src="main.js?v=20260812g"></script>
+  </body>
+</html>

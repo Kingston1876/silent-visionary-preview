@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Silent Visionary Forensics™ | Silent Visionary</title>
+    <meta
+      name="description"
+      content="AI-powered digital forensics. Automate evidence triage, reconstruct timelines, and generate court-ready reports."
+    />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Outfit:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header" id="header">
+      <div class="header__inner">
+        <a href="index.html" class="header__logo">
+          <img src="LOGO.png" alt="Silent Visionary" class="header__logo-img" />
+        </a>
+
+        <nav class="nav" id="nav">
+          <a href="index.html" class="nav__link">Home</a>
+          <a href="forensics.html" class="nav__link nav__link--active"
+            >Forensics</a
+          >
+          <a href="sentinel.html" class="nav__link">Sentinel</a>
+          <a href="redact.html" class="nav__link">Redact</a>
+          <a href="compliance.html" class="nav__link">Compliance</a>
+          <a href="fraudshield.html" class="nav__link">FraudShield</a>
+          <a
+            href="mailto:info@silentvisionary.com"
+            class="btn btn--primary nav__cta"
+            data-i18n="nav.demo"
+            >Request a Demo</a
+          >
+        </nav>
+
+        <button
+          class="nav-toggle"
+          id="nav-toggle"
+          aria-label="Toggle navigation"
+          aria-expanded="false"
+        >
+          <span class="nav-toggle__bar"></span>
+          <span class="nav-toggle__bar"></span>
+          <span class="nav-toggle__bar"></span>
+        </button>
+      </div>
+
+      <!-- Mobile Navigation -->
+      <nav class="mobile-nav" id="mobile-nav">
+        <a href="index.html" class="mobile-nav__link">Home</a>
+        <a href="forensics.html" class="mobile-nav__link">Forensics</a>
+        <a href="sentinel.html" class="mobile-nav__link">Sentinel</a>
+        <a href="redact.html" class="mobile-nav__link">Redact</a>
+        <a href="compliance.html" class="mobile-nav__link">Compliance</a>
+        <a href="fraudshield.html" class="mobile-nav__link">FraudShield</a>
+        <a
+          href="mailto:info@silentvisionary.com"
+          class="btn btn--primary btn--lg mobile-nav__cta"
+          data-i18n="nav.demo"
+          >Request a Demo</a
+        >
+      </nav>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero page-hero--forensics">
+      <div class="page-hero__bg">
+        <div class="page-hero__gradient"></div>
+        <div class="page-hero__bg-pattern"></div>
+      </div>
+      <div class="container">
+        <div class="page-hero__content">
+          <div class="page-hero__main">
+            <nav class="page-hero__breadcrumb">
+              <a href="index.html" data-i18n="breadcrumb.home">Home</a>
+              <span class="page-hero__breadcrumb-sep">·</span>
+              <a href="index.html#products" data-i18n="breadcrumb.products">Products</a>
+              <span class="page-hero__breadcrumb-sep">·</span>
+              <span>Silent Visionary Forensics™</span>
+            </nav>
+
+            <span class="page-hero__label"
+              ><span data-i18n="hero.product">Product</span> · Silent Visionary Forensics™</span
+            >
+            <h1 class="page-hero__title" data-i18n="forensics.hero.title">
+              Close Cases Faster. Prove Every Step.
+            </h1>
+            <p class="page-hero__subtitle" data-i18n="forensics.hero.subtitle">
+              AI-powered digital forensics that turns scattered evidence into
+              a single, court-ready narrative — in hours, not weeks.
+            </p>
+            <p class="page-hero__description" data-i18n="forensics.hero.description">
+              Silent Visionary Forensics™ automates evidence triage, timeline
+              reconstruction, and report generation across video, logs, and
+              devices — so investigators spend less time processing and more
+              time solving.
+            </p>
+          </div>
+
+          <div class="page-hero__side" style="--fg-accent: #1d4ed8; --fg-accent-soft: rgba(29, 78, 216, 0.18)">
+            <div class="flow-graph" style="--fg-accent: #1d4ed8; --fg-accent-soft: rgba(29, 78, 216, 0.18)" aria-hidden="true">
+              <div class="flow-graph__bar">
+                <span class="flow-graph__spark">&#10022;</span>
+                <span class="flow-graph__bar-label">Live Forensic Trace</span>
+              </div>
+              <div class="flow-graph__body">
+            <div class="radar-ping">
+              <span class="radar-ping__scanring"></span>
+              <span class="radar-ping__ring" style="animation-delay: 0s"></span>
+              <span class="radar-ping__ring" style="animation-delay: 1.2s"></span>
+              <span class="radar-ping__ring" style="animation-delay: 2.4s"></span>
+              <div class="radar-ping__callout">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+                Chain of Custody Verified
+              </div>
+              <div class="radar-ping__core">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 10a2 2 0 0 0-2 2c0 1.02-.1 2.51-.26 4"/><path d="M14 13.12c0 2.38 0 6.38-1 8.88"/><path d="M17.29 21.02c.12-.6.43-2.3.5-3.02"/><path d="M2 12a10 10 0 0 1 18-6"/><path d="M2 16h.01"/><path d="M21.8 16c.2-2 .131-5.354 0-6"/><path d="M5 19.5C5.5 18 6 15 6 12a6 6 0 0 1 .34-2"/><path d="M8.65 22c.21-.66.45-1.32.57-2"/><path d="M9 6.8a6 6 0 0 1 9 5.2v2"/></svg>
+              </div>
+              <div class="radar-ping__marker" style="--mx: -92px; --my: -38px; animation-delay: 0.2s">
+                <span class="radar-ping__marker-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="6"/><line x1="21" y1="21" x2="14.65" y2="14.65"/></svg></span>
+                <span>Extract</span>
+              </div>
+              <div class="radar-ping__marker" style="--mx: 96px; --my: -52px; animation-delay: 0.92s">
+                <span class="radar-ping__marker-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
+                <span>Timeline</span>
+              </div>
+              <div class="radar-ping__marker" style="--mx: -100px; --my: 72px; animation-delay: 1.64s">
+                <span class="radar-ping__marker-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span>
+                <span>Preserved</span>
+              </div>
+              <div class="radar-ping__marker" style="--mx: 62px; --my: 92px; animation-delay: 2.36s">
+                <span class="radar-ping__marker-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></span>
+                <span>Report</span>
+              </div>
+              <div class="radar-ping__marker" style="--mx: 104px; --my: 58px; animation-delay: 3.08s">
+                <span class="radar-ping__marker-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg></span>
+                <span>Logs</span>
+              </div>
+            </div>
+              </div>
+            </div>
+
+            <div class="page-hero__sidebar">
+              <h3 class="page-hero__sidebar-title">Key Outcomes</h3>
+              <p class="page-hero__sidebar-text">
+                Faster case closure. Stronger chain of custody. Court-ready
+                evidence. Zero guesswork.
+              </p>
+              <div class="page-hero__sidebar-tags">
+                <div class="outcome-tag" tabindex="0">
+                  <span class="outcome-tag__trigger">Chain-of-Custody</span>
+                  <p class="outcome-tag__desc">
+                    Every action taken on evidence is logged and tamper-evident,
+                    from intake to courtroom.
+                  </p>
+                </div>
+                <div class="outcome-tag" tabindex="0">
+                  <span class="outcome-tag__trigger">Court-Ready</span>
+                  <p class="outcome-tag__desc">
+                    Reports are generated in a format built to withstand
+                    cross-examination and legal review.
+                  </p>
+                </div>
+                <div class="outcome-tag" tabindex="0">
+                  <span class="outcome-tag__trigger">Explainable</span>
+                  <p class="outcome-tag__desc">
+                    Every AI-driven finding shows its reasoning, not just a
+                    conclusion.
+                  </p>
+                </div>
+                <div class="outcome-tag" tabindex="0">
+                  <span class="outcome-tag__trigger">Timeline Reconstruction</span>
+                  <p class="outcome-tag__desc">
+                    Automatically sequences events across devices, logs, and
+                    media into one coherent narrative.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Overview Section -->
+    <section class="section section--alt">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__label">Overview</span>
+          <h2 class="section__title">How Silent Visionary Forensics™ Helps.</h2>
+          <p class="section__subtitle">
+            Silent Visionary Forensics™ accelerates casework by automating
+            evidence triage, timeline reconstruction, and report creation across
+            multimedia and system data.
+          </p>
+        </div>
+
+        <div class="grid grid--3">
+          <div class="card card--feature reveal">
+            <div class="card__icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <rect x="3" y="3" width="18" height="18" rx="2" />
+                <path d="M3 9h18" />
+                <path d="M9 21V9" />
+              </svg>
+            </div>
+            <h3 class="card__title">Designed for Government</h3>
+            <p class="card__text">
+              Built with public safety, oversight, and regulatory environments
+              in mind.
+            </p>
+          </div>
+
+          <div class="card card--feature reveal">
+            <div class="card__icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M3 21h18" />
+                <path d="M5 21V7l8-4 8 4v14" />
+                <path d="M9 21v-6h6v6" />
+              </svg>
+            </div>
+            <h3 class="card__title">Useful for Every Organization</h3>
+            <p class="card__text">
+              Enterprises and SMBs can access the same high-grade protection and
+              intelligence.
+            </p>
+          </div>
+
+          <div class="card card--feature reveal">
+            <div class="card__icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <polygon points="12 2 2 7 12 12 22 7 12 2" />
+                <polyline points="2 17 12 22 22 17" />
+                <polyline points="2 12 12 17 22 12" />
+              </svg>
+            </div>
+            <h3 class="card__title">Part of Silent Visionary</h3>
+            <p class="card__text">
+              Connects with other modules through the Silent Visionary
+              Intelligence Cloud (SVIC).
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Capabilities Section -->
+    <section class="section">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__label">Capabilities</span>
+          <h2 class="section__title">Core Capabilities.</h2>
+        </div>
+
+        <div class="capabilities reveal">
+          <div class="capabilities__list">
+            <div class="capabilities__item">
+              <svg
+                class="capabilities__icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                <polyline points="22 4 12 14.01 9 11.01" />
+              </svg>
+              <span>Ingests device images, logs, video, and audio into a single case file.</span>
+            </div>
+            <div class="capabilities__item">
+              <svg
+                class="capabilities__icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                <polyline points="22 4 12 14.01 9 11.01" />
+              </svg>
+              <span>Automatically reconstructs timelines across multiple data sources.</span>
+            </div>
+            <div class="capabilities__item">
+              <svg
+                class="capabilities__icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                <polyline points="22 4 12 14.01 9 11.01" />
+              </svg>
+              <span>Flags tampering and preserves chain-of-custody at every step.</span>
+            </div>
+          </div>
+
+          <div class="capabilities__list">
+            <div class="capabilities__item">
+              <svg
+                class="capabilities__icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                <polyline points="22 4 12 14.01 9 11.01" />
+              </svg>
+              <span>Generates court-ready reports formatted for legal review.</span>
+            </div>
+            <div class="capabilities__item">
+              <svg
+                class="capabilities__icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                <polyline points="22 4 12 14.01 9 11.01" />
+              </svg>
+              <span>Redacts sensitive material directly within case exhibits.</span>
+            </div>
+            <div class="capabilities__item">
+              <svg
+                class="capabilities__icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                <polyline points="22 4 12 14.01 9 11.01" />
+              </svg>
+              <span>Surfaces the evidence most likely to matter first, not last.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+      <div class="cta__bg">
+        <div class="cta__bg-glow"></div>
+      </div>
+      <div class="container">
+        <div class="cta__content reveal">
+          <span class="cta__label">Next Step</span>
+          <h2 class="cta__title">See Silent Visionary Forensics™ in Action.</h2>
+          <p class="cta__text">
+            Get a live demo tailored to your agency, enterprise, or security
+            team.
+          </p>
+          <a
+            href="mailto:info@silentvisionary.com?subject=Silent%20Visionary%20Forensics™%20Demo"
+            class="btn btn--lg cta__btn"
+          >
+            Request a Forensics™ Demo
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__grid">
+          <div class="footer__brand">
+            <img src="LOGO.png" alt="Silent Visionary" class="footer__logo-img" />
+            <p class="footer__desc" data-i18n="footer.desc">The unified AI intelligence platform for government, enterprise, and public safety &mdash; forensics, threat detection, redaction, fraud prevention, and compliance in one explainable system.</p>
+          </div>
+
+          <div class="footer__col">
+            <h4 class="footer__col-title" data-i18n="footer.products">Products</h4>
+            <div class="footer__links">
+              <a href="forensics.html" class="footer__link">Forensics&trade;</a>
+              <a href="sentinel.html" class="footer__link">Sentinel&trade;</a>
+              <a href="redact.html" class="footer__link">Redact&trade;</a>
+              <a href="compliance.html" class="footer__link">Compliance&trade;</a>
+              <a href="fraudshield.html" class="footer__link">FraudShield&trade;</a>
+            </div>
+          </div>
+
+          <div class="footer__col">
+            <h4 class="footer__col-title" data-i18n="footer.company">Company</h4>
+            <div class="footer__links">
+              <a href="index.html#products" class="footer__link" data-i18n="footer.productsOverview">Products Overview</a>
+              <a href="index.html#solutions" class="footer__link" data-i18n="footer.solutions">Solutions</a>
+              <a href="index.html#technology" class="footer__link" data-i18n="footer.technology">Technology</a>
+              <a href="index.html#contact" class="footer__link" data-i18n="footer.contact">Contact</a>
+            </div>
+          </div>
+
+          <div class="footer__col">
+            <h4 class="footer__col-title" data-i18n="footer.touch">Get in Touch</h4>
+            <div class="footer__links">
+              <a href="mailto:info@silentvisionary.com" class="footer__link">info@silentvisionary.com</a>
+            </div>
+            <a href="mailto:info@silentvisionary.com?subject=Silent%20Visionary%20Demo" class="btn btn--primary footer__cta" data-i18n="nav.demo">Request a Demo</a>
+          </div>
+        </div>
+
+        <div class="footer__bottom">
+          <div class="footer__copyright" data-i18n="footer.copyright">
+            &copy; 2025 Silent Visionary. All rights reserved.
+          </div>
+          <div class="footer__badges">
+            <span>Silent Visionary Forensics&trade;</span>
+          </div>
+          <div class="footer__lang">
+            <label for="lang-select" class="footer__lang-label">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="footer__lang-icon" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              <span data-i18n="footer.language">Language</span>
+            </label>
+            <select id="lang-select" class="footer__lang-select">
+              <option value="en">English</option>
+              <option value="pt-BR">Português (Brasil)</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="i18n.js" defer></script>
+    <script src="main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Silent Visionary FraudShield™ | Silent Visionary</title>
+    <meta
+      name="description"
+      content="Detect benefits, identity, and procurement fraud using graph intelligence and anomaly detection."
+    />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Outfit:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header" id="header">
+      <div class="header__inner">
+        <a href="index.html" class="header__logo">
+          <img src="LOGO.png" alt="Silent Visionary" class="header__logo-img" />
+        </a>
+
+        <nav class="nav" id="nav">
+          <a href="index.html" class="nav__link">Home</a>
+          <a href="forensics.html" class="nav__link">Forensics</a>
+          <a href="sentinel.html" class="nav__link">Sentinel</a>
+          <a href="redact.html" class="nav__link">Redact</a>
+          <a href="compliance.html" class="nav__link">Compliance</a>
+          <a href="fraudshield.html" class="nav__link nav__link--active"
+            >FraudShield</a
+          >
+          <a
+            href="mailto:info@silentvisionary.com"
+            class="btn btn--primary nav__cta"
+            data-i18n="nav.demo"
+            >Request a Demo</a
+          >
+        </nav>
+
+        <button
+          class="nav-toggle"
+          id="nav-toggle"
+          aria-label="Toggle navigation"
+          aria-expanded="false"
+        >
+          <span class="nav-toggle__bar"></span>
+          <span class="nav-toggle__bar"></span>
+          <span class="nav-toggle__bar"></span>
+        </button>
+      </div>
+
+      <!-- Mobile Navigation -->
+      <nav class="mobile-nav" id="mobile-nav">
+        <a href="index.html" class="mobile-nav__link">Home</a>
+        <a href="forensics.html" class="mobile-nav__link">Forensics</a>
+        <a href="sentinel.html" class="mobile-nav__link">Sentinel</a>
+        <a href="redact.html" class="mobile-nav__link">Redact</a>
+        <a href="compliance.html" class="mobile-nav__link">Compliance</a>
+        <a href="fraudshield.html" class="mobile-nav__link">FraudShield</a>
+        <a
+          href="mailto:info@silentvisionary.com"
+          class="btn btn--primary btn--lg mobile-nav__cta"
+          data-i18n="nav.demo"
+          >Request a Demo</a
+        >
+      </nav>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero page-hero--fraudshield">
+      <div class="page-hero__bg">
+        <div class="page-hero__gradient"></div>
+        <div class="page-hero__bg-pattern"></div>
+      </div>
+      <div class="container">
+        <div class="page-hero__content">
+          <div class="page-hero__main">
+            <nav class="page-hero__breadcrumb">
+              <a href="index.html" data-i18n="breadcrumb.home">Home</a>
+              <span class="page-hero__breadcrumb-sep">·</span>
+              <a href="index.html#products" data-i18n="breadcrumb.products">Products</a>
+              <span class="page-hero__breadcrumb-sep">·</span>
+              <span>Silent Visionary FraudShield™</span>
+            </nav>
+
+            <span class="page-hero__label"
+              ><span data-i18n="hero.product">Product</span> · Silent Visionary FraudShield™</span
+            >
+            <h1 class="page-hero__title" data-i18n="fraudshield.hero.title">
+              Stop Fraud Rings Before They Cost You.
+            </h1>
+            <p class="page-hero__subtitle" data-i18n="fraudshield.hero.subtitle">
+              Graph-powered AI that connects the dots between identities,
+              transactions, and behavior — so hidden fraud rings can't stay
+              hidden.
+            </p>
+            <p class="page-hero__description" data-i18n="fraudshield.hero.description">
+              Silent Visionary FraudShield™ maps relationships across your
+              data in real time, catching coordinated fraud and abuse that
+              rule-based systems miss, and giving your team the evidence to
+              act before losses grow.
+            </p>
+          </div>
+
+          <div class="page-hero__side" style="--fg-accent: #f59e0b; --fg-accent-soft: rgba(245, 158, 11, 0.18)">
+            <div class="flow-graph" style="--fg-accent: #f59e0b; --fg-accent-soft: rgba(245, 158, 11, 0.18)" aria-hidden="true">
+              <div class="flow-graph__bar">
+                <span class="flow-graph__spark">&#10022;</span>
+                <span class="flow-graph__bar-label">Live Fraud Graph Analysis</span>
+              </div>
+              <div class="flow-graph__body">
+            <div class="fraud-graph-wrap">
+              <svg class="fraud-graph" viewBox="0 0 300 230" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <line class="fraud-graph__edge" x1="40" y1="45" x2="150" y2="95"/>
+                <line class="fraud-graph__edge" x1="40" y1="165" x2="150" y2="95"/>
+                <line class="fraud-graph__edge" x1="150" y1="195" x2="150" y2="95"/>
+                <line class="fraud-graph__edge" x1="270" y1="105" x2="225" y2="55"/>
+                <line class="fraud-graph__edge" x1="270" y1="105" x2="230" y2="150"/>
+                <line class="fraud-graph__edge fraud-graph__edge--ring" x1="150" y1="95" x2="225" y2="55"/>
+                <line class="fraud-graph__edge fraud-graph__edge--ring" x1="225" y1="55" x2="230" y2="150"/>
+                <line class="fraud-graph__edge fraud-graph__edge--ring" x1="230" y1="150" x2="150" y2="95"/>
+
+                <g class="fraud-graph__node-wrap" transform="translate(40, 45)">
+                  <circle class="fraud-graph__node" r="11"/>
+                  <svg class="fraud-graph__node-icon" x="-7" y="-7" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                  <text class="fraud-graph__node-label" y="25">User A</text>
+                </g>
+                <g class="fraud-graph__node-wrap" transform="translate(40, 165)">
+                  <circle class="fraud-graph__node" r="11"/>
+                  <svg class="fraud-graph__node-icon" x="-7" y="-7" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                  <text class="fraud-graph__node-label" y="25">User B</text>
+                </g>
+                <g class="fraud-graph__node-wrap" transform="translate(150, 195)">
+                  <circle class="fraud-graph__node" r="11"/>
+                  <svg class="fraud-graph__node-icon" x="-7" y="-7" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="12" x2="2" y2="12"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/><line x1="6" y1="16" x2="6.01" y2="16"/><line x1="10" y1="16" x2="10.01" y2="16"/></svg>
+                  <text class="fraud-graph__node-label" y="25">Device</text>
+                </g>
+                <g class="fraud-graph__node-wrap" transform="translate(270, 105)">
+                  <circle class="fraud-graph__node" r="11"/>
+                  <svg class="fraud-graph__node-icon" x="-7" y="-7" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+                  <text class="fraud-graph__node-label" y="25">Merchant</text>
+                </g>
+
+                <g class="fraud-graph__node-wrap fraud-graph__node-wrap--ring" transform="translate(150, 95)">
+                  <circle class="fraud-graph__node fraud-graph__node--ring" r="12"/>
+                  <svg class="fraud-graph__node-icon" x="-7" y="-7" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                  <text class="fraud-graph__node-label" y="26">Acct 1</text>
+                </g>
+                <g class="fraud-graph__node-wrap fraud-graph__node-wrap--ring" transform="translate(225, 55)">
+                  <circle class="fraud-graph__node fraud-graph__node--ring" r="12"/>
+                  <svg class="fraud-graph__node-icon" x="-7" y="-7" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                  <text class="fraud-graph__node-label" y="26">Acct 2</text>
+                </g>
+                <g class="fraud-graph__node-wrap fraud-graph__node-wrap--ring" transform="translate(230, 150)">
+                  <circle class="fraud-graph__node fraud-graph__node--ring" r="12"/>
+                  <svg class="fraud-graph__node-icon" x="-7" y="-7" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                  <text class="fraud-graph__node-label" y="26">Acct 3</text>
+                </g>
+
+                <g class="fraud-graph__packets">
+                  <circle class="fraud-graph__packet" r="4" fill="#f59e0b">
+                    <animateMotion dur="3s" begin="0s" repeatCount="indefinite" path="M40,45 L150,95"/>
+                  </circle>
+                  <circle class="fraud-graph__packet" r="4" fill="#f59e0b">
+                    <animateMotion dur="3.2s" begin="0.6s" repeatCount="indefinite" path="M40,165 L150,95"/>
+                  </circle>
+                  <circle class="fraud-graph__packet" r="4" fill="#f59e0b">
+                    <animateMotion dur="2.8s" begin="1.1s" repeatCount="indefinite" path="M150,195 L150,95"/>
+                  </circle>
+                  <circle class="fraud-graph__packet fraud-graph__packet--risk" r="4.5" fill="#ef4444">
+                    <animateMotion dur="1.6s" begin="0s" repeatCount="indefinite" path="M150,95 L225,55"/>
+                  </circle>
+                  <circle class="fraud-graph__packet fraud-graph__packet--risk" r="4.5" fill="#ef4444">
+                    <animateMotion dur="1.6s" begin="0.55s" repeatCount="indefinite" path="M225,55 L230,150"/>
+                  </circle>
+                  <circle class="fraud-graph__packet fraud-graph__packet--risk" r="4.5" fill="#ef4444">
+                    <animateMotion dur="1.6s" begin="1.1s" repeatCount="indefinite" path="M230,150 L150,95"/>
+                  </circle>
+                  <circle class="fraud-graph__packet fraud-graph__packet--risk" r="4" fill="#ef4444">
+                    <animateMotion dur="2.2s" begin="0.3s" repeatCount="indefinite" path="M225,55 L270,105"/>
+                  </circle>
+                  <circle class="fraud-graph__packet fraud-graph__packet--risk" r="4" fill="#ef4444">
+                    <animateMotion dur="2.2s" begin="1.3s" repeatCount="indefinite" path="M230,150 L270,105"/>
+                  </circle>
+                </g>
+              </svg>
+              <div class="fraud-graph__callout">
+                <span class="fraud-graph__callout-dot"></span>
+                Fraud ring detected
+              </div>
+            </div>
+              </div>
+            </div>
+
+            <div class="page-hero__sidebar">
+              <h3 class="page-hero__sidebar-title">Key Outcomes</h3>
+              <p class="page-hero__sidebar-text">
+                Earlier fraud detection. Fewer false approvals. Connected
+                identities exposed. Losses prevented before payout.
+              </p>
+              <div class="page-hero__sidebar-tags">
+                <div class="outcome-tag" tabindex="0">
+                  <span class="outcome-tag__trigger">Graph Intelligence</span>
+                  <p class="outcome-tag__desc">
+                    Maps relationships between identities and transactions to
+                    expose coordinated fraud rings.
+                  </p>
+                </div>
+                <div class="outcome-tag" tabindex="0">
+                  <span class="outcome-tag__trigger">Real-Time</span>
+                  <p class="outcome-tag__desc">
+                    Flags suspicious patterns as transactions happen, before
+                    payout occurs.
+                  </p>
+                </div>
+                <div class="outcome-tag" tabindex="0">
+                  <span class="outcome-tag__trigger">Proactive</span>
+                  <p class="outcome-tag__desc">
+                    Moves teams from investigating fraud after the fact to
+                    preventing it beforehand.
+                  </p>
+                </div>
+                <div class="outcome-tag" tabindex="0">
+                  <span class="outcome-tag__trigger">Identity Linking</span>
+                  <p class="outcome-tag__desc">
+                    Connects seemingly unrelated accounts back to the same bad
+                    actor.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Overview Section -->
+    <section class="section section--alt">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__label">Overview</span>
+          <h2 class="section__title">
+            How Silent Visionary FraudShield™ Helps.
+          </h2>
+          <p class="section__subtitle">
+            Silent Visionary FraudShield™ connects identities, transactions, and
+            behaviors to help teams move from reactive investigations to
+            proactive prevention.
+          </p>
+        </div>
+
+        <div class="grid grid--3">
+          <div class="card card--feature reveal">
+            <div class="card__icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <rect x="3" y="3" width="18" height="18" rx="2" />
+                <path d="M3 9h18" />
+                <path d="M9 21V9" />
+              </svg>
+            </div>
+            <h3 class="card__title">Designed for Government</h3>
+            <p class="card__text">
+              Built with public safety, oversight, and regulatory environments
+              in mind.
+            </p>
+          </div>
+
+          <div class="card card--feature reveal">
+            <div class="card__icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M3 21h18" />
+                <path d="M5 21V7l8-4 8 4v14" />
+                <path d="M9 21v-6h6v6" />
+              </svg>
+            </div>
+            <h3 class="card__title">Useful for Every Organization</h3>
+            <p class="card__text">
+              Enterprises and SMBs can access the same high-grade protection and
+              intelligence.
+            </p>
+          </div>
+
+          <div class="card card--feature reveal">
+            <div class="card__icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <polygon points="12 2 2 7 12 12 22 7 12 2" />
+                <polyline points="2 17 12 22 22 17" />
+                <polyline points="2 12 12 17 22 12" />
+              </svg>
+            </div>
+            <h3 class="card__title">Part of Silent Visionary</h3>
+            <p class="card__text">
+              Connects with other modules through the Silent Visionary
+              Intelligence Cloud (SVIC).
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Capabilities Section -->
+    <section class="section">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__label">Capabilities</span>
+          <h2 class="section__title">Core Capabilities.</h2>
+        </div>
+
+        <div class="capabilities reveal">
+          <div class="capabilities__list">
+            <div class="capabilities__item">
+              <svg
+                class="capabilities__icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                <polyline points="22 4 12 14.01 9 11.01" />
+              </svg>
+              <span>Maps relationships between identities, accounts, and transactions.</span>
+            </div>
+            <div class="capabilities__item">
+              <svg
+                class="capabilities__icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                <polyline points="22 4 12 14.01 9 11.01" />
+              </svg>
+              <span>Detects coordinated fraud rings, not just individual bad actors.</span>
+            </div>
+            <div class="capabilities__item">
+              <svg
+                class="capabilities__icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                <polyline points="22 4 12 14.01 9 11.01" />
+              </svg>
+              <span>Scores risk in real time, before a transaction settles.</span>
+            </div>
+          </div>
+
+          <div class="capabilities__list">
+            <div class="capabilities__item">
+              <svg
+                class="capabilities__icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                <polyline points="22 4 12 14.01 9 11.01" />
+              </svg>
+              <span>Reduces false positives that slow down legitimate users.</span>
+            </div>
+            <div class="capabilities__item">
+              <svg
+                class="capabilities__icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                <polyline points="22 4 12 14.01 9 11.01" />
+              </svg>
+              <span>Explains the connection behind every flagged case.</span>
+            </div>
+            <div class="capabilities__item">
+              <svg
+                class="capabilities__icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                <polyline points="22 4 12 14.01 9 11.01" />
+              </svg>
+              <span>Feeds confirmed fraud patterns back into the detection model.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+      <div class="cta__bg">
+        <div class="cta__bg-glow"></div>
+      </div>
+      <div class="container">
+        <div class="cta__content reveal">
+          <span class="cta__label">Next Step</span>
+          <h2 class="cta__title">
+            See Silent Visionary FraudShield™ in Action.
+          </h2>
+          <p class="cta__text">
+            Get a live demo tailored to your agency, enterprise, or security
+            team.
+          </p>
+          <a
+            href="mailto:info@silentvisionary.com?subject=Silent%20Visionary%20FraudShield™%20Demo"
+            class="btn btn--lg cta__btn"
+          >
+            Request a FraudShield™ Demo
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__grid">
+          <div class="footer__brand">
+            <img src="LOGO.png" alt="Silent Visionary" class="footer__logo-img" />
+            <p class="footer__desc" data-i18n="footer.desc">The unified AI intelligence platform for government, enterprise, and public safety &mdash; forensics, threat detection, redaction, fraud prevention, and compliance in one explainable system.</p>
+          </div>
+
+          <div class="footer__col">
+            <h4 class="footer__col-title" data-i18n="footer.products">Products</h4>
+            <div class="footer__links">
+              <a href="forensics.html" class="footer__link">Forensics&trade;</a>
+              <a href="sentinel.html" class="footer__link">Sentinel&trade;</a>
+              <a href="redact.html" class="footer__link">Redact&trade;</a>
+              <a href="compliance.html" class="footer__link">Compliance&trade;</a>
+              <a href="fraudshield.html" class="footer__link">FraudShield&trade;</a>
+            </div>
+          </div>
+
+          <div class="footer__col">
+            <h4 class="footer__col-title" data-i18n="footer.company">Company</h4>
+            <div class="footer__links">
+              <a href="index.html#products" class="footer__link" data-i18n="footer.productsOverview">Products Overview</a>
+              <a href="index.html#solutions" class="footer__link" data-i18n="footer.solutions">Solutions</a>
+              <a href="index.html#technology" class="footer__link" data-i18n="footer.technology">Technology</a>
+              <a href="index.html#contact" class="footer__link" data-i18n="footer.contact">Contact</a>
+            </div>
+          </div>
+
+          <div class="footer__col">
+            <h4 class="footer__col-title" data-i18n="footer.touch">Get in Touch</h4>
+            <div class="footer__links">
+              <a href="mailto:info@silentvisionary.com" class="footer__link">info@silentvisionary.com</a>
+            </div>
+            <a href="mailto:info@silentvisionary.com?subject=Silent%20Visionary%20Demo" class="btn btn--primary footer__cta" data-i18n="nav.demo">Request a Demo</a>
+          </div>
+        </div>
+
+        <div class="footer__bottom">
+          <div class="footer__copyright" data-i18n="footer.copyright">
+            &copy; 2025 Silent Visionary. All rights reserved.
+          </div>
+          <div class="footer__badges">
+            <span>Silent Visionary FraudShield&trade;</span>
+          </div>
+          <div class="footer__lang">
+            <label for="lang-select" class="footer__lang-label">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="footer__lang-icon" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              <span data-i18n="footer.language">Language</span>
+            </label>
+            <select id="lang-select" class="footer__lang-select">
+              <option value="en">English</option>
+              <option value="pt-BR">Português (Brasil)</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="i18n.js" defer></script>
+    <script src="main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact | Silent Visionary</title>
+    <meta name="description" content="Get in touch with Silent Visionary — demos, sales, support, and responsible disclosure." />
+    <link rel="stylesheet" href="styles.css?v=20260812g" />
+  </head>
+  <body>
+    <svg width="0" height="0" style="position: absolute">
+      <defs>
+        <symbol id="i-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><line x1="3" y1="12" x2="21" y2="12"/><path d="M12 3a15 15 0 0 1 4 9 15 15 0 0 1-4 9 15 15 0 0 1-4-9 15 15 0 0 1 4-9z"/></symbol>
+      </defs>
+    </svg>
+
+    <header class="header" id="header">
+      <div class="header__inner">
+        <a href="index.html" class="brandmark">
+          <img src="LOGO-icon.png" alt="Silent Visionary" class="brandmark-icon" />
+          SILENT VISIONARY
+        </a>
+        <nav class="navlinks">
+          <a href="platform.html" data-i18n="nav.platform">Platform</a>
+          <a href="products.html" data-i18n="nav.products">Products</a>
+          <a href="technology.html" data-i18n="nav.technology">Technology</a>
+          <a href="solutions.html" data-i18n="nav.solutions">Solutions</a>
+          <a href="industries.html" data-i18n="nav.industries">Industries</a>
+          <a href="about.html" data-i18n="nav.about">About</a>
+          <a href="contact.html" class="active" data-i18n="nav.contact">Contact</a>
+        </nav>
+        <div class="navcta">
+          <a href="login.html" class="btn btn-ghost btn-sm" data-i18n="nav.login">Login</a>
+          <a href="dashboard.html" class="btn btn-gold btn-sm" data-i18n="nav.demo">Launch Demo</a>
+        </div>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+          <span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span>
+        </button>
+      </div>
+      <nav class="mobile-nav" id="mobile-nav">
+        <a href="platform.html" class="mobile-nav__link">Platform</a>
+        <a href="products.html" class="mobile-nav__link">Products</a>
+        <a href="technology.html" class="mobile-nav__link">Technology</a>
+        <a href="solutions.html" class="mobile-nav__link">Solutions</a>
+        <a href="industries.html" class="mobile-nav__link">Industries</a>
+        <a href="about.html" class="mobile-nav__link">About</a>
+        <a href="contact.html" class="mobile-nav__link">Contact</a>
+        <a href="login.html" class="btn btn-ghost btn-lg btn-block mobile-nav__cta" style="margin-top: 20px">Login</a>
+        <a href="dashboard.html" class="btn btn-gold btn-lg btn-block mobile-nav__cta" style="margin-top: 12px">Launch Demo</a>
+      </nav>
+    </header>
+
+    <section class="page-hero">
+      <div class="wrap">
+        <nav class="breadcrumb"><a href="index.html" data-i18n="common.home">Home</a><span class="sep">/</span><span class="current" data-i18n="nav.contact">Contact</span></nav>
+        <div class="eyebrow" data-i18n="nav.contact">Contact</div>
+        <h1 data-i18n="contact.hero.title">Talk to the team, not a queue.</h1>
+        <p class="lede" data-i18n="contact.hero.lede">Tell us which pillar you're interested in and we'll route it directly — no generic "someone will follow up" holding pattern.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="rationale-grid" style="grid-template-columns: 1fr 1fr; align-items: start;">
+          <form id="contact-form" class="auth-card" style="max-width: none;">
+            <div class="field">
+              <label for="c-name" data-i18n="contact.form.name">Name</label>
+              <input type="text" id="c-name" placeholder="Jane Rivera" required />
+            </div>
+            <div class="field">
+              <label for="c-email" data-i18n="contact.form.email">Work email</label>
+              <input type="email" id="c-email" placeholder="jane@agency.gov" required />
+            </div>
+            <div class="field">
+              <label for="c-org" data-i18n="contact.form.org">Organization</label>
+              <input type="text" id="c-org" placeholder="Agency or company name" data-i18n-placeholder="contact.form.orgPlaceholder" />
+            </div>
+            <div class="field">
+              <label for="c-interest" data-i18n="contact.form.interest">Interested in</label>
+              <input type="text" id="c-interest" placeholder="e.g. Forensics™, or the full platform" data-i18n-placeholder="contact.form.interestPlaceholder" />
+            </div>
+            <div class="field">
+              <label for="c-message" data-i18n="contact.form.message">Message</label>
+              <input type="text" id="c-message" placeholder="What are you trying to solve?" style="height: 90px" data-i18n-placeholder="contact.form.messagePlaceholder" />
+            </div>
+            <button type="submit" class="btn btn-gold btn-block btn-lg" style="margin-top: 8px" data-i18n="contact.form.submit">Send Message</button>
+            <p class="auth-foot" data-i18n="contact.form.foot">Submits via your email client — no data leaves your device silently.</p>
+          </form>
+
+          <div>
+            <div class="pillar-card" style="margin-bottom: 14px;">
+              <h3 data-i18n="contact.card1.title">General &amp; Sales</h3>
+              <p data-i18n="contact.card1.desc">Product questions, demos, and pricing.</p>
+              <a href="mailto:info@silentvisionary.com" class="legacy-pill" style="margin-top: 4px; width: fit-content;">info@silentvisionary.com</a>
+            </div>
+            <div class="pillar-card" style="margin-bottom: 14px;">
+              <h3 data-i18n="contact.card2.title">Support</h3>
+              <p data-i18n="contact.card2.desc">Existing customers — technical issues and account access.</p>
+              <a href="mailto:support@silentvisionary.com" class="legacy-pill" style="margin-top: 4px; width: fit-content;">support@silentvisionary.com</a>
+            </div>
+            <div class="pillar-card">
+              <h3 data-i18n="contact.card3.title">Responsible Disclosure</h3>
+              <p data-i18n="contact.card3.desc">Found a security issue? We want to hear it directly.</p>
+              <a href="mailto:security@silentvisionary.com" class="legacy-pill" style="margin-top: 4px; width: fit-content;">security@silentvisionary.com</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="wrap">
+        <div class="footer__grid">
+          <div>
+            <img src="LOGO-full.png" alt="Silent Visionary" class="footer__logo-img" />
+            <p class="footer__desc" data-i18n="footer.desc">The unified cyber-physical forensic intelligence platform.</p>
+          </div>
+          <div>
+            <h4 class="footer__col-title" data-i18n="footer.products">Products</h4>
+            <div class="footer__links">
+              <a href="forensics.html" class="footer__link">Forensics™</a>
+              <a href="sentinel.html" class="footer__link">Sentinel™</a>
+              <a href="redact.html" class="footer__link">Redact™</a>
+              <a href="compliance.html" class="footer__link">Compliance™</a>
+              <a href="fraudshield.html" class="footer__link">FraudShield™</a>
+            </div>
+          </div>
+          <div>
+            <h4 class="footer__col-title" data-i18n="footer.company">Company</h4>
+            <div class="footer__links">
+              <a href="platform.html" class="footer__link" data-i18n="footer.platform">Platform</a>
+              <a href="technology.html" class="footer__link" data-i18n="footer.technology">Technology</a>
+              <a href="solutions.html" class="footer__link" data-i18n="footer.solutions">Solutions</a>
+              <a href="about.html" class="footer__link" data-i18n="footer.about">About</a>
+            </div>
+          </div>
+          <div>
+            <h4 class="footer__col-title" data-i18n="footer.touch">Get in Touch</h4>
+            <div class="footer__links">
+              <a href="mailto:info@silentvisionary.com" class="footer__link">info@silentvisionary.com</a>
+            </div>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <div class="footer__copyright" data-i18n="footer.copyright">&copy; 2025 Silent Visionary. All rights reserved.</div>
+          <div class="footer__badges"><span>Silent Visionary Platform</span></div>
+          <div class="footer__lang">
+            <label for="lang-select" class="footer__lang-label">
+              <svg class="footer__lang-icon"><use href="#i-globe"/></svg>
+              <span data-i18n="footer.language">Language</span>
+            </label>
+            <select id="lang-select" class="footer__lang-select">
+              <option value="en">English</option>
+              <option value="pt-BR">Português (Brasil)</option>
+              <option value="es">Español</option>
+              <option value="fr">Français</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="i18n.js?v=20260812g" defer></script>
+    <script src="main.js?v=20260812g"></script>
+    <script>
+      document.getElementById("contact-form").addEventListener("submit", function (e) {
+        e.preventDefault();
+        var name = document.getElementById("c-name").value;
+        var org = document.getElementById("c-org").value;
+        var interest = document.getElementById("c-interest").value;
+        var message = document.getElementById("c-message").value;
+        var subject = encodeURIComponent("Silent Visionary Inquiry — " + (interest || "General"));
+        var body = encodeURIComponent(
+          "Name: " + name + "\nOrganization: " + org + "\nInterested in: " + interest + "\n\n" + message
+        );
+        window.location.href = "mailto:info@silentvisionary.com?subject=" + subject + "&body=" + body;
+      });
+    </script>
+  </body>
+</html>

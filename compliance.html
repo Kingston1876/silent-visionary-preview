@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Silent Visionary Compliance™ | Silent Visionary</title>
+    <meta
+      name="description"
+      content="Automate NIST, CJIS, SOC2, ISO, HIPAA and more. Continuous control monitoring and evidence collection."
+    />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Outfit:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header" id="header">
+      <div class="header__inner">
+        <a href="index.html" class="header__logo">
+          <img src="LOGO.png" alt="Silent Visionary" class="header__logo-img" />
+        </a>
+
+        <nav class="nav" id="nav">
+          <a href="index.html" class="nav__link">Home</a>
+          <a href="forensics.html" class="nav__link">Forensics</a>
+          <a href="sentinel.html" class="nav__link">Sentinel</a>
+          <a href="redact.html" class="nav__link">Redact</a>
+          <a href="compliance.html" class="nav__link nav__link--active"
+            >Compliance</a
+          >
+          <a href="fraudshield.html" class="nav__link">FraudShield</a>
+          <a
+            href="mailto:info@silentvisionary.com"
+            class="btn btn--primary nav__cta"
+            data-i18n="nav.demo"
+            >Request a Demo</a
+          >
+        </nav>
+
+        <button
+          class="nav-toggle"
+          id="nav-toggle"
+          aria-label="Toggle navigation"
+          aria-expanded="false"
+        >
+          <span class="nav-toggle__bar"></span>
+          <span class="nav-toggle__bar"></span>
+          <span class="nav-toggle__bar"></span>
+        </button>
+      </div>
+
+      <!-- Mobile Navigation -->
+      <nav class="mobile-nav" id="mobile-nav">
+        <a href="index.html" class="mobile-nav__link">Home</a>
+        <a href="forensics.html" class="mobile-nav__link">Forensics</a>
+        <a href="sentinel.html" class="mobile-nav__link">Sentinel</a>
+        <a href="redact.html" class="mobile-nav__link">Redact</a>
+        <a href="compliance.html" class="mobile-nav__link">Compliance</a>
+        <a href="fraudshield.html" class="mobile-nav__link">FraudShield</a>
+        <a
+          href="mailto:info@silentvisionary.com"
+          class="btn btn--primary btn--lg mobile-nav__cta"
+          data-i18n="nav.demo"
+          >Request a Demo</a
+        >
+      </nav>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero page-hero--compliance">
+      <div class="page-hero__bg">
+        <div class="page-hero__gradient"></div>
+        <div class="page-hero__bg-pattern"></div>
+      </div>
+      <div class="container">
+        <div class="page-hero__content">
+          <div class="page-hero__main">
+            <nav class="page-hero__breadcrumb">
+              <a href="index.html" data-i18n="breadcrumb.home">Home</a>
+              <span class="page-hero__breadcrumb-sep">·</span>
+              <a href="index.html#products" data-i18n="breadcrumb.products">Products</a>
+              <span class="page-hero__breadcrumb-sep">·</span>
+              <span>Silent Visionary Compliance™</span>
+            </nav>
+
+            <span class="page-hero__label"
+              ><span data-i18n="hero.product">Product</span> · Silent Visionary Compliance™</span
+            >
+            <h1 class="page-hero__title" data-i18n="compliance.hero.title">
+              Audit-Ready, Every Single Day.
+            </h1>
+            <p class="page-hero__subtitle" data-i18n="compliance.hero.subtitle">
+              Stop scrambling before every audit — turn your compliance
+              program into something that's always current, always provable.
+            </p>
+            <p class="page-hero__description" data-i18n="compliance.hero.description">
+              Silent Visionary Compliance™ centralizes frameworks, controls,
+              and evidence in one place, using AI to continuously monitor
+              your posture and cut audit prep from weeks to days.
+            </p>
+          </div>
+
+          <div class="page-hero__side" style="--fg-accent: #475569; --fg-accent-soft: rgba(71, 85, 105, 0.18)">
+            <div class="flow-graph" style="--fg-accent: #475569; --fg-accent-soft: rgba(71, 85, 105, 0.18)" aria-hidden="true">
+              <div class="flow-graph__bar">
+                <span class="flow-graph__spark">&#10022;</span>
+                <span class="flow-graph__bar-label">Live Compliance Monitoring</span>
+              </div>
+              <div class="flow-graph__body">
+            <div class="compliance-ring">
+              <div class="compliance-ring__stage">
+                <div class="compliance-ring__blob"></div>
+                <svg class="compliance-ring__svg" viewBox="0 0 120 120">
+                  <defs>
+                    <linearGradient id="compliance-progress-grad" x1="0" y1="0" x2="120" y2="120" gradientUnits="userSpaceOnUse">
+                      <stop offset="0%" stop-color="#2563eb"/>
+                      <stop offset="35%" stop-color="#6366f1"/>
+                      <stop offset="68%" stop-color="#14b8a6"/>
+                      <stop offset="100%" stop-color="#f59e0b"/>
+                    </linearGradient>
+                  </defs>
+                  <circle class="compliance-ring__track" cx="60" cy="60" r="52"/>
+                  <circle class="compliance-ring__progress" cx="60" cy="60" r="52"/>
+                </svg>
+                <div class="compliance-ring__label">Continuously<br />Monitored</div>
+              </div>
+              <div class="compliance-ring__checklist">
+                <div class="compliance-ring__check">
+                  <span class="compliance-ring__check-icon" style="--delay: 0.38s; --check-accent: #2563eb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></span>
+                  <span class="compliance-ring__check-text">
+                    <span class="compliance-ring__check-name" style="--delay: 0.38s">NIST</span>
+                    <span class="compliance-ring__check-sub" style="--delay: 0.38s">800-53 Controls</span>
+                  </span>
+                </div>
+                <div class="compliance-ring__check">
+                  <span class="compliance-ring__check-icon" style="--delay: 1.88s; --check-accent: #6366f1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="7.5" cy="15.5" r="5.5"/><path d="m21 2-9.6 9.6"/><path d="m15.5 7.5 3 3L22 7l-3-3"/></svg></span>
+                  <span class="compliance-ring__check-text">
+                    <span class="compliance-ring__check-name" style="--delay: 1.88s">CJIS</span>
+                    <span class="compliance-ring__check-sub" style="--delay: 1.88s">Security Policy</span>
+                  </span>
+                </div>
+                <div class="compliance-ring__check">
+                  <span class="compliance-ring__check-icon" style="--delay: 3.38s; --check-accent: #14b8a6"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></span>
+                  <span class="compliance-ring__check-text">
+                    <span class="compliance-ring__check-name" style="--delay: 3.38s">SOC 2</span>
+                    <span class="compliance-ring__check-sub" style="--delay: 3.38s">Type II</span>
+                  </span>
+                </div>
+                <div class="compliance-ring__check">
+                  <span class="compliance-ring__check-icon" style="--delay: 4.88s; --check-accent: #f59e0b"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span>
+                  <span class="compliance-ring__check-text">
+                    <span class="compliance-ring__check-name" style="--delay: 4.88s">ISO</span>
+                    <span class="compliance-ring__check-sub" style="--delay: 4.88s">27001</span>
+                  </span>
+                </div>
+              </div>
+            </div>
+              </div>
+            </div>
+
+            <div class="page-hero__sidebar" style="--outcome-accent: #7c3aed; --outcome-accent-soft: rgba(124, 58, 237, 0.18)">
+              <h3 class="page-hero__sidebar-title">Key Outcomes</h3>
+              <p class="page-hero__sidebar-text">
+                Continuous audit readiness. Fewer control gaps. Less manual
+                evidence-gathering. Always inspection-ready.
+              </p>
+              <div class="page-hero__sidebar-tags">
+                <div class="outcome-tag" tabindex="0">
+                  <span class="outcome-tag__trigger">Continuous Monitoring</span>
+                  <p class="outcome-tag__desc">
+                    Controls are checked continuously, not just once a year
+                    before an audit.
+                  </p>
+                </div>
+                <div class="outcome-tag" tabindex="0">
+                  <span class="outcome-tag__trigger">Multi-Framework</span>
+                  <p class="outcome-tag__desc">
+                    Maps a single set of controls across NIST, CJIS, SOC 2,
+                    ISO, and HIPAA at once.
+                  </p>
+                </div>
+                <div class="outcome-tag" tabindex="0">
+                  <span class="outcome-tag__trigger">Audit-Ready</span>
+                  <p class="outcome-tag__desc">
+                    Evidence stays organized and current, so audit prep stops
+                    being a fire drill.
+                  </p>
+                </div>
+                <div class="outcome-tag" tabindex="0">
+                  <span class="outcome-tag__trigger">Evidence Collection</span>
+                  <p class="outcome-tag__desc">
+                    Automatically gathers and timestamps the artifacts
+                    auditors ask for.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Overview Section -->
+    <section class="section section--alt">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__label">Overview</span>
+          <h2 class="section__title">
+            How Silent Visionary Compliance™ Helps.
+          </h2>
+          <p class="section__subtitle">
+            Silent Visionary Compliance™ centralizes frameworks, controls, and
+            evidence, using AI to reduce audit prep time and clarify your true
+            risk posture.
+          </p>
+        </div>
+
+        <div class="grid grid--3">
+          <div class="card card--feature reveal">
+            <div class="card__icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <rect x="3" y="3" width="18" height="18" rx="2" />
+                <path d="M3 9h18" />
+                <path d="M9 21V9" />
+              </svg>
+            </div>
+            <h3 class="card__title">Designed for Government</h3>
+            <p class="card__text">
+              Built with public safety, oversight, and regulatory environments
+              in mind.
+            </p>
+          </div>
+
+          <div class="card card--feature reveal">
+            <div class="card__icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M3 21h18" />
+                <path d="M5 21V7l8-4 8 4v14" />
+                <path d="M9 21v-6h6v6" />
+              </svg>
+            </div>
+            <h3 class="card__title">Useful for Every Organization</h3>
+            <p class="card__text">
+              Enterprises and SMBs can access the same high-grade protection and
+              intelligence.
+            </p>
+          </div>
+
+          <div class="card card--feature reveal">
+            <div class="card__icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <polygon points="12 2 2 7 12 12 22 7 12 2" />
+                <polyline points="2 17 12 22 22 17" />
+                <polyline points="2 12 12 17 22 12" />
+              </svg>
+            </div>
+            <h3 class="card__title">Part of Silent Visionary</h3>
+            <p class="card__text">
+              Connects with other modules through the Silent Visionary
+              Intelligence Cloud (SVIC).
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Capabilities Section -->
+    <section class="section">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__label">Capabilities</span>
+          <h2 class="section__title">Core Capabilities.</h2>
+        </div>
+
+        <div class="capabilities reveal">
+          <div class="capabilities__list">
+            <div class="capabilities__item">
+              <svg
+                class="capabilities__icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                <polyline points="22 4 12 14.01 9 11.01" />
+              </svg>
+              <span>Maps a single control set across NIST, CJIS, SOC 2, ISO, and HIPAA.</span>
+            </div>
+            <div class="capabilities__item">
+              <svg
+                class="capabilities__icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                <polyline points="22 4 12 14.01 9 11.01" />
+              </svg>
+              <span>Continuously monitors controls instead of point-in-time snapshots.</span>
+            </div>
+            <div class="capabilities__item">
+              <svg
+                class="capabilities__icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                <polyline points="22 4 12 14.01 9 11.01" />
+              </svg>
+              <span>Automatically collects and timestamps audit evidence.</span>
+            </div>
+          </div>
+
+          <div class="capabilities__list">
+            <div class="capabilities__item">
+              <svg
+                class="capabilities__icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                <polyline points="22 4 12 14.01 9 11.01" />
+              </svg>
+              <span>Flags control gaps before an auditor does.</span>
+            </div>
+            <div class="capabilities__item">
+              <svg
+                class="capabilities__icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                <polyline points="22 4 12 14.01 9 11.01" />
+              </svg>
+              <span>Tracks remediation status across every open finding.</span>
+            </div>
+            <div class="capabilities__item">
+              <svg
+                class="capabilities__icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                <polyline points="22 4 12 14.01 9 11.01" />
+              </svg>
+              <span>Generates audit-ready reports on demand, not just annually.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+      <div class="cta__bg">
+        <div class="cta__bg-glow"></div>
+      </div>
+      <div class="container">
+        <div class="cta__content reveal">
+          <span class="cta__label">Next Step</span>
+          <h2 class="cta__title">
+            See Silent Visionary Compliance™ in Action.
+          </h2>
+          <p class="cta__text">
+            Get a live demo tailored to your agency, enterprise, or security
+            team.
+          </p>
+          <a
+            href="mailto:info@silentvisionary.com?subject=Silent%20Visionary%20Compliance™%20Demo"
+            class="btn btn--lg cta__btn"
+          >
+            Request a Compliance™ Demo
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__grid">
+          <div class="footer__brand">
+            <img src="LOGO.png" alt="Silent Visionary" class="footer__logo-img" />
+            <p class="footer__desc" data-i18n="footer.desc">The unified AI intelligence platform for government, enterprise, and public safety &mdash; forensics, threat detection, redaction, fraud prevention, and compliance in one explainable system.</p>
+          </div>
+
+          <div class="footer__col">
+            <h4 class="footer__col-title" data-i18n="footer.products">Products</h4>
+            <div class="footer__links">
+              <a href="forensics.html" class="footer__link">Forensics&trade;</a>
+              <a href="sentinel.html" class="footer__link">Sentinel&trade;</a>
+              <a href="redact.html" class="footer__link">Redact&trade;</a>
+              <a href="compliance.html" class="footer__link">Compliance&trade;</a>
+              <a href="fraudshield.html" class="footer__link">FraudShield&trade;</a>
+            </div>
+          </div>
+
+          <div class="footer__col">
+            <h4 class="footer__col-title" data-i18n="footer.company">Company</h4>
+            <div class="footer__links">
+              <a href="index.html#products" class="footer__link" data-i18n="footer.productsOverview">Products Overview</a>
+              <a href="index.html#solutions" class="footer__link" data-i18n="footer.solutions">Solutions</a>
+              <a href="index.html#technology" class="footer__link" data-i18n="footer.technology">Technology</a>
+              <a href="index.html#contact" class="footer__link" data-i18n="footer.contact">Contact</a>
+            </div>
+          </div>
+
+          <div class="footer__col">
+            <h4 class="footer__col-title" data-i18n="footer.touch">Get in Touch</h4>
+            <div class="footer__links">
+              <a href="mailto:info@silentvisionary.com" class="footer__link">info@silentvisionary.com</a>
+            </div>
+            <a href="mailto:info@silentvisionary.com?subject=Silent%20Visionary%20Demo" class="btn btn--primary footer__cta" data-i18n="nav.demo">Request a Demo</a>
+          </div>
+        </div>
+
+        <div class="footer__bottom">
+          <div class="footer__copyright" data-i18n="footer.copyright">
+            &copy; 2025 Silent Visionary. All rights reserved.
+          </div>
+          <div class="footer__badges">
+            <span>Silent Visionary Compliance&trade;</span>
+          </div>
+          <div class="footer__lang">
+            <label for="lang-select" class="footer__lang-label">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="footer__lang-icon" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              <span data-i18n="footer.language">Language</span>
+            </label>
+            <select id="lang-select" class="footer__lang-select">
+              <option value="en">English</option>
+              <option value="pt-BR">Português (Brasil)</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="i18n.js" defer></script>
+    <script src="main.js"></script>
+  </body>
+</html>

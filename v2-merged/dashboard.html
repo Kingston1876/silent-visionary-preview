@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard | Silent Visionary</title>
+    <meta name="description" content="Silent Visionary investigator dashboard — investigations, digital twin, timeline, threat intelligence, and the AI forensic assistant, in one workspace." />
+    <link rel="stylesheet" href="styles.css?v=20260812g" />
+  </head>
+  <body class="app-page">
+    <svg width="0" height="0" style="position: absolute">
+      <defs>
+        <symbol id="i-grid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="8" height="8" rx="1.5"/><rect x="13" y="3" width="8" height="8" rx="1.5"/><rect x="3" y="13" width="8" height="8" rx="1.5"/><rect x="13" y="13" width="8" height="8" rx="1.5"/></symbol>
+        <symbol id="i-folder" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 6a1 1 0 0 1 1-1h5l2 2h9a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/></symbol>
+        <symbol id="i-cube" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9z"/><path d="M4 7.5 12 12l8-4.5"/><path d="M12 12v9"/></symbol>
+        <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l4 2"/></symbol>
+        <symbol id="i-flow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="5" cy="6" r="2.2"/><circle cx="19" cy="18" r="2.2"/><path d="M7 6h6a4 4 0 0 1 4 4v2a4 4 0 0 0 4 4"/></symbol>
+        <symbol id="i-doc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 3h9l4 4v14H6z"/><path d="M15 3v4h4M9 12h7M9 16h7"/></symbol>
+        <symbol id="i-gear" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="3.2"/><path d="M12 3v2.4M12 18.6V21M21 12h-2.4M5.4 12H3M18 6l-1.7 1.7M7.7 16.3 6 18M18 18l-1.7-1.7M7.7 7.7 6 6"/></symbol>
+        <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/></symbol>
+        <symbol id="i-eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 12s3.8-7 10-7 10 7 10 7-3.8 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="2.6"/></symbol>
+        <symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M20 20l-4.4-4.4"/></symbol>
+        <symbol id="i-back" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M19 12H5M11 6l-6 6 6 6"/></symbol>
+        <symbol id="i-nodes" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="5" cy="6" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="12" cy="18" r="2"/><path d="M6.6 7.2 11 16.5M17.4 7.2 13 16.5M7 6h10"/></symbol>
+        <symbol id="i-pause" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></symbol>
+        <symbol id="i-play" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M7.5 5.2v13.6a.8.8 0 0 0 1.22.68l10.8-6.8a.8.8 0 0 0 0-1.36l-10.8-6.8a.8.8 0 0 0-1.22.68z"/></symbol>
+        <symbol id="i-replay" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4.5 12a7.5 7.5 0 1 1 2.4 5.5"/><path d="M4.5 8v4.2h4.2"/></symbol>
+        <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M0,0 L10,5 L0,10 z" fill="currentColor"/>
+        </marker>
+      </defs>
+    </svg>
+
+    <div class="app-frame app-frame--full">
+      <div class="app-body app-body--full" style="grid-template-columns: 232px 1fr;">
+        <aside class="app-sidebar">
+          <a href="index.html" class="app-brand">
+            <img src="LOGO-icon.png" alt="Silent Visionary" class="app-brand-icon" />
+            SILENT VISIONARY
+          </a>
+          <ul class="app-nav" id="app-nav">
+            <li><a href="#panel-overview" class="active" data-view="overview"><svg><use href="#i-grid"/></svg>Overview</a></li>
+            <li><a href="#panel-investigations" data-view="investigations"><svg><use href="#i-folder"/></svg>Investigations</a></li>
+            <li><a href="#panel-twin" data-view="twin"><svg><use href="#i-cube"/></svg>Digital Twin</a></li>
+            <li><a href="#panel-timeline" data-view="timeline"><svg><use href="#i-clock"/></svg>Timeline</a></li>
+            <li><a href="#panel-evidence-graph" data-view="evidence-graph"><svg><use href="#i-nodes"/></svg>Evidence Graph</a></li>
+            <li><a href="#panel-forensics" data-view="forensics"><svg><use href="#i-doc"/></svg>Digital Forensics</a></li>
+            <li><a href="#panel-attack" data-view="attack"><svg><use href="#i-flow"/></svg>Attack Reconstruction</a></li>
+            <li class="group-label">Forensic Intelligence</li>
+            <li><a href="forensics.html" class="sub">Forensics™</a></li>
+            <li><a href="redact.html" class="sub">Redact™</a></li>
+            <li class="group-label">Cyber Defense</li>
+            <li><a href="sentinel.html" class="sub">Sentinel™</a></li>
+            <li class="group-label">Threat Intelligence</li>
+            <li><a href="fraudshield.html" class="sub">FraudShield™</a></li>
+            <li class="group-label">Cyber Automation</li>
+            <li><a href="compliance.html" class="sub">Compliance™</a></li>
+            <li><a href="#panel-automation" data-view="automation"><svg><use href="#i-flow"/></svg>Automation</a></li>
+            <li><a href="#panel-reports" data-view="reports"><svg><use href="#i-doc"/></svg>Reports</a></li>
+            <li><a href="#panel-settings" data-view="settings"><svg><use href="#i-gear"/></svg>Settings</a></li>
+          </ul>
+          <a href="index.html" class="app-exit"><svg><use href="#i-back"/></svg>Exit to marketing site</a>
+        </aside>
+
+        <div class="app-main">
+          <div class="app-topbar">
+            <div class="case-pill" id="case-pill"><span class="sev-crit" id="case-pill-dot"></span> Active case <b id="case-pill-id">SV-001</b> — <span id="case-pill-title">Unauthorized Network Intrusion</span></div>
+            <div class="topbar-right">
+              <div class="search-wrap">
+                <div class="search-fake">
+                  <svg><use href="#i-search"/></svg>
+                  <input id="search-input" type="text" placeholder="Search entities, evidence, IOCs…" autocomplete="off" />
+                </div>
+                <div id="search-results" class="search-results"></div>
+              </div>
+              <span class="role-badge">Investigator</span>
+              <span class="avatar">AR</span>
+            </div>
+          </div>
+
+          <div class="dash-grid" id="panel-overview">
+            <div class="kpi-row">
+              <div class="kpi-tile">
+                <div class="kpi-tile-top"><span class="kpi-label">Active Cases</span><span class="kpi-delta up">+1 today</span></div>
+                <div class="kpi-value-row">
+                  <span class="kpi-value" id="kpi-active-cases">3</span>
+                  <svg class="kpi-spark" viewBox="0 0 70 26"><polyline points="0,20 12,18 24,14 36,15 48,9 60,10 70,4" fill="none" stroke="var(--ok)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+              </div>
+              <div class="kpi-tile">
+                <div class="kpi-tile-top"><span class="kpi-label">Total Evidence</span><span class="kpi-delta up">+6 today</span></div>
+                <div class="kpi-value-row">
+                  <span class="kpi-value" id="kpi-evidence">64</span>
+                  <svg class="kpi-spark" viewBox="0 0 70 26"><polyline points="0,18 12,16 24,17 36,10 48,11 60,6 70,3" fill="none" stroke="var(--low)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+              </div>
+              <div class="kpi-tile">
+                <div class="kpi-tile-top"><span class="kpi-label">Open Alerts</span><span class="kpi-delta warn">2 critical</span></div>
+                <div class="kpi-value-row">
+                  <span class="kpi-value" id="kpi-alerts">7</span>
+                  <svg class="kpi-spark" viewBox="0 0 70 26"><polyline points="0,8 12,10 24,7 36,14 48,12 60,18 70,16" fill="none" stroke="var(--high)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+              </div>
+              <div class="kpi-tile">
+                <div class="kpi-tile-top"><span class="kpi-label">Avg. Confidence</span><span class="kpi-delta flat">steady</span></div>
+                <div class="kpi-value-row">
+                  <span class="kpi-value" id="kpi-confidence">78%</span>
+                  <svg class="kpi-spark" viewBox="0 0 70 26"><polyline points="0,12 12,11 24,13 36,12 48,10 60,12 70,11" fill="none" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+              </div>
+            </div>
+
+            <div class="recon-cta">
+              <div class="recon-cta-text">
+                <span class="recon-cta-eyebrow">Case SV-001 &middot; Unauthorized Network Intrusion</span>
+                <h3>Watch the incident reconstructed, end to end.</h3>
+                <p>Walk through physical access, endpoint compromise, network activity, and evidence correlation as one continuous chain — the same reconstruction an investigator would build by hand.</p>
+              </div>
+              <button type="button" class="btn btn-gold" id="recon-launch">Start Reconstruction</button>
+            </div>
+
+            <div class="panel" id="panel-investigations">
+              <div class="panel-head"><span class="panel-title"><svg><use href="#i-folder"/></svg>Active Investigations</span><span class="panel-action">Click a case to select it</span></div>
+              <div class="panel-body">
+                <div class="invest-row" id="invest-row">
+                  <div class="case-card active" data-case="SV-001" tabindex="0" role="button" style="--card-accent: var(--crit)">
+                    <div class="case-card-top"><span class="case-id">SV-001</span><span class="sev sev-critical">Critical</span></div>
+                    <p class="case-name">Unauthorized Network Intrusion</p>
+                    <div class="case-meta"><span>Meridian DC — Ops Wing</span><button type="button" class="status-chip status-active" data-status="active" title="Click to advance status">Active</button><span><b>34</b> evidence</span><span><b>15</b> systems</span></div>
+                    <div class="case-evidence-bar" title="Physical 35% · Network 30% · Endpoint 35%">
+                      <span style="width: 35%; background: var(--low)"></span>
+                      <span style="width: 30%; background: var(--ev-correlated)"></span>
+                      <span style="width: 35%; background: var(--gold)"></span>
+                    </div>
+                    <div class="case-card-foot"><span class="lead">3 investigators</span><span>Last activity 21:14:47</span></div>
+                  </div>
+                  <div class="case-card" data-case="SV-014" tabindex="0" role="button" style="--card-accent: var(--high)">
+                    <div class="case-card-top"><span class="case-id">SV-014</span><span class="sev sev-high">High</span></div>
+                    <p class="case-name">Insider Data Exfiltration</p>
+                    <div class="case-meta"><span>Remote — VPN Segment C</span><button type="button" class="status-chip status-analysis" data-status="analysis" title="Click to advance status">Analysis</button><span><b>21</b> evidence</span><span><b>6</b> systems</span></div>
+                    <div class="case-evidence-bar" title="Network 50% · File 35% · Endpoint 15%">
+                      <span style="width: 50%; background: var(--ev-correlated)"></span>
+                      <span style="width: 35%; background: var(--text-dim)"></span>
+                      <span style="width: 15%; background: var(--gold)"></span>
+                    </div>
+                    <div class="case-card-foot"><span class="lead">2 investigators</span><span>Last activity 09:22:10</span></div>
+                  </div>
+                  <div class="case-card" data-case="SV-009" tabindex="0" role="button" style="--card-accent: var(--med)">
+                    <div class="case-card-top"><span class="case-id">SV-009</span><span class="sev sev-medium">Medium</span></div>
+                    <p class="case-name">Physical Access Anomaly</p>
+                    <div class="case-meta"><span>HQ — West Entrance</span><button type="button" class="status-chip status-review" data-status="review" title="Click to advance status">Review</button><span><b>9</b> evidence</span><span><b>2</b> systems</span></div>
+                    <div class="case-evidence-bar" title="Physical 80% · Endpoint 20%">
+                      <span style="width: 80%; background: var(--low)"></span>
+                      <span style="width: 20%; background: var(--gold)"></span>
+                    </div>
+                    <div class="case-card-foot"><span class="lead">1 investigator</span><span>Last activity 09:52:14</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="split-2">
+              <div class="panel">
+                <div class="panel-head">
+                  <span class="panel-title"><span class="live-dot" id="live-dot"></span>Live Incident Stream</span>
+                  <span class="panel-action">
+                    <span class="live-controls">
+                      <button type="button" class="live-ctrl-btn" id="live-pause-btn" title="Pause live feed"><svg><use href="#i-pause"/></svg></button>
+                      <button type="button" class="live-ctrl-btn" id="live-replay-btn" title="Replay incident"><svg><use href="#i-replay"/></svg></button>
+                    </span>
+                    <span id="stream-case-label">SV-001</span>
+                  </span>
+                </div>
+                <div class="panel-body">
+                  <ul class="stream-list" id="stream-list">
+                    <li><span class="stream-time">21:14:02</span><span class="stream-tag tag-phys">Phys</span><span class="stream-desc">Movement detected — <b>Ops Wing, Cam 04</b></span></li>
+                    <li><span class="stream-time">21:14:07</span><span class="stream-tag tag-phys">Phys</span><span class="stream-desc">Badge access — Door D-12, <b>User-019</b></span></li>
+                    <li><span class="stream-time">21:14:12</span><span class="stream-tag tag-endpoint">Auth</span><span class="stream-desc">Login success — <b>WORKSTATION-042</b></span></li>
+                    <li><span class="stream-time">21:14:19</span><span class="stream-tag tag-endpoint">Proc</span><span class="stream-desc">Suspicious process — <b>powershell.exe</b> (encoded)</span></li>
+                    <li><span class="stream-time">21:14:23</span><span class="stream-tag tag-net">Net</span><span class="stream-desc">Outbound connection — <b>185.212.44.6:443</b></span></li>
+                    <li><span class="stream-time">21:14:31</span><span class="stream-tag tag-file">File</span><span class="stream-desc">File accessed — <b>finance_q3_export.xlsx</b></span></li>
+                    <li><span class="stream-time">21:14:47</span><span class="stream-tag tag-phys">Dev</span><span class="stream-desc">USB connected — <b>VID_0951&amp;PID_1666</b></span></li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="panel" id="panel-twin">
+                <div class="panel-head"><span class="panel-title" id="twin-panel-title"><svg><use href="#i-cube"/></svg>Digital Twin — Ops Wing</span><span class="panel-action">Selected: <span id="twin-selected-label">WORKSTATION-042</span></span></div>
+                <div class="panel-body">
+                  <div class="twin-wrap">
+                    <svg viewBox="0 0 380 230" role="img" aria-label="Floor plan of the Ops Wing showing clickable rooms and device nodes, with Workstation 42 highlighted as the selected object">
+                      <g class="twin-room" data-room="server" tabindex="0">
+                        <rect x="10" y="10" width="150" height="105" rx="3" fill="none" stroke="var(--line)" color="var(--line)" stroke-width="1.2"/>
+                        <text x="18" y="26" font-family="var(--font-mono)" font-size="9" fill="var(--text-faint)" letter-spacing="1">SERVER ROOM</text>
+                      </g>
+                      <g class="twin-room" data-room="corridor" tabindex="0">
+                        <rect x="170" y="10" width="200" height="70" rx="3" fill="none" stroke="var(--line)" color="var(--line)" stroke-width="1.2"/>
+                        <text x="178" y="26" font-family="var(--font-mono)" font-size="9" fill="var(--text-faint)" letter-spacing="1">ACCESS CORRIDOR</text>
+                      </g>
+                      <g class="twin-room" data-room="ops" tabindex="0">
+                        <rect x="10" y="125" width="360" height="95" rx="3" fill="none" stroke="var(--line)" color="var(--line)" stroke-width="1.2"/>
+                        <text x="18" y="141" font-family="var(--font-mono)" font-size="9" fill="var(--text-faint)" letter-spacing="1">OPERATIONS ROOM</text>
+                      </g>
+                      <circle class="twin-node" data-device="d1" cx="55" cy="65" r="3.4" fill="var(--low)"/>
+                      <circle class="twin-node" data-device="d2" cx="120" cy="80" r="3.4" fill="var(--low)"/>
+                      <circle class="twin-node" data-device="d3" cx="280" cy="45" r="3.4" fill="var(--ev-correlated)"/>
+                      <circle class="twin-node" data-device="d4" cx="330" cy="55" r="3.4" fill="var(--ev-correlated)"/>
+                      <circle class="twin-node" data-device="d5" cx="60" cy="175" r="3.4" fill="var(--low)"/>
+                      <circle class="twin-node" data-device="d6" cx="120" cy="190" r="3.4" fill="var(--low)"/>
+                      <circle class="twin-node" data-device="d7" cx="270" cy="165" r="3.4" fill="var(--low)"/>
+                      <circle id="twin-pulse-ring" class="pulse" cx="190" cy="175" r="7" fill="none" stroke="var(--gold)" stroke-width="1.4" color="var(--gold)"/>
+                      <circle id="twin-pulse-dot" class="twin-node" data-device="d0" cx="190" cy="175" r="5" fill="var(--gold)"/>
+                      <text id="twin-pulse-label" x="190" y="200" text-anchor="middle" font-family="var(--font-mono)" font-size="9" fill="var(--gold-bright)">WORKSTATION-042</text>
+                    </svg>
+                    <div class="twin-detail">
+                      <div class="twin-detail-id" id="twin-id">WORKSTATION-042</div>
+                      <span class="sev sev-critical" id="twin-risk" style="display: inline-flex; margin-bottom: 12px;">Risk: High</span>
+                      <div class="twin-rows">
+                        <div class="twin-row"><span class="k">Location</span><span class="v" id="twin-location">Operations Room</span></div>
+                        <div class="twin-row"><span class="k">User</span><span class="v" id="twin-user">User-019</span></div>
+                        <div class="twin-row"><span class="k">IP</span><span class="v" id="twin-ip">10.44.6.112</span></div>
+                        <div class="twin-row"><span class="k">MAC</span><span class="v" id="twin-mac">3C:E1:A4:9F:02:B7</span></div>
+                        <div class="twin-row"><span class="k">Evidence</span><span class="v" id="twin-evidence">27 artifacts</span></div>
+                        <div class="twin-row"><span class="k">Sec. events</span><span class="v" id="twin-events">8</span></div>
+                        <div class="twin-row"><span class="k">Accounts</span><span class="v" id="twin-accounts">2</span></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="panel" id="panel-timeline">
+              <div class="panel-head"><span class="panel-title"><svg><use href="#i-clock"/></svg>Forensic Timeline</span><span class="panel-action" id="timeline-count">7 events</span></div>
+              <div class="panel-body">
+                <div class="timeline-zoom" id="timeline-zoom">
+                  <button type="button" class="zoom-chip" data-zoom="years">Years</button><button type="button" class="zoom-chip" data-zoom="months">Months</button><button type="button" class="zoom-chip" data-zoom="days">Days</button>
+                  <button type="button" class="zoom-chip active" data-zoom="hours">Hours</button><button type="button" class="zoom-chip" data-zoom="minutes">Minutes</button><button type="button" class="zoom-chip" data-zoom="seconds">Seconds</button>
+                </div>
+                <div class="timeline-filter" id="timeline-filter">
+                  <button type="button" class="filter-chip active" data-filter="all">All</button>
+                  <button type="button" class="filter-chip" data-filter="physical">Physical</button>
+                  <button type="button" class="filter-chip" data-filter="identity">Identity</button>
+                  <button type="button" class="filter-chip" data-filter="endpoint">Endpoint</button>
+                  <button type="button" class="filter-chip" data-filter="network">Network</button>
+                  <button type="button" class="filter-chip" data-filter="file">File</button>
+                </div>
+                <svg viewBox="0 0 1040 96" role="img" aria-label="Horizontal forensic timeline for the active case" id="timeline-svg">
+                  <line x1="20" y1="52" x2="1020" y2="52" stroke="var(--line)" stroke-width="1.2"/>
+                  <g id="timeline-ticks"></g>
+                  <g id="timeline-events"></g>
+                </svg>
+                <div class="timeline-detail" id="timeline-detail">
+                  <span class="timeline-detail-hint">Click any event marker for details.</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="panel" id="panel-evidence-graph">
+              <div class="panel-head"><span class="panel-title"><svg><use href="#i-nodes"/></svg>Evidence Graph</span><span class="panel-action" id="eg-case-label">SV-001</span></div>
+              <div class="panel-body">
+                <svg class="evidence-graph-svg" id="evidence-graph" viewBox="0 0 760 300" role="img" aria-label="Evidence graph tracing the active case's entity through account, device, IP address, network event, process, and file, with a branch to an external destination">
+                  <g stroke="var(--line)" color="var(--line)" stroke-width="1.2">
+                    <line x1="120" y1="30" x2="120" y2="70" marker-end="url(#arrow)"/>
+                    <line x1="120" y1="104" x2="120" y2="144" marker-end="url(#arrow)"/>
+                    <line x1="120" y1="178" x2="120" y2="218" marker-end="url(#arrow)"/>
+                    <line x1="200" y1="144" x2="360" y2="144" marker-end="url(#arrow)"/>
+                    <line x1="480" y1="144" x2="620" y2="90" marker-end="url(#arrow)"/>
+                    <line x1="480" y1="144" x2="620" y2="200" marker-end="url(#arrow)"/>
+                  </g>
+                  <g font-family="var(--font-mono)">
+                    <rect x="20" y="6" width="200" height="34" rx="7" fill="var(--charcoal-2)" stroke="var(--line)"/>
+                    <text class="eg-node-label" x="30" y="19" font-size="8.5" fill="var(--text-faint)">ENTITY</text>
+                    <text class="eg-node-label" id="eg-entity" x="30" y="33" font-size="12" fill="var(--text)" font-weight="600">User-019</text>
+
+                    <rect x="20" y="70" width="200" height="34" rx="7" fill="var(--charcoal-2)" stroke="var(--line)"/>
+                    <text class="eg-node-label" x="30" y="83" font-size="8.5" fill="var(--text-faint)">ACCOUNT</text>
+                    <text class="eg-node-label" id="eg-account" x="30" y="97" font-size="12" fill="var(--text)" font-weight="600">user019@sv.local</text>
+
+                    <rect x="20" y="144" width="180" height="34" rx="7" fill="var(--charcoal-2)" stroke="var(--gold-dim)"/>
+                    <text class="eg-node-label" x="30" y="157" font-size="8.5" fill="var(--gold)">DEVICE</text>
+                    <text class="eg-node-label" id="eg-device" x="30" y="171" font-size="12" fill="var(--text)" font-weight="600">WORKSTATION-042</text>
+
+                    <rect x="20" y="218" width="200" height="34" rx="7" fill="var(--charcoal-2)" stroke="var(--line)"/>
+                    <text class="eg-node-label" x="30" y="231" font-size="8.5" fill="var(--text-faint)">IP ADDRESS</text>
+                    <text class="eg-node-label" id="eg-ip" x="30" y="245" font-size="12" fill="var(--text)" font-weight="600">10.44.6.112</text>
+
+                    <rect x="360" y="127" width="200" height="34" rx="7" fill="var(--charcoal-2)" stroke="var(--line)"/>
+                    <text x="370" y="140" font-size="8.5" fill="var(--text-faint)">NETWORK EVENT</text>
+                    <text class="eg-node-label" id="eg-network" x="370" y="154" font-size="12" fill="var(--text)" font-weight="600">Outbound :443</text>
+
+                    <rect x="620" y="73" width="120" height="34" rx="7" fill="var(--charcoal-2)" stroke="rgba(226,88,79,.5)"/>
+                    <text x="630" y="86" font-size="8" fill="var(--crit)">EXTERNAL DEST.</text>
+                    <text class="eg-node-label" id="eg-external" x="630" y="100" font-size="11" fill="var(--text)" font-weight="600">185.212.44.6</text>
+
+                    <rect x="620" y="183" width="120" height="34" rx="7" fill="var(--charcoal-2)" stroke="var(--line)"/>
+                    <text x="630" y="196" font-size="8.5" fill="var(--text-faint)">FILE</text>
+                    <text class="eg-node-label" id="eg-file" x="630" y="210" font-size="11" fill="var(--text)" font-weight="600">finance_q3.xlsx</text>
+                  </g>
+                </svg>
+              </div>
+            </div>
+
+            <div class="panel" id="panel-forensics">
+              <div class="panel-head"><span class="panel-title"><svg><use href="#i-doc"/></svg>Digital Forensics</span><span class="panel-action" id="forensics-count">0 artifacts</span></div>
+              <div class="panel-body">
+                <div class="artifact-rows" id="artifact-rows"></div>
+                <div class="artifact-detail" id="artifact-detail">
+                  <span class="artifact-detail-hint">Click an artifact for chain of custody and integrity details.</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="panel" id="panel-attack">
+              <div class="panel-head"><span class="panel-title"><svg><use href="#i-flow"/></svg>Attack Reconstruction</span><span class="panel-action" id="attack-case-label">SV-001</span></div>
+              <div class="panel-body">
+                <div class="attack-chain" id="attack-chain"></div>
+                <div class="stage-tooltip" id="stage-tooltip" role="tooltip" hidden></div>
+                <div class="attack-detail" id="attack-detail">
+                  <span class="attack-detail-hint">Click a stage for its supporting evidence.</span>
+                </div>
+                <div class="legend">
+                  <span class="legend-item"><span class="legend-swatch" style="background: var(--ev-observed)"></span>Observed Evidence</span>
+                  <span class="legend-item"><span class="legend-swatch" style="background: var(--ev-correlated)"></span>Correlated Evidence</span>
+                  <span class="legend-item"><span class="legend-swatch" style="background: var(--ev-inference)"></span>AI Inference</span>
+                  <span class="legend-item"><span class="legend-swatch" style="background: var(--text-faint)"></span>No Evidence</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="split-2">
+              <div class="panel">
+                <div class="panel-head"><span class="panel-title"><svg><use href="#i-shield"/></svg>Threat Intelligence</span><span class="panel-action">3 IOCs</span></div>
+                <div class="panel-body">
+                  <div class="intel-rows" id="intel-rows">
+                    <div class="intel-row" data-ioc="185.212.44.6"><span class="intel-val">185.212.44.6</span><span class="intel-type">IP · C2 Infra</span><span class="sev sev-high">High</span></div>
+                    <div class="intel-row" data-ioc="a1b2c9…944f"><span class="intel-val">a1b2c9…944f</span><span class="intel-type">SHA-256 · Loader</span><span class="sev sev-critical">Critical</span></div>
+                    <div class="intel-row" data-ioc="update-cdn-secure.net"><span class="intel-val">update-cdn-secure.net</span><span class="intel-type">Domain</span><span class="sev sev-medium">Medium</span></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="panel">
+                <div class="panel-head"><span class="panel-title"><svg><use href="#i-eye"/></svg>Silent Visionary Intelligence</span><span class="panel-action">AI Assistant</span></div>
+                <div class="panel-body">
+                  <div class="ai-thread-scroll" id="ai-thread">
+                    <div>
+                      <div class="ai-q">Show the initial access event.</div>
+                      <div class="ai-a">
+                        Initial access occurred at <b>21:14:07</b> via badge credential for <b>User-019</b> at Door D-12, followed by an authenticated logon to <b>WORKSTATION-042</b> five seconds later. The badge event and the logon share the same identity, consistent with a physical-to-digital handoff.
+                        <div class="ai-meta"><span class="conf-badge">88% · Correlated Evidence</span><span class="ev-refs">EVID-1042, EVID-1043</span></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="ai-input-row">
+                    <input id="ai-input" type="text" placeholder="Ask about this case…" autocomplete="off" />
+                    <button id="ai-send" type="button" class="btn btn-gold btn-sm">Ask</button>
+                  </div>
+                  <div class="ai-suggestions">
+                    <button type="button" class="ai-suggestion" data-q="What happened?">What happened?</button>
+                    <button type="button" class="ai-suggestion" data-q="Which systems were affected?">Which systems were affected?</button>
+                    <button type="button" class="ai-suggestion" data-q="Summarize this investigation.">Summarize this investigation.</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="panel" id="panel-automation">
+              <div class="panel-head"><span class="panel-title"><svg><use href="#i-flow"/></svg>Automation</span><span class="panel-action">2 workflows active</span></div>
+              <div class="panel-body">
+                <div class="workflow-legend">
+                  <span>Trigger</span><span>Condition</span><span>Action</span><span>Result</span>
+                </div>
+                <div class="workflow-block" id="workflow-block-1">
+                  <div class="workflow-block-head"><span class="workflow-block-title">Intrusion response</span><span class="workflow-run-badge" id="workflow-1-runs">Ran 4 times today</span></div>
+                  <div class="workflow-row" id="workflow-row-1">
+                    <span class="workflow-step">Alert detected</span>
+                    <span class="workflow-arrow">→</span>
+                    <span class="workflow-step">Create case</span>
+                    <span class="workflow-arrow">→</span>
+                    <span class="workflow-step">Hash evidence</span>
+                    <span class="workflow-arrow">→</span>
+                    <span class="workflow-step">Correlate events</span>
+                    <span class="workflow-arrow">→</span>
+                    <span class="workflow-step">Generate timeline</span>
+                    <span class="workflow-arrow">→</span>
+                    <span class="workflow-step">Notify analyst</span>
+                  </div>
+                  <div class="workflow-toggle-row">
+                    <label class="workflow-toggle">
+                      <input type="checkbox" id="automation-toggle" checked />
+                      <span class="workflow-toggle-track"><span class="workflow-toggle-thumb"></span></span>
+                      <span id="automation-status">Enabled for SV-001</span>
+                    </label>
+                  </div>
+                </div>
+                <div class="workflow-block" id="workflow-block-2">
+                  <div class="workflow-block-head"><span class="workflow-block-title">Compliance drift</span><span class="workflow-run-badge">Ran 1 time this week</span></div>
+                  <div class="workflow-row" id="workflow-row-2">
+                    <span class="workflow-step">Control drift found</span>
+                    <span class="workflow-arrow">→</span>
+                    <span class="workflow-step">Flag finding</span>
+                    <span class="workflow-arrow">→</span>
+                    <span class="workflow-step">Notify owner</span>
+                    <span class="workflow-arrow">→</span>
+                    <span class="workflow-step">Schedule remediation</span>
+                  </div>
+                  <div class="workflow-toggle-row">
+                    <label class="workflow-toggle">
+                      <input type="checkbox" id="automation-toggle-2" checked />
+                      <span class="workflow-toggle-track"><span class="workflow-toggle-thumb"></span></span>
+                      <span id="automation-status-2">Enabled platform-wide</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="panel" id="panel-reports">
+              <div class="panel-head"><span class="panel-title"><svg><use href="#i-doc"/></svg>Reports</span><span class="panel-action" id="reports-case-label">SV-001</span></div>
+              <div class="panel-body">
+                <p style="font-size: 12.5px; color: var(--text-dim); margin-bottom: 14px;">Generates an executive summary, timeline, evidence inventory, attack path, and chain of custody for the active case.</p>
+                <button type="button" id="generate-report-btn" class="btn btn-gold btn-sm">Generate Report</button>
+                <div id="report-status" class="report-status"></div>
+                <ul class="report-history" id="report-history">
+                  <li><span class="rh-name">SV-001_Executive_Summary_v3.pdf</span><span class="rh-date">Yesterday, 17:42</span><button type="button" class="rh-link" data-report="SV-001_Executive_Summary_v3.pdf">View</button></li>
+                  <li><span class="rh-name">SV-014_Chain_of_Custody.pdf</span><span class="rh-date">3 days ago</span><button type="button" class="rh-link" data-report="SV-014_Chain_of_Custody.pdf">View</button></li>
+                  <li><span class="rh-name">SV-001_Timeline_Export.pdf</span><span class="rh-date">4 days ago</span><button type="button" class="rh-link" data-report="SV-001_Timeline_Export.pdf">View</button></li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="panel" id="panel-settings">
+              <div class="panel-head"><span class="panel-title"><svg><use href="#i-gear"/></svg>Settings</span><span class="panel-action">Investigator</span></div>
+              <div class="panel-body">
+                <div class="settings-account">
+                  <span class="avatar">AR</span>
+                  <div><b>A. Rivera</b><span>Investigator · Signed in via MFA</span></div>
+                </div>
+
+                <div class="settings-group-label">Notifications</div>
+                <div class="settings-row">
+                  <span>Email notifications for new evidence</span>
+                  <label class="workflow-toggle">
+                    <input type="checkbox" class="settings-toggle" data-setting="Email notifications" checked />
+                    <span class="workflow-toggle-track"><span class="workflow-toggle-thumb"></span></span>
+                  </label>
+                </div>
+                <div class="settings-row">
+                  <span>Digest of unresolved alerts, daily</span>
+                  <label class="workflow-toggle">
+                    <input type="checkbox" class="settings-toggle" data-setting="Daily digest" />
+                    <span class="workflow-toggle-track"><span class="workflow-toggle-thumb"></span></span>
+                  </label>
+                </div>
+
+                <div class="settings-group-label">Security &amp; Access</div>
+                <div class="settings-row">
+                  <span>Require MFA for evidence export</span>
+                  <label class="workflow-toggle">
+                    <input type="checkbox" class="settings-toggle" data-setting="MFA for evidence export" checked />
+                    <span class="workflow-toggle-track"><span class="workflow-toggle-thumb"></span></span>
+                  </label>
+                </div>
+                <div class="settings-row">
+                  <span>Auto-correlate physical &amp; digital events</span>
+                  <label class="workflow-toggle">
+                    <input type="checkbox" class="settings-toggle" data-setting="Auto-correlation" checked />
+                    <span class="workflow-toggle-track"><span class="workflow-toggle-thumb"></span></span>
+                  </label>
+                </div>
+                <div class="settings-row">
+                  <span>Lock session after 15 minutes idle</span>
+                  <label class="workflow-toggle">
+                    <input type="checkbox" class="settings-toggle" data-setting="Session auto-lock" checked />
+                    <span class="workflow-toggle-track"><span class="workflow-toggle-thumb"></span></span>
+                  </label>
+                </div>
+                <div class="settings-saved" id="settings-saved">Preferences save automatically.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="recon-overlay" id="recon-overlay" role="dialog" aria-modal="true" aria-label="Case SV-001 guided reconstruction" hidden>
+      <div class="recon-modal">
+        <div class="recon-modal-head">
+          <span class="recon-modal-title"><svg><use href="#i-flow"/></svg>SV-001 &middot; Guided Reconstruction</span>
+          <button type="button" class="recon-close" id="recon-close" aria-label="Close reconstruction">&times;</button>
+        </div>
+        <div class="recon-modal-body">
+          <p class="recon-modal-hint" id="recon-modal-hint">Reconstructing the incident, stage by stage&hellip;</p>
+          <ol class="recon-stage-list" id="recon-stage-list"></ol>
+          <div class="recon-controls">
+            <button type="button" class="btn btn-ghost btn-sm" id="recon-restart" hidden>Replay from the Start</button>
+          </div>
+          <div class="recon-summary" id="recon-summary" hidden></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="main.js?v=20260812g"></script>
+    <script src="dashboard.js?v=20260812g"></script>
+  </body>
+</html>

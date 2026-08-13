@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Silent Visionary | Unparalleled Protection. Unmatched Intelligence.
+    </title>
+    <meta
+      name="description"
+      content="The unified AI intelligence platform for government, enterprise, and public safety. Combining cybersecurity, digital forensics, fraud detection, and compliance."
+    />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Outfit:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header" id="header">
+      <div class="header__inner">
+        <a href="index.html" class="header__logo">
+          <img src="LOGO.png" alt="Silent Visionary" class="header__logo-img" />
+        </a>
+
+        <nav class="nav" id="nav">
+          <div class="nav-chip" tabindex="0">
+            <span class="nav-chip__trigger">
+              <span class="nav-chip__dot"></span>
+              SVIC
+            </span>
+            <p class="nav-chip__desc" data-i18n="nav.svicDesc">
+              <strong>Silent Visionary Intelligence Cloud (SVIC)</strong> — the
+              unified, explainable intelligence layer connecting Forensics,
+              Sentinel, Redact, Compliance, and FraudShield into one platform.
+            </p>
+          </div>
+          <a href="forensics.html" class="nav__link">Forensics</a>
+          <a href="sentinel.html" class="nav__link">Sentinel</a>
+          <a href="redact.html" class="nav__link">Redact</a>
+          <a href="compliance.html" class="nav__link">Compliance</a>
+          <a href="fraudshield.html" class="nav__link">FraudShield</a>
+          <a
+            href="mailto:info@silentvisionary.com"
+            class="btn btn--primary nav__cta"
+            data-i18n="nav.demo"
+            >Request a Demo</a
+          >
+        </nav>
+
+        <button
+          class="nav-toggle"
+          id="nav-toggle"
+          aria-label="Toggle navigation"
+          aria-expanded="false"
+        >
+          <span class="nav-toggle__bar"></span>
+          <span class="nav-toggle__bar"></span>
+          <span class="nav-toggle__bar"></span>
+        </button>
+      </div>
+
+      <!-- Mobile Navigation -->
+      <nav class="mobile-nav" id="mobile-nav">
+        <a href="forensics.html" class="mobile-nav__link">Forensics</a>
+        <a href="sentinel.html" class="mobile-nav__link">Sentinel</a>
+        <a href="redact.html" class="mobile-nav__link">Redact</a>
+        <a href="compliance.html" class="mobile-nav__link">Compliance</a>
+        <a href="fraudshield.html" class="mobile-nav__link">FraudShield</a>
+        <a
+          href="mailto:info@silentvisionary.com"
+          class="btn btn--primary btn--lg mobile-nav__cta"
+          data-i18n="nav.demo"
+          >Request a Demo</a
+        >
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero__bg">
+        <div class="hero__bg-gradient"></div>
+        <div class="hero__bg-pattern"></div>
+        <div class="hero__bg-grid"></div>
+      </div>
+
+      <div class="hero__content">
+        <div class="hero__text">
+          <div class="hero__badge" data-i18n="index.hero.badge">
+            Explainable AI. Built for Government.
+          </div>
+
+          <h1 class="hero__title" data-i18n="index.hero.title">
+            Turn Every Signal<br />
+            <span class="hero__title-accent">Into a Clear Decision.</span>
+          </h1>
+
+          <p class="hero__subtitle" data-i18n="index.hero.subtitle">
+            One AI platform for digital forensics, threat detection, fraud
+            prevention, redaction, and compliance.
+          </p>
+
+          <p class="hero__description" data-i18n="index.hero.description">
+            Silent Visionary unifies logs, video, documents, and device data
+            into a single explainable intelligence layer. Every finding comes
+            with the reasoning behind it — built for agencies that answer to
+            courts, auditors, and the public, and ready for any organization
+            that can't afford to get security wrong.
+          </p>
+
+          <div class="hero__cta">
+            <a href="#contact" class="btn btn--primary btn--lg" data-i18n="index.hero.ctaPrimary"
+              >Schedule a Live Demo</a
+            >
+            <a href="#products" class="btn btn--secondary btn--lg btn--explore" data-i18n="index.hero.ctaSecondary"
+              >Explore Products</a
+            >
+          </div>
+
+          <div class="hero__trust">
+            <div class="hero__trust-item">
+              <svg
+                class="hero__trust-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                <polyline points="22 4 12 14.01 9 11.01" />
+              </svg>
+              <span data-i18n="index.hero.trust1">Government-ready</span>
+            </div>
+            <div class="hero__trust-item">
+              <svg
+                class="hero__trust-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                <polyline points="22 4 12 14.01 9 11.01" />
+              </svg>
+              <span data-i18n="index.hero.trust2">Explainable AI</span>
+            </div>
+            <div class="hero__trust-item">
+              <svg
+                class="hero__trust-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                <polyline points="22 4 12 14.01 9 11.01" />
+              </svg>
+              <span data-i18n="index.hero.trust3">CJIS-aligned design</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero__visual">
+          <div class="flow-graph flow-graph--hero" style="--fg-accent: #2563eb; --fg-accent-soft: rgba(37, 99, 235, 0.18)" aria-hidden="true">
+            <div class="flow-graph__bar">
+              <span class="flow-graph__spark">&#10022;</span>
+              <span class="flow-graph__bar-label">Live Signal Correlation</span>
+            </div>
+            <div class="flow-graph__body">
+            <div class="orbit-hub">
+              <div class="orbit-hub__glow"></div>
+              <div class="orbit-hub__track"></div>
+              <div class="orbit-hub__core">
+                <div class="orbit-hub__core-inner">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M15 2v2"/><path d="M15 20v2"/><path d="M2 15h2"/><path d="M2 9h2"/><path d="M20 15h2"/><path d="M20 9h2"/><path d="M9 2v2"/><path d="M9 20v2"/></svg>
+                  <span>SVIC</span>
+                </div>
+              </div>
+              <div class="orbit-hub__ring">
+                <div class="orbit-hub__node" style="--angle: 0deg">
+                  <div class="orbit-hub__node-inner">
+                    <span class="orbit-hub__node-icon" style="--delay: 0s; --node-accent: #1d4ed8; --node-glow: rgba(29, 78, 216, 0.28)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 10a2 2 0 0 0-2 2c0 1.02-.1 2.51-.26 4"/><path d="M14 13.12c0 2.38 0 6.38-1 8.88"/><path d="M17.29 21.02c.12-.6.43-2.3.5-3.02"/><path d="M2 12a10 10 0 0 1 18-6"/><path d="M2 16h.01"/><path d="M21.8 16c.2-2 .131-5.354 0-6"/><path d="M5 19.5C5.5 18 6 15 6 12a6 6 0 0 1 .34-2"/><path d="M8.65 22c.21-.66.45-1.32.57-2"/><path d="M9 6.8a6 6 0 0 1 9 5.2v2"/></svg></span>
+                    <span class="orbit-hub__node-label" style="--node-accent: #1d4ed8">Forensics</span>
+                  </div>
+                </div>
+                <div class="orbit-hub__node" style="--angle: 72deg">
+                  <div class="orbit-hub__node-inner">
+                    <span class="orbit-hub__node-icon" style="--delay: 4.4s; --node-accent: #6366f1; --node-glow: rgba(99, 102, 241, 0.28)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></span>
+                    <span class="orbit-hub__node-label" style="--node-accent: #6366f1">Sentinel</span>
+                  </div>
+                </div>
+                <div class="orbit-hub__node" style="--angle: 144deg">
+                  <div class="orbit-hub__node-inner">
+                    <span class="orbit-hub__node-icon" style="--delay: 8.8s; --node-accent: #14b8a6; --node-glow: rgba(20, 184, 166, 0.28)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><path d="M6.61 6.61A18.5 18.5 0 0 0 1 12s4 8 11 8a9.26 9.26 0 0 0 5.39-1.61"/><line x1="2" y1="2" x2="22" y2="22"/></svg></span>
+                    <span class="orbit-hub__node-label" style="--node-accent: #14b8a6">Redact</span>
+                  </div>
+                </div>
+                <div class="orbit-hub__node" style="--angle: 216deg">
+                  <div class="orbit-hub__node-inner">
+                    <span class="orbit-hub__node-icon" style="--delay: 13.2s; --node-accent: #ef4444; --node-glow: rgba(239, 68, 68, 0.28)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/></svg></span>
+                    <span class="orbit-hub__node-label" style="--node-accent: #ef4444">Compliance</span>
+                  </div>
+                </div>
+                <div class="orbit-hub__node" style="--angle: 288deg">
+                  <div class="orbit-hub__node-inner">
+                    <span class="orbit-hub__node-icon" style="--delay: 17.6s; --node-accent: #f59e0b; --node-glow: rgba(245, 158, 11, 0.28)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></span>
+                    <span class="orbit-hub__node-label" style="--node-accent: #f59e0b">FraudShield</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
+          </div>
+
+          <div class="hero__card">
+            <div class="hero__card-header">
+              <div class="hero__card-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <circle cx="12" cy="12" r="3" />
+                  <path d="M12 1v6m0 6v10" />
+                  <path d="m4.93 4.93 4.24 4.24m5.66 5.66 4.24 4.24" />
+                  <path d="M1 12h6m6 0h10" />
+                  <path d="m4.93 19.07 4.24-4.24m5.66-5.66 4.24-4.24" />
+                </svg>
+              </div>
+              <h3 class="hero__card-title">
+                Silent Visionary Intelligence Cloud (SVIC)
+              </h3>
+            </div>
+            <p class="hero__card-text">
+              Ingest logs, video, audio, documents, device images, and
+              transactional data into one unified, explainable intelligence
+              layer. Every signal analyzed. Every threat illuminated.
+            </p>
+            <div class="hero__card-tags">
+              <span class="tag tag--primary" data-i18n="index.tag.multimodal">Multimodal AI</span>
+              <span class="tag tag--primary" data-i18n="index.tag.government"
+                >Government-First Architecture</span
+              >
+              <span class="tag tag--primary" data-i18n="index.tag.explainable">Explainable Insights</span>
+              <div class="nav-chip" tabindex="0">
+                <span class="nav-chip__trigger">
+                  <span class="nav-chip__dot"></span>
+                  SVIC
+                </span>
+                <p class="nav-chip__desc" data-i18n="nav.svicDesc">
+                  <strong>Silent Visionary Intelligence Cloud (SVIC)</strong> —
+                  the unified, explainable intelligence layer connecting
+                  Forensics, Sentinel, Redact, Compliance, and FraudShield into
+                  one platform.
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="section section--alt" id="products">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__label">Products</span>
+          <h2 class="section__title">
+            One Platform. Five Mission-Critical Modules.
+          </h2>
+          <p class="section__subtitle">
+            Each Silent Visionary module is powerful on its own—and
+            exponentially stronger together. Start with what you need today and
+            scale into a complete intelligence ecosystem tomorrow.
+          </p>
+        </div>
+
+        <div class="products-grid">
+          <div class="product-card reveal" style="--pc-accent: #1d4ed8">
+            <div class="product-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 10a2 2 0 0 0-2 2c0 1.02-.1 2.51-.26 4"/><path d="M14 13.12c0 2.38 0 6.38-1 8.88"/><path d="M17.29 21.02c.12-.6.43-2.3.5-3.02"/><path d="M2 12a10 10 0 0 1 18-6"/><path d="M2 16h.01"/><path d="M21.8 16c.2-2 .131-5.354 0-6"/><path d="M5 19.5C5.5 18 6 15 6 12a6 6 0 0 1 .34-2"/><path d="M8.65 22c.21-.66.45-1.32.57-2"/><path d="M9 6.8a6 6 0 0 1 9 5.2v2"/></svg>
+            </div>
+            <span class="product-card__category">Digital Forensics</span>
+            <h3 class="product-card__title">
+              <a href="forensics.html">Silent Visionary Forensics™</a>
+            </h3>
+            <p class="product-card__text">
+              AI-powered digital forensics. Automate evidence triage,
+              reconstruct timelines, and generate court-ready reports.
+            </p>
+            <div class="product-card__reveal">
+              <p class="product-card__reveal-text">
+                Unify logs, media, and device data into a single, explainable
+                forensic narrative.
+              </p>
+              <span class="product-card__reveal-cta">Explore module →</span>
+            </div>
+          </div>
+
+          <div class="product-card reveal" style="--pc-accent: #6366f1">
+            <div class="product-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            </div>
+            <span class="product-card__category">Threat Detection</span>
+            <h3 class="product-card__title">
+              <a href="sentinel.html">Silent Visionary Sentinel™</a>
+            </h3>
+            <p class="product-card__text">
+              Behavioral threat detection and SOC intelligence. Cut noise,
+              surface real risk, and respond with confidence.
+            </p>
+            <div class="product-card__reveal">
+              <p class="product-card__reveal-text">
+                Cut alert noise and surface the risks that truly matter.
+              </p>
+              <span class="product-card__reveal-cta">Explore module →</span>
+            </div>
+          </div>
+
+          <div class="product-card reveal" style="--pc-accent: #14b8a6">
+            <div class="product-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><path d="M6.61 6.61A18.5 18.5 0 0 0 1 12s4 8 11 8a9.26 9.26 0 0 0 5.39-1.61"/><line x1="2" y1="2" x2="22" y2="22"/></svg>
+            </div>
+            <span class="product-card__category">Redaction &amp; Privacy</span>
+            <h3 class="product-card__title">
+              <a href="redact.html">Silent Visionary Redact™</a>
+            </h3>
+            <p class="product-card__text">
+              Automated redaction for FOIA, public records, legal, and HR.
+              Video, audio, and document workflows at scale.
+            </p>
+            <div class="product-card__reveal">
+              <p class="product-card__reveal-text">
+                Honor transparency and privacy at the same time.
+              </p>
+              <span class="product-card__reveal-cta">Explore module →</span>
+            </div>
+          </div>
+
+          <div class="product-card reveal" style="--pc-accent: #ef4444">
+            <div class="product-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/></svg>
+            </div>
+            <span class="product-card__category">Compliance &amp; Audit</span>
+            <h3 class="product-card__title">
+              <a href="compliance.html">Silent Visionary Compliance™</a>
+            </h3>
+            <p class="product-card__text">
+              Automate NIST, CJIS, SOC2, ISO, HIPAA and more. Continuous control
+              monitoring and evidence collection.
+            </p>
+            <div class="product-card__reveal">
+              <p class="product-card__reveal-text">
+                Turn static frameworks into a living, continuously monitored
+                program.
+              </p>
+              <span class="product-card__reveal-cta">Explore module →</span>
+            </div>
+          </div>
+
+          <div class="product-card reveal" style="--pc-accent: #f59e0b">
+            <div class="product-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+            </div>
+            <span class="product-card__category">Fraud &amp; Abuse</span>
+            <h3 class="product-card__title">
+              <a href="fraudshield.html">Silent Visionary FraudShield™</a>
+            </h3>
+            <p class="product-card__text">
+              Detect benefits, identity, and procurement fraud using graph
+              intelligence and anomaly detection.
+            </p>
+            <div class="product-card__reveal">
+              <p class="product-card__reveal-text">
+                Use AI and graph analysis to expose fraud rings and abusive
+                behavior early.
+              </p>
+              <span class="product-card__reveal-cta">Explore module →</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Solutions Section -->
+    <section class="section" id="solutions">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__label">Solutions</span>
+          <h2 class="section__title">
+            Trusted Where Trust Isn't Optional.
+          </h2>
+          <p class="section__subtitle">
+            Built first for agencies who answer to courts, oversight boards,
+            and the public — then extended to every enterprise that needs the
+            same rigor without the overhead.
+          </p>
+        </div>
+
+        <div class="solutions-grid">
+          <div class="solution-card reveal">
+            <div class="solution-card__icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <rect x="3" y="3" width="18" height="18" rx="2" />
+                <path d="M3 9h18" />
+                <path d="M9 21V9" />
+              </svg>
+            </div>
+            <h3 class="solution-card__title">Government & Public Safety</h3>
+            <p class="solution-card__text">
+              From evidence intake to courtroom-ready reports — forensics,
+              FOIA response, fraud prevention, and compliance built around how
+              agencies actually work.
+            </p>
+          </div>
+
+          <div class="solution-card reveal">
+            <div class="solution-card__icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M3 21h18" />
+                <path d="M5 21V7l8-4 8 4v14" />
+                <path d="M9 21v-6h6v6" />
+              </svg>
+            </div>
+            <h3 class="solution-card__title">Enterprise Security</h3>
+            <p class="solution-card__text">
+              Cut through alert fatigue, accelerate internal investigations,
+              and stay audit-ready across finance, healthcare, energy, and any
+              regulated industry.
+            </p>
+          </div>
+
+          <div class="solution-card reveal">
+            <div class="solution-card__icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                <circle cx="9" cy="7" r="4" />
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+              </svg>
+            </div>
+            <h3 class="solution-card__title">SMB & Managed Security</h3>
+            <p class="solution-card__text">
+              The same explainable intelligence enterprises rely on,
+              delivered through simplified tiers and MSP/MSSP partners for
+              teams without a dedicated security department.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technology Section -->
+    <section class="section section--dark" id="technology">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__label">Technology</span>
+          <h2 class="section__title">Multimodal AI You Can Trust.</h2>
+          <p class="section__subtitle">
+            Silent Visionary Intelligence Cloud (SVIC) unifies language models,
+            computer vision, anomaly detection, and graph intelligence into an
+            explainable, audit-ready engine that works quietly behind the
+            scenes.
+          </p>
+        </div>
+
+        <div class="tech-grid">
+          <div class="tech-card reveal">
+            <div class="tech-card__icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="12" cy="12" r="10" />
+                <path d="m9 12 2 2 4-4" />
+              </svg>
+            </div>
+            <h3 class="tech-card__title">Explainable by Design</h3>
+            <p class="tech-card__text">
+              Every insight is tied to evidence, reasoning, and confidence
+              levels—suitable for courts, auditors, and executive briefings.
+            </p>
+          </div>
+
+          <div class="tech-card reveal">
+            <div class="tech-card__icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+              </svg>
+            </div>
+            <h3 class="tech-card__title">Government-Grade Security</h3>
+            <p class="tech-card__text">
+              Zero trust, encryption in transit and at rest, immutable logs, and
+              architectures aligned with CJIS and FedRAMP best practices.
+            </p>
+          </div>
+
+          <div class="tech-card reveal">
+            <div class="tech-card__icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <polygon points="12 2 2 7 12 12 22 7 12 2" />
+                <polyline points="2 17 12 22 22 17" />
+                <polyline points="2 12 12 17 22 12" />
+              </svg>
+            </div>
+            <h3 class="tech-card__title">Unified Intelligence Layer</h3>
+            <p class="tech-card__text">
+              Logs, evidence, video, audio, and transactional data converge into
+              one story—no more siloed tools or partial visibility.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="section mission">
+      <div class="container">
+        <div class="mission__content reveal">
+          <h2 class="mission__title">
+            Building the Future of Intelligent Security
+          </h2>
+          <p class="mission__text">
+            We're on a mission to bring government-grade AI security tools to
+            every organization that needs them. Silent Visionary is currently
+            raising funds to expand our team and accelerate development. Join us
+            in building a safer, more transparent future—where advanced
+            protection is accessible to all.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta" id="contact">
+      <div class="cta__bg">
+        <div class="cta__bg-glow"></div>
+      </div>
+      <div class="container">
+        <div class="cta__content reveal">
+          <span class="cta__label">Get Started</span>
+          <h2 class="cta__title">
+            See What Unseen Intelligence Can Do for You.
+          </h2>
+          <p class="cta__text">
+            Whether you are a government agency, enterprise, or security
+            provider, Silent Visionary can be tailored to your mission. Start
+            with a focused pilot or request a full platform demo.
+          </p>
+          <a
+            href="mailto:info@silentvisionary.com"
+            class="btn btn--lg cta__btn"
+          >
+            Contact Us · info@silentvisionary.com
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="company">
+      <div class="container">
+        <div class="footer__grid">
+          <div class="footer__brand">
+            <img src="LOGO.png" alt="Silent Visionary" class="footer__logo-img" />
+            <p class="footer__desc" data-i18n="footer.desc">The unified AI intelligence platform for government, enterprise, and public safety &mdash; forensics, threat detection, redaction, fraud prevention, and compliance in one explainable system.</p>
+          </div>
+
+          <div class="footer__col">
+            <h4 class="footer__col-title" data-i18n="footer.products">Products</h4>
+            <div class="footer__links">
+              <a href="forensics.html" class="footer__link">Forensics&trade;</a>
+              <a href="sentinel.html" class="footer__link">Sentinel&trade;</a>
+              <a href="redact.html" class="footer__link">Redact&trade;</a>
+              <a href="compliance.html" class="footer__link">Compliance&trade;</a>
+              <a href="fraudshield.html" class="footer__link">FraudShield&trade;</a>
+            </div>
+          </div>
+
+          <div class="footer__col">
+            <h4 class="footer__col-title" data-i18n="footer.company">Company</h4>
+            <div class="footer__links">
+              <a href="index.html#products" class="footer__link" data-i18n="footer.productsOverview">Products Overview</a>
+              <a href="index.html#solutions" class="footer__link" data-i18n="footer.solutions">Solutions</a>
+              <a href="index.html#technology" class="footer__link" data-i18n="footer.technology">Technology</a>
+              <a href="index.html#contact" class="footer__link" data-i18n="footer.contact">Contact</a>
+            </div>
+          </div>
+
+          <div class="footer__col">
+            <h4 class="footer__col-title" data-i18n="footer.touch">Get in Touch</h4>
+            <div class="footer__links">
+              <a href="mailto:info@silentvisionary.com" class="footer__link">info@silentvisionary.com</a>
+            </div>
+            <a href="mailto:info@silentvisionary.com?subject=Silent%20Visionary%20Demo" class="btn btn--primary footer__cta" data-i18n="nav.demo">Request a Demo</a>
+          </div>
+        </div>
+
+        <div class="footer__bottom">
+          <div class="footer__copyright" data-i18n="footer.copyright">
+            &copy; 2025 Silent Visionary. All rights reserved.
+          </div>
+          <div class="footer__badges">
+            <span data-i18n="footer.badge.government">Government-first</span>
+            <span>&middot;</span>
+            <span data-i18n="footer.badge.multimodal">Multimodal AI</span>
+            <span>&middot;</span>
+            <span data-i18n="footer.badge.platform">Unified Intelligence Platform</span>
+          </div>
+          <div class="footer__lang">
+            <label for="lang-select" class="footer__lang-label">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="footer__lang-icon" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              <span data-i18n="footer.language">Language</span>
+            </label>
+            <select id="lang-select" class="footer__lang-select">
+              <option value="en">English</option>
+              <option value="pt-BR">Português (Brasil)</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="i18n.js" defer></script>
+    <script src="main.js"></script>
+  </body>
+</html>

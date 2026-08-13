@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Silent Visionary | Cyber-Physical Forensic Intelligence</title>
+    <meta
+      name="description"
+      content="Silent Visionary unifies Forensics, Sentinel, Redact, Compliance, and FraudShield into one reconstruction engine — connecting the physical and digital world to explain what happened, why, and the evidence behind it."
+    />
+    <link rel="stylesheet" href="styles.css?v=20260812g" />
+  </head>
+  <body>
+    <svg width="0" height="0" style="position: absolute">
+      <defs>
+        <symbol id="i-grid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="8" height="8" rx="1.5"/><rect x="13" y="3" width="8" height="8" rx="1.5"/><rect x="3" y="13" width="8" height="8" rx="1.5"/><rect x="13" y="13" width="8" height="8" rx="1.5"/></symbol>
+        <symbol id="i-folder" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 6a1 1 0 0 1 1-1h5l2 2h9a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/></symbol>
+        <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/></symbol>
+        <symbol id="i-cube" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9z"/><path d="M4 7.5 12 12l8-4.5"/><path d="M12 12v9"/></symbol>
+        <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12.5 9.5 18 20 6"/></symbol>
+        <symbol id="i-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><line x1="3" y1="12" x2="21" y2="12"/><path d="M12 3a15 15 0 0 1 4 9 15 15 0 0 1-4 9 15 15 0 0 1-4-9 15 15 0 0 1 4-9z"/></symbol>
+        <symbol id="i-eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 12s3.8-7 10-7 10 7 10 7-3.8 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="2.6"/></symbol>
+        <symbol id="i-forensics" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 10a2 2 0 0 0-2 2c0 1.02-.1 2.51-.26 4"/><path d="M14 13.12c0 2.38 0 6.38-1 8.88"/><path d="M17.29 21.02c.12-.6.43-2.3.5-3.02"/><path d="M2 12a10 10 0 0 1 18-6"/><path d="M2 16h.01"/><path d="M21.8 16c.2-2 .131-5.354 0-6"/><path d="M5 19.5C5.5 18 6 15 6 12a6 6 0 0 1 .34-2"/><path d="M8.65 22c.21-.66.45-1.32.57-2"/><path d="M9 6.8a6 6 0 0 1 9 5.2v2"/></symbol>
+        <symbol id="i-redact" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><path d="M6.61 6.61A18.5 18.5 0 0 0 1 12s4 8 11 8a9.26 9.26 0 0 0 5.39-1.61"/><line x1="2" y1="2" x2="22" y2="22"/></symbol>
+        <symbol id="i-compliance" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/></symbol>
+        <symbol id="i-fraudshield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></symbol>
+      </defs>
+    </svg>
+
+    <!-- Header -->
+    <header class="header" id="header">
+      <div class="header__inner">
+        <a href="index.html" class="brandmark">
+          <img src="LOGO-icon.png" alt="Silent Visionary" class="brandmark-icon" />
+          SILENT VISIONARY
+        </a>
+        <nav class="navlinks">
+          <a href="platform.html" data-i18n="nav.platform">Platform</a>
+          <a href="products.html" data-i18n="nav.products">Products</a>
+          <a href="technology.html" data-i18n="nav.technology">Technology</a>
+          <a href="solutions.html" data-i18n="nav.solutions">Solutions</a>
+          <a href="industries.html" data-i18n="nav.industries">Industries</a>
+          <a href="about.html" data-i18n="nav.about">About</a>
+          <a href="contact.html" data-i18n="nav.contact">Contact</a>
+        </nav>
+        <div class="navcta">
+          <a href="login.html" class="btn btn-ghost btn-sm" data-i18n="nav.login">Login</a>
+          <a href="dashboard.html" class="btn btn-gold btn-sm" data-i18n="nav.demo">Launch Demo</a>
+        </div>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+          <span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span>
+        </button>
+      </div>
+      <nav class="mobile-nav" id="mobile-nav">
+        <a href="platform.html" class="mobile-nav__link">Platform</a>
+        <a href="products.html" class="mobile-nav__link">Products</a>
+        <a href="technology.html" class="mobile-nav__link">Technology</a>
+        <a href="solutions.html" class="mobile-nav__link">Solutions</a>
+        <a href="industries.html" class="mobile-nav__link">Industries</a>
+        <a href="about.html" class="mobile-nav__link">About</a>
+        <a href="contact.html" class="mobile-nav__link">Contact</a>
+        <a href="login.html" class="btn btn-ghost btn-lg btn-block mobile-nav__cta" style="margin-top: 20px">Login</a>
+        <a href="dashboard.html" class="btn btn-gold btn-lg btn-block mobile-nav__cta" style="margin-top: 12px">Launch Demo</a>
+      </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="wrap">
+        <div class="hero-grid">
+          <div class="reveal visible">
+            <div class="eyebrow" data-i18n="common.eyebrow">Cyber-Physical Forensic Intelligence</div>
+            <h1 data-i18n="index.hero.title">Reconstruct reality.<br /><span class="accent">Reveal the evidence.</span></h1>
+            <p class="lede" data-i18n="index.hero.lede">Forensics™, Sentinel™, Redact™, Compliance™, and FraudShield™ are no longer five separate products — they're five capabilities inside one reconstruction engine, unified by the Silent Visionary Intelligence Cloud (SVIC).</p>
+            <div class="hero-ctas">
+              <a href="platform.html" class="btn btn-gold" data-i18n="index.hero.ctaPrimary">Explore the Platform</a>
+            </div>
+            <div class="legacy-strip">
+              <a href="forensics.html" class="legacy-pill"><span class="legacy-dot" style="background: var(--p-forensics)"></span>Forensics™</a>
+              <a href="sentinel.html" class="legacy-pill"><span class="legacy-dot" style="background: var(--p-sentinel)"></span>Sentinel™</a>
+              <a href="redact.html" class="legacy-pill"><span class="legacy-dot" style="background: var(--p-redact)"></span>Redact™</a>
+              <a href="compliance.html" class="legacy-pill"><span class="legacy-dot" style="background: var(--p-compliance)"></span>Compliance™</a>
+              <a href="fraudshield.html" class="legacy-pill"><span class="legacy-dot" style="background: var(--p-fraudshield)"></span>FraudShield™</a>
+            </div>
+          </div>
+
+          <figure class="diagram-card reveal visible" style="transition-delay: .1s">
+            <div class="orbit-hub">
+              <div class="orbit-hub__glow"></div>
+              <div class="orbit-hub__track"></div>
+              <div class="orbit-hub__core">
+                <div class="orbit-hub__core-inner">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9z"/><path d="M12 12v9M4 7.5 12 12l8-4.5"/></svg>
+                </div>
+              </div>
+              <div class="orbit-hub__ring">
+                <div class="orbit-hub__node" style="--angle: 0deg">
+                  <div class="orbit-hub__node-inner">
+                    <span class="orbit-hub__node-icon" style="--delay: 0s; --node-accent: var(--p-forensics); --node-glow: rgba(59, 122, 232, .28)"><svg viewBox="0 0 24 24"><use href="#i-forensics"/></svg></span>
+                    <span class="orbit-hub__node-label" style="--node-accent: var(--p-forensics)">Forensics</span>
+                  </div>
+                </div>
+                <div class="orbit-hub__node" style="--angle: 72deg">
+                  <div class="orbit-hub__node-inner">
+                    <span class="orbit-hub__node-icon" style="--delay: 4.4s; --node-accent: var(--p-sentinel); --node-glow: rgba(124, 129, 242, .28)"><svg viewBox="0 0 24 24"><use href="#i-eye"/></svg></span>
+                    <span class="orbit-hub__node-label" style="--node-accent: var(--p-sentinel)">Sentinel</span>
+                  </div>
+                </div>
+                <div class="orbit-hub__node" style="--angle: 144deg">
+                  <div class="orbit-hub__node-inner">
+                    <span class="orbit-hub__node-icon" style="--delay: 8.8s; --node-accent: var(--p-redact); --node-glow: rgba(43, 201, 174, .28)"><svg viewBox="0 0 24 24"><use href="#i-redact"/></svg></span>
+                    <span class="orbit-hub__node-label" style="--node-accent: var(--p-redact)">Redact</span>
+                  </div>
+                </div>
+                <div class="orbit-hub__node" style="--angle: 216deg">
+                  <div class="orbit-hub__node-inner">
+                    <span class="orbit-hub__node-icon" style="--delay: 13.2s; --node-accent: var(--p-compliance); --node-glow: rgba(226, 88, 79, .28)"><svg viewBox="0 0 24 24"><use href="#i-compliance"/></svg></span>
+                    <span class="orbit-hub__node-label" style="--node-accent: var(--p-compliance)">Compliance</span>
+                  </div>
+                </div>
+                <div class="orbit-hub__node" style="--angle: 288deg">
+                  <div class="orbit-hub__node-inner">
+                    <span class="orbit-hub__node-icon" style="--delay: 17.6s; --node-accent: var(--p-fraudshield); --node-glow: rgba(238, 162, 62, .28)"><svg viewBox="0 0 24 24"><use href="#i-fraudshield"/></svg></span>
+                    <span class="orbit-hub__node-label" style="--node-accent: var(--p-fraudshield)">FraudShield</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why one platform -->
+    <section class="section section--navy">
+      <div class="wrap">
+        <div class="rationale-grid">
+          <div>
+            <div class="eyebrow" data-i18n="index.why.eyebrow">Why one platform</div>
+            <h2 style="font-size: 25px; margin-top: 14px" data-i18n="index.why.title">Five tools. One case. One login.</h2>
+          </div>
+          <div class="rationale-points">
+            <div class="rpoint">
+              <svg><use href="#i-check"/></svg>
+              <div><b data-i18n="index.why.p1.title">One login, not five.</b><p data-i18n="index.why.p1.desc">Investigators used to sign into five separate tools to work one case. Now Forensics, Sentinel, Redact, Compliance, and FraudShield share the same case, evidence model, and timeline.</p></div>
+            </div>
+            <div class="rpoint">
+              <svg><use href="#i-check"/></svg>
+              <div><b data-i18n="index.why.p2.title">SVIC is the core, not a feature.</b><p data-i18n="index.why.p2.desc">Every module reads and writes to the Silent Visionary Intelligence Cloud, so a Sentinel detection automatically appears as evidence in a Forensics investigation — no export, no re-upload.</p></div>
+            </div>
+            <div class="rpoint">
+              <svg><use href="#i-check"/></svg>
+              <div><b data-i18n="index.why.p3.title">Nothing you rely on is gone.</b><p data-i18n="index.why.p3.desc">Same product names, same workflows, same accent colors — reorganized under four pillars built to answer what happened, what's happening, what it means, and what should happen next.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pillars -->
+    <section class="section" id="pillars">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow" data-i18n="index.pillars.eyebrow">Platform architecture</div>
+          <h2 data-i18n="index.pillars.title">Four working pillars — and where each product lives now.</h2>
+        </div>
+        <div class="pillars-grid">
+          <a href="platform.html#forensic-intelligence" class="pillar-card reveal visible">
+            <div class="pillar-q" data-i18n="pillar.forensic.q">What happened?</div>
+            <h3 data-i18n="pillar.forensic.name">Forensic Intelligence</h3>
+            <p data-i18n="pillar.forensic.desc">Evidence acquisition, timeline reconstruction, chain of custody, and redaction.</p>
+            <div>
+              <div class="pillar-legacy-label" data-i18n="common.includes">Includes</div>
+              <div class="pillar-chips">
+                <span class="pchip"><span class="d" style="background: var(--p-forensics)"></span>Forensics™</span>
+                <span class="pchip"><span class="d" style="background: var(--p-redact)"></span>Redact™</span>
+              </div>
+            </div>
+          </a>
+          <a href="platform.html#cyber-defense" class="pillar-card reveal visible" style="transition-delay: .08s">
+            <div class="pillar-q" data-i18n="pillar.cyberdefense.q">What is happening?</div>
+            <h3 data-i18n="pillar.cyberdefense.name">Cyber Defense</h3>
+            <p data-i18n="pillar.cyberdefense.desc">Behavioral detection and SOC-ready alerting, correlated in real time.</p>
+            <div>
+              <div class="pillar-legacy-label" data-i18n="common.includes">Includes</div>
+              <div class="pillar-chips">
+                <span class="pchip"><span class="d" style="background: var(--p-sentinel)"></span>Sentinel™</span>
+              </div>
+            </div>
+          </a>
+          <a href="platform.html#threat-intelligence" class="pillar-card reveal visible" style="transition-delay: .16s">
+            <div class="pillar-q" data-i18n="pillar.threatintel.q">What does this mean?</div>
+            <h3 data-i18n="pillar.threatintel.name">Threat Intelligence</h3>
+            <p data-i18n="pillar.threatintel.desc">IOCs, actors, campaigns, and graph-based fraud-ring detection.</p>
+            <div>
+              <div class="pillar-legacy-label" data-i18n="common.includes">Includes</div>
+              <div class="pillar-chips">
+                <span class="pchip"><span class="d" style="background: var(--p-fraudshield)"></span>FraudShield™</span>
+              </div>
+            </div>
+          </a>
+          <a href="platform.html#cyber-automation" class="pillar-card reveal visible" style="transition-delay: .24s">
+            <div class="pillar-q" data-i18n="pillar.cyberauto.q">What should happen next?</div>
+            <h3 data-i18n="pillar.cyberauto.name">Cyber Automation</h3>
+            <p data-i18n="pillar.cyberauto.desc">Continuous compliance monitoring and case workflows, from alert to report.</p>
+            <div>
+              <div class="pillar-legacy-label" data-i18n="common.includes">Includes</div>
+              <div class="pillar-chips">
+                <span class="pchip"><span class="d" style="background: var(--p-compliance)"></span>Compliance™</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Inside the application -->
+    <section class="section section--border-top">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow" data-i18n="index.app.eyebrow">Inside the application</div>
+          <h2 data-i18n="index.app.title">The five products, as one workspace.</h2>
+          <p class="lede" style="margin-top: 10px" data-i18n="index.app.lede">A single case now surfaces Forensics, Sentinel, and FraudShield evidence side by side — instead of living in three separate product logins.</p>
+        </div>
+      </div>
+      <div class="app-shell">
+        <div class="wrap">
+          <div class="app-frame reveal visible">
+            <div class="app-chrome-bar">
+              <span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-dot"></span>
+              <span class="chrome-url">app.silentvisionary.io/investigations/SV-001</span>
+            </div>
+            <div class="app-body">
+              <aside class="app-sidebar">
+                <a href="dashboard.html" class="app-brand">
+                  <img src="LOGO-icon.png" alt="Silent Visionary" class="app-brand-icon" />
+                  SILENT VISIONARY
+                </a>
+                <ul class="app-nav">
+                  <li><a href="dashboard.html" class="active"><svg><use href="#i-grid"/></svg><span data-i18n="app.overview">Overview</span></a></li>
+                  <li><a href="dashboard.html"><svg><use href="#i-folder"/></svg><span data-i18n="app.investigations">Investigations</span></a></li>
+                  <li><a href="dashboard.html"><svg><use href="#i-cube"/></svg><span data-i18n="app.digitalTwin">Digital Twin</span></a></li>
+                  <li class="group-label" data-i18n="pillar.forensic.name">Forensic Intelligence</li>
+                  <li><a href="forensics.html" class="sub">Forensics™</a></li>
+                  <li><a href="redact.html" class="sub">Redact™</a></li>
+                  <li class="group-label" data-i18n="pillar.cyberdefense.name">Cyber Defense</li>
+                  <li><a href="sentinel.html" class="sub">Sentinel™</a></li>
+                  <li class="group-label" data-i18n="pillar.threatintel.name">Threat Intelligence</li>
+                  <li><a href="fraudshield.html" class="sub">FraudShield™</a></li>
+                  <li class="group-label" data-i18n="pillar.cyberauto.name">Cyber Automation</li>
+                  <li><a href="compliance.html" class="sub">Compliance™</a></li>
+                </ul>
+              </aside>
+              <div class="app-main">
+                <div class="app-topbar">
+                  <div class="case-pill"><span class="sev-crit"></span> <span data-i18n="app.case">Case</span> <b>SV-001</b> — <span data-i18n="index.app.case1.name">Unauthorized Network Intrusion</span></div>
+                  <span class="role-badge" data-i18n="app.investigator">Investigator</span>
+                </div>
+                <div class="dash-grid">
+                  <div class="panel">
+                    <div class="panel-head"><span class="panel-title"><svg><use href="#i-folder"/></svg><span data-i18n="app.activeInvestigations">Active Investigations</span></span><span class="panel-action" data-i18n="app.crossModule">Cross-module</span></div>
+                    <div class="panel-body">
+                      <div class="invest-row">
+                        <div class="case-card">
+                          <div class="case-card-top"><span class="case-id">SV-001</span><span class="sev sev-critical" data-i18n="app.sev.critical">Critical</span></div>
+                          <p class="case-name" data-i18n="index.app.case1.name">Unauthorized Network Intrusion</p>
+                          <div class="case-meta">
+                            <span><b>34</b> <span data-i18n="app.evidence">evidence</span></span>
+                            <span class="pillar-tag" style="color: var(--p-forensics); background: rgba(59,122,232,.12)">Forensics</span>
+                            <span class="pillar-tag" style="color: var(--p-sentinel); background: rgba(124,129,242,.12)">Sentinel</span>
+                          </div>
+                        </div>
+                        <div class="case-card">
+                          <div class="case-card-top"><span class="case-id">SV-014</span><span class="sev sev-high" data-i18n="app.sev.high">High</span></div>
+                          <p class="case-name" data-i18n="index.app.case2.name">Insider Data Exfiltration</p>
+                          <div class="case-meta">
+                            <span><b>21</b> <span data-i18n="app.evidence">evidence</span></span>
+                            <span class="pillar-tag" style="color: var(--p-fraudshield); background: rgba(238,162,62,.12)">FraudShield</span>
+                            <span class="pillar-tag" style="color: var(--p-redact); background: rgba(43,201,174,.12)">Redact</span>
+                          </div>
+                        </div>
+                        <div class="case-card">
+                          <div class="case-card-top"><span class="case-id">SV-009</span><span class="sev" style="color: var(--p-compliance); background: rgba(226,88,79,.12); border: 1px solid rgba(226,88,79,.35)">Compliance</span></div>
+                          <p class="case-name" data-i18n="index.app.case3.name">Continuous Control Drift — Audit Prep</p>
+                          <div class="case-meta">
+                            <span><b>9</b> <span data-i18n="app.findings">findings</span></span>
+                            <span class="pillar-tag" style="color: var(--p-compliance); background: rgba(226,88,79,.12)">Compliance</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="split-2">
+                    <div class="panel">
+                      <div class="panel-head"><span class="panel-title"><span class="live-dot"></span><span data-i18n="app.liveStream">Live Incident Stream</span></span><span class="panel-action">SV-001</span></div>
+                      <div class="panel-body">
+                        <ul class="stream-list">
+                          <li><span class="stream-time">21:14:02</span><span class="stream-tag tag-phys">Phys</span><span class="stream-desc" data-i18n="app.stream.e1">Movement detected — <b>Ops Wing, Cam 04</b></span></li>
+                          <li><span class="stream-time">21:14:07</span><span class="stream-tag tag-phys">Phys</span><span class="stream-desc" data-i18n="app.stream.e2">Badge access — Door D-12, <b>User-019</b></span></li>
+                          <li><span class="stream-time">21:14:12</span><span class="stream-tag tag-endpoint">Auth</span><span class="stream-desc" data-i18n="app.stream.e3">Login success — <b>WORKSTATION-042</b></span></li>
+                          <li><span class="stream-time">21:14:19</span><span class="stream-tag tag-endpoint">Proc</span><span class="stream-desc" data-i18n="app.stream.e4">Suspicious process — <b>powershell.exe</b> (encoded)</span></li>
+                          <li><span class="stream-time">21:14:23</span><span class="stream-tag tag-net">Net</span><span class="stream-desc" data-i18n="app.stream.e5">Outbound connection — <b>185.212.44.6:443</b></span></li>
+                          <li><span class="stream-time">21:14:31</span><span class="stream-tag tag-file">File</span><span class="stream-desc" data-i18n="app.stream.e6">File accessed — <b>finance_q3_export.xlsx</b></span></li>
+                          <li><span class="stream-time">21:14:47</span><span class="stream-tag tag-phys">Dev</span><span class="stream-desc" data-i18n="app.stream.e7">USB connected — <b>VID_0951&amp;PID_1666</b></span></li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div class="panel">
+                      <div class="panel-head"><span class="panel-title"><svg><use href="#i-cube"/></svg><span data-i18n="app.digitalTwin">Digital Twin</span> — Ops Wing</span><span class="panel-action"><span data-i18n="app.selected">Selected</span>: WORKSTATION-042</span></div>
+                      <div class="panel-body">
+                        <div class="twin-wrap">
+                          <svg viewBox="0 0 380 230" role="img" aria-label="Floor plan of the Ops Wing showing device nodes, with Workstation 42 highlighted as the selected object">
+                            <g fill="none" stroke="var(--line)" color="var(--line)" stroke-width="1.2">
+                              <rect x="10" y="10" width="150" height="105" rx="3"/>
+                              <rect x="170" y="10" width="200" height="70" rx="3"/>
+                              <rect x="10" y="125" width="360" height="95" rx="3"/>
+                            </g>
+                            <text x="18" y="26" font-family="var(--font-mono)" font-size="9" fill="var(--text-faint)" letter-spacing="1" data-i18n="app.room.server">SERVER ROOM</text>
+                            <text x="178" y="26" font-family="var(--font-mono)" font-size="9" fill="var(--text-faint)" letter-spacing="1" data-i18n="app.room.corridor">ACCESS CORRIDOR</text>
+                            <text x="18" y="141" font-family="var(--font-mono)" font-size="9" fill="var(--text-faint)" letter-spacing="1" data-i18n="app.room.ops">OPERATIONS ROOM</text>
+                            <circle cx="55" cy="65" r="3.4" fill="var(--low)"/>
+                            <circle cx="120" cy="80" r="3.4" fill="var(--low)"/>
+                            <circle cx="280" cy="45" r="3.4" fill="var(--ev-correlated)"/>
+                            <circle cx="330" cy="55" r="3.4" fill="var(--ev-correlated)"/>
+                            <circle cx="60" cy="175" r="3.4" fill="var(--low)"/>
+                            <circle cx="120" cy="190" r="3.4" fill="var(--low)"/>
+                            <circle cx="270" cy="165" r="3.4" fill="var(--low)"/>
+                            <circle class="pulse" cx="190" cy="175" r="7" fill="none" stroke="var(--gold)" stroke-width="1.4" color="var(--gold)"/>
+                            <circle cx="190" cy="175" r="5" fill="var(--gold)"/>
+                            <text x="190" y="200" text-anchor="middle" font-family="var(--font-mono)" font-size="9" fill="var(--gold-bright)">WORKSTATION-042</text>
+                          </svg>
+                          <div class="twin-detail">
+                            <div class="twin-detail-id">WORKSTATION-042</div>
+                            <span class="sev sev-critical" style="display: inline-flex; margin-bottom: 12px;"><span data-i18n="app.risk">Risk</span>: <span data-i18n="app.sev.high">High</span></span>
+                            <div class="twin-rows">
+                              <div class="twin-row"><span class="k" data-i18n="app.twin.location">Location</span><span class="v" data-i18n="app.twin.opsRoom">Operations Room</span></div>
+                              <div class="twin-row"><span class="k" data-i18n="app.twin.user">User</span><span class="v">User-019</span></div>
+                              <div class="twin-row"><span class="k">IP</span><span class="v">10.44.6.112</span></div>
+                              <div class="twin-row"><span class="k" data-i18n="app.twin.evidence">Evidence</span><span class="v">27 <span data-i18n="app.twin.artifacts">artifacts</span></span></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div style="text-align: center; margin-top: 22px">
+            <a href="dashboard.html" class="btn btn-ghost" data-i18n="index.app.openDashboard">Open the full dashboard →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Differentiator -->
+    <section class="differentiator">
+      <div class="wrap">
+        <div class="diff-grid">
+          <div class="diff-col">
+            <div class="diff-tag" data-i18n="index.diff.c1.tag">Five separate logins told you</div>
+            <div class="diff-quote" data-i18n="index.diff.c1.quote">"Here is one tool's evidence."</div>
+            <p class="diff-sub" data-i18n="index.diff.c1.sub">Correct, but partial — and never connected to the other four.</p>
+          </div>
+          <div class="diff-col">
+            <div class="diff-tag" data-i18n="index.diff.c2.tag">One platform now tells you</div>
+            <div class="diff-quote" data-i18n="index.diff.c2.quote">"Here is what happened, why we believe it, and the evidence behind it."</div>
+            <p class="diff-sub" data-i18n="index.diff.c2.sub">The same five capabilities, reasoning across each other instead of in isolation.</p>
+          </div>
+          <div class="diff-col final">
+            <div class="diff-tag">Silent Visionary</div>
+            <div class="diff-quote" data-i18n="index.diff.c3.quote">Evidence first. AI second. Human judgment always visible.</div>
+            <p class="diff-sub" data-i18n="index.diff.c3.sub">One brand, one login, one reconstruction — not five.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Closing -->
+    <section class="closing">
+      <div class="wrap">
+        <div class="eyebrow" style="justify-content: center">Silent Visionary</div>
+        <h2 data-i18n="index.closing.title">Five products. One platform. One story worth telling once.</h2>
+        <p class="lede" data-i18n="index.closing.lede">See how Forensics, Sentinel, Redact, Compliance, and FraudShield work as a single reconstruction engine.</p>
+        <div class="closing-ctas">
+          <a href="platform.html" class="btn btn-gold" data-i18n="index.hero.ctaPrimary">Explore the Platform</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="wrap">
+        <div class="footer__grid">
+          <div>
+            <img src="LOGO-full.png" alt="Silent Visionary" class="footer__logo-img" />
+            <p class="footer__desc" data-i18n="footer.desc">The unified cyber-physical forensic intelligence platform — one reconstruction engine behind five investigative capabilities.</p>
+          </div>
+          <div>
+            <h4 class="footer__col-title" data-i18n="footer.products">Products</h4>
+            <div class="footer__links">
+              <a href="forensics.html" class="footer__link">Forensics™</a>
+              <a href="sentinel.html" class="footer__link">Sentinel™</a>
+              <a href="redact.html" class="footer__link">Redact™</a>
+              <a href="compliance.html" class="footer__link">Compliance™</a>
+              <a href="fraudshield.html" class="footer__link">FraudShield™</a>
+            </div>
+          </div>
+          <div>
+            <h4 class="footer__col-title" data-i18n="footer.company">Company</h4>
+            <div class="footer__links">
+              <a href="platform.html" class="footer__link" data-i18n="footer.platform">Platform</a>
+              <a href="technology.html" class="footer__link" data-i18n="footer.technology">Technology</a>
+              <a href="solutions.html" class="footer__link" data-i18n="footer.solutions">Solutions</a>
+              <a href="about.html" class="footer__link" data-i18n="footer.about">About</a>
+            </div>
+          </div>
+          <div>
+            <h4 class="footer__col-title" data-i18n="footer.touch">Get in Touch</h4>
+            <div class="footer__links">
+              <a href="mailto:info@silentvisionary.com" class="footer__link">info@silentvisionary.com</a>
+            </div>
+            <a href="contact.html" class="btn btn-gold footer__cta" data-i18n="footer.contact">Contact</a>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <div class="footer__copyright" data-i18n="footer.copyright">&copy; 2025 Silent Visionary. All rights reserved.</div>
+          <div class="footer__badges">
+            <span data-i18n="footer.badge.gov">Government-first</span><span>&middot;</span><span data-i18n="footer.badge.cyberphysical">Cyber-Physical Intelligence</span><span>&middot;</span><span data-i18n="footer.badge.onePlatform">One Platform</span>
+          </div>
+          <div class="footer__lang">
+            <label for="lang-select" class="footer__lang-label">
+              <svg class="footer__lang-icon"><use href="#i-globe"/></svg>
+              <span data-i18n="footer.language">Language</span>
+            </label>
+            <select id="lang-select" class="footer__lang-select">
+              <option value="en">English</option>
+              <option value="pt-BR">Português (Brasil)</option>
+              <option value="es">Español</option>
+              <option value="fr">Français</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="i18n.js?v=20260812g" defer></script>
+    <script src="main.js?v=20260812g"></script>
+  </body>
+</html>

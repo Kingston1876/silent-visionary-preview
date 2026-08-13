@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Redact™ | Silent Visionary</title>
+    <meta name="description" content="Automated redaction for FOIA, public records, legal, and HR — part of the Forensic Intelligence pillar." />
+    <link rel="stylesheet" href="styles.css?v=20260812g" />
+  </head>
+  <body>
+    <svg width="0" height="0" style="position: absolute">
+      <defs>
+        <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12.5 9.5 18 20 6"/></symbol>
+        <symbol id="i-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><line x1="3" y1="12" x2="21" y2="12"/><path d="M12 3a15 15 0 0 1 4 9 15 15 0 0 1-4 9 15 15 0 0 1-4-9 15 15 0 0 1 4-9z"/></symbol>
+      </defs>
+    </svg>
+
+    <header class="header" id="header">
+      <div class="header__inner">
+        <a href="index.html" class="brandmark">
+          <img src="LOGO-icon.png" alt="Silent Visionary" class="brandmark-icon" />
+          SILENT VISIONARY
+        </a>
+        <nav class="navlinks">
+          <a href="platform.html" data-i18n="nav.platform">Platform</a>
+          <a href="products.html" class="active" data-i18n="nav.products">Products</a>
+          <a href="technology.html" data-i18n="nav.technology">Technology</a>
+          <a href="solutions.html" data-i18n="nav.solutions">Solutions</a>
+          <a href="industries.html" data-i18n="nav.industries">Industries</a>
+          <a href="about.html" data-i18n="nav.about">About</a>
+          <a href="contact.html" data-i18n="nav.contact">Contact</a>
+        </nav>
+        <div class="navcta">
+          <a href="login.html" class="btn btn-ghost btn-sm" data-i18n="nav.login">Login</a>
+          <a href="dashboard.html" class="btn btn-gold btn-sm" data-i18n="nav.demo">Launch Demo</a>
+        </div>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+          <span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span>
+        </button>
+      </div>
+      <nav class="mobile-nav" id="mobile-nav">
+        <a href="platform.html" class="mobile-nav__link">Platform</a>
+        <a href="products.html" class="mobile-nav__link">Products</a>
+        <a href="technology.html" class="mobile-nav__link">Technology</a>
+        <a href="solutions.html" class="mobile-nav__link">Solutions</a>
+        <a href="industries.html" class="mobile-nav__link">Industries</a>
+        <a href="about.html" class="mobile-nav__link">About</a>
+        <a href="contact.html" class="mobile-nav__link">Contact</a>
+        <a href="login.html" class="btn btn-ghost btn-lg btn-block mobile-nav__cta" style="margin-top: 20px">Login</a>
+        <a href="dashboard.html" class="btn btn-gold btn-lg btn-block mobile-nav__cta" style="margin-top: 12px">Launch Demo</a>
+      </nav>
+    </header>
+
+    <section class="page-hero">
+      <div class="wrap">
+        <div class="page-hero__content">
+          <div class="page-hero__main">
+            <nav class="breadcrumb">
+              <a href="index.html" data-i18n="common.home">Home</a><span class="sep">/</span>
+              <a href="platform.html#forensic-intelligence" data-i18n="pillar.forensic.name">Forensic Intelligence</a><span class="sep">/</span>
+              <span class="current">Redact™</span>
+            </nav>
+            <div class="eyebrow" style="color: var(--p-redact)">Forensic Intelligence · Redact™</div>
+            <h1 data-i18n="redact.hero.title">Redact in minutes. Release with confidence.</h1>
+            <p class="lede" data-i18n="redact.hero.lede">Meet every disclosure deadline without sacrificing privacy — or your team's sanity. Silent Visionary Redact™ automates redaction across documents, video, and audio, with an audit trail for every decision.</p>
+            <div class="page-hero-cta">
+              <a href="platform.html#forensic-intelligence" class="btn btn-gold" data-i18n="forensics.hero.cta">View pillar: Forensic Intelligence</a>
+            </div>
+          </div>
+          <div class="page-hero__side">
+            <div class="flow-graph" style="--fg-accent: var(--p-redact); --fg-accent-soft: rgba(43, 201, 174, .18)">
+              <div class="flow-graph__bar">
+                <span class="flow-graph__spark">&#10022;</span>
+                <span class="flow-graph__bar-label" data-i18n="redact.widget.label">Live Redaction Pipeline</span>
+              </div>
+              <div class="flow-graph__body">
+                <div class="redact-doc">
+                  <div class="redact-doc__header">
+                    <span class="redact-doc__file-icon">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                    </span>
+                    <span class="redact-doc__file-name">incident_report_0847.pdf</span>
+                    <span class="redact-doc__pii-badge" data-i18n="redact.doc.piiBadge">PII Detected</span>
+                  </div>
+                  <div class="redact-doc__lines">
+                    <div class="redact-doc__line"><span class="redact-doc__text">Case File: INC-0847-2025</span></div>
+                    <div class="redact-doc__line redact-doc__line--sensitive" style="--delay: 0s">
+                      <span class="redact-doc__text">Reported by: Michael Torres</span>
+                      <span class="redact-doc__bar"></span>
+                      <span class="redact-doc__label" data-i18n="redact.doc.label">Redacted</span>
+                    </div>
+                    <div class="redact-doc__line"><span class="redact-doc__text">Date/Time: 2025-03-14 &middot; 02:41</span></div>
+                    <div class="redact-doc__line"><span class="redact-doc__text">Location: Data Center B, Rack 12</span></div>
+                    <div class="redact-doc__line redact-doc__line--sensitive" style="--delay: 2s">
+                      <span class="redact-doc__text">SSN: 412-98-3351</span>
+                      <span class="redact-doc__bar"></span>
+                      <span class="redact-doc__label" data-i18n="redact.doc.label">Redacted</span>
+                    </div>
+                    <div class="redact-doc__line"><span class="redact-doc__text">Badge Level: 3 &mdash; Restricted</span></div>
+                    <div class="redact-doc__line redact-doc__line--sensitive" style="--delay: 4s">
+                      <span class="redact-doc__text">Account #: 8821-3340-19</span>
+                      <span class="redact-doc__bar"></span>
+                      <span class="redact-doc__label" data-i18n="redact.doc.label">Redacted</span>
+                    </div>
+                    <div class="redact-doc__line"><span class="redact-doc__text">Status: Under Review</span></div>
+                  </div>
+                  <div class="redact-doc__stat">
+                    <span class="redact-doc__stat-value">240&times;</span>
+                    <span class="redact-doc__stat-label" data-i18n="redact.doc.statLabel">faster than manual document review</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow" data-i18n="products.keyOutcomes">Key outcomes</div>
+          <h2 data-i18n="redact.outcomes.title">What changes when redaction stops being manual.</h2>
+        </div>
+        <div class="rationale-points" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px 40px;">
+          <div class="rpoint"><svg><use href="#i-check"/></svg><div><b data-i18n="redact.outcomes.p1.title">FOIA-ready</b><p data-i18n="redact.outcomes.p1.desc">Built around the turnaround times and formatting public records requests demand.</p></div></div>
+          <div class="rpoint"><svg><use href="#i-check"/></svg><div><b data-i18n="redact.outcomes.p2.title">PII detection</b><p data-i18n="redact.outcomes.p2.desc">Automatically flags sensitive identifiers across documents, video, and audio.</p></div></div>
+          <div class="rpoint"><svg><use href="#i-check"/></svg><div><b data-i18n="redact.outcomes.p3.title">Consistent redactions</b><p data-i18n="redact.outcomes.p3.desc">The same policy applied every time — no reviewer-to-reviewer drift.</p></div></div>
+          <div class="rpoint"><svg><use href="#i-check"/></svg><div><b data-i18n="redact.outcomes.p4.title">Audit trail</b><p data-i18n="redact.outcomes.p4.desc">Every redaction decision is logged and defensible under review.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--navy">
+      <div class="wrap">
+        <div class="rationale-grid" style="align-items: center;">
+          <div>
+            <div class="eyebrow" data-i18n="forensics.crosslink.eyebrow">Part of Forensic Intelligence</div>
+            <h2 style="font-size: 22px; margin-top: 12px" data-i18n="redact.crosslink.title">Redact™ shares its case model with Forensics™</h2>
+            <p class="lede" style="margin-top: 10px" data-i18n="redact.crosslink.lede">Documents pulled into a Forensics investigation can be redacted in place — the release copy and the evidentiary copy stay linked to the same case.</p>
+          </div>
+          <div>
+            <a href="forensics.html" class="legacy-pill" style="padding: 10px 16px; font-size: 12px;"><span class="legacy-dot" style="background: var(--p-forensics)"></span><span data-i18n="forensics.crosslink.pillPrefix">Also in this pillar:</span> Forensics™ →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="product-pager">
+      <div class="wrap">
+        <a href="sentinel.html" class="product-pager__link product-pager__link--prev">
+          <span class="product-pager__dir">&larr; Previous</span>
+          <span class="product-pager__name">Sentinel™</span>
+        </a>
+        <a href="compliance.html" class="product-pager__link product-pager__link--next">
+          <span class="product-pager__dir">Next &rarr;</span>
+          <span class="product-pager__name">Compliance™</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="closing">
+      <div class="wrap">
+        <h2 data-i18n="redact.closing.title">See a redaction batch run, start to finish.</h2>
+        <div class="closing-ctas">
+          <a href="products.html" class="btn btn-gold">All Products</a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="wrap">
+        <div class="footer__grid">
+          <div>
+            <img src="LOGO-full.png" alt="Silent Visionary" class="footer__logo-img" />
+            <p class="footer__desc" data-i18n="footer.desc">The unified cyber-physical forensic intelligence platform.</p>
+          </div>
+          <div>
+            <h4 class="footer__col-title" data-i18n="footer.products">Products</h4>
+            <div class="footer__links">
+              <a href="forensics.html" class="footer__link">Forensics™</a>
+              <a href="sentinel.html" class="footer__link">Sentinel™</a>
+              <a href="redact.html" class="footer__link">Redact™</a>
+              <a href="compliance.html" class="footer__link">Compliance™</a>
+              <a href="fraudshield.html" class="footer__link">FraudShield™</a>
+            </div>
+          </div>
+          <div>
+            <h4 class="footer__col-title" data-i18n="footer.company">Company</h4>
+            <div class="footer__links">
+              <a href="platform.html" class="footer__link" data-i18n="footer.platform">Platform</a>
+              <a href="technology.html" class="footer__link" data-i18n="footer.technology">Technology</a>
+              <a href="solutions.html" class="footer__link" data-i18n="footer.solutions">Solutions</a>
+              <a href="about.html" class="footer__link" data-i18n="footer.about">About</a>
+            </div>
+          </div>
+          <div>
+            <h4 class="footer__col-title" data-i18n="footer.touch">Get in Touch</h4>
+            <div class="footer__links">
+              <a href="mailto:info@silentvisionary.com" class="footer__link">info@silentvisionary.com</a>
+            </div>
+            <a href="contact.html" class="btn btn-gold footer__cta" data-i18n="footer.contact">Contact</a>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <div class="footer__copyright" data-i18n="footer.copyright">&copy; 2025 Silent Visionary. All rights reserved.</div>
+          <div class="footer__badges"><span>Silent Visionary Redact™</span></div>
+          <div class="footer__lang">
+            <label for="lang-select" class="footer__lang-label">
+              <svg class="footer__lang-icon"><use href="#i-globe"/></svg>
+              <span data-i18n="footer.language">Language</span>
+            </label>
+            <select id="lang-select" class="footer__lang-select">
+              <option value="en">English</option>
+              <option value="pt-BR">Português (Brasil)</option>
+              <option value="es">Español</option>
+              <option value="fr">Français</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="i18n.js?v=20260812g" defer></script>
+    <script src="main.js?v=20260812g"></script>
+  </body>
+</html>

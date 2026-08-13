@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login | Silent Visionary</title>
+    <meta name="description" content="Sign in to the Silent Visionary investigator platform." />
+    <link rel="stylesheet" href="styles.css?v=20260812g" />
+  </head>
+  <body>
+    <header class="header" id="header">
+      <div class="header__inner">
+        <a href="index.html" class="brandmark">
+          <img src="LOGO-icon.png" alt="Silent Visionary" class="brandmark-icon" />
+          SILENT VISIONARY
+        </a>
+        <nav class="navlinks">
+          <a href="platform.html" data-i18n="nav.platform">Platform</a>
+          <a href="products.html" data-i18n="nav.products">Products</a>
+          <a href="technology.html" data-i18n="nav.technology">Technology</a>
+          <a href="solutions.html" data-i18n="nav.solutions">Solutions</a>
+          <a href="industries.html" data-i18n="nav.industries">Industries</a>
+          <a href="about.html" data-i18n="nav.about">About</a>
+          <a href="contact.html" data-i18n="nav.contact">Contact</a>
+        </nav>
+        <div class="navcta">
+          <a href="login.html" class="btn btn-ghost btn-sm active" data-i18n="nav.login">Login</a>
+          <a href="dashboard.html" class="btn btn-gold btn-sm" data-i18n="nav.demo">Launch Demo</a>
+        </div>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+          <span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span>
+        </button>
+      </div>
+      <nav class="mobile-nav" id="mobile-nav">
+        <a href="platform.html" class="mobile-nav__link">Platform</a>
+        <a href="products.html" class="mobile-nav__link">Products</a>
+        <a href="technology.html" class="mobile-nav__link">Technology</a>
+        <a href="solutions.html" class="mobile-nav__link">Solutions</a>
+        <a href="industries.html" class="mobile-nav__link">Industries</a>
+        <a href="about.html" class="mobile-nav__link">About</a>
+        <a href="contact.html" class="mobile-nav__link">Contact</a>
+        <a href="dashboard.html" class="btn btn-gold btn-lg btn-block mobile-nav__cta" style="margin-top: 20px">Launch Demo</a>
+      </nav>
+    </header>
+
+    <main class="auth-shell">
+      <div class="auth-card">
+        <div class="auth-head">
+          <img src="LOGO-full.png" alt="Silent Visionary" class="auth-logo" />
+          <h1>Sign in to Silent Visionary</h1>
+          <p>Investigator access — multi-factor authentication required.</p>
+        </div>
+
+        <form id="login-form">
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="you@agency.gov" autocomplete="username" />
+          </div>
+          <div class="field">
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="••••••••••••" autocomplete="current-password" />
+          </div>
+          <div class="field-row">
+            <label class="check-row"><input type="checkbox" /> Remember this device</label>
+            <a href="#">Forgot password?</a>
+          </div>
+
+          <div class="auth-divider">Multi-factor code</div>
+          <div class="mfa-boxes">
+            <input type="text" maxlength="1" inputmode="numeric" />
+            <input type="text" maxlength="1" inputmode="numeric" />
+            <input type="text" maxlength="1" inputmode="numeric" />
+            <input type="text" maxlength="1" inputmode="numeric" />
+            <input type="text" maxlength="1" inputmode="numeric" />
+            <input type="text" maxlength="1" inputmode="numeric" />
+          </div>
+
+          <button type="submit" class="btn btn-gold btn-block btn-lg" style="margin-top: 22px">Sign In</button>
+        </form>
+
+        <div class="auth-divider">Demo role</div>
+        <div class="role-select-grid" id="role-select-grid">
+          <div class="role-opt active" tabindex="0" role="button" aria-pressed="true">Investigator</div>
+          <div class="role-opt" tabindex="0" role="button" aria-pressed="false">Forensic Analyst</div>
+          <div class="role-opt" tabindex="0" role="button" aria-pressed="false">SOC Analyst</div>
+          <div class="role-opt" tabindex="0" role="button" aria-pressed="false">Administrator</div>
+        </div>
+
+        <p class="auth-foot">This is a simulated sign-in for demonstration — no credentials are transmitted or stored. Don't have access? Contact your administrator.</p>
+      </div>
+    </main>
+
+    <script src="main.js?v=20260812g"></script>
+    <script>
+      document.getElementById("login-form").addEventListener("submit", function (e) {
+        e.preventDefault();
+        window.location.href = "dashboard.html";
+      });
+      var mfaInputs = document.querySelectorAll(".mfa-boxes input");
+      mfaInputs.forEach(function (input, i) {
+        input.addEventListener("input", function () {
+          if (input.value && mfaInputs[i + 1]) mfaInputs[i + 1].focus();
+        });
+      });
+
+      var roleOpts = document.querySelectorAll(".role-opt");
+      function selectRole(opt) {
+        roleOpts.forEach(function (o) {
+          o.classList.remove("active");
+          o.setAttribute("aria-pressed", "false");
+        });
+        opt.classList.add("active");
+        opt.setAttribute("aria-pressed", "true");
+        try {
+          window.localStorage.setItem("sv_demo_role", opt.textContent.trim());
+        } catch (e) {}
+      }
+      roleOpts.forEach(function (opt) {
+        opt.addEventListener("click", function () { selectRole(opt); });
+        opt.addEventListener("keydown", function (e) {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            selectRole(opt);
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

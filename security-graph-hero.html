@@ -1,0 +1,653 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Security Graph — Real-Time Cloud Risk Visualization</title>
+<style>
+  :root {
+    --bg: #05070d;
+    --bg-panel: #0a0f1c;
+    --cyan: #22d3ee;
+    --indigo: #818cf8;
+    --blue: #3b82f6;
+    --red: #ef4444;
+    --text: #e2e8f0;
+    --text-dim: #94a3b8;
+    --edge: rgba(148, 163, 184, 0.28);
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    overflow-x: hidden;
+  }
+
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 8vh 5vw 6vh;
+    text-align: center;
+    overflow: hidden;
+  }
+
+  /* ambient radial glow backdrop, sits behind everything */
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: -20%;
+    background: radial-gradient(circle at 28% 22%, rgba(34, 211, 238, 0.12), transparent 45%),
+      radial-gradient(circle at 76% 72%, rgba(99, 102, 241, 0.14), transparent 45%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .hero__content {
+    position: relative;
+    z-index: 2;
+    max-width: 780px;
+  }
+
+  .hero__badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--cyan);
+    background: rgba(34, 211, 238, 0.08);
+    border: 1px solid rgba(34, 211, 238, 0.25);
+    padding: 6px 14px;
+    border-radius: 999px;
+    margin-bottom: 20px;
+  }
+
+  .hero__badge .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--cyan);
+    box-shadow: 0 0 8px var(--cyan);
+    animation: dot-pulse 1.8s ease-in-out infinite;
+  }
+
+  @keyframes dot-pulse {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.3;
+    }
+  }
+
+  .hero__title {
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    line-height: 1.12;
+    font-weight: 700;
+    margin: 0 0 18px;
+    background: linear-gradient(135deg, #f8fafc 0%, #cbd5e1 55%, #818cf8 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .hero__subtitle {
+    font-size: clamp(1rem, 1.6vw, 1.15rem);
+    color: var(--text-dim);
+    max-width: 560px;
+    margin: 0 auto 32px;
+    line-height: 1.6;
+  }
+
+  .hero__cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, var(--cyan), var(--blue));
+    color: #04101c;
+    font-weight: 700;
+    font-size: 14px;
+    padding: 13px 26px;
+    border-radius: 10px;
+    text-decoration: none;
+    box-shadow: 0 0 0 1px rgba(34, 211, 238, 0.4), 0 10px 30px -8px rgba(34, 211, 238, 0.5);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .hero__cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 0 1px rgba(34, 211, 238, 0.6), 0 14px 34px -6px rgba(34, 211, 238, 0.65);
+  }
+
+  /* ---- Graph ---- */
+
+  .graph-wrap {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 1120px;
+    margin-top: 5vh;
+  }
+
+  .graph-wrap svg {
+    width: 100%;
+    height: auto;
+    display: block;
+    overflow: visible;
+  }
+
+  .edge-path {
+    fill: none;
+    stroke: var(--edge);
+    stroke-width: 1.6;
+  }
+
+  .edge-path--risk {
+    stroke: rgba(239, 68, 68, 0.35);
+  }
+
+  .packet {
+    fill: var(--cyan);
+    filter: url(#packet-glow);
+  }
+
+  .packet--risk {
+    fill: var(--red);
+  }
+
+  .node {
+    transform-box: fill-box;
+    transform-origin: center;
+  }
+
+  .node__halo {
+    fill: var(--bg-panel);
+  }
+
+  .node--cyan .node__halo {
+    filter: url(#glow-cyan);
+  }
+
+  .node--indigo .node__halo {
+    filter: url(#glow-indigo);
+  }
+
+  .node--risk .node__halo {
+    filter: url(#glow-red);
+  }
+
+  .node__ring {
+    fill: none;
+    stroke-width: 1.5;
+  }
+
+  .node--cyan .node__ring {
+    stroke: var(--cyan);
+  }
+
+  .node--indigo .node__ring {
+    stroke: var(--indigo);
+  }
+
+  .node--risk .node__ring {
+    stroke: var(--red);
+  }
+
+  .node__icon {
+    color: var(--text);
+  }
+
+  .node--cyan .node__icon {
+    color: var(--cyan);
+  }
+
+  .node--indigo .node__icon {
+    color: var(--indigo);
+  }
+
+  .node--risk .node__icon {
+    color: var(--red);
+  }
+
+  .node__label {
+    font-size: 12px;
+    font-weight: 600;
+    fill: var(--text-dim);
+    text-anchor: middle;
+    font-family: inherit;
+  }
+
+  .node--risk .node__label {
+    fill: #fca5a5;
+  }
+
+  .node__sublabel {
+    font-size: 9.5px;
+    fill: var(--text-dim);
+    opacity: 0.55;
+    text-anchor: middle;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  /* ambient float — each node gets its own duration/delay set inline by JS */
+  @keyframes node-float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-7px);
+    }
+  }
+
+  /* risk detection pulse, triggered by adding .node--pulsing */
+  @keyframes risk-pulse-ring {
+    0% {
+      stroke-width: 1.5;
+      stroke-opacity: 1;
+      r: 34;
+    }
+    60% {
+      stroke-width: 3;
+      stroke-opacity: 0.35;
+      r: 50;
+    }
+    100% {
+      stroke-width: 1.5;
+      stroke-opacity: 1;
+      r: 34;
+    }
+  }
+
+  @keyframes risk-pulse-fill {
+    0%,
+    100% {
+      fill: var(--bg-panel);
+    }
+    35% {
+      fill: rgba(239, 68, 68, 0.35);
+    }
+  }
+
+  .node--pulsing .node__ring {
+    animation: risk-pulse-ring 0.9s ease-out;
+  }
+
+  .node--pulsing .node__halo {
+    animation: risk-pulse-fill 0.9s ease-out;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .node {
+      animation: none !important;
+    }
+    .hero__badge .dot {
+      animation: none;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .hero {
+      padding: 10vh 6vw 6vh;
+    }
+    .graph-wrap {
+      margin-top: 6vh;
+    }
+  }
+</style>
+</head>
+<body>
+<section class="hero">
+  <div class="hero__content">
+    <span class="hero__badge"><span class="dot"></span> Live Cloud Security Graph</span>
+    <h1 class="hero__title">See every identity, workload, and risk — connected.</h1>
+    <p class="hero__subtitle">
+      A real-time graph of your cloud estate: code, infrastructure, and identity,
+      correlated automatically so the one path an attacker could take is the
+      first thing you see.
+    </p>
+    <a href="#" class="hero__cta">Explore the Graph →</a>
+  </div>
+
+  <div class="graph-wrap">
+    <svg id="security-graph" viewBox="0 0 960 540" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+      <defs>
+        <pattern id="grid-pattern" width="40" height="40" patternUnits="userSpaceOnUse">
+          <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(148,163,184,0.06)" stroke-width="1" />
+        </pattern>
+        <filter id="glow-cyan" x="-60%" y="-60%" width="220%" height="220%">
+          <feGaussianBlur stdDeviation="4" result="blur" />
+          <feMerge>
+            <feMergeNode in="blur" />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
+        <filter id="glow-indigo" x="-60%" y="-60%" width="220%" height="220%">
+          <feGaussianBlur stdDeviation="4" result="blur" />
+          <feMerge>
+            <feMergeNode in="blur" />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
+        <filter id="glow-red" x="-80%" y="-80%" width="260%" height="260%">
+          <feGaussianBlur stdDeviation="6" result="blur" />
+          <feMerge>
+            <feMergeNode in="blur" />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
+        <filter id="packet-glow" x="-200%" y="-200%" width="500%" height="500%">
+          <feGaussianBlur stdDeviation="2.4" result="blur" />
+          <feMerge>
+            <feMergeNode in="blur" />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
+      </defs>
+
+      <rect x="0" y="0" width="960" height="540" fill="url(#grid-pattern)" />
+
+      <!-- JS populates these three layers from the NODES / EDGES config below -->
+      <g id="edges-layer"></g>
+      <g id="nodes-layer"></g>
+      <g id="packets-layer"></g>
+    </svg>
+  </div>
+</section>
+
+<script>
+/* =========================================================================
+   SECURITY GRAPH — modular vanilla-JS SVG animation
+   Sections: CONFIG -> DOM HELPERS -> GRAPH BUILD -> PARTICLE SYSTEM
+             -> RISK PULSE -> ANIMATION LOOP -> INIT
+   Tweak node/edge data in CONFIG to reshape the graph; edges, icons, glow
+   and particle motion all derive from it automatically.
+   ========================================================================= */
+(function () {
+  "use strict";
+
+  /* ---------------------------------------------------------------------
+     1. CONFIG — single source of truth for the graph
+  --------------------------------------------------------------------- */
+  const SVG_NS = "http://www.w3.org/2000/svg";
+  const RISK_NODE_ID = "alert";
+
+  // 24x24 viewBox line-icon paths (stroke, no fill) keyed by node type
+  const ICONS = {
+    repo: '<line x1="6" y1="3" x2="6" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/>',
+    pipeline:
+      '<polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/>',
+    server:
+      '<rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/>',
+    key: '<circle cx="7.5" cy="15.5" r="5.5"/><path d="m21 2-9.6 9.6"/><path d="m15.5 7.5 3 3L22 7l-3-3"/>',
+    database: '<ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/>',
+    cpu: '<rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M15 2v2"/><path d="M15 20v2"/><path d="M2 15h2"/><path d="M2 9h2"/><path d="M20 15h2"/><path d="M20 9h2"/><path d="M9 2v2"/><path d="M9 20v2"/>',
+    globe:
+      '<circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>',
+    alert:
+      '<path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/>'
+  };
+
+  // Node registry — position drives the auto-generated curved edges below.
+  const NODES = [
+    { id: "repo", x: 90, y: 130, label: "Code Repo", sub: "Source", icon: "repo", accent: "cyan" },
+    { id: "pipeline", x: 250, y: 270, label: "CI/CD Pipeline", sub: "Build", icon: "pipeline", accent: "cyan" },
+    { id: "vm", x: 430, y: 130, label: "Cloud VM", sub: "Compute", icon: "server", accent: "indigo" },
+    { id: "iam", x: 430, y: 340, label: "IAM Role", sub: "Identity", icon: "key", accent: "indigo" },
+    { id: "db", x: 620, y: 220, label: "Database", sub: "Data", icon: "database", accent: "cyan" },
+    { id: "ai", x: 620, y: 420, label: "AI Pipeline", sub: "ML / LLM", icon: "cpu", accent: "indigo" },
+    { id: "gateway", x: 800, y: 130, label: "API Gateway", sub: "Ingress", icon: "globe", accent: "cyan" },
+    { id: "alert", x: 830, y: 420, label: "Security Alert", sub: "At Risk", icon: "alert", accent: "risk" }
+  ];
+
+  // Edges — which nodes connect, and how many packets flow along each.
+  const EDGES = [
+    { from: "repo", to: "pipeline", packets: 2 },
+    { from: "pipeline", to: "vm", packets: 2 },
+    { from: "vm", to: "iam", packets: 1 },
+    { from: "iam", to: "db", packets: 2 },
+    { from: "iam", to: "gateway", packets: 1 },
+    { from: "db", to: "ai", packets: 2 },
+    { from: "ai", to: "alert", packets: 1 },
+    { from: "gateway", to: "alert", packets: 1 }
+  ];
+
+  const NODE_RADIUS = 30;
+  const RISK_RADIUS = 34;
+  const PACKET_RADIUS = 4;
+  const PACKET_SPEED_RANGE = [55, 95]; // px/sec — randomized per packet for staggered motion
+
+  /* ---------------------------------------------------------------------
+     2. DOM HELPERS
+  --------------------------------------------------------------------- */
+  function svgEl(tag, attrs) {
+    const el = document.createElementNS(SVG_NS, tag);
+    for (const key in attrs) el.setAttribute(key, attrs[key]);
+    return el;
+  }
+
+  function findNode(id) {
+    return NODES.find((n) => n.id === id);
+  }
+
+  function randRange(min, max) {
+    return min + Math.random() * (max - min);
+  }
+
+  // Smooth quadratic-curve path between two node centers, offsetting the
+  // control point perpendicular to the line for a gentle arc.
+  function curvedPathD(x1, y1, x2, y2, bend) {
+    const mx = (x1 + x2) / 2;
+    const my = (y1 + y2) / 2;
+    const dx = x2 - x1;
+    const dy = y2 - y1;
+    const len = Math.hypot(dx, dy) || 1;
+    const nx = -dy / len; // perpendicular unit vector
+    const ny = dx / len;
+    const cx = mx + nx * bend;
+    const cy = my + ny * bend;
+    return `M ${x1},${y1} Q ${cx},${cy} ${x2},${y2}`;
+  }
+
+  /* ---------------------------------------------------------------------
+     3. GRAPH BUILD — draws edges and nodes from CONFIG
+  --------------------------------------------------------------------- */
+  const edgesLayer = document.getElementById("edges-layer");
+  const nodesLayer = document.getElementById("nodes-layer");
+  const edgePathEls = {}; // "from->to" -> <path>, so particles can traverse it
+
+  function buildEdges() {
+    EDGES.forEach((edge, i) => {
+      const a = findNode(edge.from);
+      const b = findNode(edge.to);
+      const bend = 36 * (i % 2 === 0 ? 1 : -1); // alternate curve direction for variety
+      const isRiskEdge = edge.to === RISK_NODE_ID;
+      const path = svgEl("path", {
+        d: curvedPathD(a.x, a.y, b.x, b.y, bend),
+        class: "edge-path" + (isRiskEdge ? " edge-path--risk" : "")
+      });
+      edgesLayer.appendChild(path);
+      edgePathEls[edge.from + "->" + edge.to] = path;
+    });
+  }
+
+  function buildNodes() {
+    NODES.forEach((node, i) => {
+      const radius = node.id === RISK_NODE_ID ? RISK_RADIUS : NODE_RADIUS;
+
+      // Positioning and the CSS float animation must live on separate
+      // elements: an SVG `transform` attribute and a CSS `transform`
+      // animation on the *same* element conflict — the CSS transform wins
+      // and silently discards the attribute's translate(x, y).
+      const posGroup = svgEl("g", {
+        transform: `translate(${node.x}, ${node.y})`
+      });
+
+      const floatGroup = svgEl("g", {
+        class: "node node--" + node.accent,
+        style: `animation: node-float ${5 + (i % 3)}s ease-in-out ${(i * 0.35).toFixed(2)}s infinite`
+      });
+
+      const halo = svgEl("circle", { class: "node__halo", r: radius });
+      const ring = svgEl("circle", { class: "node__ring", r: radius });
+
+      const iconSize = radius * 0.62;
+      const iconWrap = svgEl("svg", {
+        class: "node__icon",
+        x: -iconSize / 2,
+        y: -iconSize / 2,
+        width: iconSize,
+        height: iconSize,
+        viewBox: "0 0 24 24",
+        fill: "none",
+        stroke: "currentColor",
+        "stroke-width": "2",
+        "stroke-linecap": "round",
+        "stroke-linejoin": "round"
+      });
+      iconWrap.innerHTML = ICONS[node.icon] || "";
+
+      const label = svgEl("text", { class: "node__label", y: radius + 20 });
+      label.textContent = node.label;
+
+      const sublabel = svgEl("text", { class: "node__sublabel", y: radius + 33 });
+      sublabel.textContent = node.sub;
+
+      floatGroup.append(halo, ring, iconWrap, label, sublabel);
+      posGroup.appendChild(floatGroup);
+      nodesLayer.appendChild(posGroup);
+      node.el = floatGroup; // risk pulse toggles a class here, unrelated to either transform
+    });
+  }
+
+  /* ---------------------------------------------------------------------
+     4. PARTICLE SYSTEM — moves glowing "data packets" along edge paths
+  --------------------------------------------------------------------- */
+  const packetsLayer = document.getElementById("packets-layer");
+  const packets = [];
+
+  class Packet {
+    constructor(pathEl, edge, isRisk) {
+      this.pathEl = pathEl;
+      this.length = pathEl.getTotalLength();
+      this.edge = edge;
+      this.speed = randRange(PACKET_SPEED_RANGE[0], PACKET_SPEED_RANGE[1]); // px/sec
+      this.progress = Math.random(); // stagger starting position along the path
+      this.el = svgEl("circle", {
+        class: "packet" + (isRisk ? " packet--risk" : ""),
+        r: PACKET_RADIUS
+      });
+      packetsLayer.appendChild(this.el);
+      this.place();
+    }
+
+    // Advance along the path by dt seconds; wrapping the lap fires onArrive.
+    update(dt) {
+      this.progress += (this.speed * dt) / this.length;
+      if (this.progress >= 1) {
+        this.progress -= 1;
+        this.onArrive();
+      }
+      this.place();
+    }
+
+    place() {
+      const point = this.pathEl.getPointAtLength(this.progress * this.length);
+      this.el.setAttribute("cx", point.x);
+      this.el.setAttribute("cy", point.y);
+    }
+
+    onArrive() {
+      if (this.edge.to === RISK_NODE_ID) triggerRiskPulse();
+    }
+  }
+
+  function spawnPackets() {
+    EDGES.forEach((edge) => {
+      const pathEl = edgePathEls[edge.from + "->" + edge.to];
+      const isRisk = edge.to === RISK_NODE_ID;
+      for (let i = 0; i < edge.packets; i++) {
+        packets.push(new Packet(pathEl, edge, isRisk));
+      }
+    });
+  }
+
+  /* ---------------------------------------------------------------------
+     5. RISK PULSE — flashes the at-risk node when a packet reaches it
+  --------------------------------------------------------------------- */
+  function triggerRiskPulse() {
+    const el = findNode(RISK_NODE_ID).el;
+    if (!el) return;
+    // Remove-then-reflow-then-add so the CSS animation restarts cleanly
+    // even if a previous pulse is still finishing.
+    el.classList.remove("node--pulsing");
+    void el.offsetWidth;
+    el.classList.add("node--pulsing");
+  }
+
+  /* ---------------------------------------------------------------------
+     6. ANIMATION LOOP — single rAF driver for every packet
+  --------------------------------------------------------------------- */
+  let lastTime = null;
+  let rafId = null;
+
+  function tick(timestamp) {
+    if (lastTime === null) lastTime = timestamp;
+    const dt = Math.min((timestamp - lastTime) / 1000, 0.1); // clamp tab-switch gaps
+    lastTime = timestamp;
+
+    for (let i = 0; i < packets.length; i++) packets[i].update(dt);
+
+    rafId = requestAnimationFrame(tick);
+  }
+
+  /* ---------------------------------------------------------------------
+     7. INIT
+  --------------------------------------------------------------------- */
+  function init() {
+    buildEdges();
+    buildNodes();
+    spawnPackets();
+
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (!prefersReducedMotion) {
+      rafId = requestAnimationFrame(tick);
+    }
+
+    // Pause the loop when the tab is hidden to save CPU/battery.
+    document.addEventListener("visibilitychange", () => {
+      if (document.hidden) {
+        if (rafId) cancelAnimationFrame(rafId);
+        rafId = null;
+        lastTime = null;
+      } else if (!rafId && !prefersReducedMotion) {
+        rafId = requestAnimationFrame(tick);
+      }
+    });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init);
+  } else {
+    init();
+  }
+})();
+</script>
+</body>
+</html>
