@@ -1108,6 +1108,10 @@ body.mobile-nav-open .faq-widget { display: none; }
   .faq-widget__panel { width: calc(100vw - 32px); height: min(66vh, 500px); bottom: 68px; }
 }
 
+/* Reserve vertical clearance below the footer so its content (which wraps to
+   either corner depending on viewport width) never sits under the fixed launcher. */
+.footer__bottom { padding-bottom: 84px; }
+
 /* ============================================
    DESKTOP-ONLY GATE (dashboard + login on mobile)
    ============================================ */
