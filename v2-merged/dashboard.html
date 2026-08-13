@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dashboard | Silent Visionary</title>
     <meta name="description" content="Silent Visionary investigator dashboard — investigations, digital twin, timeline, threat intelligence, and the AI forensic assistant, in one workspace." />
-    <link rel="stylesheet" href="styles.css?v=20260812m" />
+    <link rel="stylesheet" href="styles.css?v=20260812n" />
   </head>
   <body class="app-page">
     <div class="desktop-only-notice">
@@ -91,7 +91,7 @@
               <div class="kpi-tile">
                 <div class="kpi-tile-top"><span class="kpi-label">Active Cases</span><span class="kpi-delta up">+1 today</span></div>
                 <div class="kpi-value-row">
-                  <span class="kpi-value" id="kpi-active-cases">3</span>
+                  <span class="kpi-value" id="kpi-active-cases">6</span>
                   <svg class="kpi-spark" viewBox="0 0 70 26"><polyline points="0,20 12,18 24,14 36,15 48,9 60,10 70,4" fill="none" stroke="var(--ok)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 </div>
               </div>
@@ -162,6 +162,36 @@
                       <span style="width: 20%; background: var(--gold)"></span>
                     </div>
                     <div class="case-card-foot"><span class="lead">1 investigator</span><span>Last activity 09:52:14</span></div>
+                  </div>
+                  <div class="case-card" data-case="SV-022" tabindex="0" role="button" style="--card-accent: var(--high)">
+                    <div class="case-card-top"><span class="case-id">SV-022</span><span class="sev sev-high">High</span></div>
+                    <p class="case-name">Hit-and-Run — 5th &amp; Main</p>
+                    <div class="case-meta"><span>5th &amp; Main — Retail Corridor</span><button type="button" class="status-chip status-new" data-status="new" title="Click to advance status">New</button><span><b>12</b> evidence</span><span><b>1</b> system</span></div>
+                    <div class="case-evidence-bar" title="Physical 65% · Endpoint 35%">
+                      <span style="width: 65%; background: var(--low)"></span>
+                      <span style="width: 35%; background: var(--gold)"></span>
+                    </div>
+                    <div class="case-card-foot"><span class="lead">2 investigators</span><span>Last activity 14:27:52</span></div>
+                  </div>
+                  <div class="case-card" data-case="SV-031" tabindex="0" role="button" style="--card-accent: var(--crit)">
+                    <div class="case-card-top"><span class="case-id">SV-031</span><span class="sev sev-critical">Critical</span></div>
+                    <p class="case-name">Transit Station Assault — Riverside Line</p>
+                    <div class="case-meta"><span>Riverside — Transit Hub</span><button type="button" class="status-chip status-active" data-status="active" title="Click to advance status">Active</button><span><b>16</b> evidence</span><span><b>1</b> system</span></div>
+                    <div class="case-evidence-bar" title="Physical 70% · Endpoint 30%">
+                      <span style="width: 70%; background: var(--low)"></span>
+                      <span style="width: 30%; background: var(--gold)"></span>
+                    </div>
+                    <div class="case-card-foot"><span class="lead">3 investigators</span><span>Last activity 22:24:02</span></div>
+                  </div>
+                  <div class="case-card" data-case="SV-018" tabindex="0" role="button" style="--card-accent: var(--med)">
+                    <div class="case-card-top"><span class="case-id">SV-018</span><span class="sev sev-medium">Medium</span></div>
+                    <p class="case-name">Signal Depot Copper Theft</p>
+                    <div class="case-meta"><span>Downtown — Traffic Ops Center</span><button type="button" class="status-chip status-review" data-status="review" title="Click to advance status">Review</button><span><b>7</b> evidence</span><span><b>1</b> system</span></div>
+                    <div class="case-evidence-bar" title="Physical 90% · Endpoint 10%">
+                      <span style="width: 90%; background: var(--low)"></span>
+                      <span style="width: 10%; background: var(--gold)"></span>
+                    </div>
+                    <div class="case-card-foot"><span class="lead">1 investigator</span><span>Last activity 08:15:00</span></div>
                   </div>
                 </div>
               </div>
@@ -509,7 +539,7 @@
       </div>
     </div>
 
-    <script src="main.js?v=20260812m"></script>
-    <script src="dashboard.js?v=20260812m"></script>
+    <script src="main.js?v=20260812n"></script>
+    <script src="dashboard.js?v=20260812n"></script>
   </body>
 </html>
