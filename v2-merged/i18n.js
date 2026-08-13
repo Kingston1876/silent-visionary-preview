@@ -16,6 +16,11 @@
       "nav.login": "Login",
       "nav.demo": "Launch Demo",
 
+      "faq.title": "Ask Silent Visionary",
+      "faq.subtitle": "Quick answers about the platform",
+      "faq.greeting": "Hi! Ask me about our products, pricing, security, or how to get started.",
+      "faq.placeholder": "Type a question…",
+
       "footer.desc":
         "The unified cyber-physical forensic intelligence platform — one reconstruction engine behind five investigative capabilities.",
       "footer.products": "Products",
@@ -482,6 +487,11 @@
       "nav.contact": "Contato",
       "nav.login": "Entrar",
       "nav.demo": "Ver Demonstração",
+
+      "faq.title": "Pergunte à Silent Visionary",
+      "faq.subtitle": "Respostas rápidas sobre a plataforma",
+      "faq.greeting": "Olá! Pergunte sobre nossos produtos, preços, segurança ou como começar.",
+      "faq.placeholder": "Digite uma pergunta…",
 
       "footer.desc":
         "A plataforma unificada de inteligência forense ciberfísica — um único motor de reconstrução por trás de cinco capacidades investigativas.",
@@ -950,6 +960,11 @@
       "nav.login": "Iniciar sesión",
       "nav.demo": "Ver Demostración",
 
+      "faq.title": "Pregunta a Silent Visionary",
+      "faq.subtitle": "Respuestas rápidas sobre la plataforma",
+      "faq.greeting": "¡Hola! Pregúntame sobre nuestros productos, precios, seguridad o cómo empezar.",
+      "faq.placeholder": "Escribe una pregunta…",
+
       "footer.desc":
         "La plataforma unificada de inteligencia forense ciberfísica — un único motor de reconstrucción detrás de cinco capacidades de investigación.",
       "footer.products": "Productos",
@@ -1416,6 +1431,11 @@
       "nav.contact": "Contact",
       "nav.login": "Connexion",
       "nav.demo": "Voir la Démo",
+
+      "faq.title": "Demandez à Silent Visionary",
+      "faq.subtitle": "Réponses rapides sur la plateforme",
+      "faq.greeting": "Bonjour ! Posez-moi vos questions sur nos produits, tarifs, sécurité ou comment démarrer.",
+      "faq.placeholder": "Tapez une question…",
 
       "footer.desc":
         "La plateforme unifiée d'intelligence forensique cyber-physique — un seul moteur de reconstruction derrière cinq capacités d'investigation.",
