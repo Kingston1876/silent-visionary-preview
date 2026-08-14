@@ -22,9 +22,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css?v=20260813l" />
+    <link rel="stylesheet" href="styles.css?v=20260814b" />
   </head>
   <body class="app-page">
+    <a href="#main" class="skip-link" data-i18n="common.skipToContent">Skip to content</a>
     <div class="desktop-only-notice">
       <div class="desktop-only-notice__inner">
         <svg class="desktop-only-notice__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
@@ -56,7 +57,7 @@
       </defs>
     </svg>
 
-    <div class="app-frame app-frame--full">
+    <div class="app-frame app-frame--full" id="main">
       <div class="app-body app-body--full" style="grid-template-columns: 232px 1fr;">
         <aside class="app-sidebar">
           <a href="index.html" class="app-brand">
@@ -242,8 +243,8 @@
                   <span class="panel-title"><span class="live-dot" id="live-dot"></span>Live Incident Stream</span>
                   <span class="panel-action">
                     <span class="live-controls">
-                      <button type="button" class="live-ctrl-btn" id="live-pause-btn" title="Pause live feed"><svg><use href="#i-pause"/></svg></button>
-                      <button type="button" class="live-ctrl-btn" id="live-replay-btn" title="Replay incident"><svg><use href="#i-replay"/></svg></button>
+                      <button type="button" class="live-ctrl-btn" id="live-pause-btn" title="Pause live feed" aria-label="Pause live feed"><svg><use href="#i-pause"/></svg></button>
+                      <button type="button" class="live-ctrl-btn" id="live-replay-btn" title="Replay incident" aria-label="Replay incident"><svg><use href="#i-replay"/></svg></button>
                     </span>
                     <span id="stream-case-label">SV-014</span>
                   </span>
@@ -577,7 +578,7 @@
       </div>
     </div>
 
-    <script src="main.js?v=20260813l"></script>
-    <script src="dashboard.js?v=20260813l"></script>
+    <script src="main.js?v=20260814b"></script>
+    <script src="dashboard.js?v=20260814b"></script>
   </body>
 </html>

@@ -1240,3 +1240,48 @@ body.mobile-nav-open .faq-widget { display: none; }
 @media (max-width: 640px) {
   .custody-demo__entry { grid-template-columns: 1fr; gap: 3px; }
 }
+
+/* ============================================
+   ACCESSIBILITY: SKIP LINK
+   ============================================ */
+
+.skip-link {
+  position: absolute; top: -100px; left: 12px; z-index: 1000;
+  background: var(--gold); color: var(--ink); padding: 10px 16px; border-radius: 8px;
+  font-family: var(--font-mono); font-size: 13px; font-weight: 700; text-decoration: none;
+  transition: top var(--transition-fast);
+}
+.skip-link:focus { top: 12px; outline: 2px solid var(--text); outline-offset: 2px; }
+
+/* ============================================
+   SITEMAP PAGE
+   ============================================ */
+
+.sitemap-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px 32px; }
+.sitemap-col__title { font-family: var(--font-display); font-weight: 700; font-size: 16px; margin: 0 0 14px; color: var(--text); }
+.sitemap-col__list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 11px; }
+.sitemap-col__list a { color: var(--text-dim); text-decoration: none; font-size: 16px; }
+.sitemap-col__list a:hover { color: var(--gold); }
+.sitemap-col__list a:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; border-radius: 3px; }
+
+@media (max-width: 900px) {
+  .sitemap-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+  .sitemap-grid { grid-template-columns: 1fr; gap: 28px; }
+}
+
+/* ============================================
+   LEGAL PAGES (Privacy, Terms)
+   ============================================ */
+
+.legal-prose { max-width: 720px; }
+.legal-prose h2 { font-size: 20px; margin: 40px 0 14px; }
+.legal-prose h2:first-of-type { margin-top: 8px; }
+.legal-prose h3 { font-size: 16px; margin: 24px 0 8px; color: var(--text); }
+.legal-prose p { color: var(--text-dim); line-height: 1.7; margin: 0 0 16px; }
+.legal-prose ul { margin: 0 0 16px; padding-left: 22px; color: var(--text-dim); line-height: 1.7; }
+.legal-prose li { margin-bottom: 6px; }
+.legal-prose a { color: var(--gold); }
+.legal-prose code { font-family: var(--font-mono); font-size: 0.92em; background: var(--charcoal-2); padding: 2px 6px; border-radius: 4px; }
+.legal-updated { color: var(--text-faint); font-size: 13.5px; margin-bottom: 24px; }

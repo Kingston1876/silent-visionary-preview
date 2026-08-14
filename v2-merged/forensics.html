@@ -22,9 +22,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css?v=20260813l" />
+    <link rel="stylesheet" href="styles.css?v=20260814b" />
   </head>
   <body>
+    <a href="#main" class="skip-link" data-i18n="common.skipToContent">Skip to content</a>
     <svg width="0" height="0" style="position: absolute">
       <defs>
         <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12.5 9.5 18 20 6"/></symbol>
@@ -66,7 +67,7 @@
       </nav>
     </header>
 
-    <section class="page-hero">
+    <section class="page-hero" id="main">
       <div class="wrap">
         <div class="page-hero__content">
           <div class="page-hero__main">
@@ -88,7 +89,7 @@
                 <span class="flow-graph__spark">&#10022;</span>
                 <span class="flow-graph__bar-label" data-i18n="forensics.widget.label">Live Forensic Trace</span>
               </div>
-              <div class="flow-graph__body">
+              <div class="flow-graph__body" aria-hidden="true">
                 <div class="radar-ping">
                   <span class="radar-ping__scanring"></span>
                   <span class="radar-ping__ring" style="animation-delay: 0s"></span>
@@ -153,14 +154,14 @@
         </div>
         <div class="custody-demo">
           <div class="custody-demo__input-row">
-            <input type="text" id="custody-input" class="custody-demo__input" data-i18n-placeholder="forensics.custody.placeholder" placeholder="Type a case note, a filename, anything…" maxlength="200" autocomplete="off" />
+            <input type="text" id="custody-input" class="custody-demo__input" aria-label="Text to hash and seal" data-i18n-placeholder="forensics.custody.placeholder" placeholder="Type a case note, a filename, anything…" maxlength="200" autocomplete="off" />
             <button type="button" id="custody-seal-btn" class="btn btn-gold" data-i18n="forensics.custody.button">Compute Hash &amp; Seal</button>
           </div>
           <div class="custody-demo__hash" id="custody-hash-row" hidden>
             <span class="custody-demo__hash-label">SHA-256</span>
             <code class="custody-demo__hash-value" id="custody-hash-value"></code>
           </div>
-          <div class="custody-demo__ledger" id="custody-ledger"></div>
+          <div class="custody-demo__ledger" id="custody-ledger" aria-live="polite"></div>
           <p class="custody-demo__hint" data-i18n="forensics.custody.hint">Change even one character above and seal again — watch the hash completely change. That's the avalanche effect: it's what makes tampering with evidence mathematically impossible to hide.</p>
         </div>
       </div>
@@ -240,7 +241,12 @@
         </div>
         <div class="footer__bottom">
           <div class="footer__copyright" data-i18n="footer.copyright">&copy; 2025 Silent Visionary. All rights reserved.</div>
-          <div class="footer__badges"><span>Silent Visionary Forensics™</span></div>
+          <div class="footer__badges">
+            <span>Silent Visionary Forensics™</span>
+            <a href="privacy.html" class="footer__link" data-i18n="footer.privacy">Privacy Policy</a>
+            <a href="terms.html" class="footer__link" data-i18n="footer.terms">Terms of Service</a>
+            <a href="sitemap.html" class="footer__link" data-i18n="sitemap.hero.eyebrow">Sitemap</a>
+          </div>
           <div class="footer__lang">
             <label for="lang-select" class="footer__lang-label">
               <svg class="footer__lang-icon"><use href="#i-globe"/></svg>
@@ -267,7 +273,7 @@
           <div class="faq-widget__title" data-i18n="faq.title">Ask Silent Visionary</div>
           <div class="faq-widget__subtitle" data-i18n="faq.subtitle">Quick answers about the platform</div>
         </div>
-        <div class="faq-widget__thread" id="faq-thread">
+        <div class="faq-widget__thread" id="faq-thread" aria-live="polite">
           <div class="faq-widget__msg faq-widget__msg--bot"><p data-i18n="faq.greeting">Hi! Ask me about our products, pricing, security, or how to get started.</p></div>
           <div class="faq-widget__chips" id="faq-chips"></div>
         </div>
@@ -280,7 +286,7 @@
       </div>
     </div>
 
-    <script src="i18n.js?v=20260813l" defer></script>
-    <script src="main.js?v=20260813l"></script>
+    <script src="i18n.js?v=20260814b" defer></script>
+    <script src="main.js?v=20260814b"></script>
   </body>
 </html>

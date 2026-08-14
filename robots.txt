@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kingston1876.github.io/silent-visionary-preview/sitemap.xml
