@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'" />
     <title>Contact | Silent Visionary</title>
     <meta name="description" content="Get in touch with Silent Visionary — demos, sales, support, and responsible disclosure." />
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
@@ -11,6 +12,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
     <link rel="manifest" href="site.webmanifest" />
     <meta name="theme-color" content="#090c11" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Silent Visionary" />
     <meta property="og:title" content="Contact | Silent Visionary" />
@@ -25,7 +27,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css?v=20260814g" />
+    <link rel="stylesheet" href="styles.min.css?v=20260814h" />
   </head>
   <body>
     <a href="#main" class="skip-link" data-i18n="common.skipToContent">Skip to content</a>
@@ -210,21 +212,8 @@
       </div>
     </div>
 
-    <script src="i18n.js?v=20260814g" defer></script>
-    <script src="main.js?v=20260814g"></script>
-    <script>
-      document.getElementById("contact-form").addEventListener("submit", function (e) {
-        e.preventDefault();
-        var name = document.getElementById("c-name").value;
-        var org = document.getElementById("c-org").value;
-        var interest = document.getElementById("c-interest").value;
-        var message = document.getElementById("c-message").value;
-        var subject = encodeURIComponent("Silent Visionary Inquiry — " + (interest || "General"));
-        var body = encodeURIComponent(
-          "Name: " + name + "\nOrganization: " + org + "\nInterested in: " + interest + "\n\n" + message
-        );
-        window.location.href = "mailto:info@silentvisionary.com?subject=" + subject + "&body=" + body;
-      });
-    </script>
+    <script src="i18n.min.js?v=20260814h" defer></script>
+    <script src="main.min.js?v=20260814h"></script>
+    <script src="contact.min.js?v=20260814h"></script>
   </body>
 </html>
