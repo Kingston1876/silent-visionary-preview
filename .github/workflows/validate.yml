@@ -1,0 +1,33 @@
+name: Validate site
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Check JS syntax
+        run: |
+          node --check v2-merged/dashboard.js
+          node --check v2-merged/main.js
+          node --check v2-merged/i18n.js
+
+      - name: Run HTML/CSS/i18n/link validation
+        run: python3 .github/scripts/validate.py
