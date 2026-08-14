@@ -133,11 +133,9 @@
   const faqLauncher = document.getElementById('faq-launcher');
   const faqPanel = document.getElementById('faq-panel');
   const faqThread = document.getElementById('faq-thread');
-  const faqForm = document.getElementById('faq-form');
-  const faqInput = document.getElementById('faq-input');
   const faqChips = document.getElementById('faq-chips');
 
-  if (faqLauncher && faqPanel && faqForm && faqInput && faqThread) {
+  if (faqLauncher && faqPanel && faqThread) {
     const FAQ_DATA = [
       {
         q: 'What products does Silent Visionary offer?',
@@ -196,15 +194,12 @@
       },
     ];
 
-    const FAQ_STARTERS = [FAQ_DATA[0].q, FAQ_DATA[2].q, FAQ_DATA[3].q, FAQ_DATA[10].q];
+    const FAQ_STARTERS = FAQ_DATA.map(function (item) { return item.q; });
 
     function faqOpen() {
       faqPanel.classList.add('faq-widget__panel--open');
       faqLauncher.setAttribute('aria-expanded', 'true');
       faqLauncher.classList.add('faq-widget__launcher--open');
-      window.setTimeout(function () {
-        faqInput.focus();
-      }, 150);
     }
 
     function faqClose() {
@@ -260,17 +255,8 @@
       botMsg.appendChild(botP);
       faqThread.appendChild(botMsg);
 
-      if (faqChips) {
-        faqChips.remove();
-      }
       faqThread.scrollTop = faqThread.scrollHeight;
-      faqInput.value = '';
     }
-
-    faqForm.addEventListener('submit', function (e) {
-      e.preventDefault();
-      faqAsk(faqInput.value);
-    });
 
     faqRenderChips();
 

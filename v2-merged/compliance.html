@@ -27,7 +27,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.min.css?v=20260814j" />
+    <link rel="stylesheet" href="styles.min.css?v=20260814k" />
   </head>
   <body>
     <a href="#main" class="skip-link" data-i18n="common.skipToContent">Skip to content</a>
@@ -150,7 +150,7 @@
       </div>
     </section>
 
-    <section class="section">
+    <section id="what-changes" class="section">
       <div class="wrap">
         <div class="section-head">
           <div class="eyebrow" data-i18n="products.keyOutcomes">Key outcomes</div>
@@ -165,22 +165,22 @@
       </div>
     </section>
 
-    <section class="section section--navy">
+    <section id="reports-assemble" class="section section--navy">
       <div class="wrap">
         <div class="rationale-grid" style="align-items: center;">
-          <div>
+          <div class="section-head">
             <div class="eyebrow" data-i18n="compliance.crosslink.eyebrow">Powered by Cyber Automation</div>
-            <h2 style="font-size: 22px; margin-top: 12px" data-i18n="compliance.crosslink.title">Reports assemble themselves</h2>
+            <h2 data-i18n="compliance.crosslink.title">Reports assemble themselves</h2>
             <p class="lede" style="margin-top: 10px" data-i18n="compliance.crosslink.lede">Compliance findings run on the same trigger → condition → action → result workflow builder that powers the rest of the platform's automation.</p>
           </div>
           <div>
-            <a href="platform.html#cyber-automation" class="legacy-pill" style="padding: 10px 16px; font-size: 12px;"><span class="legacy-dot" style="background: var(--p-compliance)"></span><span data-i18n="compliance.hero.cta">View pillar: Cyber Automation</span> →</a>
+            <a href="platform.html#cyber-automation" class="btn btn-ghost"><span data-i18n="compliance.hero.cta">View pillar: Cyber Automation</span> →</a>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="product-pager">
+    <section id="product-pager" class="product-pager">
       <div class="wrap">
         <a href="redact.html" class="product-pager__link product-pager__link--prev">
           <span class="product-pager__dir">&larr; Previous</span>
@@ -193,7 +193,7 @@
       </div>
     </section>
 
-    <section class="closing">
+    <section id="closing-cta" class="closing">
       <div class="wrap">
         <h2 data-i18n="compliance.closing.title">See a control drift caught before it becomes a finding.</h2>
         <div class="closing-ctas">
@@ -238,14 +238,16 @@
           </div>
         </div>
         <div class="footer__bottom">
+          <div class="footer__left">
           <div class="footer__copyright" data-i18n="footer.copyright">&copy; 2025 Silent Visionary. All rights reserved.</div>
-          <div class="footer__badges">
-            <div class="footer__badges-row"><span>Silent Visionary Compliance™</span></div>
             <div class="footer__legal-row">
               <a href="privacy.html" class="footer__link" data-i18n="footer.privacy">Privacy Policy</a>
               <a href="terms.html" class="footer__link" data-i18n="footer.terms">Terms of Service</a>
               <a href="sitemap.html" class="footer__link" data-i18n="sitemap.hero.eyebrow">Sitemap</a>
             </div>
+          </div>
+          <div class="footer__badges">
+            <div class="footer__badges-row"><span>Silent Visionary Compliance™</span></div>
           </div>
           <div class="footer__lang">
             <label for="lang-select" class="footer__lang-label">
@@ -277,16 +279,10 @@
           <div class="faq-widget__msg faq-widget__msg--bot"><p data-i18n="faq.greeting">Hi! Ask me about our products, pricing, security, or how to get started.</p></div>
           <div class="faq-widget__chips" id="faq-chips"></div>
         </div>
-        <form class="faq-widget__form" id="faq-form">
-          <input type="text" id="faq-input" class="faq-widget__input" data-i18n-placeholder="faq.placeholder" placeholder="Type a question…" autocomplete="off" />
-          <button type="submit" class="faq-widget__send" aria-label="Send">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4 20-7z"/></svg>
-          </button>
-        </form>
       </div>
     </div>
 
-    <script src="i18n.min.js?v=20260814j" defer></script>
-    <script src="main.min.js?v=20260814j"></script>
+    <script src="i18n.min.js?v=20260814k" defer></script>
+    <script src="main.min.js?v=20260814k"></script>
   </body>
 </html>

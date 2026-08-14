@@ -30,7 +30,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.min.css?v=20260814j" />
+    <link rel="stylesheet" href="styles.min.css?v=20260814k" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -116,13 +116,6 @@
             <div class="hero-ctas">
               <a href="platform.html" class="btn btn-gold" data-i18n="index.hero.ctaPrimary">Explore the Platform</a>
             </div>
-            <div class="legacy-strip">
-              <a href="forensics.html" class="legacy-pill"><span class="legacy-dot" style="background: var(--p-forensics)"></span>Forensics™</a>
-              <a href="sentinel.html" class="legacy-pill"><span class="legacy-dot" style="background: var(--p-sentinel)"></span>Sentinel™</a>
-              <a href="redact.html" class="legacy-pill"><span class="legacy-dot" style="background: var(--p-redact)"></span>Redact™</a>
-              <a href="compliance.html" class="legacy-pill"><span class="legacy-dot" style="background: var(--p-compliance)"></span>Compliance™</a>
-              <a href="fraudshield.html" class="legacy-pill"><span class="legacy-dot" style="background: var(--p-fraudshield)"></span>FraudShield™</a>
-            </div>
           </div>
 
           <figure class="diagram-card reveal visible" style="transition-delay: .1s">
@@ -173,10 +166,10 @@
     </section>
 
     <!-- One engine, two worlds -->
-    <section class="section split-feed-section">
+    <section id="split-feed" class="section split-feed-section">
       <div class="wrap">
-        <div class="section-head" style="text-align: center; align-items: center;">
-          <div class="eyebrow" style="justify-content: center;" data-i18n="index.split.eyebrow">One engine. Two worlds.</div>
+        <div class="section-head section-head--center">
+          <div class="eyebrow" data-i18n="index.split.eyebrow">One engine. Two worlds.</div>
           <h2 data-i18n="index.split.title">Watch the same engine work a cyberattack and a street crime, live.</h2>
         </div>
         <div class="split-feed">
@@ -196,12 +189,12 @@
     </section>
 
     <!-- Why one platform -->
-    <section class="section section--navy">
+    <section id="five-tools-one-login" class="section section--navy">
       <div class="wrap">
         <div class="rationale-grid">
-          <div>
+          <div class="section-head">
             <div class="eyebrow" data-i18n="index.why.eyebrow">Why one platform</div>
-            <h2 style="font-size: 25px; margin-top: 14px" data-i18n="index.why.title">Five tools. One case. One login.</h2>
+            <h2 data-i18n="index.why.title">Five tools. One case. One login.</h2>
           </div>
           <div class="rationale-points">
             <div class="rpoint">
@@ -224,7 +217,7 @@
     <!-- Pillars -->
     <section class="section" id="pillars">
       <div class="wrap">
-        <div class="section-head">
+        <div class="section-head section-head--center">
           <div class="eyebrow" data-i18n="index.pillars.eyebrow">Platform architecture</div>
           <h2 data-i18n="index.pillars.title">Four working pillars — and where each product lives now.</h2>
         </div>
@@ -279,7 +272,7 @@
     </section>
 
     <!-- Inside the application -->
-    <section class="section section--border-top">
+    <section id="five-products-workspace" class="section section--border-top">
       <div class="wrap">
         <div class="section-head">
           <div class="eyebrow" data-i18n="index.app.eyebrow">Inside the application</div>
@@ -421,22 +414,22 @@
     </section>
 
     <!-- Differentiator -->
-    <section class="differentiator">
+    <section id="differentiator" class="differentiator">
       <div class="wrap">
         <div class="diff-grid">
           <div class="diff-col">
             <div class="diff-tag" data-i18n="index.diff.c1.tag">Five separate logins told you</div>
-            <div class="diff-quote" data-i18n="index.diff.c1.quote">"Here is one tool's evidence."</div>
+            <h3 class="diff-quote" data-i18n="index.diff.c1.quote">"Here is this one tool's evidence, and nothing more."</h3>
             <p class="diff-sub" data-i18n="index.diff.c1.sub">Correct, but partial — and never connected to the other four.</p>
           </div>
           <div class="diff-col">
             <div class="diff-tag" data-i18n="index.diff.c2.tag">One platform now tells you</div>
-            <div class="diff-quote" data-i18n="index.diff.c2.quote">"Here is what happened, why we believe it, and the evidence behind it."</div>
-            <p class="diff-sub" data-i18n="index.diff.c2.sub">The same five capabilities, reasoning across each other instead of in isolation.</p>
+            <h3 class="diff-quote" data-i18n="index.diff.c2.quote">"Here is what happened, why, and the evidence behind it."</h3>
+            <p class="diff-sub" data-i18n="index.diff.c2.sub">The same five capabilities, now reasoning across each other.</p>
           </div>
           <div class="diff-col final">
             <div class="diff-tag">Silent Visionary</div>
-            <div class="diff-quote" data-i18n="index.diff.c3.quote">Evidence first. AI second. Human judgment always visible.</div>
+            <h3 class="diff-quote" data-i18n="index.diff.c3.quote">Evidence first. AI second. Human judgment always visible.</h3>
             <p class="diff-sub" data-i18n="index.diff.c3.sub">One brand, one login, one reconstruction — not five.</p>
           </div>
         </div>
@@ -444,7 +437,7 @@
     </section>
 
     <!-- Closing -->
-    <section class="closing">
+    <section id="closing-cta" class="closing">
       <div class="wrap">
         <div class="eyebrow" style="justify-content: center">Silent Visionary</div>
         <h2 data-i18n="index.closing.title">Five products. One platform. One story worth telling once.</h2>
@@ -492,14 +485,16 @@
           </div>
         </div>
         <div class="footer__bottom">
+          <div class="footer__left">
           <div class="footer__copyright" data-i18n="footer.copyright">&copy; 2025 Silent Visionary. All rights reserved.</div>
-          <div class="footer__badges">
-            <div class="footer__badges-row"><span data-i18n="footer.badge.gov">Government-first</span><span>&middot;</span><span data-i18n="footer.badge.cyberphysical">Cyber-Physical Intelligence</span><span>&middot;</span><span data-i18n="footer.badge.onePlatform">One Platform</span></div>
             <div class="footer__legal-row">
               <a href="privacy.html" class="footer__link" data-i18n="footer.privacy">Privacy Policy</a>
               <a href="terms.html" class="footer__link" data-i18n="footer.terms">Terms of Service</a>
               <a href="sitemap.html" class="footer__link" data-i18n="sitemap.hero.eyebrow">Sitemap</a>
             </div>
+          </div>
+          <div class="footer__badges">
+            <div class="footer__badges-row"><span data-i18n="footer.badge.gov">Government-first</span><span>&middot;</span><span data-i18n="footer.badge.cyberphysical">Cyber-Physical Intelligence</span><span>&middot;</span><span data-i18n="footer.badge.onePlatform">One Platform</span></div>
           </div>
           <div class="footer__lang">
             <label for="lang-select" class="footer__lang-label">
@@ -531,16 +526,10 @@
           <div class="faq-widget__msg faq-widget__msg--bot"><p data-i18n="faq.greeting">Hi! Ask me about our products, pricing, security, or how to get started.</p></div>
           <div class="faq-widget__chips" id="faq-chips"></div>
         </div>
-        <form class="faq-widget__form" id="faq-form">
-          <input type="text" id="faq-input" class="faq-widget__input" data-i18n-placeholder="faq.placeholder" placeholder="Type a question…" autocomplete="off" />
-          <button type="submit" class="faq-widget__send" aria-label="Send">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4 20-7z"/></svg>
-          </button>
-        </form>
       </div>
     </div>
 
-    <script src="i18n.min.js?v=20260814j" defer></script>
-    <script src="main.min.js?v=20260814j"></script>
+    <script src="i18n.min.js?v=20260814k" defer></script>
+    <script src="main.min.js?v=20260814k"></script>
   </body>
 </html>

@@ -27,7 +27,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.min.css?v=20260814j" />
+    <link rel="stylesheet" href="styles.min.css?v=20260814k" />
   </head>
   <body>
     <a href="#main" class="skip-link" data-i18n="common.skipToContent">Skip to content</a>
@@ -135,7 +135,7 @@
       </div>
     </section>
 
-    <section class="section">
+    <section id="what-changes" class="section">
       <div class="wrap">
         <div class="section-head">
           <div class="eyebrow" data-i18n="products.keyOutcomes">Key outcomes</div>
@@ -150,10 +150,10 @@
       </div>
     </section>
 
-    <section class="section section--navy">
+    <section id="evidence-seal-demo" class="section section--navy">
       <div class="wrap">
-        <div class="section-head" style="text-align: center; align-items: center;">
-          <div class="eyebrow" style="justify-content: center;" data-i18n="forensics.custody.eyebrow">Try it yourself</div>
+        <div class="section-head section-head--center">
+          <div class="eyebrow" data-i18n="forensics.custody.eyebrow">Try it yourself</div>
           <h2 data-i18n="forensics.custody.title">Seal a piece of evidence, live in your browser.</h2>
           <p class="lede" style="max-width: 620px; margin: 10px auto 0;" data-i18n="forensics.custody.lede">Type anything below and we'll compute a real SHA-256 hash — the same cryptographic primitive Forensics™ uses to seal every piece of evidence — right here, client-side. Nothing you type leaves your browser.</p>
         </div>
@@ -172,22 +172,25 @@
       </div>
     </section>
 
-    <section class="section section--navy">
+    <section id="shared-case-model" class="section section--navy">
       <div class="wrap">
         <div class="rationale-grid" style="align-items: center;">
           <div>
-            <div class="eyebrow" data-i18n="forensics.crosslink.eyebrow">Part of Forensic Intelligence</div>
-            <h2 style="font-size: 22px; margin-top: 12px" data-i18n="forensics.crosslink.title">Forensics™ shares its case model with Redact™</h2>
-            <p class="lede" style="margin-top: 10px" data-i18n="forensics.crosslink.lede">Evidence acquired in Forensics is immediately available to Redact — no export, no re-upload — because both run on the same Forensic Intelligence pillar.</p>
+            <div class="section-head">
+              <div class="eyebrow" data-i18n="forensics.crosslink.eyebrow">Part of Forensic Intelligence</div>
+              <h2 data-i18n="forensics.crosslink.title">Forensics™ shares its case model with Redact™</h2>
+              <p class="lede" style="margin-top: 10px" data-i18n="forensics.crosslink.lede">Evidence acquired in Forensics is immediately available to Redact — no export, no re-upload — because both run on the same Forensic Intelligence pillar.</p>
+            </div>
+            <a href="redact.html" class="btn btn-ghost" style="margin-top: 20px"><span data-i18n="forensics.crosslink.pillPrefix">Also in this pillar:</span> Redact™ →</a>
           </div>
-          <div>
-            <a href="redact.html" class="legacy-pill" style="padding: 10px 16px; font-size: 12px;"><span class="legacy-dot" style="background: var(--p-redact)"></span><span data-i18n="forensics.crosslink.pillPrefix">Also in this pillar:</span> Redact™ →</a>
+          <div class="crosslink-media">
+            <img src="forensics-crosslink.jpg" alt="Police barricade tape marking a secured evidence scene" width="900" height="1350" loading="lazy" />
           </div>
         </div>
       </div>
     </section>
 
-    <section class="product-pager">
+    <section id="product-pager" class="product-pager">
       <div class="wrap">
         <a href="fraudshield.html" class="product-pager__link product-pager__link--prev">
           <span class="product-pager__dir">&larr; Previous</span>
@@ -200,7 +203,7 @@
       </div>
     </section>
 
-    <section class="closing">
+    <section id="closing-cta" class="closing">
       <div class="wrap">
         <h2 data-i18n="forensics.closing.title">See a case reconstructed, end to end.</h2>
         <div class="closing-ctas">
@@ -245,14 +248,16 @@
           </div>
         </div>
         <div class="footer__bottom">
+          <div class="footer__left">
           <div class="footer__copyright" data-i18n="footer.copyright">&copy; 2025 Silent Visionary. All rights reserved.</div>
-          <div class="footer__badges">
-            <div class="footer__badges-row"><span>Silent Visionary Forensics™</span></div>
             <div class="footer__legal-row">
               <a href="privacy.html" class="footer__link" data-i18n="footer.privacy">Privacy Policy</a>
               <a href="terms.html" class="footer__link" data-i18n="footer.terms">Terms of Service</a>
               <a href="sitemap.html" class="footer__link" data-i18n="sitemap.hero.eyebrow">Sitemap</a>
             </div>
+          </div>
+          <div class="footer__badges">
+            <div class="footer__badges-row"><span>Silent Visionary Forensics™</span></div>
           </div>
           <div class="footer__lang">
             <label for="lang-select" class="footer__lang-label">
@@ -284,16 +289,10 @@
           <div class="faq-widget__msg faq-widget__msg--bot"><p data-i18n="faq.greeting">Hi! Ask me about our products, pricing, security, or how to get started.</p></div>
           <div class="faq-widget__chips" id="faq-chips"></div>
         </div>
-        <form class="faq-widget__form" id="faq-form">
-          <input type="text" id="faq-input" class="faq-widget__input" data-i18n-placeholder="faq.placeholder" placeholder="Type a question…" autocomplete="off" />
-          <button type="submit" class="faq-widget__send" aria-label="Send">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4 20-7z"/></svg>
-          </button>
-        </form>
       </div>
     </div>
 
-    <script src="i18n.min.js?v=20260814j" defer></script>
-    <script src="main.min.js?v=20260814j"></script>
+    <script src="i18n.min.js?v=20260814k" defer></script>
+    <script src="main.min.js?v=20260814k"></script>
   </body>
 </html>

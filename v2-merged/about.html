@@ -27,7 +27,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.min.css?v=20260814j" />
+    <link rel="stylesheet" href="styles.min.css?v=20260814k" />
   </head>
   <body>
     <a href="#main" class="skip-link" data-i18n="common.skipToContent">Skip to content</a>
@@ -84,12 +84,12 @@
       </div>
     </section>
 
-    <section class="section section--navy">
+    <section id="evidence-first" class="section section--navy">
       <div class="wrap">
         <div class="rationale-grid">
-          <div>
+          <div class="section-head">
             <div class="eyebrow" data-i18n="about.philosophy.eyebrow">Our philosophy</div>
-            <h2 style="font-size: 25px; margin-top: 14px" data-i18n="about.philosophy.title">Evidence first. AI second. Human judgment always visible.</h2>
+            <h2 data-i18n="about.philosophy.title">Evidence first. AI second. Human judgment always visible.</h2>
           </div>
           <div class="rationale-points">
             <div class="rpoint"><svg><use href="#i-check"/></svg><div><b data-i18n="about.philosophy.p1.title">Evidence traces to source.</b><p data-i18n="about.philosophy.p1.desc">Every conclusion the platform shows is one click from the artifact that supports it.</p></div></div>
@@ -126,7 +126,7 @@
       </div>
     </section>
 
-    <section class="section">
+    <section id="core-differentiator" class="section">
       <div class="wrap">
         <div class="section-head">
           <div class="eyebrow" data-i18n="about.diff.eyebrow">What we don't do</div>
@@ -135,24 +135,24 @@
         <div class="diff-grid" style="border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 32px 0;">
           <div class="diff-col">
             <div class="diff-tag" data-i18n="about.diff.col1.tag">Most security platforms</div>
-            <div class="diff-quote" data-i18n="about.diff.col1.quote">&quot;There is an alert.&quot;</div>
+            <h3 class="diff-quote" data-i18n="about.diff.col1.quote">&quot;There is an alert, and nothing more.&quot;</h3>
             <p class="diff-sub" data-i18n="about.diff.col1.sub">A signal, disconnected from cause or consequence.</p>
           </div>
           <div class="diff-col">
             <div class="diff-tag" data-i18n="about.diff.col2.tag">Most forensic tools</div>
-            <div class="diff-quote" data-i18n="about.diff.col2.quote">&quot;Here is the evidence.&quot;</div>
+            <h3 class="diff-quote" data-i18n="about.diff.col2.quote">&quot;Here is the evidence, unexplained.&quot;</h3>
             <p class="diff-sub" data-i18n="about.diff.col2.sub">Artifacts, without the narrative connecting them.</p>
           </div>
           <div class="diff-col final">
             <div class="diff-tag">Silent Visionary</div>
-            <div class="diff-quote" data-i18n="about.diff.col3.quote">&quot;Here is what happened, why we believe it, and the evidence behind it.&quot;</div>
+            <h3 class="diff-quote" data-i18n="about.diff.col3.quote">&quot;Here is what happened, why, and the evidence behind it.&quot;</h3>
             <p class="diff-sub" data-i18n="about.diff.col3.sub">That's the whole company, in one sentence.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="closing">
+    <section id="closing-cta" class="closing">
       <div class="wrap">
         <h2 data-i18n="about.closing.title">Want to see how we build this?</h2>
         <div class="closing-ctas">
@@ -198,14 +198,16 @@
           </div>
         </div>
         <div class="footer__bottom">
-          <div class="footer__copyright" data-i18n="footer.copyright">&copy; 2025 Silent Visionary. All rights reserved.</div>
-          <div class="footer__badges">
-            <div class="footer__badges-row"><span>Silent Visionary Platform</span></div>
+          <div class="footer__left">
+            <div class="footer__copyright" data-i18n="footer.copyright">&copy; 2025 Silent Visionary. All rights reserved.</div>
             <div class="footer__legal-row">
               <a href="privacy.html" class="footer__link" data-i18n="footer.privacy">Privacy Policy</a>
               <a href="terms.html" class="footer__link" data-i18n="footer.terms">Terms of Service</a>
               <a href="sitemap.html" class="footer__link" data-i18n="sitemap.hero.eyebrow">Sitemap</a>
             </div>
+          </div>
+          <div class="footer__badges">
+            <div class="footer__badges-row"><span>Silent Visionary Platform</span></div>
           </div>
           <div class="footer__lang">
             <label for="lang-select" class="footer__lang-label">
@@ -237,16 +239,10 @@
           <div class="faq-widget__msg faq-widget__msg--bot"><p data-i18n="faq.greeting">Hi! Ask me about our products, pricing, security, or how to get started.</p></div>
           <div class="faq-widget__chips" id="faq-chips"></div>
         </div>
-        <form class="faq-widget__form" id="faq-form">
-          <input type="text" id="faq-input" class="faq-widget__input" data-i18n-placeholder="faq.placeholder" placeholder="Type a question…" autocomplete="off" />
-          <button type="submit" class="faq-widget__send" aria-label="Send">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4 20-7z"/></svg>
-          </button>
-        </form>
       </div>
     </div>
 
-    <script src="i18n.min.js?v=20260814j" defer></script>
-    <script src="main.min.js?v=20260814j"></script>
+    <script src="i18n.min.js?v=20260814k" defer></script>
+    <script src="main.min.js?v=20260814k"></script>
   </body>
 </html>
