@@ -28,9 +28,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.min.css?v=20260814h" />
+    <link rel="stylesheet" href="styles.min.css?v=20260814i" />
   </head>
-  <body>
+  <body class="page-404">
     <a href="#main" class="skip-link" data-i18n="common.skipToContent">Skip to content</a>
     <svg width="0" height="0" style="position: absolute">
       <defs>
@@ -80,23 +80,25 @@
         <h1 data-i18n="error404.title">This trail went cold.</h1>
         <p class="lede" style="margin-left: auto; margin-right: auto;" data-i18n="error404.lede">The page you're looking for isn't in evidence. It may have moved, been renamed, or never existed in this case file.</p>
 
-        <div class="scan-radar" aria-hidden="true">
-          <div class="scan-radar__ring"></div>
-          <div class="scan-radar__ring scan-radar__ring--inner"></div>
-          <div class="scan-radar__sweep"></div>
-          <div class="scan-radar__blip" style="top: 28%; left: 66%; animation-delay: 0s;"></div>
-          <div class="scan-radar__blip" style="top: 68%; left: 32%; animation-delay: 1s;"></div>
-          <div class="scan-radar__blip" style="top: 60%; left: 74%; animation-delay: 2s;"></div>
-          <div class="scan-radar__core">
-            <svg viewBox="0 0 24 24"><use href="#i-forensics"/></svg>
+        <div class="scan-console-row">
+          <div class="scan-radar" aria-hidden="true">
+            <div class="scan-radar__ring"></div>
+            <div class="scan-radar__ring scan-radar__ring--inner"></div>
+            <div class="scan-radar__sweep"></div>
+            <div class="scan-radar__blip" style="top: 28%; left: 66%; animation-delay: 0s;"></div>
+            <div class="scan-radar__blip" style="top: 68%; left: 32%; animation-delay: 1s;"></div>
+            <div class="scan-radar__blip" style="top: 60%; left: 74%; animation-delay: 2s;"></div>
+            <div class="scan-radar__core">
+              <svg viewBox="0 0 24 24"><use href="#i-forensics"/></svg>
+            </div>
           </div>
-        </div>
 
-        <div class="trace-console" id="trace-console" aria-hidden="true">
-          <div class="trace-console__line"><span class="prompt">&gt;</span><span id="trace-1" data-i18n="error404.trace1">Scanning case index for</span></div>
-          <div class="trace-console__line"><span class="prompt">&gt;</span><span id="trace-2" data-i18n="error404.trace2">Cross-referencing evidence log… no match</span></div>
-          <div class="trace-console__line"><span class="prompt">&gt;</span><span id="trace-3" data-i18n="error404.trace3">Last known location: unknown</span></div>
-          <div class="trace-console__line"><span class="prompt">&gt;</span><span class="trace-console__status" id="trace-status" data-i18n="error404.traceStatus">Trail Cold</span><span class="trace-console__cursor"></span></div>
+          <div class="trace-console" id="trace-console" aria-hidden="true">
+            <div class="trace-console__line"><span class="prompt">&gt;</span><span id="trace-1" data-i18n="error404.trace1">Scanning case index for</span></div>
+            <div class="trace-console__line"><span class="prompt">&gt;</span><span id="trace-2" data-i18n="error404.trace2">Cross-referencing evidence log… no match</span></div>
+            <div class="trace-console__line"><span class="prompt">&gt;</span><span id="trace-3" data-i18n="error404.trace3">Last known location: unknown</span></div>
+            <div class="trace-console__line"><span class="prompt">&gt;</span><span class="trace-console__status" id="trace-status" data-i18n="error404.traceStatus">Trail Cold</span><span class="trace-console__cursor"></span></div>
+          </div>
         </div>
 
         <div class="page-hero-cta">
@@ -108,43 +110,9 @@
 
     <footer class="footer">
       <div class="wrap">
-        <div class="footer__grid">
-          <div>
-            <img src="LOGO-full-sm.png" alt="Silent Visionary" class="footer__logo-img" />
-            <p class="footer__desc" data-i18n="footer.desc">The unified cyber-physical forensic intelligence platform.</p>
-          </div>
-          <div>
-            <h4 class="footer__col-title" data-i18n="footer.products">Products</h4>
-            <div class="footer__links">
-              <a href="forensics.html" class="footer__link">Forensics™</a>
-              <a href="sentinel.html" class="footer__link">Sentinel™</a>
-              <a href="redact.html" class="footer__link">Redact™</a>
-              <a href="compliance.html" class="footer__link">Compliance™</a>
-              <a href="fraudshield.html" class="footer__link">FraudShield™</a>
-            </div>
-          </div>
-          <div>
-            <h4 class="footer__col-title" data-i18n="footer.company">Company</h4>
-            <div class="footer__links">
-              <a href="platform.html" class="footer__link" data-i18n="footer.platform">Platform</a>
-              <a href="technology.html" class="footer__link" data-i18n="footer.technology">Technology</a>
-              <a href="solutions.html" class="footer__link" data-i18n="footer.solutions">Solutions</a>
-              <a href="industries.html" class="footer__link" data-i18n="footer.industries">Industries</a>
-              <a href="about.html" class="footer__link" data-i18n="footer.about">About</a>
-            </div>
-          </div>
-          <div>
-            <h4 class="footer__col-title" data-i18n="footer.touch">Get in Touch</h4>
-            <div class="footer__links">
-              <a href="mailto:info@silentvisionary.com" class="footer__link">info@silentvisionary.com</a>
-            </div>
-            <a href="contact.html" class="btn btn-gold footer__cta" data-i18n="footer.contact">Contact</a>
-          </div>
-        </div>
         <div class="footer__bottom">
           <div class="footer__copyright" data-i18n="footer.copyright">&copy; 2025 Silent Visionary. All rights reserved.</div>
           <div class="footer__badges">
-            <div class="footer__badges-row"><span>Silent Visionary Platform</span></div>
             <div class="footer__legal-row">
               <a href="privacy.html" class="footer__link" data-i18n="footer.privacy">Privacy Policy</a>
               <a href="terms.html" class="footer__link" data-i18n="footer.terms">Terms of Service</a>
@@ -167,8 +135,8 @@
       </div>
     </footer>
 
-    <script src="i18n.min.js?v=20260814h" defer></script>
-    <script src="main.min.js?v=20260814h"></script>
-    <script src="error-404.min.js?v=20260814h" defer></script>
+    <script src="i18n.min.js?v=20260814i" defer></script>
+    <script src="main.min.js?v=20260814i"></script>
+    <script src="error-404.min.js?v=20260814i" defer></script>
   </body>
 </html>
