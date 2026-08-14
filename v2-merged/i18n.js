@@ -54,7 +54,7 @@
       "index.why.title": "Five tools. One case. One login.",
       "index.why.p1.title": "One login, not five.",
       "index.why.p1.desc":
-        "Investigators used to sign into five separate tools to work one case. Now Forensics, Sentinel, Redact, Compliance, and FraudShield share the same case, evidence model, and timeline.",
+        "Investigators used to sign into five separate tools to work one case. Now they all share the same case, evidence model, and timeline.",
       "index.why.p2.title": "SVIC is the core, not a feature.",
       "index.why.p2.desc":
         "Every module reads and writes to the Silent Visionary Intelligence Cloud, so a Sentinel detection automatically appears as evidence in a Forensics investigation — no export, no re-upload.",
@@ -482,7 +482,7 @@
 
       "index.closing.title": "Five products. One platform. One story worth telling once.",
       "index.closing.lede":
-        "See how Forensics, Sentinel, Redact, Compliance, and FraudShield work as a single reconstruction engine.",
+        "See all five work as a single reconstruction engine.",
 
       "footer.badge.gov": "Government-first",
       "footer.badge.cyberphysical": "Cyber-Physical Intelligence",
@@ -538,7 +538,7 @@
       "index.why.title": "Cinco ferramentas. Um caso. Um login.",
       "index.why.p1.title": "Um login, não cinco.",
       "index.why.p1.desc":
-        "Investigadores costumavam acessar cinco ferramentas separadas para trabalhar em um caso. Agora Forensics, Sentinel, Redact, Compliance e FraudShield compartilham o mesmo caso, modelo de evidências e linha do tempo.",
+        "Investigadores costumavam acessar cinco ferramentas separadas para trabalhar em um caso. Agora todas compartilham o mesmo caso, modelo de evidências e linha do tempo.",
       "index.why.p2.title": "O SVIC é o núcleo, não um recurso.",
       "index.why.p2.desc":
         "Todos os módulos leem e gravam na Silent Visionary Intelligence Cloud, então uma detecção do Sentinel aparece automaticamente como evidência em uma investigação do Forensics — sem exportação, sem novo upload.",
@@ -966,7 +966,7 @@
 
       "index.closing.title": "Cinco produtos. Uma plataforma. Uma história que vale a pena contar uma única vez.",
       "index.closing.lede":
-        "Veja como Forensics, Sentinel, Redact, Compliance e FraudShield funcionam como um único motor de reconstrução.",
+        "Veja as cinco funcionando como um único motor de reconstrução.",
 
       "footer.badge.gov": "Foco Governamental",
       "footer.badge.cyberphysical": "Inteligência Ciberfísica",
@@ -1022,7 +1022,7 @@
       "index.why.title": "Cinco herramientas. Un caso. Un inicio de sesión.",
       "index.why.p1.title": "Un inicio de sesión, no cinco.",
       "index.why.p1.desc":
-        "Los investigadores solían iniciar sesión en cinco herramientas separadas para trabajar en un caso. Ahora Forensics, Sentinel, Redact, Compliance y FraudShield comparten el mismo caso, modelo de evidencia y línea de tiempo.",
+        "Los investigadores solían iniciar sesión en cinco herramientas separadas para trabajar en un caso. Ahora las cinco comparten el mismo caso, modelo de evidencia y línea de tiempo.",
       "index.why.p2.title": "SVIC es el núcleo, no una función.",
       "index.why.p2.desc":
         "Cada módulo lee y escribe en la Silent Visionary Intelligence Cloud, por lo que una detección de Sentinel aparece automáticamente como evidencia en una investigación de Forensics — sin exportar, sin volver a subir archivos.",
@@ -1450,7 +1450,7 @@
 
       "index.closing.title": "Cinco productos. Una plataforma. Una historia que vale la pena contar una sola vez.",
       "index.closing.lede":
-        "Descubre cómo Forensics, Sentinel, Redact, Compliance y FraudShield funcionan como un único motor de reconstrucción.",
+        "Descubre cómo las cinco funcionan como un único motor de reconstrucción.",
 
       "footer.badge.gov": "Enfoque Gubernamental",
       "footer.badge.cyberphysical": "Inteligencia Ciberfísica",
@@ -1506,7 +1506,7 @@
       "index.why.title": "Cinq outils. Un dossier. Une connexion.",
       "index.why.p1.title": "Une connexion, pas cinq.",
       "index.why.p1.desc":
-        "Les enquêteurs devaient auparavant se connecter à cinq outils distincts pour traiter un seul dossier. Désormais, Forensics, Sentinel, Redact, Compliance et FraudShield partagent le même dossier, le même modèle de preuves et la même chronologie.",
+        "Les enquêteurs devaient auparavant se connecter à cinq outils distincts pour traiter un seul dossier. Désormais, tous partagent le même dossier, le même modèle de preuves et la même chronologie.",
       "index.why.p2.title": "SVIC est le noyau, pas une fonctionnalité.",
       "index.why.p2.desc":
         "Chaque module lit et écrit dans le Silent Visionary Intelligence Cloud, de sorte qu'une détection de Sentinel apparaît automatiquement comme preuve dans une enquête Forensics — sans export, sans nouveau téléversement.",
@@ -1934,7 +1934,7 @@
 
       "index.closing.title": "Cinq produits. Une plateforme. Une histoire qui mérite d'être racontée une seule fois.",
       "index.closing.lede":
-        "Découvrez comment Forensics, Sentinel, Redact, Compliance et FraudShield fonctionnent comme un seul moteur de reconstruction.",
+        "Découvrez comment les cinq fonctionnent comme un seul moteur de reconstruction.",
 
       "footer.badge.gov": "Priorité au Secteur Public",
       "footer.badge.cyberphysical": "Intelligence Cyber-Physique",
