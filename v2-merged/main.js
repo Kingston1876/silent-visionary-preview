@@ -140,7 +140,7 @@
       {
         q: 'What products does Silent Visionary offer?',
         keywords: /product|forensics|sentinel|redact|compliance|fraudshield|five capabilit/i,
-        a: 'Silent Visionary unifies five capabilities under one platform: <b>Forensics™</b> (digital forensics investigations), <b>Sentinel™</b> (behavioral threat detection), <b>Redact™</b> (automated sensitive-data redaction), <b>Compliance™</b> (audit-ready compliance workflows), and <b>FraudShield™</b> (fraud detection) — sharing one login, one evidence model, and one case timeline.',
+        a: 'Silent Visionary unifies five capabilities under one platform: <b>Forensics</b> (digital forensics investigations), <b>Sentinel</b> (behavioral threat detection), <b>Redact</b> (automated sensitive-data redaction), <b>Compliance</b> (audit-ready compliance workflows), and <b>FraudShield</b> (fraud detection) — sharing one login, one evidence model, and one case timeline.',
       },
       {
         q: 'How much does it cost?',
@@ -185,7 +185,7 @@
       {
         q: 'What is the SVIC?',
         keywords: /svic|intelligence cloud|shared core/i,
-        a: 'The Silent Visionary Intelligence Cloud (SVIC) is the shared core all five products read and write to — so a Sentinel™ detection automatically appears as evidence in a Forensics™ investigation, with no export or re-upload.',
+        a: 'The Silent Visionary Intelligence Cloud (SVIC) is the shared core all five products read and write to — so a Sentinel detection automatically appears as evidence in a Forensics investigation, with no export or re-upload.',
       },
       {
         q: 'How do I contact you?',
