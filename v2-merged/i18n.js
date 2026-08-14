@@ -41,7 +41,7 @@
         "From a robbery three blocks away to a compromised traffic signal downtown, Silent Visionary fuses street cameras, license plates, cell records, and public infrastructure data into one investigation. Forensics™, Sentinel™, Redact™, Compliance™, and FraudShield™ — five capabilities built for law enforcement and city government, unified by the Silent Visionary Intelligence Cloud (SVIC).",
       "index.hero.ctaPrimary": "Explore the Platform",
 
-      "common.eyebrow": "Digital Forensics for the Street",
+      "common.eyebrow": "Physical Crime. Digital Evidence. One Platform.",
       "common.includes": "Includes",
       "common.home": "Home",
 
@@ -525,7 +525,7 @@
         "De um assalto a três quarteirões de distância a um semáforo comprometido no centro da cidade, a Silent Visionary reúne câmeras de rua, placas de veículos, registros de celular e dados de infraestrutura pública em uma única investigação. Forensics™, Sentinel™, Redact™, Compliance™ e FraudShield™ — cinco capacidades criadas para a aplicação da lei e para governos municipais, unificadas pela Silent Visionary Intelligence Cloud (SVIC).",
       "index.hero.ctaPrimary": "Explorar a Plataforma",
 
-      "common.eyebrow": "Perícia Digital para a Rua",
+      "common.eyebrow": "Crime Físico. Evidência Digital. Uma Plataforma.",
       "common.includes": "Inclui",
       "common.home": "Início",
 
@@ -1009,7 +1009,7 @@
         "Desde un robo a tres cuadras de distancia hasta un semáforo comprometido en el centro de la ciudad, Silent Visionary combina cámaras de calle, matrículas, registros telefónicos y datos de infraestructura pública en una sola investigación. Forensics™, Sentinel™, Redact™, Compliance™ y FraudShield™ — cinco capacidades creadas para las fuerzas del orden y los gobiernos municipales, unificadas por Silent Visionary Intelligence Cloud (SVIC).",
       "index.hero.ctaPrimary": "Explorar la Plataforma",
 
-      "common.eyebrow": "Forense Digital para la Calle",
+      "common.eyebrow": "Crimen Físico. Evidencia Digital. Una Plataforma.",
       "common.includes": "Incluye",
       "common.home": "Inicio",
 
@@ -1493,7 +1493,7 @@
         "D'un vol à trois rues de là à un feu de signalisation compromis en centre-ville, Silent Visionary réunit caméras de rue, plaques d'immatriculation, relevés téléphoniques et données d'infrastructure publique en une seule enquête. Forensics™, Sentinel™, Redact™, Compliance™ et FraudShield™ — cinq capacités conçues pour les forces de l'ordre et les gouvernements municipaux, unifiées par Silent Visionary Intelligence Cloud (SVIC).",
       "index.hero.ctaPrimary": "Explorer la Plateforme",
 
-      "common.eyebrow": "Investigation Numérique pour la Rue",
+      "common.eyebrow": "Crime Physique. Preuve Numérique. Une Plateforme.",
       "common.includes": "Comprend",
       "common.home": "Accueil",
 
