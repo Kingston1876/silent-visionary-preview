@@ -3,85 +3,126 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Page Not Found | Silent Visionary</title>
-    <meta name="description" content="This page doesn't exist on Silent Visionary." />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'" />
+    <title>404 Not Found | Silent Visionary</title>
+    <meta name="description" content="The page you're looking for doesn't exist or has moved." />
     <meta name="robots" content="noindex" />
-    <link rel="icon" type="image/x-icon" href="v2-merged/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="/silent-visionary-preview/v2-merged/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/silent-visionary-preview/v2-merged/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/silent-visionary-preview/v2-merged/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/silent-visionary-preview/v2-merged/apple-touch-icon.png" />
+    <link rel="manifest" href="/silent-visionary-preview/v2-merged/site.webmanifest" />
+    <meta name="theme-color" content="#090c11" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Silent Visionary" />
+    <meta property="og:title" content="404 Not Found | Silent Visionary" />
+    <meta property="og:description" content="The page you're looking for doesn't exist or has moved." />
+    <meta property="og:image" content="https://kingston1876.github.io/silent-visionary-preview/v2-merged/og-image.png" />
+    <meta property="og:url" content="https://kingston1876.github.io/silent-visionary-preview/404.html" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="404 Not Found | Silent Visionary" />
+    <meta name="twitter:description" content="The page you're looking for doesn't exist or has moved." />
+    <meta name="twitter:image" content="https://kingston1876.github.io/silent-visionary-preview/v2-merged/og-image.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
-    <style>
-      :root {
-        --ink: #090c11;
-        --navy: #0d1524;
-        --charcoal: #141b26;
-        --line: #242e3d;
-        --text: #e7ebf1;
-        --text-dim: #93a1b4;
-        --text-faint: #7a87a3;
-        --gold: #c9a15a;
-        --gold-bright: #e4c483;
-      }
-      * { box-sizing: border-box; }
-      html, body {
-        margin: 0; height: 100%;
-        background:
-          radial-gradient(ellipse at 28% 22%, rgba(34, 211, 238, 0.13) 0%, transparent 50%),
-          radial-gradient(ellipse at 76% 70%, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
-          radial-gradient(ellipse at 90% 15%, rgba(37, 99, 235, 0.11) 0%, transparent 45%),
-          linear-gradient(180deg, var(--ink) 0%, var(--navy) 60%, var(--navy) 100%);
-        color: var(--text);
-        font-family: "Public Sans", -apple-system, "Segoe UI", sans-serif;
-      }
-      .wrap {
-        min-height: 100%;
-        display: flex; flex-direction: column; align-items: center; justify-content: center;
-        text-align: center; padding: 40px 24px;
-      }
-      .brand {
-        display: flex; align-items: center; gap: 10px; margin-bottom: 56px;
-        font-family: "Archivo", sans-serif; font-weight: 700; font-size: 15px; letter-spacing: -0.01em;
-        text-decoration: none; color: var(--text);
-      }
-      .brand img { height: 30px; width: auto; }
-      .code {
-        font-family: "IBM Plex Mono", monospace; font-size: 13px; font-weight: 600;
-        letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold);
-        display: flex; align-items: center; gap: 10px;
-      }
-      .code::before { content: ""; width: 24px; height: 1px; background: var(--gold); opacity: 0.6; }
-      h1 {
-        font-family: "Archivo", sans-serif; font-weight: 800; letter-spacing: -0.01em;
-        font-size: clamp(32px, 5vw, 52px); margin: 18px 0 14px; text-wrap: balance;
-      }
-      p.lede {
-        color: var(--text-dim); font-size: 16px; line-height: 1.6; max-width: 480px; margin: 0 0 34px;
-      }
-      .ctas { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
-      .btn {
-        font-family: "Public Sans", sans-serif; font-size: 13.5px; font-weight: 600;
-        padding: 12px 22px; border-radius: 8px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;
-        transition: transform 0.15s ease, border-color 0.15s ease;
-      }
-      .btn-gold { background: linear-gradient(180deg, var(--gold-bright), var(--gold)); color: #1a1305; }
-      .btn-ghost { border: 1px solid var(--line); color: var(--text); background: transparent; }
-      .btn:hover { transform: translateY(-1px); }
-      .btn-ghost:hover { border-color: var(--gold); }
-    </style>
+    <link rel="stylesheet" href="/silent-visionary-preview/v2-merged/styles.min.css?v=20260814i" />
   </head>
-  <body>
-    <div class="wrap">
-      <a href="/v2-merged/index.html" class="brand">
-        <img src="v2-merged/LOGO-icon.png" alt="Silent Visionary" />
-        SILENT VISIONARY
-      </a>
-      <div class="code">404 &middot; Page Not Found</div>
-      <h1>This trail went cold.</h1>
-      <p class="lede">The page you're looking for doesn't exist, moved, or the link's broken. Let's get you back on the case.</p>
-      <div class="ctas">
-        <a href="/v2-merged/index.html" class="btn btn-gold">Back to Silent Visionary</a>
-        <a href="/v2-merged/contact.html" class="btn btn-ghost">Contact Us</a>
+  <body class="page-404">
+    <a href="#main" class="skip-link">Skip to content</a>
+    <svg width="0" height="0" style="position: absolute">
+      <defs>
+        <symbol id="i-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><line x1="3" y1="12" x2="21" y2="12"/><path d="M12 3a15 15 0 0 1 4 9 15 15 0 0 1-4 9 15 15 0 0 1-4-9 15 15 0 0 1 4-9z"/></symbol>
+        <symbol id="i-forensics" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 10a2 2 0 0 0-2 2c0 1.02-.1 2.51-.26 4"/><path d="M14 13.12c0 2.38 0 6.38-1 8.88"/><path d="M17.29 21.02c.12-.6.43-2.3.5-3.02"/><path d="M2 12a10 10 0 0 1 18-6"/><path d="M2 16h.01"/><path d="M21.8 16c.2-2 .131-5.354 0-6"/><path d="M5 19.5C5.5 18 6 15 6 12a6 6 0 0 1 .34-2"/><path d="M8.65 22c.21-.66.45-1.32.57-2"/><path d="M9 6.8a6 6 0 0 1 9 5.2v2"/></symbol>
+      </defs>
+    </svg>
+
+    <header class="header" id="header">
+      <div class="header__inner">
+        <a href="/silent-visionary-preview/v2-merged/index.html" class="brandmark">
+          <img src="/silent-visionary-preview/v2-merged/LOGO-icon-sm.png" alt="Silent Visionary" class="brandmark-icon" />
+          SILENT VISIONARY
+        </a>
+        <nav class="navlinks">
+          <a href="/silent-visionary-preview/v2-merged/platform.html">Platform</a>
+          <a href="/silent-visionary-preview/v2-merged/products.html">Products</a>
+          <a href="/silent-visionary-preview/v2-merged/technology.html">Technology</a>
+          <a href="/silent-visionary-preview/v2-merged/solutions.html">Solutions</a>
+          <a href="/silent-visionary-preview/v2-merged/industries.html">Industries</a>
+          <a href="/silent-visionary-preview/v2-merged/about.html">About</a>
+          <a href="/silent-visionary-preview/v2-merged/contact.html">Contact</a>
+        </nav>
+        <div class="navcta">
+          <a href="/silent-visionary-preview/v2-merged/login.html" class="btn btn-ghost btn-sm">Login</a>
+          <a href="/silent-visionary-preview/v2-merged/dashboard.html" class="btn btn-gold btn-sm">Launch Demo</a>
+        </div>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+          <span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span>
+        </button>
       </div>
-    </div>
+      <nav class="mobile-nav" id="mobile-nav">
+        <a href="/silent-visionary-preview/v2-merged/platform.html" class="mobile-nav__link">Platform</a>
+        <a href="/silent-visionary-preview/v2-merged/products.html" class="mobile-nav__link">Products</a>
+        <a href="/silent-visionary-preview/v2-merged/technology.html" class="mobile-nav__link">Technology</a>
+        <a href="/silent-visionary-preview/v2-merged/solutions.html" class="mobile-nav__link">Solutions</a>
+        <a href="/silent-visionary-preview/v2-merged/industries.html" class="mobile-nav__link">Industries</a>
+        <a href="/silent-visionary-preview/v2-merged/about.html" class="mobile-nav__link">About</a>
+        <a href="/silent-visionary-preview/v2-merged/contact.html" class="mobile-nav__link">Contact</a>
+      </nav>
+    </header>
+
+    <section class="page-hero" id="main" style="text-align: center;">
+      <div class="wrap">
+        <div class="eyebrow" style="justify-content: center;">Error 404</div>
+        <div class="error-code">404</div>
+        <h1>This trail went cold.</h1>
+        <p class="lede" style="margin-left: auto; margin-right: auto;">The page you're looking for isn't in evidence. It may have moved, been renamed, or never existed in this case file.</p>
+
+        <div class="scan-console-row">
+          <div class="scan-radar" aria-hidden="true">
+            <div class="scan-radar__ring"></div>
+            <div class="scan-radar__ring scan-radar__ring--inner"></div>
+            <div class="scan-radar__sweep"></div>
+            <div class="scan-radar__blip" style="top: 28%; left: 66%; animation-delay: 0s;"></div>
+            <div class="scan-radar__blip" style="top: 68%; left: 32%; animation-delay: 1s;"></div>
+            <div class="scan-radar__blip" style="top: 60%; left: 74%; animation-delay: 2s;"></div>
+            <div class="scan-radar__core">
+              <svg viewBox="0 0 24 24"><use href="#i-forensics"/></svg>
+            </div>
+          </div>
+
+          <div class="trace-console" id="trace-console" aria-hidden="true">
+            <div class="trace-console__line"><span class="prompt">&gt;</span><span id="trace-1">Scanning case index for</span></div>
+            <div class="trace-console__line"><span class="prompt">&gt;</span><span id="trace-2">Cross-referencing evidence log… no match</span></div>
+            <div class="trace-console__line"><span class="prompt">&gt;</span><span id="trace-3">Last known location: unknown</span></div>
+            <div class="trace-console__line"><span class="prompt">&gt;</span><span class="trace-console__status" id="trace-status">Trail Cold</span><span class="trace-console__cursor"></span></div>
+          </div>
+        </div>
+
+        <div class="page-hero-cta">
+          <a href="/silent-visionary-preview/v2-merged/index.html" class="btn btn-gold">Return Home</a>
+          <a href="/silent-visionary-preview/v2-merged/sitemap.html" class="btn btn-ghost">View Sitemap</a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="wrap">
+        <div class="footer__bottom">
+          <div class="footer__copyright">&copy; 2026 Silent Visionary. All rights reserved.</div>
+          <div class="footer__badges">
+            <div class="footer__legal-row">
+              <a href="/silent-visionary-preview/v2-merged/privacy.html" class="footer__link">Privacy Policy</a>
+              <a href="/silent-visionary-preview/v2-merged/terms.html" class="footer__link">Terms of Service</a>
+              <a href="/silent-visionary-preview/v2-merged/sitemap.html" class="footer__link">Sitemap</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="/silent-visionary-preview/v2-merged/main.min.js?v=20260814i"></script>
+    <script src="/silent-visionary-preview/v2-merged/error-404.min.js?v=20260814i" defer></script>
   </body>
 </html>
