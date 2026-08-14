@@ -1553,6 +1553,30 @@
     animateCountUp(document.getElementById("kpi-confidence"), 78, { duration: 1300, suffix: "%" });
   }
 
+  var SESSION_DURATION = 15 * 60;
+  var sessionSecondsLeft = SESSION_DURATION;
+
+  function initSessionTimer() {
+    var el = document.getElementById("session-timer");
+    var valueEl = document.getElementById("session-timer-value");
+    if (!el || !valueEl) return;
+
+    function render() {
+      var m = Math.floor(sessionSecondsLeft / 60);
+      var s = sessionSecondsLeft % 60;
+      valueEl.textContent = m + ":" + (s < 10 ? "0" : "") + s;
+      el.classList.toggle("critical", sessionSecondsLeft <= 30);
+      el.classList.toggle("warn", sessionSecondsLeft > 30 && sessionSecondsLeft <= 120);
+    }
+
+    render();
+    window.setInterval(function () {
+      sessionSecondsLeft--;
+      if (sessionSecondsLeft <= 0) sessionSecondsLeft = SESSION_DURATION;
+      render();
+    }, 1000);
+  }
+
   var liveFeedTimer = null;
   var liveFeedIndex = 0;
   var replayTimer = null;
@@ -1676,6 +1700,7 @@
     initReconstruction();
     initKpiCountUp();
     initCaseAutoRotate();
+    initSessionTimer();
     startLiveFeed();
 
     // Safety net: a stuck tooltip (e.g. a missed mouseleave on some

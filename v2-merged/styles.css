@@ -446,6 +446,10 @@ body.app-page { padding-top: 0; }
 .search-result .rval { font-family: var(--font-mono); color: var(--text); }
 .search-result .rtype { font-family: var(--font-mono); font-size: 10px; color: var(--text-faint); text-transform: uppercase; }
 .search-empty { padding: 12px; font-size: 12px; color: var(--text-faint); text-align: center; }
+.session-timer { display: flex; align-items: center; gap: 6px; font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.04em; color: var(--text-dim); border: 1px solid var(--line); border-radius: 100px; padding: 5px 11px; font-variant-numeric: tabular-nums; }
+.session-timer svg { width: 13px; height: 13px; flex-shrink: 0; }
+.session-timer.warn { color: var(--gold); border-color: var(--gold-dim); }
+.session-timer.critical { color: var(--crit); border-color: rgba(226, 88, 79, 0.4); }
 .role-badge { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--gold); border: 1px solid var(--gold-dim); border-radius: 100px; padding: 5px 11px; }
 .avatar { width: 28px; height: 28px; border-radius: 50%; background: var(--charcoal-2); border: 1px solid var(--line); display: flex; align-items: center; justify-content: center; font-family: var(--font-mono); font-size: 11px; color: var(--text-dim); flex-shrink: 0; }
 
