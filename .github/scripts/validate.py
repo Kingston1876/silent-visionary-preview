@@ -92,7 +92,6 @@ def check_i18n_completeness():
 
 def check_broken_links():
     print("== broken internal links/images ==")
-    existing = set(os.listdir(SITE_DIR))
     for fname in sorted(glob.glob(os.path.join(SITE_DIR, "*.html"))):
         content = open(fname, encoding="utf-8").read()
         base = os.path.basename(fname)
@@ -100,13 +99,13 @@ def check_broken_links():
             if href.startswith(("http://", "https://", "mailto:", "tel:", "#", "/")) or not href:
                 continue
             path = href.split("?")[0].split("#")[0]
-            if path and path not in existing:
+            if path and not os.path.exists(os.path.join(SITE_DIR, path)):
                 fail(f"{base}: broken link href=\"{href}\"")
         for src in re.findall(r'src="([^"]+)"', content):
             if src.startswith(("http://", "https://", "data:")):
                 continue
             path = src.split("?")[0]
-            if path and path not in existing:
+            if path and not os.path.exists(os.path.join(SITE_DIR, path)):
                 fail(f"{base}: broken src=\"{src}\"")
     print("  done")
 

@@ -150,7 +150,7 @@
       {
         q: 'How do I request a demo?',
         keywords: /demo|trial|try it|get started|sign up/i,
-        a: 'You can explore a live interactive demo right now via <a href="dashboard.html">Launch Demo</a> at the top of the site, or <a href="contact.html">contact us</a> to schedule a guided walkthrough.',
+        a: 'You can explore a live interactive demo right now via <a href="app/index.html">Launch Demo</a> at the top of the site, or <a href="contact.html">contact us</a> to schedule a guided walkthrough.',
       },
       {
         q: 'Is Silent Visionary secure?',
@@ -180,7 +180,7 @@
       {
         q: 'How do I log in?',
         keywords: /log ?in|sign in|dashboard|account/i,
-        a: 'Use the <a href="login.html">Login</a> link at the top of the site. Just exploring? <a href="dashboard.html">Launch Demo</a> takes you straight into a live sample investigation — no account required.',
+        a: 'Use the <a href="login.html">Login</a> link at the top of the site. Just exploring? <a href="app/index.html">Launch Demo</a> takes you straight into a live sample investigation — no account required.',
       },
       {
         q: 'What is the SVIC?',
